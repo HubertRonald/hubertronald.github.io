@@ -1316,7 +1316,7 @@ body {
 .cid-qSxbE0ISfV {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-color: #efefef;
+  background-color: #ffffff;
 }
 .cid-qSxbE0ISfV h2 {
   text-align: center;
@@ -1346,7 +1346,7 @@ body {
   word-break: break-word;
 }
 .cid-qSxbE0ISfV .mbr-section-subtitle {
-  color: #767676;
+  color: #149dcc;
 }
 .cid-qSxbE0ISfV .card-title {
   font-weight: 500;
@@ -1727,6 +1727,9 @@ body {
 }
 .cid-qSDzwCvQMv H2 {
   color: #efefef;
+}
+.cid-qSDzwCvQMv P {
+  color: #149dcc;
 }
 .cid-qSvItLI9fP .navbar {
   padding: .5rem 0;
