@@ -23,6 +23,12 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
+  <!-- themes diretories -->
+  <link rel="stylesheet" href="assets/theme/css/prism-cook-night.css">
+
+  <!--Button Copy Inside box-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/plugins/toolbar/prism-toolbar.min.css">
+  
   
   
 </head>
@@ -70,7 +76,7 @@
     </nav>
 </section>
 
-<section class="engine"><a href="https://mobirise.me/c">website builder</a></section><section class="mbr-section content4 cid-qTlSdUTbtP" id="content4-95">
+<section class="engine"></section><section class="mbr-section content4 cid-qTlSdUTbtP" id="content4-95">
 
     
 
@@ -150,11 +156,8 @@
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">
-                    Article Title with Solid Background
-                </h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
-                    Shape your future web project with sharp design and refine coded functions.
+                    When have many objects on 3D, it's useful select them, when mouse down on them.
                 </h3>
                 
             </div>
@@ -162,170 +165,49 @@
     </div>
 </section>
 
-<section class="mbr-section content4 cid-qTlSdWLR7e" id="content4-9b">
-
-    
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                
-                
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="header10 cid-qTlSdXe6Xj" id="header10-9c">
+<section class="mbr-section article content1 cid-qTlxnILfKH" id="content1-6m">
 
     
 
     
-
-    <div class="container">
-        <div class="media-container-column mbr-white col-lg-8 col-md-10 ml-auto">
-            
-            
-            
-            
-        </div>
-    </div>
-
-    
-</section>
-
-<section class="mbr-section article content1 cid-qTlSdY8hid" id="content1-9d">
-    
-     
 
     <div class="container">
         <div class="media-container-row">
             <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <strong> Make your own website in a few clicks!</strong> Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and <em>mobile friendly websites</em> in a few clicks. Mobirise is one of the easiest website development tools <a href="https://mobirise.com/">available</a> today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.
-            </div>
-        </div>
+                <P>
+                    This snippet was orginally taken from
+                    <a href="https://forum.unity.com/threads/new-user-help-understand-click-to-view-object-script.356112/" target="_blank">Help understand Click to View Object Script</a>
+
+                    <pre><code class="language-csharp">using UnityEngine;
+using System.Collections;
+
+public class ChangeLookAtTarget : MonoBehaviour {
+
+    public GameObject target; // the target that the camera should look at
+
+    void Start() {
+        if (target == null) 
+        {
+            target = this.gameObject;
+            Debug.Log ("ChangeLookAtTarget target not specified. Defaulting to parent GameObject");
+        }
+    }
+
+    // Called when MouseDown on this gameObject
+    void OnMouseDown () {
+        // change the target of the LookAtTarget script to be this gameobject.
+        LookAtTarget.target = target;
+        Camera.main.fieldOfView = 60*target.transform.localScale.x;
+    }
+}
+</code></pre>
+
     </div>
-</section>
-
-<section class="mbr-section article content1 cid-qTlSdYrSdu" id="content1-9e">
-    
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <strong> Make your own website in a few clicks!</strong> Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and <em>mobile friendly websites</em> in a few clicks. Mobirise is one of the easiest website development tools <a href="https://mobirise.com/">available</a> today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section article content11 cid-qTlSdYNR9B" id="content11-9f">
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
-                <ol>
-                    <li><strong>MOBILE FRIENDLY</strong> - no special actions required, all sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site, it will adapt automagically. <a href="https://mobirise.com/">Try it now!</a></li>
-                    <li><strong>EASY AND SIMPLE</strong> - cut down the development time with drag-and-drop website builder. Drop the blocks into the page, edit content inline and publish - no technical skills required. <a href="https://mobirise.com/">Try it now!</a></li>
-                    <li><strong>UNIQUE STYLES</strong> - choose from the large selection of latest pre-made blocks - full-screen intro, bootstrap carousel, content slider, responsive image gallery with lightbox, parallax scrolling, video backgrounds, hamburger menu, sticky header and more. <a href="https://mobirise.com/">Try it now!</a></li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section article content3 cid-qTlSdZ7G6D" id="content3-9g">
-      
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="row col-12 col-md-8">
-                <div class="col-12 col-md-6 pr-lg-4 mbr-text mbr-fonts-style display-7">
-                     Make your own website in a few clicks! Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and mobile friendly websites in a few clicks. Mobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.
-                </div>
-                <div class="col-12 col-md-6 pl-lg-4 mbr-text mbr-fonts-style display-7">
-                     Make your own website in a few clicks! Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and mobile friendly websites in a few clicks. Mobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section article content1 cid-qTlSdZWIjq" id="content2-9h">
-
-     
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-                <blockquote> <strong>Make your own website in a few clicks!</strong> Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and <strong>mobile friendly websites</strong> in a few clicks. Mobirise is one of the easiest website development tools <a href="https://mobirise.com/">available</a> today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.</blockquote>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section content6 cid-qTlSe1K5dM" id="content6-9i">
-    
-     
-    
-    <div class="container">
-        <div class="media-container-row">
-            <div class="col-12 col-md-8">
-                <div class="media-container-row">
-                    <div class="mbr-figure" style="width: 120%;">
-                      <img src="assets/images/captura-de-pantalla-2018-05-27-a-las-7.48.53-p.-m.-616x495.png" alt="Mobirise" title="">  
-                    </div>
-                    <div class="media-content">
-                        <div class="mbr-section-text">
-                            <p class="mbr-text mb-0 mbr-fonts-style display-7"><br><strong>Make your own website in a few clicks!</strong> Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and <em>mobile friendly websites</em> in a few clicks. Mobirise is one of the easiest website development tools available today.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section content7 cid-qTlSe1XcYt" id="content7-9j">
-          
-    
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="col-12 col-md-8">
-                <div class="media-container-row">
-                    <div class="media-content">
-                        <div class="mbr-section-text">
-                            <p class="mbr-text align-right mb-0 mbr-fonts-style display-7">
-                               <strong><br></strong><br><strong>Make your own website in a few clicks!</strong> Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface. Mobirise Website Builder creates responsive, retina and <em>mobile friendly websites</em> in a few clicks. Mobirise is one of the easiest website development tools available today.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mbr-figure" style="width: 100%;">
-                     <img src="assets/images/captura-de-pantalla-2018-05-27-a-las-7.48.44-p.-m.-616x655.png" alt="" title="">  
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-qTlSe29cZO" id="image3-9k">
 
     
-
-    <figure class="mbr-figure container">
-            <div class="image-block" style="width: 74%;">
-                <img src="assets/images/captura-de-pantalla-2018-05-27-a-las-6.43.24-p.-m.-1376x807.png" width="1400" alt="" title="">
-                
-            </div>
-    </figure>
 </section>
+
+
 
 <section class="features11 cid-qTlSe2maMT" id="features11-9l">
 
@@ -401,7 +283,7 @@
             <div class="media-container-column col-lg-8" data-form-type="formoid">
                     <div data-form-alert="" hidden="">Thanks for filling out the form!</div>
             
-                    <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="JYbTwPIMZw/C5v2ykvdjUPO8cXQsa+GdSvLYz0g+sTLwLPPHF/BtXU9liJppdf4/Tr7zxwqOOuhY0tGZoASeY41BUeHGtftcBeOUcBLROxjNrubcXcT3OvClc+QmHUUw" data-form-field="Email">
+                    <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="Xm0m/6bHIG/LgegAZ6DY4suxhigsVVPyfqdUK0iYEX+WHFztQRP0RsgFp6B7r5Sv35Zeicw1vdTL2avKl7lzy5ycBoeXJEe1yPadLlTKB+80iJ39XsfunBwc/Utw4rop" data-form-field="Email">
                         <div class="row row-sm-offset">
                             <div class="col-md-4 multi-horizontal" data-for="name">
                                 <div class="form-group">
@@ -467,7 +349,7 @@
                     <div data-form-alert="" hidden="" class="align-center">Thanks for filling out the form!</div>
 
                     <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
-                        <input type="hidden" value="W3tFveEhhJjZFpUnsyZAyxqZKdg89oymg3nny5r70Ex8g2fkoyz7FdwNYa7UPOlbj8zAA4MWV53Cu7HPLJb/PACFw+TVT1v3WbeTvXgB9WrtJboZGhtW4x9puOBCqCx9" data-form-email="true">
+                        <input type="hidden" value="GH94OsWiZgLv4G/T0Q1+wZpjJEU8/6deFf2FWMs5wleec4BJmvJycipFyU79ZZlFbS4flQTXVixMuCWKH2qDYnCdk8AXQRbpjr2VqpzeJWiqu+8bF90te3zDbfW75jVE" data-form-email="true">
                         <div class="form-group">
                             <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer4-9o">
                         </div>
@@ -538,6 +420,43 @@
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
   
+  
+  <!--Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
+  <!--Languages syntaxis support-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-csharp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-c.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-lua.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-java.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-git.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-http.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-sql.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-swift.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-visual-basic.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-php.min.js"></script>
+ 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-matlab.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-latex.js"></script>
+
+
+  <!--Plugins-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/plugins/data-uri-highlight/prism-data-uri-highlight.min.js"></script>
+ 
   
   <input name="animation" type="hidden">
   <input name="cookieData" type="hidden" data-cookie-text="We use cookies to give you the best experience. Read our <a href='privacyPolicy.html'>cookie policy</a>.">
