@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/android-chrome-512x512.png" type="image/x-icon">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  <title>Home</title>
+</head>
+
+<style>
+body {
+  margin: 40px;
+}
+
+.photo          { grid-area: it01; }
+.tituleName     { grid-area: it02; }
+.content        { grid-area: it03; }
+.btnStack       { grid-area: it04; }
+.footer         { grid-area: it05; }
+
+.wrapper {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+        'it01'
+        'it02'
+        'it03'
+        'it04'
+        'it05';
+        grid-gap: 10px;
+        padding: 60px;
+}
+
+.wrapper > div {
+    text-align: text-align: justify;
+    padding: 20px;
+}
+
+a{
+    text-decoration: underline
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:50%;
+    height:auto;
+    -webkit-filter: opacity(80%) grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: opacity(80%) grayscale(100%);
+
+}
+
+@media screen and (max-width: 40em) {
+    img {
+        max-width:60%;
+    }
+}
+
+ @media only screen and (min-width: 900px)   {
+     img {
+        max-width:30%;
+    }
+ }
+
+
+</style>
+    <body>
+    <div class="wapper">
+
+
+        <div class="box photo align-center">
+            <p class="mbr-figure pl-lg-0" style="width: 100%;"> 
+            <img src="assets/images/yocircle-1-512x512.png" alt="" title=""></p>
+        </div>
+
+
+
+        <div class="box tituleName align-center">
+            <p class="mbr-author-desc mbr-fonts-style display-5">Hubert <span style="text-decoration: none; color: #C5050C;">Ronald</span></p>
+        </div>
+
+
+
+        <div class="box content align-center">
+
+            <p class="mbr-text testimonial-text mbr-fonts-style display-7" >Desde pequeño siempre he tenido un espiritú por ayudar y aprender.<br>
+            <br> Actualmente dedico parte de mi tiempo libre a compartir mi experiencia y mis conocimientos en
+                <a href="https://es.stackoverflow.com/users/88852/hubert-ronaldubertRonald" target="_blank" class="text-info">Stack&nbsp;Overflow&nbsp;Español</a>.<br>
+            <br> Asimismo contribuyo desde <a href="https://github.com/HubertRonald" target="_blank" class="text-info">GitHub</a> a elaborar scripts libres de uso.
+            </p>
+            <br>
+        </div>  
+
+
+
+        <div class="box btnStack mbr-section-btn align-center">
+            <br>
+
+            <span class="mbr-section-btn align-center">
+                <a class="btn btn-black display-4" href="https://es.stackoverflow.com/users/88852/hubert-ronaldubertRonald" target="_blank"
+                style="text-decoration: none;">
+                <span class="socicon socicon-stackoverflow mbr-iconfont mbr-iconfont-btn">
+                </span>stackoverflow</a>
+        
+        </div>
+
+
+
+        <div class="box footer align-center">
+                <br>
+                <p class="display-7">
+                        © <script type="text/javascript">
+                            var today = new Date()
+                            var year = today.getFullYear()
+                            document.write(year)
+                        </script>
+                        <a href="mailto:liasoft.co@gmail.com?Subject=Hola%20Hubert%20Ronald" target="_top" style="text-decoration: none; color: #C5050C;">Hubert&nbsp;Ronald</a>
+                </p>
+                </div>
+        </div>
+
+
+    </body>
+
+</html>

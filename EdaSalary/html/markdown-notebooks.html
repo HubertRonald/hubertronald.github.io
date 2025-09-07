@@ -1,0 +1,1154 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Documentar el modelado &#8212; Análisis y Explorarión De Data Salarios</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Presentar un dashboard básico" href="markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Análisis y Explorarión De Data Salarios</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Visualización y Documentación Para Narrar a un Equipo de Trabajo
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="etl_salary.html">Modelar los datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Presentar un dashboard básico</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Documentar el modelado</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/HubertRonald/hubertronald.github.io/tree/master" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/markdown-notebooks.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Documentar el modelado</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-en-base-de-datos-original">Variables en base de datos original</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-luego-de-modeladas">Variables luego de modeladas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso-actualizar-datos">Paso a Paso actualizar datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-el-sitio-web">Sobre el Sitio Web</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="documentar-el-modelado">
+<h1>Documentar el modelado<a class="headerlink" href="#documentar-el-modelado" title="Permalink to this heading">#</a></h1>
+<p>Ahora, elaboren un documento escrito en español con las siguientes secciones:</p>
+<ol class="arabic simple">
+<li><p>Variables en base de datos original. Tengan en cuenta que, al describir esta base de datos, los nombres de las variables deben estar escritas en inglés, tal cual las encuentran en la base de datos original, mientras que las descripciones sí deben estar escritas en español. Esto permite a los otros miembros del grupo volver a la base original y reconocer las variables que están describiendo:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Tipo de variable (número, texto, etc.).</p></li>
+<li><p>Descripción de variable.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Variables luego de modeladas. Durante el modelado, ustedes pueden cambiar el nombre de las variables, las pueden dejar en inglés o traducirlas al español. En cualquier caso, por buena práctica, decidan qué idioma van a usar y sean consistentes con esa decisión en todas las variables:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Tipo de variable.</p></li>
+<li><p>Descripción corta, máximo 1 párrafo.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Describir paso a paso lo que una persona debería hacer para actualizar los datos y aplicar el modelado que han diseñado. Piensen esta sección como una ayuda a alguien que los va a reemplazar en el trabajo. Esta persona debe entender con precisión cómo replicar lo que diseñaron. Este paso a paso asume que la estructura de la base de datos original no cambia en nuevas versiones. Puede ser tan detallada como ustedes quieran, pero debe ser muy claro cómo crear los nuevos campos y procedimientos para limpiar.</p></li>
+</ol>
+<div class="admonition-etl admonition">
+<p class="admonition-title">ETL</p>
+<p>Todo el proceso se encuenta embebido en el presente sitio web, mayor detalle en <a class="reference internal" href="etl_salary.html#etl"><span class="std std-ref">ETL</span></a></p>
+</div>
+<section id="variables-en-base-de-datos-original">
+<span id="variables-originales"></span><h2>Variables en base de datos original<a class="headerlink" href="#variables-en-base-de-datos-original" title="Permalink to this heading">#</a></h2>
+<p>Primero se efectua un print de las columnas que trae el juego de datos</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.float_format&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+
+<span class="n">path</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;./data&#39;</span>
+<span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Ask A Manager Salary Survey 2021 (Responses) - Form Responses 1.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Columnas que trae el dataframe&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">idx</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Columnas que trae el dataframe
+
+00 Timestamp
+01 How old are you?
+02 What industry do you work in?
+03 Job title
+04 If your job title needs additional context, please clarify here:
+05 What is your annual salary? (You&#39;ll indicate the currency in a later question. If you are part-time or hourly, please enter an annualized equivalent -- what you would earn if you worked the job 40 hours a week, 52 weeks a year.)
+06 How much additional monetary compensation do you get, if any (for example, bonuses or overtime in an average year)? Please only include monetary compensation here, not the value of benefits.
+07 Please indicate the currency
+08 If &quot;Other,&quot; please indicate the currency here: 
+09 If your income needs additional context, please provide it here:
+10 What country do you work in?
+11 If you&#39;re in the U.S., what state do you work in?
+12 What city do you work in?
+13 How many years of professional work experience do you have overall?
+14 How many years of professional work experience do you have in your field?
+15 What is your highest level of education completed?
+16 What is your gender?
+17 What is your race? (Choose all that apply.)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A las cabeceras originales (variables)
+se le coloca los números correlativos por que los nombres originales son extensas, ver el <a class="reference internal" href="#variables-originales"><span class="std std-ref">inicio de este documento</span></a> para saber como se llaman</p>
+</div>
+<p>A continuación se muestran los tipos para cada columna</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tipo de dato por Columnas&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))]</span>
+<span class="c1">#for idx, dtype in enumerate(df.dtypes):</span>
+<span class="c1">#  print(f&#39;{idx:02d} {&quot;String&quot; if &quot;object&quot;==dtype else &quot;Numeric&quot;}&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo de dato por Columnas
+
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 28006 entries, 0 to 28005
+Data columns (total 18 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   00      28006 non-null  object 
+ 1   01      28006 non-null  object 
+ 2   02      27934 non-null  object 
+ 3   03      28005 non-null  object 
+ 4   04      7245 non-null   object 
+ 5   05      28006 non-null  object 
+ 6   06      20729 non-null  float64
+ 7   07      28006 non-null  object 
+ 8   08      199 non-null    object 
+ 9   09      3036 non-null   object 
+ 10  10      28006 non-null  object 
+ 11  11      23006 non-null  object 
+ 12  12      27929 non-null  object 
+ 13  13      28006 non-null  object 
+ 14  14      28006 non-null  object 
+ 15  15      27790 non-null  object 
+ 16  16      27838 non-null  object 
+ 17  17      27834 non-null  object 
+dtypes: float64(1), object(17)
+memory usage: 3.8+ MB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<p>En relación a lo anterior se da una muestra de los datos porque la herramienta reconoce a todos como texto</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>00</th>
+      <th>01</th>
+      <th>02</th>
+      <th>03</th>
+      <th>04</th>
+      <th>05</th>
+      <th>06</th>
+      <th>07</th>
+      <th>08</th>
+      <th>09</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+      <th>16</th>
+      <th>17</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4/27/2021 11:02:10</td>
+      <td>25-34</td>
+      <td>Education (Higher Education)</td>
+      <td>Research and Instruction Librarian</td>
+      <td>NaN</td>
+      <td>55,000</td>
+      <td>0.00</td>
+      <td>USD</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>United States</td>
+      <td>Massachusetts</td>
+      <td>Boston</td>
+      <td>5-7 years</td>
+      <td>5-7 years</td>
+      <td>Master's degree</td>
+      <td>Woman</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4/27/2021 11:02:22</td>
+      <td>25-34</td>
+      <td>Computing or Tech</td>
+      <td>Change &amp; Internal Communications Manager</td>
+      <td>NaN</td>
+      <td>54,600</td>
+      <td>4000.00</td>
+      <td>GBP</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>United Kingdom</td>
+      <td>NaN</td>
+      <td>Cambridge</td>
+      <td>8 - 10 years</td>
+      <td>5-7 years</td>
+      <td>College degree</td>
+      <td>Non-binary</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4/27/2021 11:02:38</td>
+      <td>25-34</td>
+      <td>Accounting, Banking &amp; Finance</td>
+      <td>Marketing Specialist</td>
+      <td>NaN</td>
+      <td>34,000</td>
+      <td>NaN</td>
+      <td>USD</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>US</td>
+      <td>Tennessee</td>
+      <td>Chattanooga</td>
+      <td>2 - 4 years</td>
+      <td>2 - 4 years</td>
+      <td>College degree</td>
+      <td>Woman</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4/27/2021 11:02:41</td>
+      <td>25-34</td>
+      <td>Nonprofits</td>
+      <td>Program Manager</td>
+      <td>NaN</td>
+      <td>62,000</td>
+      <td>3000.00</td>
+      <td>USD</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>USA</td>
+      <td>Wisconsin</td>
+      <td>Milwaukee</td>
+      <td>8 - 10 years</td>
+      <td>5-7 years</td>
+      <td>College degree</td>
+      <td>Woman</td>
+      <td>White</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4/27/2021 11:02:42</td>
+      <td>25-34</td>
+      <td>Accounting, Banking &amp; Finance</td>
+      <td>Accounting Manager</td>
+      <td>NaN</td>
+      <td>60,000</td>
+      <td>7000.00</td>
+      <td>USD</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>US</td>
+      <td>South Carolina</td>
+      <td>Greenville</td>
+      <td>8 - 10 years</td>
+      <td>5-7 years</td>
+      <td>College degree</td>
+      <td>Woman</td>
+      <td>White</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En aras de no caer en la repetición con la descripción (porque los datos limpios ya las tienen) se deja esta parte para el siguiente punto. Tengase en cuenta el <a class="reference internal" href="etl_salary.html#etl"><span class="std std-ref">ETL</span></a> para más detalle.</p>
+<p>Lo único que se puede indicar que las siguientes columnas se eliminan porque la cantidad de no nulos es muchísimo menor al total de observaciones 28006</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">04</span> <span class="pre">If</span> <span class="pre">your</span> <span class="pre">job</span> <span class="pre">title</span> <span class="pre">needs</span> <span class="pre">additional</span> <span class="pre">context,</span> <span class="pre">please</span> <span class="pre">clarify</span> <span class="pre">here:</span></code> Solo tiene 7245 observaciones</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">08</span> <span class="pre">If</span> <span class="pre">&quot;Other,&quot;</span> <span class="pre">please</span> <span class="pre">indicate</span> <span class="pre">the</span> <span class="pre">currency</span> <span class="pre">here:</span></code> Solo tiene 199 observaciones</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">09</span> <span class="pre">If</span> <span class="pre">your</span> <span class="pre">income</span> <span class="pre">needs</span> <span class="pre">additional</span> <span class="pre">context,</span> <span class="pre">please</span> <span class="pre">provide</span> <span class="pre">it</span> <span class="pre">here:</span></code> Solo tiene 3036 observaciones</p></li>
+</ul>
+</section>
+<section id="variables-luego-de-modeladas">
+<h2>Variables luego de modeladas<a class="headerlink" href="#variables-luego-de-modeladas" title="Permalink to this heading">#</a></h2>
+<p>Se genera el archivo que se subirá a Looker Studio para ello se comparte su estructura luego de efectuado el <a class="reference internal" href="etl_salary.html#etl"><span class="std std-ref">ETL</span></a>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_clean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;./industry_salary_output_clean.csv&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_clean</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 28006 entries, 0 to 28005
+Data columns (total 16 columns):
+ #   Column                 Non-Null Count  Dtype  
+---  ------                 --------------  -----  
+ 0   timestamp              28006 non-null  object 
+ 1   age                    28006 non-null  object 
+ 2   industry               28006 non-null  object 
+ 3   job_title              28006 non-null  object 
+ 4   annual_salary          28006 non-null  float64
+ 5   monetary_compensation  28006 non-null  float64
+ 6   currency               28006 non-null  object 
+ 7   country                28006 non-null  object 
+ 8   only_us_state          28006 non-null  object 
+ 9   city                   28004 non-null  object 
+ 10  work_xp_overall        28006 non-null  object 
+ 11  work_xp_field          28006 non-null  object 
+ 12  education              28006 non-null  object 
+ 13  gender                 28006 non-null  object 
+ 14  race                   28006 non-null  object 
+ 15  convert                28006 non-null  float64
+dtypes: float64(3), object(13)
+memory usage: 3.4+ MB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<p>A continación se muestra el conjunto de datos para luego dar una descripción y el tipo de cada una de sus columnas (características)</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_clean</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>timestamp</th>
+      <th>age</th>
+      <th>industry</th>
+      <th>job_title</th>
+      <th>annual_salary</th>
+      <th>monetary_compensation</th>
+      <th>currency</th>
+      <th>country</th>
+      <th>only_us_state</th>
+      <th>city</th>
+      <th>work_xp_overall</th>
+      <th>work_xp_field</th>
+      <th>education</th>
+      <th>gender</th>
+      <th>race</th>
+      <th>convert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4/27/2021 11:02:10</td>
+      <td>25-34</td>
+      <td>academic</td>
+      <td>Research and Instruction Librarian</td>
+      <td>216875565.50</td>
+      <td>0.00</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>Massachusetts</td>
+      <td>Boston</td>
+      <td>5-7 years</td>
+      <td>5-7 years</td>
+      <td>Master's degree</td>
+      <td>Woman</td>
+      <td>White</td>
+      <td>3943.19</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4/27/2021 11:02:22</td>
+      <td>25-34</td>
+      <td>computing or tech</td>
+      <td>Change &amp; Internal Communications Manager</td>
+      <td>271700203.32</td>
+      <td>19904776.80</td>
+      <td>GBP</td>
+      <td>United Kingdom</td>
+      <td>NotAvailable</td>
+      <td>Cambridge</td>
+      <td>8-10 years</td>
+      <td>5-7 years</td>
+      <td>College degree</td>
+      <td>Non-binary</td>
+      <td>White</td>
+      <td>4976.19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4/27/2021 11:02:38</td>
+      <td>25-34</td>
+      <td>accounting banking finance</td>
+      <td>Marketing Specialist</td>
+      <td>134068531.40</td>
+      <td>0.00</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>Tennessee</td>
+      <td>Chattanooga</td>
+      <td>2-4 years</td>
+      <td>2-4 years</td>
+      <td>College degree</td>
+      <td>Woman</td>
+      <td>White</td>
+      <td>3943.19</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4/27/2021 11:02:41</td>
+      <td>25-34</td>
+      <td>nonprofit</td>
+      <td>Program Manager</td>
+      <td>244477910.20</td>
+      <td>11829576.30</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>Wisconsin</td>
+      <td>Milwaukee</td>
+      <td>8-10 years</td>
+      <td>5-7 years</td>
+      <td>College degree</td>
+      <td>Woman</td>
+      <td>White</td>
+      <td>3943.19</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4/27/2021 11:02:42</td>
+      <td>25-34</td>
+      <td>accounting banking finance</td>
+      <td>Accounting Manager</td>
+      <td>236591526.00</td>
+      <td>27602344.70</td>
+      <td>USD</td>
+      <td>United States</td>
+      <td>South Carolina</td>
+      <td>Greenville</td>
+      <td>8-10 years</td>
+      <td>5-7 years</td>
+      <td>College degree</td>
+      <td>Woman</td>
+      <td>White</td>
+      <td>3943.19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Se proporciona la discripción así como los tipos de cada variable (columna)</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_descripcion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="n">df_clean</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+  <span class="s1">&#39;tipoVariable&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span>
+  <span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span>
+  <span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span>
+  <span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span>
+  <span class="p">,</span> <span class="s1">&#39;float&#39;</span>
+  <span class="p">],</span>
+  <span class="s1">&#39;descripcion&#39;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">&#39;fecha con hora&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rango de edades&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;industria en la que trabaja&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;titulo del puesto de trabajo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;salario anual&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;compensacion anual&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;moneda&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;pais&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;estados solo de estados unidos&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ciudad&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;anios de experiencia general&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;anios de experiencia especifica&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;educacion&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;genero&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;etnia&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tipo de cambio a 2024-02-10 de https://www.xe.com/es/currencyconverter/&#39;</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">df_descripcion</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>variable</th>
+      <th>tipoVariable</th>
+      <th>descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>timestamp</td>
+      <td>timestamp</td>
+      <td>fecha con hora</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>age</td>
+      <td>string</td>
+      <td>rango de edades</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>industry</td>
+      <td>string</td>
+      <td>industria en la que trabaja</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>job_title</td>
+      <td>string</td>
+      <td>titulo del puesto de trabajo</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>annual_salary</td>
+      <td>float</td>
+      <td>salario anual</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>monetary_compensation</td>
+      <td>float</td>
+      <td>compensacion anual</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>currency</td>
+      <td>string</td>
+      <td>moneda</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>country</td>
+      <td>string</td>
+      <td>pais</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>only_us_state</td>
+      <td>string</td>
+      <td>estados solo de estados unidos</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>city</td>
+      <td>string</td>
+      <td>ciudad</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>work_xp_overall</td>
+      <td>string</td>
+      <td>anios de experiencia general</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>work_xp_field</td>
+      <td>string</td>
+      <td>anios de experiencia especifica</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>education</td>
+      <td>string</td>
+      <td>educacion</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>gender</td>
+      <td>string</td>
+      <td>genero</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>race</td>
+      <td>string</td>
+      <td>etnia</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>convert</td>
+      <td>float</td>
+      <td>tipo de cambio a 2024-02-10 de https://www.xe.com/es/currencyconverter/</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="paso-a-paso-actualizar-datos">
+<h2>Paso a Paso actualizar datos<a class="headerlink" href="#paso-a-paso-actualizar-datos" title="Permalink to this heading">#</a></h2>
+<p>Como todo el detalle del proceso está en el <a class="reference internal" href="etl_salary.html#etl"><span class="std std-ref">ETL</span></a>, hay que tener en cuenta lo siguiente porque dicho script no está automatizado para ingestar directamente las fuentes, por lo demás, eso va a procesar y generar el archivo que Looker Studio consume actualmente:</p>
+<ol class="arabic simple">
+<li><p>Cargar la fuente <a class="reference external" href="https://docs.google.com/spreadsheets/d/1IPS5dBSGtwYVbjsfbaMCYIWnOuRmJcbequohNxCyGVw/edit?resourcekey#gid=1625408792">https://docs.google.com/spreadsheets/d/1IPS5dBSGtwYVbjsfbaMCYIWnOuRmJcbequohNxCyGVw/edit?resourcekey#gid=1625408792</a></p></li>
+<li><p>Actualizar las divisas de <a class="reference external" href="https://www.xe.com/es/currencyconverter/">https://www.xe.com/es/currencyconverter/</a> el cual posee un api (aunque es de pago) para su consumo directo ya sea con python o con bash
+<img alt="" src="https://images.ctfassets.net/izij9rskv5y1/5z5ZPZmIsy6KpExpI6kR4s/ff05a2986b702e6a937e1ea687ddfd78/xe-currency-data-api-documentation.png" /></p></li>
+<li><p>La estandarización de las <code class="docutils literal notranslate"><span class="pre">industrias</span></code> es algo que se puede aún mejorar más, por favor ver las notas colocadas al módulo 3 en el <a class="reference internal" href="markdown.html#tablero"><span class="std std-ref">Tablero</span></a></p></li>
+<li><p>Adicional a los pasos anterior está subir el archivo <code class="docutils literal notranslate"><span class="pre">industry_salary_output_clean.csv</span></code> que genera el <a class="reference internal" href="etl_salary.html#etl"><span class="std std-ref">ETL</span></a> al looker studio para que la información quede actualizada</p></li>
+</ol>
+</section>
+<section id="sobre-el-sitio-web">
+<h2>Sobre el Sitio Web<a class="headerlink" href="#sobre-el-sitio-web" title="Permalink to this heading">#</a></h2>
+<p>Con respecto a la rúbrica para conseguir el puntaje extra, emplee <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">book</span></code> para crear el presente entregable mediante un pequeño <code class="docutils literal notranslate"><span class="pre">.devcontainer</span></code> y hosteando el sitio en mi cuenta de <code class="docutils literal notranslate"><span class="pre">github</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="markdown.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Presentar un dashboard básico</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-en-base-de-datos-original">Variables en base de datos original</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-luego-de-modeladas">Variables luego de modeladas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-a-paso-actualizar-datos">Paso a Paso actualizar datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-el-sitio-web">Sobre el Sitio Web</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By HubertRonald
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
