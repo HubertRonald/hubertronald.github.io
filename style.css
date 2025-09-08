@@ -81,6 +81,7 @@ svg{
     font-size: 1.3rem;
 }
 
+
 @keyframes clockHand{
     from{
         transform: rotateZ(0deg);
