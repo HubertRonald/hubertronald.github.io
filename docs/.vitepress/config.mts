@@ -48,6 +48,12 @@ export default withMermaid(
             text: 'LuaSF',
             items: [
               { text: 'Overview', link: '/luasf/' },
+              { text: 'Getting Started', link: '/luasf/getting-started' },
+              { text: 'API Overview', link: '/luasf/api-overview' },
+              { text: 'Architecture', link: '/luasf/architecture' },
+              { text: 'Examples', link: '/luasf/examples' },
+              { text: 'Contributing', link: '/luasf/contributing' },
+              { text: 'Releases', link: '/luasf/releases' }
             ]
           }
         ]
