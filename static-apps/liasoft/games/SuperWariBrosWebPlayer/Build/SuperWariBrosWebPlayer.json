@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "SuperWariBrosWebPlayer.data.unityweb",
+"asmCodeUrl": "SuperWariBrosWebPlayer.asm.code.unityweb",
+"asmMemoryUrl": "SuperWariBrosWebPlayer.asm.memory.unityweb",
+"asmFrameworkUrl": "SuperWariBrosWebPlayer.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

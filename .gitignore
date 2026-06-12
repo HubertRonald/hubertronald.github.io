@@ -119,9 +119,16 @@ target/
 profile_default/
 ipython_config.py
 
-# folders
-EdaSalary
-SuperWariBrosWebPlayer
+# Legacy root folders
+/EdaSalary/
+/SuperWariBrosWebPlayer/
+
+# Keep deployable static app builds
+!static-apps/
+!static-apps/liasoft/
+!static-apps/liasoft/games/
+!static-apps/liasoft/games/SuperWariBrosWebPlayer/
+!static-apps/liasoft/games/SuperWariBrosWebPlayer/**
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
