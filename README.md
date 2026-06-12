@@ -1,4 +1,4 @@
-# Hubert Ronald GitHub Pages
+# GitHub Pages
 
 <p align="left">
     <a href="https://nodejs.org/" target="_blank">
