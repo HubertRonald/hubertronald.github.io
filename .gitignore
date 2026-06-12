@@ -120,8 +120,8 @@ profile_default/
 ipython_config.py
 
 # Legacy root folders
-/EdaSalary/
-/SuperWariBrosWebPlayer/
+/legacy/EdaSalary/
+/legacy/SuperWariBrosWebPlayer/
 
 # Keep deployable static app builds
 !static-apps/
