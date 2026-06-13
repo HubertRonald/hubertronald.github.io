@@ -46,12 +46,13 @@ The public repository demonstrates:
 ## Recommended reading order
 
 1. [Local Setup](./setup)
-2. [Notebook Guide](./notebooks)
-3. [Model Topology](./model-topology)
-4. [Pipeline](./pipeline)
-5. [Architecture](./architecture)
-6. [Results Guide](./results)
-7. [Serving & Demo](./serving)
+2. [Dataset](./data)
+3. [Notebook Guide](./notebooks)
+4. [Model Topology](./model-topology)
+5. [Pipeline](./pipeline)
+6. [Architecture](./architecture)
+7. [Results Guide](./results)
+8. [Serving & Demo](./serving)
 
 ## Source repository
 

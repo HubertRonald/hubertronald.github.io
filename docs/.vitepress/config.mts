@@ -40,6 +40,7 @@ export default withMermaid(
             items: [
               { text: 'Overview', link: '/versovector/' },
               { text: 'Local Setup', link: '/versovector/setup' },
+              { text: 'Dataset', link: '/versovector/data' },
               { text: 'Notebook Guide', link: '/versovector/notebooks' },
               { text: 'Model Topology', link: '/versovector/model-topology' },
               { text: 'Pipeline', link: '/versovector/pipeline' },

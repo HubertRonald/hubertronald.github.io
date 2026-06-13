@@ -65,6 +65,16 @@ pip install -r requirements-umap.txt
 
 If UMAP installation fails, the project can still be inspected through the remaining notebooks and t-SNE/projection alternatives where available.
 
+## Dataset requirement
+
+Before running the notebooks, download the main dataset:
+
+```text
+data/PoetryFoundationData.csv
+```
+
+See [Dataset](./data) for download options and expected file layout.
+
 ## Jupyter kernel
 
 Optional but recommended:

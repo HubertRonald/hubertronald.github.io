@@ -6,6 +6,19 @@ The notebooks should be read and executed in order because each stage depends on
 
 Before running the notebooks, review the [Model Topology](./model-topology). It explains how the feature union, supervised branch, unsupervised branch, and integration stage connect across the full workflow.
 
+## Before running notebooks
+
+Make sure the dataset exists at:
+
+```text
+data/vallejo_poems_en.csv
+data/PoetryFoundationData.csv
+```
+
+See [Dataset](./data) for download instructions.
+
+The first notebook, `01_cleaning_pipeline.ipynb`, expects this raw CSV and produces the processed corpus used by the following notebooks.
+
 ## Notebook sequence
 
 | Step | Notebook | Purpose | Related topology stage |
