@@ -28,9 +28,6 @@
     <a href="https://www.markdownguide.org/" target="_blank">
         <img src="https://img.shields.io/badge/Markdown-content-000000?style=flat-square&logo=markdown&logoColor=white" alt="Markdown" />
     </a>
-    <a href="https://itch.io/" target="_blank">
-        <img src="https://img.shields.io/badge/itch.io-indie%20games-FA5C5C?style=flat-square&logo=itchdotio&logoColor=white" alt="itch.io" />
-    </a>
 </p>
 
 This repository powers the personal GitHub Pages site for **Hubert Ronald**.
