@@ -49,49 +49,49 @@ Start here if you want to clone the repository, reproduce the notebooks, and und
 
 <div class="hr-card-grid">
 
-<a class="hr-card-grid" href="./setup">
+<a class="hr-card" href="./setup">
   <span class="hr-icon vv-icon-setup" aria-hidden="true"></span>
   <span class="hr-card-title">Local Setup</span>
   <span class="hr-card-desc">Prepare Python, dependencies, notebooks, and local tooling.</span>
 </a>
 
-<a class="hr-card-grid" href="./data">
+<a class="hr-card" href="./data">
   <span class="hr-icon vv-icon-data" aria-hidden="true"></span>
   <span class="hr-card-title">Dataset</span>
   <span class="hr-card-desc">Download PoetryFoundationData.csv and place it under data/.</span>
 </a>
 
-<a class="hr-card-grid" href="./notebooks">
+<a class="hr-card" href="./notebooks">
   <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
   <span class="hr-card-title">Notebook Guide</span>
   <span class="hr-card-desc">Run the notebooks in the correct order and understand each stage.</span>
 </a>
 
-<a class="hr-card-grid" href="./model-topology">
+<a class="hr-card" href="./model-topology">
   <span class="hr-icon vv-icon-topology" aria-hidden="true"></span>
   <span class="hr-card-title">Model Topology</span>
   <span class="hr-card-desc">See how supervised and unsupervised learning branches connect.</span>
 </a>
 
-<a class="hr-card-grid" href="./pipeline">
+<a class="hr-card" href="./pipeline">
   <span class="hr-icon vv-icon-pipeline" aria-hidden="true"></span>
   <span class="hr-card-title">Pipeline</span>
   <span class="hr-card-desc">Follow the flow from raw poems to integrated outputs.</span>
 </a>
 
-<a class="hr-card-grid" href="./architecture">
+<a class="hr-card" href="./architecture">
   <span class="hr-icon vv-icon-architecture" aria-hidden="true"></span>
   <span class="hr-card-title">Architecture</span>
   <span class="hr-card-desc">Understand repository layers, model bundle, inference, and services.</span>
 </a>
 
-<a class="hr-card-grid" href="./results">
+<a class="hr-card" href="./results">
   <span class="hr-icon vv-icon-results" aria-hidden="true"></span>
   <span class="hr-card-title">Results Guide</span>
   <span class="hr-card-desc">Learn how to read predictions, topics, clusters, and visual outputs.</span>
 </a>
 
-<a class="hr-card-grid" href="./serving">
+<a class="hr-card" href="./serving">
   <span class="hr-icon vv-icon-serving" aria-hidden="true"></span>
   <span class="hr-card-title">Serving & Demo</span>
   <span class="hr-card-desc">Run the local API/frontend foundation when artifacts are ready.</span>
