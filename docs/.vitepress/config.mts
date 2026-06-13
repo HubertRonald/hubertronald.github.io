@@ -81,5 +81,21 @@ export default withMermaid(
         provider: 'local'
       }
     }
-  })
+  }),
+  {
+    mermaid: {
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Inter, ui-sans-serif, system-ui, sans-serif',
+        primaryColor: '#ffffff',
+        primaryTextColor: '#111827',
+        primaryBorderColor: '#111827',
+        lineColor: '#6b7280',
+        secondaryColor: '#f9fafb',
+        tertiaryColor: '#f3f4f6',
+        clusterBkg: '#f9fafb',
+        clusterBorder: '#d1d5db'
+      }
+    }
+  }
 )
