@@ -1,0 +1,37 @@
+/* Logo next to "Hubert Ronald" */
+.VPNavBarTitle .logo {
+    width: 18px;
+    height: 18px;
+    margin-right: 9px;
+}
+
+.dark .VPNavBarTitle .logo {
+    filter: invert(1) brightness(1.5);
+}
+
+/* Top navigation */
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink:hover {
+    color: var(--hr-brand-primary) !important;
+}
+
+/* Sidebar active / hover */
+.VPSidebarItem.is-active>.item>.link>.text,
+.VPSidebarItem .link:hover .text {
+    color: var(--hr-brand-primary) !important;
+}
+
+.VPSidebarItem.is-active>.item>.indicator {
+    background-color: var(--hr-brand-primary) !important;
+}
+
+/* Markdown links, except card links */
+.vp-doc a:not(.hr-card):not(.vv-path-card) {
+    color: var(--vp-c-brand-1);
+    text-decoration-color: color-mix(in srgb, var(--vp-c-brand-1) 35%, transparent);
+}
+
+.vp-doc a:not(.hr-card):not(.vv-path-card):hover {
+    color: var(--vp-c-brand-1);
+    text-decoration-color: var(--vp-c-brand-1);
+}

@@ -1,0 +1,53 @@
+:root {
+    /* Core brand palette */
+    --hr-color-ink: #111827;
+    --hr-color-ink-2: #1f2937;
+    --hr-color-ink-3: #374151;
+    --hr-color-paper: #ffffff;
+
+    /* Semantic brand tokens */
+    --hr-brand-primary: var(--hr-color-ink);
+    --hr-brand-primary-hover: var(--hr-color-ink-2);
+    --hr-brand-primary-muted: var(--hr-color-ink-3);
+    --hr-brand-soft: rgba(17, 24, 39, 0.08);
+
+    /* Text / icon semantic tokens */
+    --hr-text-strong: var(--vp-c-text-1);
+    --hr-text-body: var(--vp-c-text-2);
+    --hr-text-muted: var(--vp-c-text-3);
+
+    --hr-icon-color: var(--hr-brand-primary);
+    --hr-icon-muted: rgba(17, 24, 39, 0.76);
+
+    /* Shape / layout tokens */
+    --hr-radius-card: 16px;
+    --hr-card-padding: 18px;
+    --hr-card-gap: 18px;
+    --hr-icon-size-sm: 16px;
+    --hr-icon-size-md: 22px;
+    --hr-icon-gap: 10px;
+
+    /* VitePress brand bridge */
+    --vp-c-brand-1: var(--hr-brand-primary);
+    --vp-c-brand-2: var(--hr-brand-primary-hover);
+    --vp-c-brand-3: var(--hr-brand-primary-muted);
+    --vp-c-brand-soft: var(--hr-brand-soft);
+
+    --vp-home-hero-name-color: var(--hr-brand-primary);
+    --vp-home-hero-name-background: transparent;
+}
+
+.dark {
+    --hr-brand-primary: #f9fafb;
+    --hr-brand-primary-hover: #e5e7eb;
+    --hr-brand-primary-muted: #d1d5db;
+    --hr-brand-soft: rgba(249, 250, 251, 0.10);
+
+    --hr-icon-color: var(--hr-brand-primary);
+    --hr-icon-muted: rgba(249, 250, 251, 0.72);
+
+    --vp-c-brand-1: var(--hr-brand-primary);
+    --vp-c-brand-2: var(--hr-brand-primary-hover);
+    --vp-c-brand-3: var(--hr-brand-primary-muted);
+    --vp-c-brand-soft: var(--hr-brand-soft);
+}

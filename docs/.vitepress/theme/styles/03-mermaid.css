@@ -1,0 +1,65 @@
+/* Mermaid diagrams */
+.vp-doc .mermaid {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0;
+    overflow-x: auto;
+}
+
+.vp-doc .mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+html:not(.dark) .vp-doc .mermaid {
+    color: var(--hr-color-ink);
+}
+
+.dark .vp-doc .mermaid {
+    color: #f9fafb;
+}
+
+/* General Mermaid text contrast */
+.vp-doc .mermaid text,
+.vp-doc .mermaid span,
+.vp-doc .mermaid .nodeLabel,
+.vp-doc .mermaid .edgeLabel,
+.vp-doc .mermaid .label {
+    color: var(--hr-color-ink) !important;
+    fill: var(--hr-color-ink) !important;
+}
+
+.dark .vp-doc .mermaid text,
+.dark .vp-doc .mermaid span,
+.dark .vp-doc .mermaid .nodeLabel,
+.dark .vp-doc .mermaid .edgeLabel,
+.dark .vp-doc .mermaid .label {
+    color: #f9fafb !important;
+    fill: #f9fafb !important;
+}
+
+/* Dark mode node boxes */
+.dark .vp-doc .mermaid .node rect,
+.dark .vp-doc .mermaid .node polygon,
+.dark .vp-doc .mermaid .node circle,
+.dark .vp-doc .mermaid .node ellipse {
+    fill: #111827 !important;
+    stroke: #e5e7eb !important;
+}
+
+/* Dark mode clusters / subgraphs */
+.dark .vp-doc .mermaid .cluster rect {
+    fill: rgba(31, 41, 55, 0.85) !important;
+    stroke: #9ca3af !important;
+}
+
+/* Dark mode edges and arrows */
+.dark .vp-doc .mermaid .edgePath path,
+.dark .vp-doc .mermaid .flowchart-link {
+    stroke: #d1d5db !important;
+}
+
+.dark .vp-doc .mermaid marker path {
+    fill: #d1d5db !important;
+    stroke: #d1d5db !important;
+}

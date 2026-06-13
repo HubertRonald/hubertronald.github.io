@@ -1,0 +1,126 @@
+/* VersoVector sidebar icons */
+.VPSidebarItem a.link[href="/versovector/"]::before,
+.VPSidebarItem a.link[href="/versovector"]::before,
+.VPSidebarItem a.link[href="/versovector/index.html"]::before {
+    mask-image: url("/icons/versovector/overview.svg");
+    -webkit-mask-image: url("/icons/versovector/overview.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/setup"]::before,
+.VPSidebarItem a.link[href="/versovector/setup.html"]::before,
+.VPSidebarItem a.link[href="/versovector/setup/"]::before {
+    mask-image: url("/icons/versovector/setup.svg");
+    -webkit-mask-image: url("/icons/versovector/setup.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/data"]::before,
+.VPSidebarItem a.link[href="/versovector/data.html"]::before,
+.VPSidebarItem a.link[href="/versovector/data/"]::before {
+    mask-image: url("/icons/versovector/data.svg");
+    -webkit-mask-image: url("/icons/versovector/data.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/notebooks"]::before,
+.VPSidebarItem a.link[href="/versovector/notebooks.html"]::before,
+.VPSidebarItem a.link[href="/versovector/notebooks/"]::before {
+    mask-image: url("/icons/versovector/notebook.svg");
+    -webkit-mask-image: url("/icons/versovector/notebook.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/model-topology"]::before,
+.VPSidebarItem a.link[href="/versovector/model-topology.html"]::before,
+.VPSidebarItem a.link[href="/versovector/model-topology/"]::before {
+    mask-image: url("/icons/versovector/topology.svg");
+    -webkit-mask-image: url("/icons/versovector/topology.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/pipeline"]::before,
+.VPSidebarItem a.link[href="/versovector/pipeline.html"]::before,
+.VPSidebarItem a.link[href="/versovector/pipeline/"]::before {
+    mask-image: url("/icons/versovector/pipeline.svg");
+    -webkit-mask-image: url("/icons/versovector/pipeline.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/architecture"]::before,
+.VPSidebarItem a.link[href="/versovector/architecture.html"]::before,
+.VPSidebarItem a.link[href="/versovector/architecture/"]::before {
+    mask-image: url("/icons/versovector/architecture.svg");
+    -webkit-mask-image: url("/icons/versovector/architecture.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/results"]::before,
+.VPSidebarItem a.link[href="/versovector/results.html"]::before,
+.VPSidebarItem a.link[href="/versovector/results/"]::before {
+    mask-image: url("/icons/versovector/results.svg");
+    -webkit-mask-image: url("/icons/versovector/results.svg");
+}
+
+.VPSidebarItem a.link[href="/versovector/serving"]::before,
+.VPSidebarItem a.link[href="/versovector/serving.html"]::before,
+.VPSidebarItem a.link[href="/versovector/serving/"]::before {
+    mask-image: url("/icons/versovector/serving.svg");
+    -webkit-mask-image: url("/icons/versovector/serving.svg");
+}
+
+/* Sidebar icon base, applied only when a section stylesheet defines a mask */
+.VPSidebarItem a.link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--hr-icon-gap);
+}
+
+.VPSidebarItem a.link::before {
+    content: "";
+    width: var(--hr-icon-size-sm);
+    height: var(--hr-icon-size-sm);
+    min-width: var(--hr-icon-size-sm);
+    display: inline-block;
+    background-color: var(--hr-icon-muted);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+
+/* VersoVector card icon mappings */
+.vv-icon-setup {
+    mask-image: url("/icons/versovector/setup.svg");
+    -webkit-mask-image: url("/icons/versovector/setup.svg");
+}
+
+.vv-icon-data {
+    mask-image: url("/icons/versovector/data.svg");
+    -webkit-mask-image: url("/icons/versovector/data.svg");
+}
+
+.vv-icon-notebook {
+    mask-image: url("/icons/versovector/notebook.svg");
+    -webkit-mask-image: url("/icons/versovector/notebook.svg");
+}
+
+.vv-icon-topology {
+    mask-image: url("/icons/versovector/topology.svg");
+    -webkit-mask-image: url("/icons/versovector/topology.svg");
+}
+
+.vv-icon-pipeline {
+    mask-image: url("/icons/versovector/pipeline.svg");
+    -webkit-mask-image: url("/icons/versovector/pipeline.svg");
+}
+
+.vv-icon-architecture {
+    mask-image: url("/icons/versovector/architecture.svg");
+    -webkit-mask-image: url("/icons/versovector/architecture.svg");
+}
+
+.vv-icon-results {
+    mask-image: url("/icons/versovector/results.svg");
+    -webkit-mask-image: url("/icons/versovector/results.svg");
+}
+
+.vv-icon-serving {
+    mask-image: url("/icons/versovector/serving.svg");
+    -webkit-mask-image: url("/icons/versovector/serving.svg");
+}
