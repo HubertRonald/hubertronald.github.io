@@ -19,12 +19,45 @@ It is designed for small scripts, teaching, simulations, game/mod scripting, and
 
 ## Current documentation sections
 
-- [Getting Started](./getting-started)
-- [API Overview](./api-overview)
-- [Architecture](./architecture)
-- [Examples](./examples)
-- [Contributing](./contributing)
-- [Releases](./releases)
+<div class="hr-card-grid">
+
+<a class="hr-card" href="./getting-started">
+  <span class="hr-icon luasf-icon-getting-started" aria-hidden="true"></span>
+  <span class="hr-card-title">Getting Started</span>
+  <span class="hr-card-desc">Install LuaSF, verify your Lua environment, and run the first statistical examples.</span>
+</a>
+
+<a class="hr-card" href="./api-overview">
+  <span class="hr-icon luasf-icon-api" aria-hidden="true"></span>
+  <span class="hr-card-title">API Overview</span>
+  <span class="hr-card-desc">Browse the main modules, functions, and statistical helpers exposed by the library.</span>
+</a>
+
+<a class="hr-card" href="./architecture">
+  <span class="hr-icon luasf-icon-architecture" aria-hidden="true"></span>
+  <span class="hr-card-title">Architecture</span>
+  <span class="hr-card-desc">Understand how LuaSF is organized as a lightweight pure Lua statistical toolkit.</span>
+</a>
+
+<a class="hr-card" href="./examples">
+  <span class="hr-icon luasf-icon-examples" aria-hidden="true"></span>
+  <span class="hr-card-title">Examples</span>
+  <span class="hr-card-desc">Review practical snippets for descriptive statistics, probability, sampling, and regression.</span>
+</a>
+
+<a class="hr-card" href="./contributing">
+  <span class="hr-icon luasf-icon-contributing" aria-hidden="true"></span>
+  <span class="hr-card-title">Contributing</span>
+  <span class="hr-card-desc">Follow the contribution guidelines, coding expectations, and documentation conventions.</span>
+</a>
+
+<a class="hr-card" href="./releases">
+  <span class="hr-icon luasf-icon-releases" aria-hidden="true"></span>
+  <span class="hr-card-title">Releases</span>
+  <span class="hr-card-desc">Track version notes, documentation changes, and library evolution across releases.</span>
+</a>
+
+</div>
 
 ## Repository
 

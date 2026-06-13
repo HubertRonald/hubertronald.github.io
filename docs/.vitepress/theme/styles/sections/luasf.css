@@ -1,6 +1,119 @@
 /*
  * LuaSF section-specific styles.
  *
- * Add LuaSF sidebar icon masks and section-specific components here
- * when docs/public/icons/luasf/ is available.
+ * This file maps LuaSF documentation routes and card icons
+ * to LuaSF-specific SVG masks.
  */
+
+/* LuaSF sidebar icon base */
+.VPSidebarItem a.link[href^="/luasf"] {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--hr-icon-gap);
+}
+
+.VPSidebarItem a.link[href^="/luasf"]::before {
+    content: "";
+    width: var(--hr-icon-size-sm);
+    height: var(--hr-icon-size-sm);
+    min-width: var(--hr-icon-size-sm);
+    display: inline-block;
+    background-color: var(--hr-icon-muted);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+
+.VPSidebarItem a.link[href^="/luasf"]:hover::before,
+.VPSidebarItem.is-active a.link[href^="/luasf"]::before {
+    background-color: var(--hr-icon-color);
+}
+
+/* LuaSF sidebar icons */
+.VPSidebarItem a.link[href="/luasf/"]::before,
+.VPSidebarItem a.link[href="/luasf"]::before,
+.VPSidebarItem a.link[href="/luasf/index.html"]::before {
+    mask-image: url("/icons/luasf/overview.svg");
+    -webkit-mask-image: url("/icons/luasf/overview.svg");
+}
+
+.VPSidebarItem a.link[href="/luasf/getting-started"]::before,
+.VPSidebarItem a.link[href="/luasf/getting-started.html"]::before,
+.VPSidebarItem a.link[href="/luasf/getting-started/"]::before {
+    mask-image: url("/icons/luasf/getting-started.svg");
+    -webkit-mask-image: url("/icons/luasf/getting-started.svg");
+}
+
+.VPSidebarItem a.link[href="/luasf/api-overview"]::before,
+.VPSidebarItem a.link[href="/luasf/api-overview.html"]::before,
+.VPSidebarItem a.link[href="/luasf/api-overview/"]::before {
+    mask-image: url("/icons/luasf/api.svg");
+    -webkit-mask-image: url("/icons/luasf/api.svg");
+}
+
+.VPSidebarItem a.link[href="/luasf/architecture"]::before,
+.VPSidebarItem a.link[href="/luasf/architecture.html"]::before,
+.VPSidebarItem a.link[href="/luasf/architecture/"]::before {
+    mask-image: url("/icons/luasf/architecture.svg");
+    -webkit-mask-image: url("/icons/luasf/architecture.svg");
+}
+
+.VPSidebarItem a.link[href="/luasf/examples"]::before,
+.VPSidebarItem a.link[href="/luasf/examples.html"]::before,
+.VPSidebarItem a.link[href="/luasf/examples/"]::before {
+    mask-image: url("/icons/luasf/examples.svg");
+    -webkit-mask-image: url("/icons/luasf/examples.svg");
+}
+
+.VPSidebarItem a.link[href="/luasf/contributing"]::before,
+.VPSidebarItem a.link[href="/luasf/contributing.html"]::before,
+.VPSidebarItem a.link[href="/luasf/contributing/"]::before {
+    mask-image: url("/icons/luasf/contributing.svg");
+    -webkit-mask-image: url("/icons/luasf/contributing.svg");
+}
+
+.VPSidebarItem a.link[href="/luasf/releases"]::before,
+.VPSidebarItem a.link[href="/luasf/releases.html"]::before,
+.VPSidebarItem a.link[href="/luasf/releases/"]::before {
+    mask-image: url("/icons/luasf/releases.svg");
+    -webkit-mask-image: url("/icons/luasf/releases.svg");
+}
+
+/* LuaSF card icon mappings */
+.luasf-icon-overview {
+    mask-image: url("/icons/luasf/overview.svg");
+    -webkit-mask-image: url("/icons/luasf/overview.svg");
+}
+
+.luasf-icon-getting-started {
+    mask-image: url("/icons/luasf/getting-started.svg");
+    -webkit-mask-image: url("/icons/luasf/getting-started.svg");
+}
+
+.luasf-icon-api {
+    mask-image: url("/icons/luasf/api.svg");
+    -webkit-mask-image: url("/icons/luasf/api.svg");
+}
+
+.luasf-icon-architecture {
+    mask-image: url("/icons/luasf/architecture.svg");
+    -webkit-mask-image: url("/icons/luasf/architecture.svg");
+}
+
+.luasf-icon-examples {
+    mask-image: url("/icons/luasf/examples.svg");
+    -webkit-mask-image: url("/icons/luasf/examples.svg");
+}
+
+.luasf-icon-contributing {
+    mask-image: url("/icons/luasf/contributing.svg");
+    -webkit-mask-image: url("/icons/luasf/contributing.svg");
+}
+
+.luasf-icon-releases {
+    mask-image: url("/icons/luasf/releases.svg");
+    -webkit-mask-image: url("/icons/luasf/releases.svg");
+}
