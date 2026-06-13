@@ -43,16 +43,61 @@ The public repository demonstrates:
 - Docker-based local services;
 - tests and reproducibility-oriented structure.
 
-## Recommended reading order
+## Recommended learning path
 
-1. [Local Setup](./setup)
-2. [Dataset](./data)
-3. [Notebook Guide](./notebooks)
-4. [Model Topology](./model-topology)
-5. [Pipeline](./pipeline)
-6. [Architecture](./architecture)
-7. [Results Guide](./results)
-8. [Serving & Demo](./serving)
+Start here if you want to clone the repository, reproduce the notebooks, and understand how the model pipeline is assembled.
+
+<div class="vv-path-grid">
+
+<a class="vv-path-card" href="./setup">
+  <img class="vv-path-icon" src="/icons/versovector/setup.svg" alt="" />
+  <strong>Local Setup</strong>
+  <small>Prepare Python, dependencies, notebooks, and local tooling.</small>
+</a>
+
+<a class="vv-path-card" href="./data">
+  <img class="vv-path-icon" src="/icons/versovector/data.svg" alt="" />
+  <strong>Dataset</strong>
+  <small>Download PoetryFoundationData.csv and place it under data/.</small>
+</a>
+
+<a class="vv-path-card" href="./notebooks">
+  <img class="vv-path-icon" src="/icons/versovector/notebook.svg" alt="" />
+  <strong>Notebook Guide</strong>
+  <small>Run the notebooks in the correct order and understand each stage.</small>
+</a>
+
+<a class="vv-path-card" href="./model-topology">
+  <img class="vv-path-icon" src="/icons/versovector/topology.svg" alt="" />
+  <strong>Model Topology</strong>
+  <small>See how supervised and unsupervised learning branches connect.</small>
+</a>
+
+<a class="vv-path-card" href="./pipeline">
+  <img class="vv-path-icon" src="/icons/versovector/pipeline.svg" alt="" />
+  <strong>Pipeline</strong>
+  <small>Follow the flow from raw poems to integrated outputs.</small>
+</a>
+
+<a class="vv-path-card" href="./architecture">
+  <img class="vv-path-icon" src="/icons/versovector/architecture.svg" alt="" />
+  <strong>Architecture</strong>
+  <small>Understand repository layers, model bundle, inference, and services.</small>
+</a>
+
+<a class="vv-path-card" href="./results">
+  <img class="vv-path-icon" src="/icons/versovector/results.svg" alt="" />
+  <strong>Results Guide</strong>
+  <small>Learn how to read predictions, topics, clusters, and visual outputs.</small>
+</a>
+
+<a class="vv-path-card" href="./serving">
+  <img class="vv-path-icon" src="/icons/versovector/serving.svg" alt="" />
+  <strong>Serving & Demo</strong>
+  <small>Run the local API/frontend foundation when artifacts are ready.</small>
+</a>
+
+</div>
 
 ## Source repository
 
