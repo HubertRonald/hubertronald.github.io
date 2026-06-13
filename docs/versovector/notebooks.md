@@ -52,48 +52,48 @@ Some notebook outputs may not render fully on GitHub, especially HTML diagrams o
 
 Use nbviewer when you want a more reliable rendered view of the executed notebooks.
 
-<div class="vv-path-grid">
+<div class="hr-card-grid">
 
-<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/01_cleaning_pipeline.ipynb" target="_blank" rel="noopener noreferrer">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-kicker">Notebook 01</span>
-  <span class="vv-path-title">Cleaning Pipeline</span>
-  <span class="vv-path-desc">Inspect raw text cleaning, normalization, metadata preparation, and processed corpus generation.</span>
+<a class="hr-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/01_cleaning_pipeline.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-kicker">Notebook 01</span>
+  <span class="hr-card-title">Cleaning Pipeline</span>
+  <span class="hr-card-desc">Inspect raw text cleaning, normalization, metadata preparation, and processed corpus generation.</span>
 </a>
 
-<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/02_feature_pipeline.ipynb" target="_blank" rel="noopener noreferrer">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-kicker">Notebook 02</span>
-  <span class="vv-path-title">Feature Pipeline</span>
-  <span class="vv-path-desc">Review the shared feature representation with CountVectorizer, TF-IDF, DictVectorizer, and normalization.</span>
+<a class="hr-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/02_feature_pipeline.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-kicker">Notebook 02</span>
+  <span class="hr-card-title">Feature Pipeline</span>
+  <span class="hr-card-desc">Review the shared feature representation with CountVectorizer, TF-IDF, DictVectorizer, and normalization.</span>
 </a>
 
-<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/03_embeddings_supervised.ipynb" target="_blank" rel="noopener noreferrer">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-kicker">Notebook 03</span>
-  <span class="vv-path-title">Supervised Embeddings</span>
-  <span class="vv-path-desc">Explore multilabel tag prediction for emotional, thematic, or poetic tone classification.</span>
+<a class="hr-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/03_embeddings_supervised.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-kicker">Notebook 03</span>
+  <span class="hr-card-title">Supervised Embeddings</span>
+  <span class="hr-card-desc">Explore multilabel tag prediction for emotional, thematic, or poetic tone classification.</span>
 </a>
 
-<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/04_embeddings_unsupervised.ipynb" target="_blank" rel="noopener noreferrer">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-kicker">Notebook 04</span>
-  <span class="vv-path-title">Unsupervised Embeddings</span>
-  <span class="vv-path-desc">Inspect similarity search, topic modeling, clustering, and projection experiments.</span>
+<a class="hr-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/04_embeddings_unsupervised.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-kicker">Notebook 04</span>
+  <span class="hr-card-title">Unsupervised Embeddings</span>
+  <span class="hr-card-desc">Inspect similarity search, topic modeling, clustering, and projection experiments.</span>
 </a>
 
-<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/05_supervised_unsupervised_integration.ipynb" target="_blank" rel="noopener noreferrer">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-kicker">Notebook 05</span>
-  <span class="vv-path-title">Results Integration</span>
-  <span class="vv-path-desc">See how supervised predictions and unsupervised outputs are combined into a unified result view.</span>
+<a class="hr-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/05_supervised_unsupervised_integration.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-kicker">Notebook 05</span>
+  <span class="hr-card-title">Results Integration</span>
+  <span class="hr-card-desc">See how supervised predictions and unsupervised outputs are combined into a unified result view.</span>
 </a>
 
-<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/06_visualizations.ipynb" target="_blank" rel="noopener noreferrer">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-kicker">Notebook 06</span>
-  <span class="vv-path-title">Visualizations</span>
-  <span class="vv-path-desc">Review final plots, interpretation assets, projections, and result-oriented visual summaries.</span>
+<a class="hr-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/06_visualizations.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-kicker">Notebook 06</span>
+  <span class="hr-card-title">Visualizations</span>
+  <span class="hr-card-desc">Review final plots, interpretation assets, projections, and result-oriented visual summaries.</span>
 </a>
 
 </div>

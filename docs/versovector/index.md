@@ -47,54 +47,54 @@ The public repository demonstrates:
 
 Start here if you want to clone the repository, reproduce the notebooks, and understand how the model pipeline is assembled.
 
-<div class="vv-path-grid">
+<div class="hr-card-grid">
 
-<a class="vv-path-card" href="./setup">
-  <span class="vv-path-icon vv-icon-setup" aria-hidden="true"></span>
-  <span class="vv-path-title">Local Setup</span>
-  <span class="vv-path-desc">Prepare Python, dependencies, notebooks, and local tooling.</span>
+<a class="hr-card-grid" href="./setup">
+  <span class="hr-icon vv-icon-setup" aria-hidden="true"></span>
+  <span class="hr-card-title">Local Setup</span>
+  <span class="hr-card-desc">Prepare Python, dependencies, notebooks, and local tooling.</span>
 </a>
 
-<a class="vv-path-card" href="./data">
-  <span class="vv-path-icon vv-icon-data" aria-hidden="true"></span>
-  <span class="vv-path-title">Dataset</span>
-  <span class="vv-path-desc">Download PoetryFoundationData.csv and place it under data/.</span>
+<a class="hr-card-grid" href="./data">
+  <span class="hr-icon vv-icon-data" aria-hidden="true"></span>
+  <span class="hr-card-title">Dataset</span>
+  <span class="hr-card-desc">Download PoetryFoundationData.csv and place it under data/.</span>
 </a>
 
-<a class="vv-path-card" href="./notebooks">
-  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
-  <span class="vv-path-title">Notebook Guide</span>
-  <span class="vv-path-desc">Run the notebooks in the correct order and understand each stage.</span>
+<a class="hr-card-grid" href="./notebooks">
+  <span class="hr-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="hr-card-title">Notebook Guide</span>
+  <span class="hr-card-desc">Run the notebooks in the correct order and understand each stage.</span>
 </a>
 
-<a class="vv-path-card" href="./model-topology">
-  <span class="vv-path-icon vv-icon-topology" aria-hidden="true"></span>
-  <span class="vv-path-title">Model Topology</span>
-  <span class="vv-path-desc">See how supervised and unsupervised learning branches connect.</span>
+<a class="hr-card-grid" href="./model-topology">
+  <span class="hr-icon vv-icon-topology" aria-hidden="true"></span>
+  <span class="hr-card-title">Model Topology</span>
+  <span class="hr-card-desc">See how supervised and unsupervised learning branches connect.</span>
 </a>
 
-<a class="vv-path-card" href="./pipeline">
-  <span class="vv-path-icon vv-icon-pipeline" aria-hidden="true"></span>
-  <span class="vv-path-title">Pipeline</span>
-  <span class="vv-path-desc">Follow the flow from raw poems to integrated outputs.</span>
+<a class="hr-card-grid" href="./pipeline">
+  <span class="hr-icon vv-icon-pipeline" aria-hidden="true"></span>
+  <span class="hr-card-title">Pipeline</span>
+  <span class="hr-card-desc">Follow the flow from raw poems to integrated outputs.</span>
 </a>
 
-<a class="vv-path-card" href="./architecture">
-  <span class="vv-path-icon vv-icon-architecture" aria-hidden="true"></span>
-  <span class="vv-path-title">Architecture</span>
-  <span class="vv-path-desc">Understand repository layers, model bundle, inference, and services.</span>
+<a class="hr-card-grid" href="./architecture">
+  <span class="hr-icon vv-icon-architecture" aria-hidden="true"></span>
+  <span class="hr-card-title">Architecture</span>
+  <span class="hr-card-desc">Understand repository layers, model bundle, inference, and services.</span>
 </a>
 
-<a class="vv-path-card" href="./results">
-  <span class="vv-path-icon vv-icon-results" aria-hidden="true"></span>
-  <span class="vv-path-title">Results Guide</span>
-  <span class="vv-path-desc">Learn how to read predictions, topics, clusters, and visual outputs.</span>
+<a class="hr-card-grid" href="./results">
+  <span class="hr-icon vv-icon-results" aria-hidden="true"></span>
+  <span class="hr-card-title">Results Guide</span>
+  <span class="hr-card-desc">Learn how to read predictions, topics, clusters, and visual outputs.</span>
 </a>
 
-<a class="vv-path-card" href="./serving">
-  <span class="vv-path-icon vv-icon-serving" aria-hidden="true"></span>
-  <span class="vv-path-title">Serving & Demo</span>
-  <span class="vv-path-desc">Run the local API/frontend foundation when artifacts are ready.</span>
+<a class="hr-card-grid" href="./serving">
+  <span class="hr-icon vv-icon-serving" aria-hidden="true"></span>
+  <span class="hr-card-title">Serving & Demo</span>
+  <span class="hr-card-desc">Run the local API/frontend foundation when artifacts are ready.</span>
 </a>
 
 </div>
