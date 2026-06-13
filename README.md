@@ -184,6 +184,34 @@ Preview the built site:
 npm run docs:preview
 ```
 
+
+### Clean local preview build
+
+When updating static assets such as icons, images, or standalone site files, the browser may keep cached versions of files that use the same URL.
+
+To force a clean local build:
+
+```bash
+rm -rf docs/.vitepress/dist
+rm -rf docs/.vitepress/cache
+
+npm run docs:build
+npm run docs:preview
+```
+
+If the updated assets still do not appear in the browser, perform a hard refresh:
+
+```text
+macOS: Cmd + Shift + R
+Windows/Linux: Ctrl + Shift + R
+```
+
+This is especially useful after replacing SVG icons under:
+
+```text
+docs/public/icons/
+```
+
 ---
 
 ## Deployment
