@@ -58,10 +58,10 @@ https://hubertronald.github.io/luasf/
   LuaSF technical documentation
 
 https://hubertronald.github.io/versovector/
-  VersoVector product and technical documentation
+  VersoVector public repository documentation
 
 https://hubertronald.github.io/liasoft/
-  LiaSoft standalone static website for indie games, apps, demos, itch.io, and Google Play links
+  Liasoft standalone static website for indie games, apps, demos, and future publishing links
 
 https://hubertronald.github.io/liasoft/games/SuperWariBrosWebPlayer/
   Static browser game build
@@ -309,7 +309,7 @@ https://liasoft.hubertronald.dev/
 
 * [LuaSF](https://github.com/HubertRonald/LuaSF)
 * [VersoVector](https://github.com/HubertRonald/VersoVector)
-* [LiaSoft on itch.io](https://github.com/HubertRonald/liasoft)
+* [LiaSoft static site source](https://github.com/HubertRonald/hubertronald.github.io/tree/master/static-sites/liasoft)
 
 ---
 
@@ -318,3 +318,13 @@ https://liasoft.hubertronald.dev/
 **Hubert Ronald**
 
 GitHub: [HubertRonald](https://github.com/HubertRonald)
+
+---
+
+## License
+
+This repository uses the MIT License for the source code of the GitHub Pages site, unless otherwise noted.
+
+Personal branding, personal written content, project names, logos, screenshots, third-party assets, datasets, external project documentation, and generated artifacts may be subject to separate rights or licenses.
+
+See [LICENSE](./LICENSE) for details.
