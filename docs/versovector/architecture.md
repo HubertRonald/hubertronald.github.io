@@ -1,26 +1,8 @@
 # Architecture
 
-VersoVector is organized as a layered NLP/MLOps system.
+VersoVector is organized as a layered NLP/MLOps repository.
 
-The public repository shows the technical foundation without exposing production-only configuration.
-
-## High-level architecture
-
-```mermaid
-flowchart TD
-    Input["Poems / lyric-like fragments / reflective text"] --> Cleaning["Cleaning & preprocessing"]
-    Cleaning --> Features["Feature pipeline<br/>Count / TF-IDF / custom features"]
-    Features --> Supervised["Supervised branch<br/>multilabel tag prediction"]
-    Features --> Unsupervised["Unsupervised branch<br/>similarity / topics / clustering"]
-    Supervised --> Integration["Integration layer"]
-    Unsupervised --> Integration
-    Integration --> Bundle["Model bundle<br/>artifacts/model_bundle"]
-    Bundle --> Inference["PoemAnalyzer<br/>Python inference layer"]
-    Inference --> API["FastAPI service"]
-    Inference --> Frontend["Gradio frontend"]
-    API --> FutureProduct["Future product API"]
-    Frontend --> Demo["Portfolio demo experience"]
-```
+It starts with notebooks for experimentation and moves toward reproducible scripts, model bundles, inference, API serving, and frontend demos.
 
 ## Repository layers
 
@@ -34,59 +16,115 @@ VersoVector/
 ├── docs/
 ├── figs/
 ├── infra/
-│   └── gcp-cloud-run-blueprint/
 ├── modules/
 ├── notebook/
 ├── services/
-│   ├── api/
-│   ├── frontend/
-│   └── compose.yaml
 ├── src/
 │   └── versovector/
 ├── tests/
 └── utils/
 ```
 
-## Main responsibilities
+## Layer responsibility
 
 | Layer | Responsibility |
 |---|---|
-| `notebook/` | Exploratory and analytical pipeline |
-| `modules/` | Reusable analytical components |
+| `notebook/` | Exploratory pipeline, validation, and visual analysis |
+| `modules/` | Reusable analytical logic shared by notebooks and scripts |
 | `src/versovector/training/` | Scripted training and artifact generation |
-| `src/versovector/inference/` | Model bundle loading and inference |
-| `src/versovector/api/` | FastAPI serving layer |
-| `apps/frontend/` | Gradio user-facing demo |
-| `services/` | Local Dockerized API and frontend services |
-| `infra/gcp-cloud-run-blueprint/` | Sanitized Google Cloud deployment blueprint |
-| `tests/` | Unit and integration testing |
+| `src/versovector/inference/` | Model bundle loading and local inference |
+| `src/versovector/api/` | FastAPI layer exposing inference operations |
+| `apps/frontend/` | Gradio frontend foundation |
+| `services/` | Dockerized API and frontend service packaging |
+| `configs/` | Model and pipeline configuration |
+| `artifacts/` | Locally generated artifacts ignored by Git |
+| `tests/` | Automated tests |
 
-## Public architecture boundary
+## Package-level architecture
 
 ```mermaid
-flowchart LR
-    Public["Public Portfolio Layer"] --> Docs["Documentation"]
-    Public --> Notebooks["Clean notebooks"]
-    Public --> Tests["Tests"]
-    Public --> API["API skeleton"]
-    Public --> Frontend["Demo frontend"]
-    Public --> Blueprint["Sanitized GCP blueprint"]
+flowchart TD
+    Notebooks["notebook/"] --> Modules["modules/"]
+    Modules --> Training["src/versovector/training/"]
+    Training --> Bundle["artifacts/model_bundle/"]
 
-    Private["Private Product Layer"] --> Secrets["Secrets"]
-    Private --> Billing["Billing"]
-    Private --> Auth["Authentication"]
-    Private --> LicensedData["Licensed datasets"]
-    Private --> ProdInfra["Production infrastructure state"]
-    Private --> AdvancedLogic["Commercial recommendation logic"]
+    Bundle --> Inference["src/versovector/inference/"]
+    Inference --> API["src/versovector/api/"]
+    Inference --> Frontend["apps/frontend/"]
 
-    Public -. "informs" .-> Private
+    API --> ServicesAPI["services/api/"]
+    Frontend --> ServicesFrontend["services/frontend/"]
+    ServicesAPI --> Compose["services/compose.yaml"]
+    ServicesFrontend --> Compose
 ```
 
-## Design principles
+## Training package
 
-- Keep training and inference separated.
-- Avoid retraining inside the serving layer.
-- Package trained artifacts into a model bundle.
-- Keep public infrastructure examples sanitized.
-- Keep copyrighted or licensed content out of the public repository unless redistribution is allowed.
-- Use the public repo as a credible technical portfolio, not as the full production product.
+The training package is the scriptable counterpart of the notebooks.
+
+```text
+src/versovector/training/
+├── build_dataset.py
+├── train_features.py
+├── train_supervised.py
+├── train_unsupervised.py
+├── register_model.py
+└── mlflow_utils.py
+```
+
+## Inference package
+
+The inference package loads generated artifacts and exposes reusable analysis logic.
+
+```text
+src/versovector/inference/
+├── artifact_loader.py
+├── poem_analyzer.py
+├── schemas.py
+├── similarity_search.py
+├── tag_predictor.py
+└── topic_clusterer.py
+```
+
+## API package
+
+The API package exposes the inference layer through FastAPI.
+
+```text
+src/versovector/api/
+├── dependencies.py
+├── main.py
+├── schemas.py
+└── settings.py
+```
+
+## Model bundle contract
+
+The model bundle is the contract between training and inference.
+
+```text
+artifacts/model_bundle/
+├── model_config.toml
+├── model_metadata.json
+├── feature_pipeline.joblib
+├── supervised_classifier.joblib
+├── multilabel_binarizer.joblib
+├── nearest_neighbors.joblib
+├── reference_metadata.csv
+├── lda_model.joblib
+├── lda_count_vectorizer.joblib
+├── dimensionality_reducer.joblib
+├── kmeans_model.joblib
+├── gmm_model.joblib
+├── lda_topics.csv
+├── supervised_metrics.csv
+└── unsupervised_metadata.json
+```
+
+## Design principle
+
+The serving layer should not retrain models.
+
+Training produces a model bundle.
+Inference loads the model bundle.
+API and frontend expose the inference behavior.

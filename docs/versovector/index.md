@@ -1,57 +1,63 @@
 # VersoVector
 
-**VersoVector** is an emotional-semantic NLP and MLOps project for poetic, lyrical, and reflective language.
+**VersoVector** is a public NLP/MLOps repository for exploring emotional-semantic patterns in poetic and lyrical language.
 
-The public repository demonstrates how a poetry-centered analytical project can evolve into a product-oriented recommendation system while keeping production-only assets private.
+The project explores whether computational language models can detect emotional, thematic, and semantic relationships in poems in a way that supports human literary interpretation.
 
-## What the public repository shows
+It combines two complementary learning approaches:
 
-VersoVector currently presents:
+- **Unsupervised learning**: clustering poems by style, tone, topic, or semantic proximity.
+- **Supervised learning**: classifying poems by emotion, theme, or poetic tone.
 
-- a notebook-first analytical pipeline;
-- text preprocessing and feature engineering;
+The central research question is:
+
+> Can a language model perceive the emotion behind a poem, as a human reader does?
+
+## What this documentation is for
+
+This documentation helps a reader:
+
+- clone the public repository;
+- prepare the local environment;
+- understand the notebook sequence;
+- understand the model topology;
+- reproduce the main analytical pipeline;
+- inspect generated outputs;
+- understand how model artifacts are packaged;
+- run the local API/frontend foundation when the model bundle is available.
+
+## Repository focus
+
+The public repository demonstrates:
+
+- text cleaning and preprocessing;
+- `FeatureUnion`-based feature representation;
+- `CountVectorizer`, `TfidfVectorizer`, and `DictVectorizer`;
 - supervised multilabel tag prediction;
-- semantic similarity and nearest-neighbor search;
-- topic modeling;
-- clustering and projection experiments;
+- unsupervised similarity, topic modeling, clustering, and projections;
+- integration of supervised and unsupervised outputs;
 - model bundle generation;
 - Python inference abstractions;
 - FastAPI serving foundation;
 - Gradio frontend foundation;
 - Docker-based local services;
-- testing strategy;
-- sanitized Google Cloud deployment blueprint.
+- tests and reproducibility-oriented structure.
 
-## What it is becoming
+## Recommended reading order
 
-The long-term direction is an emotional-semantic recommendation engine for poetic and lyrical content.
+1. [Local Setup](./setup)
+2. [Notebook Guide](./notebooks)
+3. [Model Topology](./model-topology)
+4. [Pipeline](./pipeline)
+5. [Architecture](./architecture)
+6. [Results Guide](./results)
+7. [Serving & Demo](./serving)
 
-Given a poem, lyric-like fragment, or reflective text, the system should help users understand:
+## Source repository
 
-- emotional tone;
-- semantic neighborhood;
-- topic signals;
-- similar works;
-- cluster membership;
-- interpretable recommendation signals.
+- GitHub: [HubertRonald/VersoVector](https://github.com/HubertRonald/VersoVector)
+- Original model topology source: [docs/model_topology.md](https://github.com/HubertRonald/VersoVector/blob/main/docs/model_topology.md)
 
-## Documentation sections
+## Future direction
 
-- [Public Repository Strategy](./public-repo-strategy)
-- [Product Vision](./product-vision)
-- [Architecture](./architecture)
-- [Analytical Pipeline](./analytical-pipeline)
-- [MLOps & Serving](./mlops-serving)
-- [Notebooks & Results](./notebooks-and-results)
-- [Demo Roadmap](./demo-roadmap)
-- [Responsible Content](./responsible-content)
-
-## Repository
-
-- Public repository: [HubertRonald/VersoVector](https://github.com/HubertRonald/VersoVector)
-
-## Product note
-
-This documentation describes the public portfolio repository.
-
-A future production application may live separately and expose a curated demo experience once licensing, data boundaries, authentication, deployment, and product scope are ready.
+This public repository may later support a hosted product demo, but this documentation focuses on the reproducible public project: how to run it, inspect it, and understand its results.
