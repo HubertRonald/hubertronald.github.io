@@ -1,34 +1,37 @@
+/*
+ * Reusable documentation components.
+ *
+ * This file should remain project-agnostic.
+ * Section-specific icon mappings belong in:
+ *
+ * docs/.vitepress/theme/styles/sections/versovector.css
+ * docs/.vitepress/theme/styles/sections/luasf.css
+ */
+
 /* Generic card grid */
-.hr-card-grid,
-.vv-path-grid {
+.hr-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--hr-card-gap);
     margin: 28px 0 36px;
-}
-
-/* Card base */
-.vp-doc a.hr-card,
-.vp-doc a.vv-path-card,
-.vp-doc a.hr-card:hover,
-.vp-doc a.vv-path-card:hover,
-.vp-doc a.hr-card:focus,
-.vp-doc a.vv-path-card:focus,
-.vp-doc a.hr-card:visited,
-.vp-doc a.vv-path-card:visited {
+  }
+  
+  /* Remove VitePress link underline from cards */
+  .vp-doc a.hr-card,
+  .vp-doc a.hr-card:hover,
+  .vp-doc a.hr-card:focus,
+  .vp-doc a.hr-card:visited {
     color: inherit;
     text-decoration: none !important;
-}
-
-.vp-doc a.hr-card *,
-.vp-doc a.vv-path-card *,
-.vp-doc a.hr-card:hover *,
-.vp-doc a.vv-path-card:hover * {
+  }
+  
+  .vp-doc a.hr-card *,
+  .vp-doc a.hr-card:hover * {
     text-decoration: none !important;
-}
-
-.vp-doc .hr-card,
-.vp-doc .vv-path-card {
+  }
+  
+  /* Card layout */
+  .vp-doc .hr-card {
     display: grid;
     grid-template-columns: 34px minmax(0, 1fr);
     grid-template-rows: auto auto auto;
@@ -40,23 +43,20 @@
     border-radius: var(--hr-radius-card);
     background: var(--vp-c-bg-soft);
     transition:
-        border-color 0.2s ease,
-        background-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.vp-doc .hr-card:hover,
-.vp-doc .vv-path-card:hover,
-.vp-doc .hr-card:focus-visible,
-.vp-doc .vv-path-card:focus-visible {
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .vp-doc .hr-card:hover,
+  .vp-doc .hr-card:focus-visible {
     border-color: var(--hr-brand-primary);
     background: var(--vp-c-bg);
     transform: translateY(-2px);
-}
-
-/* Generic masked icon */
-.hr-icon,
-.vv-path-icon {
+  }
+  
+  /* Generic masked icon */
+  .vp-doc .hr-icon {
     grid-column: 1;
     grid-row: 1 / span 3;
     width: var(--hr-icon-size-md);
@@ -70,70 +70,62 @@
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
-}
-
-.hr-card:hover .hr-icon,
-.vv-path-card:hover .vv-path-icon {
+  }
+  
+  .vp-doc .hr-card:hover .hr-icon {
     background-color: var(--hr-icon-color);
-}
-
-/* Card text */
-.hr-card-kicker,
-.hr-card-title,
-.hr-card-desc,
-.vv-path-kicker,
-.vv-path-title,
-.vv-path-desc {
+  }
+  
+  /* Card text placement */
+  .vp-doc .hr-card-kicker,
+  .vp-doc .hr-card-title,
+  .vp-doc .hr-card-desc {
     grid-column: 2;
     min-width: 0;
-}
-
-.hr-card-kicker,
-.vv-path-kicker {
+  }
+  
+  /* Kicker */
+  .vp-doc .hr-card-kicker {
     color: var(--hr-text-muted);
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     line-height: 1.2;
-}
-
-.hr-card-title,
-.vv-path-title {
+  }
+  
+  /* Title */
+  .vp-doc .hr-card-title {
     color: var(--hr-text-strong);
     font-size: 1rem;
     font-weight: 650;
     line-height: 1.35;
-}
-
-.hr-card-desc,
-.vv-path-desc {
+  }
+  
+  /* Description */
+  .vp-doc .hr-card-desc {
     color: var(--hr-text-body);
     font-size: 0.92rem;
     line-height: 1.45;
     max-width: 100%;
-}
-
-/* Compatibility for older card markup using strong/small */
-.vp-doc .hr-card strong,
-.vp-doc .vv-path-card strong,
-.vp-doc .hr-card small,
-.vp-doc .vv-path-card small {
+  }
+  
+  /* Compatibility for simple card markup using strong/small */
+  .vp-doc .hr-card strong,
+  .vp-doc .hr-card small {
     grid-column: 2;
     min-width: 0;
-}
-
-.vp-doc .hr-card strong,
-.vp-doc .vv-path-card strong {
+  }
+  
+  .vp-doc .hr-card strong {
     color: var(--hr-text-strong);
     font-size: 1rem;
     font-weight: 650;
     line-height: 1.35;
-}
-
-.vp-doc .hr-card small,
-.vp-doc .vv-path-card small {
+  }
+  
+  .vp-doc .hr-card small {
     color: var(--hr-text-body);
     font-size: 0.92rem;
     line-height: 1.45;
-}
+  }
