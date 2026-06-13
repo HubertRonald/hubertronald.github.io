@@ -50,51 +50,51 @@ Start here if you want to clone the repository, reproduce the notebooks, and und
 <div class="vv-path-grid">
 
 <a class="vv-path-card" href="./setup">
-  <img class="vv-path-icon" src="/icons/versovector/setup.svg" alt="" />
-  <strong>Local Setup</strong>
-  <small>Prepare Python, dependencies, notebooks, and local tooling.</small>
+  <span class="vv-path-icon vv-icon-setup" aria-hidden="true"></span>
+  <span class="vv-path-title">Local Setup</span>
+  <span class="vv-path-desc">Prepare Python, dependencies, notebooks, and local tooling.</span>
 </a>
 
 <a class="vv-path-card" href="./data">
-  <img class="vv-path-icon" src="/icons/versovector/data.svg" alt="" />
-  <strong>Dataset</strong>
-  <small>Download PoetryFoundationData.csv and place it under data/.</small>
+  <span class="vv-path-icon vv-icon-data" aria-hidden="true"></span>
+  <span class="vv-path-title">Dataset</span>
+  <span class="vv-path-desc">Download PoetryFoundationData.csv and place it under data/.</span>
 </a>
 
 <a class="vv-path-card" href="./notebooks">
-  <img class="vv-path-icon" src="/icons/versovector/notebook.svg" alt="" />
-  <strong>Notebook Guide</strong>
-  <small>Run the notebooks in the correct order and understand each stage.</small>
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-title">Notebook Guide</span>
+  <span class="vv-path-desc">Run the notebooks in the correct order and understand each stage.</span>
 </a>
 
 <a class="vv-path-card" href="./model-topology">
-  <img class="vv-path-icon" src="/icons/versovector/topology.svg" alt="" />
-  <strong>Model Topology</strong>
-  <small>See how supervised and unsupervised learning branches connect.</small>
+  <span class="vv-path-icon vv-icon-topology" aria-hidden="true"></span>
+  <span class="vv-path-title">Model Topology</span>
+  <span class="vv-path-desc">See how supervised and unsupervised learning branches connect.</span>
 </a>
 
 <a class="vv-path-card" href="./pipeline">
-  <img class="vv-path-icon" src="/icons/versovector/pipeline.svg" alt="" />
-  <strong>Pipeline</strong>
-  <small>Follow the flow from raw poems to integrated outputs.</small>
+  <span class="vv-path-icon vv-icon-pipeline" aria-hidden="true"></span>
+  <span class="vv-path-title">Pipeline</span>
+  <span class="vv-path-desc">Follow the flow from raw poems to integrated outputs.</span>
 </a>
 
 <a class="vv-path-card" href="./architecture">
-  <img class="vv-path-icon" src="/icons/versovector/architecture.svg" alt="" />
-  <strong>Architecture</strong>
-  <small>Understand repository layers, model bundle, inference, and services.</small>
+  <span class="vv-path-icon vv-icon-architecture" aria-hidden="true"></span>
+  <span class="vv-path-title">Architecture</span>
+  <span class="vv-path-desc">Understand repository layers, model bundle, inference, and services.</span>
 </a>
 
 <a class="vv-path-card" href="./results">
-  <img class="vv-path-icon" src="/icons/versovector/results.svg" alt="" />
-  <strong>Results Guide</strong>
-  <small>Learn how to read predictions, topics, clusters, and visual outputs.</small>
+  <span class="vv-path-icon vv-icon-results" aria-hidden="true"></span>
+  <span class="vv-path-title">Results Guide</span>
+  <span class="vv-path-desc">Learn how to read predictions, topics, clusters, and visual outputs.</span>
 </a>
 
 <a class="vv-path-card" href="./serving">
-  <img class="vv-path-icon" src="/icons/versovector/serving.svg" alt="" />
-  <strong>Serving & Demo</strong>
-  <small>Run the local API/frontend foundation when artifacts are ready.</small>
+  <span class="vv-path-icon vv-icon-serving" aria-hidden="true"></span>
+  <span class="vv-path-title">Serving & Demo</span>
+  <span class="vv-path-desc">Run the local API/frontend foundation when artifacts are ready.</span>
 </a>
 
 </div>

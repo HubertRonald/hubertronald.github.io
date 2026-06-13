@@ -28,6 +28,7 @@ export default withMermaid(
     ],
 
     themeConfig: {
+      logo: '/icons/common/home.svg',
       nav: [
         { text: 'VersoVector', link: '/versovector/' },
         { text: 'LuaSF', link: '/luasf/' },
