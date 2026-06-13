@@ -135,7 +135,7 @@
 /* Card grid */
 .vv-path-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 18px;
   margin: 28px 0 36px;
 }
@@ -157,10 +157,10 @@
 /* Card layout */
 .vp-doc .vv-path-card {
   display: grid;
-  grid-template-columns: 34px 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
   column-gap: 14px;
-  row-gap: 4px;
+  row-gap: 5px;
   align-items: start;
   padding: 18px;
   border: 1px solid var(--vp-c-divider);
@@ -181,10 +181,11 @@
 
 /* Card icons using CSS mask */
 .vp-doc .vv-path-icon {
-  grid-row: 1 / span 2;
-  width: 26px;
-  height: 26px;
-  margin-top: 2px;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 22px;
+  height: 22px;
+  margin-top: 3px;
   display: inline-block;
   background-color: var(--hr-icon-muted);
   mask-repeat: no-repeat;
@@ -199,6 +200,15 @@
   background-color: var(--hr-icon-color);
 }
 
+/* Text placement: this is the important fix */
+.vp-doc .vv-path-kicker,
+.vp-doc .vv-path-title,
+.vp-doc .vv-path-desc {
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* Kicker */
 .vp-doc .vv-path-kicker {
   color: var(--vp-c-text-3);
   font-size: 0.74rem;
@@ -208,8 +218,109 @@
   line-height: 1.2;
 }
 
-.vp-doc .vv-path-card .vv-path-kicker + .vv-path-title {
-  margin-top: 2px;
+/* Title */
+.vp-doc .vv-path-title {
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+/* Description */
+.vp-doc .vv-path-desc {
+  color: var(--vp-c-text-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  max-width: 100%;
+}
+
+/* Compatibility if some cards still use strong/small */
+.vp-doc .vv-path-card strong,
+.vp-doc .vv-path-card small {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.vp-doc .vv-path-card strong {
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.vp-doc .vv-path-card small {
+  color: var(--vp-c-text-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* Mermaid diagrams */
+.vp-doc .mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0;
+  overflow-x: auto;
+}
+
+.vp-doc .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Light mode Mermaid tuning */
+html:not(.dark) .vp-doc .mermaid {
+  color: #111827;
+}
+
+/* Dark mode Mermaid tuning */
+.dark .vp-doc .mermaid {
+  color: #f9fafb;
+}
+
+/* General Mermaid text contrast */
+.vp-doc .mermaid text,
+.vp-doc .mermaid span,
+.vp-doc .mermaid .nodeLabel,
+.vp-doc .mermaid .edgeLabel,
+.vp-doc .mermaid .label {
+  color: #111827 !important;
+  fill: #111827 !important;
+}
+
+/* Dark mode text contrast */
+.dark .vp-doc .mermaid text,
+.dark .vp-doc .mermaid span,
+.dark .vp-doc .mermaid .nodeLabel,
+.dark .vp-doc .mermaid .edgeLabel,
+.dark .vp-doc .mermaid .label {
+  color: #f9fafb !important;
+  fill: #f9fafb !important;
+}
+
+/* Dark mode node boxes */
+.dark .vp-doc .mermaid .node rect,
+.dark .vp-doc .mermaid .node polygon,
+.dark .vp-doc .mermaid .node circle,
+.dark .vp-doc .mermaid .node ellipse {
+  fill: #111827 !important;
+  stroke: #e5e7eb !important;
+}
+
+/* Dark mode clusters / subgraphs */
+.dark .vp-doc .mermaid .cluster rect {
+  fill: rgba(31, 41, 55, 0.85) !important;
+  stroke: #9ca3af !important;
+}
+
+/* Dark mode edges and arrows */
+.dark .vp-doc .mermaid .edgePath path,
+.dark .vp-doc .mermaid .flowchart-link {
+  stroke: #d1d5db !important;
+}
+
+.dark .vp-doc .mermaid marker path {
+  fill: #d1d5db !important;
+  stroke: #d1d5db !important;
 }
 
 .vv-icon-setup {

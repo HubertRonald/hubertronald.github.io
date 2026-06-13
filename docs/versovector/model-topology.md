@@ -91,11 +91,17 @@ flowchart TD
 
     J --> K["06 Final interpretation<br/>emotion + emergent themes"]
 
-    style FeatureUnion fill:#FFE0B2,stroke:#EF6C00,stroke-width:2px
-    style DictVect fill:#FFF3E0,stroke:#FB8C00,stroke-width:1.5px
-    style Supervised fill:#BBDEFB,stroke:#1565C0,stroke-width:2px
-    style Unsupervised fill:#F1F3F4,stroke:#9AA0A6,stroke-width:1px
-    style Integration fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px
+    classDef vvNode fill:#ffffff,stroke:#111827,color:#111827,stroke-width:1.4px;
+    classDef vvFeature fill:#fff7ed,stroke:#f97316,color:#111827,stroke-width:1.8px;
+    classDef vvSupervised fill:#eff6ff,stroke:#2563eb,color:#111827,stroke-width:1.8px;
+    classDef vvUnsupervised fill:#f8fafc,stroke:#64748b,color:#111827,stroke-width:1.5px;
+    classDef vvIntegration fill:#f0fdf4,stroke:#16a34a,color:#111827,stroke-width:1.8px;
+
+    class A,B,S2,S21,S22,DV1,DV2,S4,D,S3,E,F,G,H1,H2,H3,S5,S51,S52,S6,E2,J,K vvNode;
+    class S2,S21,S22,DV1,DV2 vvFeature;
+    class S5,S51,S52,S6,E2 vvSupervised;
+    class E,F,G,H1,H2,H3,D,S3 vvUnsupervised;
+    class J,K vvIntegration;
 ```
 
 ## Stage 1 — Cleaning
