@@ -2,24 +2,21 @@
 
 VersoVector combines supervised and unsupervised NLP workflows.
 
+For a visual explanation of how the modeling components connect across notebooks, see [Model Topology](./model-topology).
+
 The goal is to produce an integrated analytical view of poetic text: predicted tags, semantic neighbors, topics, clusters, and projection metadata.
 
 ## High-level flow
 
 ```mermaid
 flowchart TD
-    Raw["Raw poems / source datasets"] --> Clean["01 Cleaning pipeline"]
-    Clean --> Corpus["Processed corpus"]
-    Corpus --> Features["02 Feature pipeline"]
-
-    Features --> Supervised["03 Supervised branch"]
-    Features --> Unsupervised["04 Unsupervised branch"]
-
-    Supervised --> Integration["05 Integration"]
-    Unsupervised --> Integration
-
-    Integration --> Visuals["06 Visualizations"]
-    Integration --> Bundle["Model bundle preparation"]
+    N1["01 Cleaning"] --> N2["02 Feature Pipeline"]
+    N2 --> N3["03 Supervised Branch"]
+    N2 --> N4["04 Unsupervised Branch"]
+    N3 --> N5["05 Integration"]
+    N4 --> N5
+    N5 --> N6["06 Visualizations"]
+    N5 --> Bundle["Model Bundle"]
 ```
 
 ## 1. Cleaning pipeline
