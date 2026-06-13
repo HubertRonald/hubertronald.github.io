@@ -50,14 +50,54 @@ The first notebook, `01_cleaning_pipeline.ipynb`, expects this raw CSV and produ
 
 Some notebook outputs may not render fully on GitHub, especially HTML diagrams or rich model visualizations.
 
-Use nbviewer when needed:
+Use nbviewer when you want a more reliable rendered view of the executed notebooks.
 
-- [01 Cleaning Pipeline](https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/01_cleaning_pipeline.ipynb)
-- [02 Feature Pipeline](https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/02_feature_pipeline.ipynb)
-- [03 Supervised Embeddings](https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/03_embeddings_supervised.ipynb)
-- [04 Unsupervised Embeddings](https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/04_embeddings_unsupervised.ipynb)
-- [05 Supervised + Unsupervised Integration](https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/05_supervised_unsupervised_integration.ipynb)
-- [06 Visualizations](https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/06_visualizations.ipynb)
+<div class="vv-path-grid">
+
+<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/01_cleaning_pipeline.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-kicker">Notebook 01</span>
+  <span class="vv-path-title">Cleaning Pipeline</span>
+  <span class="vv-path-desc">Inspect raw text cleaning, normalization, metadata preparation, and processed corpus generation.</span>
+</a>
+
+<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/02_feature_pipeline.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-kicker">Notebook 02</span>
+  <span class="vv-path-title">Feature Pipeline</span>
+  <span class="vv-path-desc">Review the shared feature representation with CountVectorizer, TF-IDF, DictVectorizer, and normalization.</span>
+</a>
+
+<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/03_embeddings_supervised.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-kicker">Notebook 03</span>
+  <span class="vv-path-title">Supervised Embeddings</span>
+  <span class="vv-path-desc">Explore multilabel tag prediction for emotional, thematic, or poetic tone classification.</span>
+</a>
+
+<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/04_embeddings_unsupervised.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-kicker">Notebook 04</span>
+  <span class="vv-path-title">Unsupervised Embeddings</span>
+  <span class="vv-path-desc">Inspect similarity search, topic modeling, clustering, and projection experiments.</span>
+</a>
+
+<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/05_supervised_unsupervised_integration.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-kicker">Notebook 05</span>
+  <span class="vv-path-title">Results Integration</span>
+  <span class="vv-path-desc">See how supervised predictions and unsupervised outputs are combined into a unified result view.</span>
+</a>
+
+<a class="vv-path-card" href="https://nbviewer.org/github/HubertRonald/VersoVector/blob/main/notebook/06_visualizations.ipynb" target="_blank" rel="noopener noreferrer">
+  <span class="vv-path-icon vv-icon-notebook" aria-hidden="true"></span>
+  <span class="vv-path-kicker">Notebook 06</span>
+  <span class="vv-path-title">Visualizations</span>
+  <span class="vv-path-desc">Review final plots, interpretation assets, projections, and result-oriented visual summaries.</span>
+</a>
+
+</div>
+
 
 ## What to inspect
 
