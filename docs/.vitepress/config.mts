@@ -38,7 +38,15 @@ export default withMermaid(
           {
             text: 'VersoVector',
             items: [
-              { text: 'Overview', link: '/versovector/' }
+              { text: 'Overview', link: '/versovector/' },
+              { text: 'Public Repository Strategy', link: '/versovector/public-repo-strategy' },
+              { text: 'Product Vision', link: '/versovector/product-vision' },
+              { text: 'Architecture', link: '/versovector/architecture' },
+              { text: 'Analytical Pipeline', link: '/versovector/analytical-pipeline' },
+              { text: 'MLOps & Serving', link: '/versovector/mlops-serving' },
+              { text: 'Notebooks & Results', link: '/versovector/notebooks-and-results' },
+              { text: 'Demo Roadmap', link: '/versovector/demo-roadmap' },
+              { text: 'Responsible Content', link: '/versovector/responsible-content' }
             ]
           }
         ],
