@@ -14,6 +14,11 @@ export default withMermaid(
     cleanUrls: true,
     lastUpdated: true,
 
+    markdown: {
+      math: true
+    },
+
+
     head: [
       ['meta', { name: 'theme-color', content: '#111827' }],
       ['meta', { property: 'og:type', content: 'website' }],
@@ -32,6 +37,7 @@ export default withMermaid(
       nav: [
         { text: 'VersoVector', link: '/versovector/' },
         { text: 'LuaSF', link: '/luasf/' },
+        { text: 'GradientMesh', link: '/gradientmesh/' }
       ],
 
       sidebar: {
@@ -63,6 +69,21 @@ export default withMermaid(
               { text: 'Examples', link: '/luasf/examples' },
               { text: 'Contributing', link: '/luasf/contributing' },
               { text: 'Releases', link: '/luasf/releases' }
+            ]
+          }
+        ],
+
+        '/gradientmesh/': [
+          {
+            text: 'GradientMesh',
+            items: [
+              { text: 'Overview', link: '/gradientmesh/' },
+              { text: 'Getting Started', link: '/gradientmesh/getting-started' },
+              { text: 'Examples', link: '/gradientmesh/examples' },
+              { text: 'How It Works', link: '/gradientmesh/how-it-works' },
+              { text: 'API Reference', link: '/gradientmesh/api-reference' },
+              { text: 'Architecture', link: '/gradientmesh/architecture' },
+              { text: 'Releases', link: '/gradientmesh/releases' }
             ]
           }
         ]
