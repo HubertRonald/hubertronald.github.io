@@ -2,6 +2,7 @@
 @import './styles/01-vitepress-theme.css';
 @import './styles/02-components.css';
 @import './styles/03-mermaid.css';
+@import './styles/04-media.css';
 @import './styles/sections/versovector.css';
 @import './styles/sections/luasf.css';
 @import './styles/sections/gradientmesh.css';

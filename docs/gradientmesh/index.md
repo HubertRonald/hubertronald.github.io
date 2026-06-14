@@ -15,21 +15,21 @@ The examples below show two main use cases for **Gideros Gradient Mesh**: applyi
 
 These examples use a source image as a texture and blend it with a generated gradient mesh. This is useful for hero images, game menus, splash screens, atmospheric backgrounds, and visual experiments where the image should keep its structure while gaining a stronger color mood.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/assets/images/landscapes/pexels-photo-89432.png" width="32%" alt="Original landscape image">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow.png" width="32%" alt="Landscape image with Big Rainbow gradient overlay">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow-fog.png" width="32%" alt="Landscape image with soft Big Rainbow Fog gradient overlay">
-</p>
+<div class="hr-image-row hr-image-row-3">
+  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/assets/images/landscapes/pexels-photo-89432.png" alt="Original landscape image">
+  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow.png" alt="Landscape image with Big Rainbow gradient overlay">
+  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow-fog.png" alt="Landscape image with soft Big Rainbow Fog gradient overlay">
+</div>
 
 ### Gradient backgrounds and shapes
 
 These examples focus on pure gradient surfaces generated with mesh vertices and interpolated colors. They are useful for UI cards, menu backgrounds, decorative panels, abstract scenes, and quick visual prototyping inside Gideros.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-royal-blue.png" width="32%" alt="Royal Blue gradient mesh background">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-firewatch.png" width="32%" alt="Firewatch gradient mesh background">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-mango.png" width="32%" alt="Mango gradient mesh background">
-</p>
+<div class="hr-image-row hr-image-row-3">
+  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-royal-blue.png" alt="Royal Blue gradient mesh background">
+  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-firewatch.png" alt="Firewatch gradient mesh background">
+  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-mango.png" alt="Mango gradient mesh background">
+</div>
 
 > These screenshots are generated examples. For a cleaner portfolio presentation, the visuals are intentionally kept simple: the image carries the gradient result, while names and descriptions live in the documentation instead of being embedded inside the screenshots.
 

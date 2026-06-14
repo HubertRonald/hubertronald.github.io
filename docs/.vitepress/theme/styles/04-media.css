@@ -1,0 +1,72 @@
+/*
+ * Reusable media components.
+ *
+ * Use these classes for image rows, preview galleries,
+ * screenshots, and visual documentation blocks.
+ */
+
+/* Horizontal image row */
+.vp-doc .hr-image-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 12px;
+    margin: 24px 0 28px;
+    overflow-x: auto;
+    padding: 4px 2px 10px;
+}
+
+/* Images inside horizontal rows */
+.vp-doc .hr-image-row img {
+    display: block;
+    flex: 0 0 min(32%, 280px);
+    width: min(32%, 280px);
+    max-width: none;
+    height: auto;
+    margin: 0;
+    border-radius: 14px;
+    border: 1px solid var(--vp-c-divider);
+    background: var(--vp-c-bg-soft);
+    object-fit: cover;
+}
+
+/* Three-item gallery variant */
+.vp-doc .hr-image-row-3 img {
+    flex-basis: min(32%, 280px);
+    width: min(32%, 280px);
+}
+
+/* Wider screenshots */
+.vp-doc .hr-image-wide {
+    display: block;
+    width: min(100%, 760px);
+    max-width: 100%;
+    height: auto;
+    margin: 24px auto 28px;
+    border-radius: 16px;
+    border: 1px solid var(--vp-c-divider);
+    background: var(--vp-c-bg-soft);
+}
+
+/* Optional caption / note below visual blocks */
+.vp-doc .hr-image-caption {
+    margin-top: -12px;
+    color: var(--vp-c-text-2);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    text-align: center;
+}
+
+/* Mobile: keep horizontal scrolling instead of stacking */
+@media (max-width: 640px) {
+    .vp-doc .hr-image-row {
+        justify-content: flex-start;
+    }
+
+    .vp-doc .hr-image-row img {
+        flex: 0 0 78%;
+        width: 78%;
+    }
+}

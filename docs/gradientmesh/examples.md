@@ -5,27 +5,6 @@ GradientMesh examples are grouped by rendering feature.
 
 The visual assets are kept in the original GradientMesh repository. This documentation references the same source paths through GitHub raw URLs, so the images do not need to be duplicated in this GitHub Pages repository.
 
-## Preview examples
-
-### Gradient overlays
-
-These examples use a source image as a texture and blend it with a generated gradient mesh.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/assets/images/landscapes/pexels-photo-89432.png" width="32%" alt="Original landscape image">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow.png" width="32%" alt="Landscape image with Big Rainbow gradient overlay">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow-fog.png" width="32%" alt="Landscape image with soft Big Rainbow Fog gradient overlay">
-</p>
-
-### Gradient backgrounds and shapes
-
-These examples focus on pure gradient surfaces generated with mesh vertices and interpolated colors.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-royal-blue.png" width="32%" alt="Royal Blue gradient mesh background">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-firewatch.png" width="32%" alt="Firewatch gradient mesh background">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-mango.png" width="32%" alt="Mango gradient mesh background">
-</p>
 
 ## Visual examples
 
@@ -43,9 +22,7 @@ It is useful for:
 * atmospheric backgrounds;
 * quick mood exploration.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-overlay-landscape.png" width="75%" alt="Landscape image with procedural gradient mesh overlay">
-</p>
+<img class="hr-image-wide" src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-overlay-landscape.png" alt="Landscape image with procedural gradient mesh overlay">
 
 Generated from:
 
@@ -67,9 +44,7 @@ GradientMesh can map an image texture onto polygon-based mesh geometry.
 
 This makes it possible to clip, rotate, tint, and antialias images using mesh vertices instead of pre-rendered bitmap masks.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/texture-mask-rotated-mesh.png" width="75%" alt="Texture mask over square and rotated polygon mesh">
-</p>
+<img class="hr-image-wide" src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/texture-mask-rotated-mesh.png" width="75%" alt="Texture mask over square and rotated polygon mesh">
 
 Generated from:
 
@@ -89,9 +64,7 @@ This example maps a portrait texture onto regular hexagon meshes.
 
 It shows how the same portrait can be clipped through polygon geometry while preserving the image and adding a subtle vertex-color tint.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/hexagon-portrait-texture-mask.png" width="75%" alt="Portrait texture masked through regular hexagon meshes">
-</p>
+<img class="hr-image-wide" src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/hexagon-portrait-texture-mask.png" width="75%" alt="Portrait texture masked through regular hexagon meshes">
 
 Generated from:
 
@@ -117,9 +90,7 @@ By changing the number of edges, scale factors, and inner radius, the same algor
 * donuts;
 * deformed radial shapes.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/radial-shapes-hole-deform.png" width="75%" alt="Radial gradient shapes with hole and deformation">
-</p>
+<img class="hr-image-wide" src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/radial-shapes-hole-deform.png" width="75%" alt="Radial gradient shapes with hole and deformation">
 
 Generated from:
 
@@ -139,9 +110,7 @@ Splash examples combine texture masks with radial color interpolation.
 
 This is useful for expressive backgrounds, particle-like effects, menu accents, and creative coding experiments.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/radial-gradient-splash-masks.png" width="75%" alt="Radial gradient splash texture masks">
-</p>
+<img class="hr-image-wide" src="https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/radial-gradient-splash-masks.png" width="75%" alt="Radial gradient splash texture masks">
 
 Generated from:
 
