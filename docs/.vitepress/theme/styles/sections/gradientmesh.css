@@ -1,0 +1,119 @@
+/*
+ * GradientMesh section-specific styles.
+ *
+ * This file maps GradientMesh documentation routes and card icons
+ * to GradientMesh-specific SVG masks.
+ */
+
+/* GradientMesh sidebar icon base */
+.VPSidebarItem a.link[href^="/gradientmesh"] {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--hr-icon-gap);
+  }
+  
+  .VPSidebarItem a.link[href^="/gradientmesh"]::before {
+    content: "";
+    width: var(--hr-icon-size-sm);
+    height: var(--hr-icon-size-sm);
+    min-width: var(--hr-icon-size-sm);
+    display: inline-block;
+    background-color: var(--hr-icon-muted);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+  
+  .VPSidebarItem a.link[href^="/gradientmesh"]:hover::before,
+  .VPSidebarItem.is-active a.link[href^="/gradientmesh"]::before {
+    background-color: var(--hr-icon-color);
+  }
+  
+  /* GradientMesh sidebar icons */
+  .VPSidebarItem a.link[href="/gradientmesh/"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/index.html"]::before {
+    mask-image: url("/icons/gradientmesh/overview.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/overview.svg");
+  }
+  
+  .VPSidebarItem a.link[href="/gradientmesh/getting-started"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/getting-started.html"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/getting-started/"]::before {
+    mask-image: url("/icons/gradientmesh/setup.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/setup.svg");
+  }
+  
+  .VPSidebarItem a.link[href="/gradientmesh/examples"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/examples.html"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/examples/"]::before {
+    mask-image: url("/icons/gradientmesh/examples.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/examples.svg");
+  }
+  
+  .VPSidebarItem a.link[href="/gradientmesh/how-it-works"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/how-it-works.html"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/how-it-works/"]::before {
+    mask-image: url("/icons/gradientmesh/how-it-works.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/how-it-works.svg");
+  }
+  
+  .VPSidebarItem a.link[href="/gradientmesh/api-reference"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/api-reference.html"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/api-reference/"]::before {
+    mask-image: url("/icons/gradientmesh/api-reference.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/api-reference.svg");
+  }
+  
+  .VPSidebarItem a.link[href="/gradientmesh/architecture"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/architecture.html"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/architecture/"]::before {
+    mask-image: url("/icons/gradientmesh/architecture.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/architecture.svg");
+  }
+  
+  .VPSidebarItem a.link[href="/gradientmesh/releases"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/releases.html"]::before,
+  .VPSidebarItem a.link[href="/gradientmesh/releases/"]::before {
+    mask-image: url("/icons/gradientmesh/releases.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/releases.svg");
+  }
+  
+  /* GradientMesh card icon mappings */
+  .gradientmesh-icon-overview {
+    mask-image: url("/icons/gradientmesh/overview.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/overview.svg");
+  }
+  
+  .gradientmesh-icon-setup {
+    mask-image: url("/icons/gradientmesh/setup.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/setup.svg");
+  }
+  
+  .gradientmesh-icon-examples {
+    mask-image: url("/icons/gradientmesh/examples.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/examples.svg");
+  }
+  
+  .gradientmesh-icon-how-it-works {
+    mask-image: url("/icons/gradientmesh/how-it-works.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/how-it-works.svg");
+  }
+  
+  .gradientmesh-icon-api-reference {
+    mask-image: url("/icons/gradientmesh/api-reference.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/api-reference.svg");
+  }
+  
+  .gradientmesh-icon-architecture {
+    mask-image: url("/icons/gradientmesh/architecture.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/architecture.svg");
+  }
+  
+  .gradientmesh-icon-releases {
+    mask-image: url("/icons/gradientmesh/releases.svg");
+    -webkit-mask-image: url("/icons/gradientmesh/releases.svg");
+  }
