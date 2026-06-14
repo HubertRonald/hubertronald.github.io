@@ -355,6 +355,15 @@ https://liasoft.hubertronald.dev/
 
 ---
 
+## Related projects
+
+* [VersoVector](https://github.com/HubertRonald/VersoVector)
+* [LuaSF](https://github.com/HubertRonald/LuaSF)
+* [GradientMesh](https://github.com/HubertRonald/GradientMesh)
+* [Liasoft static site source](https://github.com/HubertRonald/hubertronald.github.io/tree/master/static-sites/liasoft)
+
+---
+
 ## Author
 
 **Hubert Ronald**
