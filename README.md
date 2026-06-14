@@ -2,7 +2,7 @@
 
 <p align="left">
     <a href="https://nodejs.org/" target="_blank">
-        <img src="https://img.shields.io/badge/Node.js-24.x-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 24.x" />
+        <img src="https://img.shields.io/badge/Node.js-20.x%20local%20%2F%2024.x%20CI-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 20.x local / 24.x CI" />
     </a>
     <a href="https://www.npmjs.com/" target="_blank">
         <img src="https://img.shields.io/badge/npm-package%20scripts-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm scripts" />
@@ -42,6 +42,7 @@ The site is designed as a hybrid portfolio and documentation hub. It combines:
 
 * a personal technical landing page;
 * VitePress-based documentation sections;
+* creative-coding documentation for visual and experimental projects;
 * standalone static websites;
 * static game/app builds;
 * legacy archived content.
@@ -54,6 +55,9 @@ The site is designed as a hybrid portfolio and documentation hub. It combines:
 https://hubertronald.github.io/
   Personal hub / technical portfolio / landing page
 
+https://hubertronald.github.io/gradientmesh/
+  GradientMesh creative-coding documentation for Gideros procedural gradients
+
 https://hubertronald.github.io/luasf/
   LuaSF technical documentation
 
@@ -61,7 +65,7 @@ https://hubertronald.github.io/versovector/
   VersoVector public repository documentation
 
 https://hubertronald.github.io/liasoft/
-  Liasoft standalone static website for indie games, apps, demos, and future publishing links
+  LiaSoft standalone static website for indie games, apps, demos, and future publishing links
 
 https://hubertronald.github.io/liasoft/games/SuperWariBrosWebPlayer/
   Static browser game build
@@ -75,8 +79,18 @@ https://hubertronald.github.io/liasoft/games/SuperWariBrosWebPlayer/
 .
 ├── docs/
 │   ├── index.md
+│   ├── gradientmesh/
 │   ├── luasf/
 │   ├── versovector/
+│   ├── public/
+│   │   ├── icons/
+│   │   │   ├── common/
+│   │   │   ├── gradientmesh/
+│   │   │   ├── luasf/
+│   │   │   └── versovector/
+│   │   └── images/
+│   │       ├── gradientmesh/
+│   │       └── versovector/
 │   └── .vitepress/
 │
 ├── static-sites/
@@ -114,6 +128,7 @@ VitePress owns the root documentation and portfolio shell:
 
 ```text
 /
+ /gradientmesh/
  /luasf/
  /versovector/
 ```
@@ -154,6 +169,12 @@ These files are kept for reference and migration safety.
 
 ## Local development
 
+The local Node.js version is defined by `.nvmrc`.
+
+```bash
+nvm use
+```
+
 Install dependencies:
 
 ```bash
@@ -166,16 +187,10 @@ Run the VitePress development server:
 npm run docs:dev
 ```
 
-Build the VitePress site:
+Build the VitePress site and copy standalone static sites/apps into the generated output:
 
 ```bash
 npm run docs:build
-```
-
-Copy standalone static sites and apps into the generated output:
-
-```bash
-node scripts/copy-static-sites.mjs
 ```
 
 Preview the built site:
@@ -184,6 +199,11 @@ Preview the built site:
 npm run docs:preview
 ```
 
+Run the standalone copy step manually only when needed:
+
+```bash
+node scripts/copy-static-sites.mjs
+```
 
 ### Clean local preview build
 
@@ -318,6 +338,7 @@ Potential future structure:
 
 ```text
 https://hubertronald.dev/
+https://hubertronald.dev/gradientmesh/
 https://hubertronald.dev/luasf/
 https://hubertronald.dev/versovector/
 https://hubertronald.dev/liasoft/
@@ -326,18 +347,11 @@ https://hubertronald.dev/liasoft/
 Product-specific subdomains may be used later when a project grows enough to justify an independent identity:
 
 ```text
+https://gradientmesh.hubertronald.dev/
 https://versovector.hubertronald.dev/
 https://api.versovector.hubertronald.dev/
 https://liasoft.hubertronald.dev/
 ```
-
----
-
-## Related projects
-
-* [LuaSF](https://github.com/HubertRonald/LuaSF)
-* [VersoVector](https://github.com/HubertRonald/VersoVector)
-* [LiaSoft static site source](https://github.com/HubertRonald/hubertronald.github.io/tree/master/static-sites/liasoft)
 
 ---
 

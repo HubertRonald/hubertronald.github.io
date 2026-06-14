@@ -40,6 +40,9 @@ or, if you keep it under `src/`:
 local GradientMesh = require "src/gradient_mesh"
 ```
 
+For the public repository documentation, `GradientMesh.lua` is treated as the main source file, while `src/gradient_mesh.lua` is documented as an optional local organization pattern.
+
+
 ## Quick start
 
 Create a simple rectangular gradient:
@@ -133,13 +136,25 @@ require "examples/radial_gradient_splash_masks"
 Start with:
 
 ```lua
-require "examples/radial_gradient_splash_masks"
+require "Samples/radial_gradient_splash_masks"
 ```
 
 Then try:
 
 ```lua
-require "examples/gradient_overlay"
+require "Samples/gradient_overlay"
 ```
 
 This gives you one pure procedural mesh example and one texture-overlay example.
+
+## Notes
+
+If you copy the examples into a different folder such as `examples/`, update the `require` paths accordingly.
+
+For example:
+
+```lua
+require "examples/radial_gradient_splash_masks"
+```
+
+Both naming conventions are valid as long as they match your local Gideros project structure.
