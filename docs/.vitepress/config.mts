@@ -36,6 +36,7 @@ export default withMermaid(
       logo: '/icons/common/home.svg',
       nav: [
         { text: 'VersoVector', link: '/versovector/' },
+        { text: 'RelationalStats', link: '/relationalstats/' },
         { text: 'LuaSF', link: '/luasf/' },
         { text: 'GradientMesh', link: '/gradientmesh/' }
       ],
@@ -54,6 +55,25 @@ export default withMermaid(
               { text: 'Architecture', link: '/versovector/architecture' },
               { text: 'Results Guide', link: '/versovector/results' },
               { text: 'Serving & Demo', link: '/versovector/serving' }
+            ]
+          }
+        ],
+
+        '/relationalstats/': [
+          {
+            text: 'RelationalStats',
+            items: [
+              { text: 'Overview', link: '/relationalstats/' },
+              { text: 'Package README', link: '/relationalstats/package' },
+              { text: 'Documentation Index', link: '/relationalstats/reference/docs/' },
+              { text: 'Link Prediction', link: '/relationalstats/reference/docs/linkprediction/' },
+              { text: 'QAP', link: '/relationalstats/reference/docs/qap/' },
+              { text: 'ERGM Approximation', link: '/relationalstats/reference/docs/ergm/' },
+              { text: 'STERGM Approximation', link: '/relationalstats/reference/docs/stergm/' },
+              { text: 'Methodology', link: '/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
+              { text: 'Examples', link: '/relationalstats/reference/examples/' },
+              { text: 'Notebooks', link: '/relationalstats/reference/notebooks/' },
+              { text: 'Releases', link: '/relationalstats/releases' }
             ]
           }
         ],
