@@ -66,12 +66,81 @@ export default withMermaid(
               { text: 'Overview', link: '/relationalstats/' },
               { text: 'Package README', link: '/relationalstats/package' },
               { text: 'Documentation Index', link: '/relationalstats/reference/docs/' },
-              { text: 'Link Prediction', link: '/relationalstats/reference/docs/linkprediction/' },
-              { text: 'QAP', link: '/relationalstats/reference/docs/qap/' },
-              { text: 'ERGM Approximation', link: '/relationalstats/reference/docs/ergm/' },
-              { text: 'STERGM Approximation', link: '/relationalstats/reference/docs/stergm/' },
-              { text: 'Methodology', link: '/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
-              { text: 'Examples', link: '/relationalstats/reference/examples/' },
+
+              {
+                text: 'Link Prediction',
+                collapsed: false,
+                items: [
+                  { text: 'Overview', link: '/relationalstats/reference/docs/linkprediction/' },
+                  { text: 'ProxFun Full', link: '/relationalstats/reference/docs/linkprediction/proxfun-full' },
+                  { text: 'Metrics', link: '/relationalstats/reference/docs/linkprediction/metrics' },
+                  { text: 'Results', link: '/relationalstats/reference/docs/linkprediction/results' },
+                  { text: 'Scalability', link: '/relationalstats/reference/docs/linkprediction/scalability' },
+                  { text: 'Manual Small-Graph Tests', link: '/relationalstats/reference/docs/linkprediction/manual-small-graph-tests' },
+                  { text: 'Internal Refactor', link: '/relationalstats/reference/docs/linkprediction/internal-refactor' },
+                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/linkprediction/validation-against-r' }
+                ]
+              },
+
+              {
+                text: 'QAP',
+                collapsed: false,
+                items: [
+                  { text: 'Overview', link: '/relationalstats/reference/docs/qap/' },
+                  { text: 'Formulas', link: '/relationalstats/reference/docs/qap/formulas' },
+                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/qap/validation-against-r' }
+                ]
+              },
+
+              {
+                text: 'ERGM',
+                collapsed: false,
+                items: [
+                  { text: 'Overview', link: '/relationalstats/reference/docs/ergm/' },
+                  { text: 'Formulas', link: '/relationalstats/reference/docs/ergm/formulas' },
+                  { text: 'Terms', link: '/relationalstats/reference/docs/ergm/terms' },
+                  { text: 'Goodness of Fit', link: '/relationalstats/reference/docs/ergm/gof' },
+                  { text: 'Limitations', link: '/relationalstats/reference/docs/ergm/limitations' },
+                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/ergm/validation-against-r' }
+                ]
+              },
+
+              {
+                text: 'STERGM',
+                collapsed: false,
+                items: [
+                  { text: 'Overview', link: '/relationalstats/reference/docs/stergm/' },
+                  { text: 'Formulas', link: '/relationalstats/reference/docs/stergm/formulas' },
+                  { text: 'Temporal Dyads', link: '/relationalstats/reference/docs/stergm/temporal-dyads' },
+                  { text: 'Limitations', link: '/relationalstats/reference/docs/stergm/limitations' },
+                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/stergm/validation-against-r' }
+                ]
+              },
+
+              {
+                text: 'Methodology',
+                collapsed: false,
+                items: [
+                  { text: 'Equivalence vs Approximation', link: '/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
+                  { text: 'Reproducibility', link: '/relationalstats/reference/docs/methodology/reproducibility' },
+                  { text: 'Release Checklist', link: '/relationalstats/reference/docs/methodology/release-checklist' },
+                  { text: 'Roadmap', link: '/relationalstats/reference/docs/methodology/roadmap' }
+                ]
+              },
+
+              {
+                text: 'Examples',
+                collapsed: false,
+                items: [
+                  { text: 'Overview', link: '/relationalstats/reference/examples/' },
+                  { text: 'Link Prediction', link: '/relationalstats/reference/examples/linkprediction/' },
+                  { text: 'Experimental ML Workflow', link: '/relationalstats/reference/examples/linkprediction/experimental-ml-workflow' },
+                  { text: 'QAP', link: '/relationalstats/reference/examples/qap/' },
+                  { text: 'ERGM', link: '/relationalstats/reference/examples/ergm/' },
+                  { text: 'STERGM', link: '/relationalstats/reference/examples/stergm/' }
+                ]
+              },
+
               { text: 'Notebooks', link: '/relationalstats/reference/notebooks/' },
               { text: 'Releases', link: '/relationalstats/releases' }
             ]

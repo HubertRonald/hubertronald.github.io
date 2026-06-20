@@ -1,4 +1,6 @@
-import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
+// scripts/sync-relationalstats-docs.mjs
+
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const sourceRoot = process.env.RELATIONALSTATS_REPO
@@ -7,6 +9,8 @@ const sourceRoot = process.env.RELATIONALSTATS_REPO
 
 const targetRoot = path.resolve('docs/relationalstats')
 const referenceRoot = path.join(targetRoot, 'reference')
+
+const sourceScopes = ['docs', 'examples', 'notebooks']
 
 async function exists(filePath) {
   try {
@@ -17,52 +21,190 @@ async function exists(filePath) {
   }
 }
 
-function rewriteLinks(markdown) {
-  return markdown
-    .replaceAll('(README.md)', '(index.md)')
-    .replaceAll('(./README.md)', '(./index.md)')
-    .replaceAll('(../README.md)', '(../index.md)')
-    .replaceAll('(../../README.md)', '(../../index.md)')
-    .replaceAll('(docs/README.md)', '(reference/docs/index.md)')
-    .replaceAll('(examples/README.md)', '(reference/examples/index.md)')
-    .replaceAll('(notebooks/README.md)', '(reference/notebooks/index.md)')
-    .replaceAll('(docs/linkprediction/README.md)', '(reference/docs/linkprediction/index.md)')
-    .replaceAll('(docs/qap/README.md)', '(reference/docs/qap/index.md)')
-    .replaceAll('(docs/ergm/README.md)', '(reference/docs/ergm/index.md)')
-    .replaceAll('(docs/stergm/README.md)', '(reference/docs/stergm/index.md)')
+function normalizePath(filePath) {
+  return filePath.split(path.sep).join('/')
 }
 
-async function copyMarkdownTree(srcDir, dstDir) {
-  await mkdir(dstDir, { recursive: true })
+function isExternalLink(href) {
+  return (
+    href.startsWith('http://') ||
+    href.startsWith('https://') ||
+    href.startsWith('mailto:') ||
+    href.startsWith('#') ||
+    href.startsWith('tel:')
+  )
+}
 
-  const entries = await readdir(srcDir, { withFileTypes: true })
+function splitHref(href) {
+  const hashIndex = href.indexOf('#')
+
+  if (hashIndex === -1) {
+    return { pathname: href, hash: '' }
+  }
+
+  return {
+    pathname: href.slice(0, hashIndex),
+    hash: href.slice(hashIndex)
+  }
+}
+
+function sourceToTargetPath(sourceFilePath) {
+  const relativeSource = normalizePath(path.relative(sourceRoot, sourceFilePath))
+
+  if (relativeSource === 'README.md') {
+    return path.join(targetRoot, 'package.md')
+  }
+
+  for (const scope of sourceScopes) {
+    if (relativeSource === `${scope}/README.md`) {
+      return path.join(referenceRoot, scope, 'index.md')
+    }
+
+    if (relativeSource.startsWith(`${scope}/`)) {
+      const scopedRelative = relativeSource.slice(scope.length + 1)
+      const outputRelative =
+        scopedRelative === 'README.md'
+          ? 'index.md'
+          : scopedRelative.replace(/\/README\.md$/g, '/index.md')
+
+      return path.join(referenceRoot, scope, outputRelative)
+    }
+  }
+
+  return path.join(referenceRoot, relativeSource)
+}
+
+function resolveSourceLink(currentSourceFile, hrefPathname) {
+  const cleanHref = decodeURI(hrefPathname)
+
+  if (!cleanHref || cleanHref === '.') {
+    return currentSourceFile
+  }
+
+  if (cleanHref === 'README.md') {
+    return path.join(path.dirname(currentSourceFile), 'README.md')
+  }
+
+  const normalizedHref = cleanHref.replace(/\\/g, '/')
+
+  const startsAtKnownScope = sourceScopes.some(
+    (scope) =>
+      normalizedHref === scope ||
+      normalizedHref.startsWith(`${scope}/`)
+  )
+
+  if (normalizedHref === 'README.md') {
+    return path.join(sourceRoot, 'README.md')
+  }
+
+  if (startsAtKnownScope) {
+    return path.join(sourceRoot, normalizedHref)
+  }
+
+  return path.resolve(path.dirname(currentSourceFile), normalizedHref)
+}
+
+function toVitePressLink(currentTargetFile, linkedTargetFile, hash = '') {
+  let relative = normalizePath(
+    path.relative(path.dirname(currentTargetFile), linkedTargetFile)
+  )
+
+  if (!relative.startsWith('.')) {
+    relative = `./${relative}`
+  }
+
+  if (relative.endsWith('/index.md')) {
+    relative = relative.slice(0, -'index.md'.length)
+  } else if (relative.endsWith('.md')) {
+    relative = relative.slice(0, -'.md'.length)
+  }
+
+  if (relative === './') {
+    return `.${hash}`
+  }
+
+  return `${relative}${hash}`
+}
+
+async function rewriteLinks(markdown, currentSourceFile) {
+  const currentTargetFile = sourceToTargetPath(currentSourceFile)
+  const missingLinks = []
+
+  const rewritten = markdown.replace(
+    /(?<!!)\[([^\]]+)\]\(([^)]+)\)/g,
+    (match, label, rawHref) => {
+      const href = rawHref.trim()
+
+      if (isExternalLink(href)) {
+        return match
+      }
+
+      const { pathname, hash } = splitHref(href)
+
+      if (!pathname.endsWith('.md') && pathname !== 'README.md') {
+        return match
+      }
+
+      const linkedSourceFile = resolveSourceLink(currentSourceFile, pathname)
+      const linkedTargetFile = sourceToTargetPath(linkedSourceFile)
+      const rewrittenHref = toVitePressLink(
+        currentTargetFile,
+        linkedTargetFile,
+        hash
+      )
+
+      missingLinks.push({
+        from: normalizePath(path.relative(sourceRoot, currentSourceFile)),
+        original: href,
+        resolved: normalizePath(path.relative(sourceRoot, linkedSourceFile)),
+        vitepress: rewrittenHref
+      })
+
+      return `[${label}](${rewrittenHref})`
+    }
+  )
+
+  return { rewritten, links: missingLinks }
+}
+
+async function collectMarkdownFiles(dir) {
+  const output = []
+  const entries = await readdir(dir, { withFileTypes: true })
 
   for (const entry of entries) {
-    const srcPath = path.join(srcDir, entry.name)
-    const outputName = entry.name === 'README.md' ? 'index.md' : entry.name
-    const dstPath = path.join(dstDir, outputName)
+    const fullPath = path.join(dir, entry.name)
 
     if (entry.isDirectory()) {
-      await copyMarkdownTree(srcPath, dstPath)
+      output.push(...await collectMarkdownFiles(fullPath))
       continue
     }
 
-    if (!entry.name.endsWith('.md')) {
-      continue
+    if (entry.isFile() && entry.name.endsWith('.md')) {
+      output.push(fullPath)
     }
+  }
 
-    const original = await readFile(srcPath, 'utf8')
-    const updated = rewriteLinks(original)
+  return output
+}
 
-    await mkdir(path.dirname(dstPath), { recursive: true })
-    await writeFile(dstPath, updated, 'utf8')
+async function copyMarkdownFile(sourceFile) {
+  const targetFile = sourceToTargetPath(sourceFile)
+  const original = await readFile(sourceFile, 'utf8')
+  const { rewritten } = await rewriteLinks(original, sourceFile)
+
+  await mkdir(path.dirname(targetFile), { recursive: true })
+  await writeFile(targetFile, rewritten, 'utf8')
+
+  return {
+    source: normalizePath(path.relative(sourceRoot, sourceFile)),
+    target: normalizePath(path.relative(process.cwd(), targetFile))
   }
 }
 
 async function main() {
-  const readmePath = path.join(sourceRoot, 'README.md')
+  const rootReadme = path.join(sourceRoot, 'README.md')
 
-  if (!(await exists(readmePath))) {
+  if (!(await exists(rootReadme))) {
     throw new Error(
       `RelationalStats repo was not found at ${sourceRoot}. ` +
       `Set RELATIONALSTATS_REPO=/path/to/relationalstats.`
@@ -71,28 +213,33 @@ async function main() {
 
   await mkdir(targetRoot, { recursive: true })
   await rm(referenceRoot, { recursive: true, force: true })
-  await mkdir(referenceRoot, { recursive: true })
+  await rm(path.join(targetRoot, 'package.md'), { force: true })
 
-  const packageReadme = rewriteLinks(await readFile(readmePath, 'utf8'))
-  await writeFile(path.join(targetRoot, 'package.md'), packageReadme, 'utf8')
+  const copied = []
 
-  await copyMarkdownTree(
-    path.join(sourceRoot, 'docs'),
-    path.join(referenceRoot, 'docs')
-  )
+  copied.push(await copyMarkdownFile(rootReadme))
 
-  await copyMarkdownTree(
-    path.join(sourceRoot, 'examples'),
-    path.join(referenceRoot, 'examples')
-  )
+  for (const scope of sourceScopes) {
+    const scopeDir = path.join(sourceRoot, scope)
 
-  await copyMarkdownTree(
-    path.join(sourceRoot, 'notebooks'),
-    path.join(referenceRoot, 'notebooks')
-  )
+    if (await exists(path.join(scopeDir, 'README.md'))) {
+      const files = await collectMarkdownFiles(scopeDir)
 
-  console.log('RelationalStats documentation synced from:', sourceRoot)
-  console.log('Output:', targetRoot)
+      for (const file of files) {
+        copied.push(await copyMarkdownFile(file))
+      }
+    }
+  }
+
+  console.log('RelationalStats documentation synced.')
+  console.log('Source:', sourceRoot)
+  console.log('Target:', targetRoot)
+  console.log('')
+  console.log('Copied Markdown files:')
+
+  for (const item of copied) {
+    console.log(`- ${item.source} -> ${item.target}`)
+  }
 }
 
 main().catch((error) => {
