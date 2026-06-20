@@ -12,6 +12,10 @@ const referenceRoot = path.join(targetRoot, 'reference')
 
 const sourceScopes = ['docs', 'examples', 'notebooks']
 
+const sourceRepoBlobBase =
+  process.env.RELATIONALSTATS_BLOB_BASE ??
+  'https://github.com/HubertRonald/relationalstats/blob/main'
+
 function normalizePath(filePath) {
   return filePath.split(path.sep).join('/')
 }
@@ -128,6 +132,11 @@ function toVitePressLink(currentTargetFile, linkedTargetFile, hash = '') {
   return `${relative}${hash}`
 }
 
+function toGitHubBlobLink(sourceFile) {
+  const relative = normalizePath(path.relative(sourceRoot, sourceFile))
+  return `${sourceRepoBlobBase}/${relative}`
+}
+
 function rewriteLinks(markdown, currentSourceFile) {
   const currentTargetFile = sourceToTargetPath(currentSourceFile)
 
@@ -142,20 +151,25 @@ function rewriteLinks(markdown, currentSourceFile) {
 
       const { pathname, hash } = splitHref(href)
 
-      if (!pathname.endsWith('.md') && pathname !== 'README.md') {
+      if (!pathname) {
         return match
       }
 
       const linkedSourceFile = resolveSourceLink(currentSourceFile, pathname)
-      const linkedTargetFile = sourceToTargetPath(linkedSourceFile)
 
-      const rewrittenHref = toVitePressLink(
-        currentTargetFile,
-        linkedTargetFile,
-        hash
-      )
+      if (pathname.endsWith('.md') || pathname === 'README.md') {
+        const linkedTargetFile = sourceToTargetPath(linkedSourceFile)
 
-      return `[${label}](${rewrittenHref})`
+        const rewrittenHref = toVitePressLink(
+          currentTargetFile,
+          linkedTargetFile,
+          hash
+        )
+
+        return `[${label}](${rewrittenHref})`
+      }
+
+      return `[${label}](${toGitHubBlobLink(linkedSourceFile)}${hash})`
     }
   )
 }
