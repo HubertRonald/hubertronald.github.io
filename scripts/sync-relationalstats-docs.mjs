@@ -1,6 +1,6 @@
 // scripts/sync-relationalstats-docs.mjs
 
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const sourceRoot = process.env.RELATIONALSTATS_REPO
@@ -12,17 +12,26 @@ const referenceRoot = path.join(targetRoot, 'reference')
 
 const sourceScopes = ['docs', 'examples', 'notebooks']
 
-async function exists(filePath) {
+function normalizePath(filePath) {
+  return filePath.split(path.sep).join('/')
+}
+
+async function pathExists(filePath) {
   try {
-    await readFile(filePath)
+    await stat(filePath)
     return true
   } catch {
     return false
   }
 }
 
-function normalizePath(filePath) {
-  return filePath.split(path.sep).join('/')
+async function isDirectory(filePath) {
+  try {
+    const info = await stat(filePath)
+    return info.isDirectory()
+  } catch {
+    return false
+  }
 }
 
 function isExternalLink(href) {
@@ -62,6 +71,7 @@ function sourceToTargetPath(sourceFilePath) {
 
     if (relativeSource.startsWith(`${scope}/`)) {
       const scopedRelative = relativeSource.slice(scope.length + 1)
+
       const outputRelative =
         scopedRelative === 'README.md'
           ? 'index.md'
@@ -75,33 +85,25 @@ function sourceToTargetPath(sourceFilePath) {
 }
 
 function resolveSourceLink(currentSourceFile, hrefPathname) {
-  const cleanHref = decodeURI(hrefPathname)
+  const cleanHref = decodeURI(hrefPathname).replace(/\\/g, '/')
 
   if (!cleanHref || cleanHref === '.') {
     return currentSourceFile
   }
 
+  const startsAtKnownScope = sourceScopes.some(
+    (scope) => cleanHref === scope || cleanHref.startsWith(`${scope}/`)
+  )
+
   if (cleanHref === 'README.md') {
     return path.join(path.dirname(currentSourceFile), 'README.md')
   }
 
-  const normalizedHref = cleanHref.replace(/\\/g, '/')
-
-  const startsAtKnownScope = sourceScopes.some(
-    (scope) =>
-      normalizedHref === scope ||
-      normalizedHref.startsWith(`${scope}/`)
-  )
-
-  if (normalizedHref === 'README.md') {
-    return path.join(sourceRoot, 'README.md')
-  }
-
   if (startsAtKnownScope) {
-    return path.join(sourceRoot, normalizedHref)
+    return path.join(sourceRoot, cleanHref)
   }
 
-  return path.resolve(path.dirname(currentSourceFile), normalizedHref)
+  return path.resolve(path.dirname(currentSourceFile), cleanHref)
 }
 
 function toVitePressLink(currentTargetFile, linkedTargetFile, hash = '') {
@@ -126,11 +128,10 @@ function toVitePressLink(currentTargetFile, linkedTargetFile, hash = '') {
   return `${relative}${hash}`
 }
 
-async function rewriteLinks(markdown, currentSourceFile) {
+function rewriteLinks(markdown, currentSourceFile) {
   const currentTargetFile = sourceToTargetPath(currentSourceFile)
-  const missingLinks = []
 
-  const rewritten = markdown.replace(
+  return markdown.replace(
     /(?<!!)\[([^\]]+)\]\(([^)]+)\)/g,
     (match, label, rawHref) => {
       const href = rawHref.trim()
@@ -147,24 +148,16 @@ async function rewriteLinks(markdown, currentSourceFile) {
 
       const linkedSourceFile = resolveSourceLink(currentSourceFile, pathname)
       const linkedTargetFile = sourceToTargetPath(linkedSourceFile)
+
       const rewrittenHref = toVitePressLink(
         currentTargetFile,
         linkedTargetFile,
         hash
       )
 
-      missingLinks.push({
-        from: normalizePath(path.relative(sourceRoot, currentSourceFile)),
-        original: href,
-        resolved: normalizePath(path.relative(sourceRoot, linkedSourceFile)),
-        vitepress: rewrittenHref
-      })
-
       return `[${label}](${rewrittenHref})`
     }
   )
-
-  return { rewritten, links: missingLinks }
 }
 
 async function collectMarkdownFiles(dir) {
@@ -190,7 +183,7 @@ async function collectMarkdownFiles(dir) {
 async function copyMarkdownFile(sourceFile) {
   const targetFile = sourceToTargetPath(sourceFile)
   const original = await readFile(sourceFile, 'utf8')
-  const { rewritten } = await rewriteLinks(original, sourceFile)
+  const rewritten = rewriteLinks(original, sourceFile)
 
   await mkdir(path.dirname(targetFile), { recursive: true })
   await writeFile(targetFile, rewritten, 'utf8')
@@ -201,10 +194,44 @@ async function copyMarkdownFile(sourceFile) {
   }
 }
 
+async function assertGeneratedFiles() {
+  const requiredFiles = [
+    'docs/relationalstats/package.md',
+    'docs/relationalstats/reference/docs/index.md',
+    'docs/relationalstats/reference/docs/qap/formulas.md',
+    'docs/relationalstats/reference/docs/ergm/formulas.md',
+    'docs/relationalstats/reference/docs/stergm/formulas.md',
+    'docs/relationalstats/reference/docs/linkprediction/metrics.md',
+    'docs/relationalstats/reference/examples/linkprediction/experimental-ml-workflow.md'
+  ]
+
+  const missing = []
+
+  for (const file of requiredFiles) {
+    if (!(await pathExists(path.resolve(file)))) {
+      missing.push(file)
+    }
+  }
+
+  if (missing.length > 0) {
+    console.error('\nMissing generated files:')
+    for (const file of missing) {
+      console.error(`- ${file}`)
+    }
+
+    throw new Error('RelationalStats documentation sync is incomplete.')
+  }
+
+  console.log('\nRequired generated files OK:')
+  for (const file of requiredFiles) {
+    console.log(`- ${file}`)
+  }
+}
+
 async function main() {
   const rootReadme = path.join(sourceRoot, 'README.md')
 
-  if (!(await exists(rootReadme))) {
+  if (!(await pathExists(rootReadme))) {
     throw new Error(
       `RelationalStats repo was not found at ${sourceRoot}. ` +
       `Set RELATIONALSTATS_REPO=/path/to/relationalstats.`
@@ -222,27 +249,31 @@ async function main() {
   for (const scope of sourceScopes) {
     const scopeDir = path.join(sourceRoot, scope)
 
-    if (await exists(path.join(scopeDir, 'README.md'))) {
-      const files = await collectMarkdownFiles(scopeDir)
+    if (!(await isDirectory(scopeDir))) {
+      console.warn(`Skipping missing scope: ${scopeDir}`)
+      continue
+    }
 
-      for (const file of files) {
-        copied.push(await copyMarkdownFile(file))
-      }
+    const files = await collectMarkdownFiles(scopeDir)
+
+    for (const file of files) {
+      copied.push(await copyMarkdownFile(file))
     }
   }
 
-  console.log('RelationalStats documentation synced.')
+  console.log('\nRelationalStats documentation synced.')
   console.log('Source:', sourceRoot)
   console.log('Target:', targetRoot)
-  console.log('')
-  console.log('Copied Markdown files:')
+  console.log('\nCopied Markdown files:')
 
   for (const item of copied) {
     console.log(`- ${item.source} -> ${item.target}`)
   }
+
+  await assertGeneratedFiles()
 }
 
 main().catch((error) => {
-  console.error(error)
+  console.error(error.message)
   process.exit(1)
 })

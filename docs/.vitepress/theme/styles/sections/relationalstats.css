@@ -2,140 +2,154 @@
  * RelationalStats section-specific styles.
  */
 
- .VPSidebarItem a.link[href^="/relationalstats"] {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--hr-icon-gap);
-  }
-  
-  .VPSidebarItem a.link[href^="/relationalstats"]::before {
-    content: "";
-    width: var(--hr-icon-size-sm);
-    height: var(--hr-icon-size-sm);
-    min-width: var(--hr-icon-size-sm);
-    display: inline-block;
-    background-color: var(--hr-icon-muted);
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
-  }
-  
-  .VPSidebarItem a.link[href^="/relationalstats"]:hover::before,
-  .VPSidebarItem.is-active a.link[href^="/relationalstats"]::before {
-    background-color: var(--hr-icon-color);
-  }
-  
-  .VPSidebarItem a.link[href="/relationalstats/"]::before,
-  .VPSidebarItem a.link[href="/relationalstats"]::before,
-  .VPSidebarItem a.link[href="/relationalstats/index.html"]::before {
-    mask-image: url("/icons/relationalstats/overview.svg");
-    -webkit-mask-image: url("/icons/relationalstats/overview.svg");
-  }
-  
-  .VPSidebarItem a.link[href="/relationalstats/package"]::before,
-  .VPSidebarItem a.link[href="/relationalstats/package.html"]::before,
-  .VPSidebarItem a.link[href="/relationalstats/package/"]::before {
-    mask-image: url("/icons/relationalstats/package.svg");
-    -webkit-mask-image: url("/icons/relationalstats/package.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/docs/linkprediction"]::before {
-    mask-image: url("/icons/relationalstats/linkprediction.svg");
-    -webkit-mask-image: url("/icons/relationalstats/linkprediction.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/docs/qap"]::before {
-    mask-image: url("/icons/relationalstats/qap.svg");
-    -webkit-mask-image: url("/icons/relationalstats/qap.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/docs/ergm"]::before {
-    mask-image: url("/icons/relationalstats/ergm.svg");
-    -webkit-mask-image: url("/icons/relationalstats/ergm.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/docs/stergm"]::before {
-    mask-image: url("/icons/relationalstats/stergm.svg");
-    -webkit-mask-image: url("/icons/relationalstats/stergm.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/docs/methodology"]::before {
-    mask-image: url("/icons/relationalstats/methodology.svg");
-    -webkit-mask-image: url("/icons/relationalstats/methodology.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/examples"]::before {
-    mask-image: url("/icons/relationalstats/examples.svg");
-    -webkit-mask-image: url("/icons/relationalstats/examples.svg");
-  }
-  
-  .VPSidebarItem a.link[href*="/relationalstats/reference/notebooks"]::before {
-    mask-image: url("/icons/relationalstats/notebooks.svg");
-    -webkit-mask-image: url("/icons/relationalstats/notebooks.svg");
-  }
-  
-  .VPSidebarItem a.link[href="/relationalstats/releases"]::before,
-  .VPSidebarItem a.link[href="/relationalstats/releases.html"]::before,
-  .VPSidebarItem a.link[href="/relationalstats/releases/"]::before {
-    mask-image: url("/icons/relationalstats/releases.svg");
-    -webkit-mask-image: url("/icons/relationalstats/releases.svg");
-  }
-  
-  /* Card icon mappings */
-  .relationalstats-icon-overview {
-    mask-image: url("/icons/relationalstats/overview.svg");
-    -webkit-mask-image: url("/icons/relationalstats/overview.svg");
-  }
-  
-  .relationalstats-icon-package {
-    mask-image: url("/icons/relationalstats/package.svg");
-    -webkit-mask-image: url("/icons/relationalstats/package.svg");
-  }
-  
-  .relationalstats-icon-docs {
-    mask-image: url("/icons/relationalstats/docs.svg");
-    -webkit-mask-image: url("/icons/relationalstats/docs.svg");
-  }
-  
-  .relationalstats-icon-linkprediction {
-    mask-image: url("/icons/relationalstats/linkprediction.svg");
-    -webkit-mask-image: url("/icons/relationalstats/linkprediction.svg");
-  }
-  
-  .relationalstats-icon-qap {
-    mask-image: url("/icons/relationalstats/qap.svg");
-    -webkit-mask-image: url("/icons/relationalstats/qap.svg");
-  }
-  
-  .relationalstats-icon-ergm {
-    mask-image: url("/icons/relationalstats/ergm.svg");
-    -webkit-mask-image: url("/icons/relationalstats/ergm.svg");
-  }
-  
-  .relationalstats-icon-stergm {
-    mask-image: url("/icons/relationalstats/stergm.svg");
-    -webkit-mask-image: url("/icons/relationalstats/stergm.svg");
-  }
-  
-  .relationalstats-icon-methodology {
-    mask-image: url("/icons/relationalstats/methodology.svg");
-    -webkit-mask-image: url("/icons/relationalstats/methodology.svg");
-  }
-  
-  .relationalstats-icon-examples {
-    mask-image: url("/icons/relationalstats/examples.svg");
-    -webkit-mask-image: url("/icons/relationalstats/examples.svg");
-  }
-  
-  .relationalstats-icon-notebooks {
-    mask-image: url("/icons/relationalstats/notebooks.svg");
-    -webkit-mask-image: url("/icons/relationalstats/notebooks.svg");
-  }
-  
-  .relationalstats-icon-releases {
-    mask-image: url("/icons/relationalstats/releases.svg");
-    -webkit-mask-image: url("/icons/relationalstats/releases.svg");
-  }
+.VPSidebarItem a.link[href^="/relationalstats"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hr-icon-gap);
+}
+
+.VPSidebarItem a.link[href^="/relationalstats"]::before {
+  content: "";
+  width: var(--hr-icon-size-sm);
+  height: var(--hr-icon-size-sm);
+  min-width: var(--hr-icon-size-sm);
+  display: inline-block;
+  background-color: var(--hr-icon-muted);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.VPSidebarItem a.link[href^="/relationalstats"]:hover::before,
+.VPSidebarItem.is-active a.link[href^="/relationalstats"]::before {
+  background-color: var(--hr-icon-color);
+}
+
+.VPSidebarItem a.link[href="/relationalstats/"]::before,
+.VPSidebarItem a.link[href="/relationalstats"]::before,
+.VPSidebarItem a.link[href="/relationalstats/index.html"]::before {
+  mask-image: url("/icons/relationalstats/overview.svg");
+  -webkit-mask-image: url("/icons/relationalstats/overview.svg");
+}
+
+.VPSidebarItem a.link[href="/relationalstats/package"]::before,
+.VPSidebarItem a.link[href="/relationalstats/package.html"]::before,
+.VPSidebarItem a.link[href="/relationalstats/package/"]::before {
+  mask-image: url("/icons/relationalstats/package.svg");
+  -webkit-mask-image: url("/icons/relationalstats/package.svg");
+}
+
+/* Documentation index and generic docs fallback */
+.VPSidebarItem a.link[href="/relationalstats/reference/docs/"]::before,
+.VPSidebarItem a.link[href="/relationalstats/reference/docs"]::before,
+.VPSidebarItem a.link[href="/relationalstats/reference/docs/index.html"]::before {
+  mask-image: url("/icons/relationalstats/docs.svg");
+  -webkit-mask-image: url("/icons/relationalstats/docs.svg");
+}
+
+/* Generic fallback for docs pages not mapped below */
+.VPSidebarItem a.link[href^="/relationalstats/reference/docs/"]::before {
+  mask-image: url("/icons/relationalstats/docs.svg");
+  -webkit-mask-image: url("/icons/relationalstats/docs.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/docs/linkprediction"]::before {
+  mask-image: url("/icons/relationalstats/linkprediction.svg");
+  -webkit-mask-image: url("/icons/relationalstats/linkprediction.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/docs/qap"]::before {
+  mask-image: url("/icons/relationalstats/qap.svg");
+  -webkit-mask-image: url("/icons/relationalstats/qap.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/docs/ergm"]::before {
+  mask-image: url("/icons/relationalstats/ergm.svg");
+  -webkit-mask-image: url("/icons/relationalstats/ergm.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/docs/stergm"]::before {
+  mask-image: url("/icons/relationalstats/stergm.svg");
+  -webkit-mask-image: url("/icons/relationalstats/stergm.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/docs/methodology"]::before {
+  mask-image: url("/icons/relationalstats/methodology.svg");
+  -webkit-mask-image: url("/icons/relationalstats/methodology.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/examples"]::before {
+  mask-image: url("/icons/relationalstats/examples.svg");
+  -webkit-mask-image: url("/icons/relationalstats/examples.svg");
+}
+
+.VPSidebarItem a.link[href*="/relationalstats/reference/notebooks"]::before {
+  mask-image: url("/icons/relationalstats/notebooks.svg");
+  -webkit-mask-image: url("/icons/relationalstats/notebooks.svg");
+}
+
+.VPSidebarItem a.link[href="/relationalstats/releases"]::before,
+.VPSidebarItem a.link[href="/relationalstats/releases.html"]::before,
+.VPSidebarItem a.link[href="/relationalstats/releases/"]::before {
+  mask-image: url("/icons/relationalstats/releases.svg");
+  -webkit-mask-image: url("/icons/relationalstats/releases.svg");
+}
+
+/* Card icon mappings */
+.relationalstats-icon-overview {
+  mask-image: url("/icons/relationalstats/overview.svg");
+  -webkit-mask-image: url("/icons/relationalstats/overview.svg");
+}
+
+.relationalstats-icon-package {
+  mask-image: url("/icons/relationalstats/package.svg");
+  -webkit-mask-image: url("/icons/relationalstats/package.svg");
+}
+
+.relationalstats-icon-docs {
+  mask-image: url("/icons/relationalstats/docs.svg");
+  -webkit-mask-image: url("/icons/relationalstats/docs.svg");
+}
+
+.relationalstats-icon-linkprediction {
+  mask-image: url("/icons/relationalstats/linkprediction.svg");
+  -webkit-mask-image: url("/icons/relationalstats/linkprediction.svg");
+}
+
+.relationalstats-icon-qap {
+  mask-image: url("/icons/relationalstats/qap.svg");
+  -webkit-mask-image: url("/icons/relationalstats/qap.svg");
+}
+
+.relationalstats-icon-ergm {
+  mask-image: url("/icons/relationalstats/ergm.svg");
+  -webkit-mask-image: url("/icons/relationalstats/ergm.svg");
+}
+
+.relationalstats-icon-stergm {
+  mask-image: url("/icons/relationalstats/stergm.svg");
+  -webkit-mask-image: url("/icons/relationalstats/stergm.svg");
+}
+
+.relationalstats-icon-methodology {
+  mask-image: url("/icons/relationalstats/methodology.svg");
+  -webkit-mask-image: url("/icons/relationalstats/methodology.svg");
+}
+
+.relationalstats-icon-examples {
+  mask-image: url("/icons/relationalstats/examples.svg");
+  -webkit-mask-image: url("/icons/relationalstats/examples.svg");
+}
+
+.relationalstats-icon-notebooks {
+  mask-image: url("/icons/relationalstats/notebooks.svg");
+  -webkit-mask-image: url("/icons/relationalstats/notebooks.svg");
+}
+
+.relationalstats-icon-releases {
+  mask-image: url("/icons/relationalstats/releases.svg");
+  -webkit-mask-image: url("/icons/relationalstats/releases.svg");
+}
