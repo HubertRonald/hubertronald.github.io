@@ -34,12 +34,14 @@ export default withMermaid(
 
     themeConfig: {
       logo: '/icons/common/home.svg',
+      /* 
       nav: [
         { text: 'VersoVector', link: '/versovector/' },
         { text: 'RelationalStats', link: '/relationalstats/' },
         { text: 'LuaSF', link: '/luasf/' },
         { text: 'GradientMesh', link: '/gradientmesh/' }
       ],
+      */
 
       sidebar: {
         '/versovector/': [
