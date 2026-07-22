@@ -1,0 +1,137 @@
+/*
+ * RetainAI section-specific styles.
+ */
+
+.VPSidebarItem a.link[href^="/retainai"] {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hr-icon-gap);
+}
+
+.VPSidebarItem a.link[href^="/retainai"]::before {
+  content: "";
+  width: var(--hr-icon-size-sm);
+  height: var(--hr-icon-size-sm);
+  min-width: var(--hr-icon-size-sm);
+  display: inline-block;
+  background-color: var(--hr-icon-muted);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.VPSidebarItem a.link[href^="/retainai"]:hover::before,
+.VPSidebarItem.is-active a.link[href^="/retainai"]::before {
+  background-color: var(--hr-icon-color);
+}
+
+.VPSidebarItem a.link[href="/retainai/"]::before,
+.VPSidebarItem a.link[href="/retainai"]::before,
+.VPSidebarItem a.link[href="/retainai/index.html"]::before {
+  mask-image: url("/icons/retainai/overview.svg");
+  -webkit-mask-image: url("/icons/retainai/overview.svg");
+}
+
+.VPSidebarItem a.link[href="/retainai/package"]::before,
+.VPSidebarItem a.link[href="/retainai/package.html"]::before,
+.VPSidebarItem a.link[href="/retainai/package/"]::before {
+  mask-image: url("/icons/retainai/package.svg");
+  -webkit-mask-image: url("/icons/retainai/package.svg");
+}
+
+.VPSidebarItem a.link[href="/retainai/reference/docs/"]::before,
+.VPSidebarItem a.link[href="/retainai/reference/docs"]::before,
+.VPSidebarItem a.link[href="/retainai/reference/docs/index.html"]::before,
+.VPSidebarItem a.link[href^="/retainai/reference/docs/"]::before {
+  mask-image: url("/icons/retainai/docs.svg");
+  -webkit-mask-image: url("/icons/retainai/docs.svg");
+}
+
+.VPSidebarItem a.link[href*="/retainai/reference/docs/architecture"]::before,
+.VPSidebarItem a.link[href*="/retainai/reference/docs/multicloud"]::before {
+  mask-image: url("/icons/retainai/architecture.svg");
+  -webkit-mask-image: url("/icons/retainai/architecture.svg");
+}
+
+.VPSidebarItem a.link[href*="/retainai/reference/docs/aws"]::before,
+.VPSidebarItem a.link[href*="/retainai/reference/docs/gcp"]::before,
+.VPSidebarItem a.link[href*="/retainai/reference/docs/cloud"]::before,
+.VPSidebarItem a.link[href*="/retainai/reference/docs/deployment"]::before {
+  mask-image: url("/icons/retainai/cloud.svg");
+  -webkit-mask-image: url("/icons/retainai/cloud.svg");
+}
+
+.VPSidebarItem a.link[href*="/retainai/reference/docs/api"]::before,
+.VPSidebarItem a.link[href*="/retainai/reference/docs/backend"]::before {
+  mask-image: url("/icons/retainai/api.svg");
+  -webkit-mask-image: url("/icons/retainai/api.svg");
+}
+
+.VPSidebarItem a.link[href*="/retainai/reference/docs/security"]::before,
+.VPSidebarItem a.link[href*="/retainai/reference/docs/cost"]::before {
+  mask-image: url("/icons/retainai/security.svg");
+  -webkit-mask-image: url("/icons/retainai/security.svg");
+}
+
+.VPSidebarItem a.link[href="/retainai/reference/reports/"]::before,
+.VPSidebarItem a.link[href="/retainai/reference/reports"]::before,
+.VPSidebarItem a.link[href="/retainai/reference/reports/index.html"]::before,
+.VPSidebarItem a.link[href^="/retainai/reference/reports/"]::before {
+  mask-image: url("/icons/retainai/reports.svg");
+  -webkit-mask-image: url("/icons/retainai/reports.svg");
+}
+
+.VPSidebarItem a.link[href="/retainai/releases"]::before,
+.VPSidebarItem a.link[href="/retainai/releases.html"]::before,
+.VPSidebarItem a.link[href="/retainai/releases/"]::before {
+  mask-image: url("/icons/retainai/releases.svg");
+  -webkit-mask-image: url("/icons/retainai/releases.svg");
+}
+
+.retainai-icon-overview {
+  mask-image: url("/icons/retainai/overview.svg");
+  -webkit-mask-image: url("/icons/retainai/overview.svg");
+}
+
+.retainai-icon-package {
+  mask-image: url("/icons/retainai/package.svg");
+  -webkit-mask-image: url("/icons/retainai/package.svg");
+}
+
+.retainai-icon-docs {
+  mask-image: url("/icons/retainai/docs.svg");
+  -webkit-mask-image: url("/icons/retainai/docs.svg");
+}
+
+.retainai-icon-reports {
+  mask-image: url("/icons/retainai/reports.svg");
+  -webkit-mask-image: url("/icons/retainai/reports.svg");
+}
+
+.retainai-icon-cloud {
+  mask-image: url("/icons/retainai/cloud.svg");
+  -webkit-mask-image: url("/icons/retainai/cloud.svg");
+}
+
+.retainai-icon-api {
+  mask-image: url("/icons/retainai/api.svg");
+  -webkit-mask-image: url("/icons/retainai/api.svg");
+}
+
+.retainai-icon-security {
+  mask-image: url("/icons/retainai/security.svg");
+  -webkit-mask-image: url("/icons/retainai/security.svg");
+}
+
+.retainai-icon-architecture {
+  mask-image: url("/icons/retainai/architecture.svg");
+  -webkit-mask-image: url("/icons/retainai/architecture.svg");
+}
+
+.retainai-icon-releases {
+  mask-image: url("/icons/retainai/releases.svg");
+  -webkit-mask-image: url("/icons/retainai/releases.svg");
+}

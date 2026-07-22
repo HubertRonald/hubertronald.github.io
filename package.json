@@ -12,7 +12,10 @@
         "static:copy": "node scripts/copy-static-sites.mjs",
         "relationalstats:fetch": "rm -rf .vendor/relationalstats && mkdir -p .vendor && git clone --depth 1 https://github.com/HubertRonald/relationalstats.git .vendor/relationalstats",
         "relationalstats:sync": "RELATIONALSTATS_REPO=.vendor/relationalstats node scripts/sync-relationalstats-docs.mjs",
-        "relationalstats:update": "npm run relationalstats:fetch && npm run relationalstats:sync"
+        "relationalstats:update": "npm run relationalstats:fetch && npm run relationalstats:sync",
+        "retainai:fetch": "bash scripts/fetch-retainai-docs.sh",
+        "retainai:sync": "RETAINAI_REPO=.vendor/retainai node scripts/sync-retainai-docs.mjs",
+        "retainai:update": "npm run retainai:fetch && npm run retainai:sync"
     },
     "devDependencies": {
         "gray-matter": "^4.0.3",

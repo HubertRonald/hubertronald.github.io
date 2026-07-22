@@ -36,14 +36,28 @@ export default withMermaid(
       logo: '/icons/common/home.svg',
       /* 
       nav: [
-        { text: 'VersoVector', link: '/versovector/' },
+        { text: 'RetainAI', link: '/retainai/' },
         { text: 'RelationalStats', link: '/relationalstats/' },
-        { text: 'LuaSF', link: '/luasf/' },
-        { text: 'GradientMesh', link: '/gradientmesh/' }
+        { text: 'GradientMesh', link: '/gradientmesh/' },
+        { text: 'VersoVector', link: '/versovector/' },
+        { text: 'LuaSF', link: '/luasf/' }
       ],
       */
 
       sidebar: {
+        '/retainai/': [
+          {
+            text: 'RetainAI',
+            items: [
+              { text: 'Overview', link: '/retainai/' },
+              { text: 'Project README', link: '/retainai/package' },
+              { text: 'Documentation Index', link: '/retainai/reference/docs/' },
+              { text: 'Reports', link: '/retainai/reference/reports/' },
+              { text: 'Releases', link: '/retainai/releases' }
+            ]
+          }
+        ],
+
         '/versovector/': [
           {
             text: 'VersoVector',
