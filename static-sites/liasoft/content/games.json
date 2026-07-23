@@ -1,0 +1,88 @@
+[
+    {
+        "slug": "bow-sailboat",
+        "title": "BowSailboat",
+        "type": "game",
+        "status": "legacy",
+        "engine": "Gideros",
+        "platforms": [
+            "iOS"
+        ],
+        "publicAvailability": "catalog-only",
+        "image": "assets/images/bannerbowsailboatyoutube-2000x1125.jpg",
+        "youtubeUrl": "",
+        "webBuildPath": null,
+        "repoUrl": null,
+        "shortDescription": "Legacy iOS game built with Gideros and preserved as part of the Liasoft archive.",
+        "notes": "The full build is not published online because it may include large assets and licensed third-party material."
+    },
+    {
+        "slug": "paintpong",
+        "title": "Paintpong",
+        "type": "game",
+        "status": "legacy",
+        "engine": "Gideros",
+        "platforms": [
+            "Android",
+            "iOS"
+        ],
+        "publicAvailability": "catalog-only",
+        "image": "assets/images/bannerpaintpongweb-1-2000x1125.jpg",
+        "youtubeUrl": "",
+        "webBuildPath": null,
+        "repoUrl": null,
+        "shortDescription": "Legacy mobile game released for Android and iOS, preserved as part of the Liasoft archive.",
+        "notes": "The full build is not published online because it may include large assets and licensed third-party material."
+    },
+    {
+        "slug": "mars-tap",
+        "title": "Mars Tap",
+        "type": "game",
+        "status": "legacy",
+        "engine": "Gideros",
+        "platforms": [
+            "Android"
+        ],
+        "publicAvailability": "catalog-only",
+        "image": "assets/images/bannersverlongmarstap-1280x720-1280x720.png",
+        "youtubeUrl": "",
+        "webBuildPath": null,
+        "repoUrl": null,
+        "shortDescription": "Legacy Android game built with Gideros and preserved as part of the Liasoft archive.",
+        "notes": "The full build is not published online because it may include large assets and licensed third-party material."
+    },
+    {
+        "slug": "winki",
+        "title": "Winki",
+        "type": "game",
+        "status": "legacy",
+        "engine": "Gideros",
+        "platforms": [
+            "Android"
+        ],
+        "publicAvailability": "catalog-only",
+        "image": "assets/images/bannerwinkiyoutube-2048x1152-1-2000x1125.png",
+        "youtubeUrl": "",
+        "webBuildPath": null,
+        "repoUrl": null,
+        "shortDescription": "Legacy Android game built with Gideros and preserved as part of the Liasoft archive.",
+        "notes": "The full build is not published online because it may include large assets and licensed third-party material."
+    },
+    {
+        "slug": "winki-aircraft",
+        "title": "Winki Aircraft",
+        "type": "game",
+        "status": "legacy",
+        "engine": "Gideros",
+        "platforms": [
+            "Android"
+        ],
+        "publicAvailability": "catalog-only",
+        "image": "assets/images/bannerwinkiaircraft-youtube-2048x1152-2000x1125.png",
+        "youtubeUrl": "",
+        "webBuildPath": null,
+        "repoUrl": null,
+        "shortDescription": "Legacy Android game built with Gideros and preserved as part of the Liasoft archive.",
+        "notes": "The full build is not published online because it may include large assets and licensed third-party material."
+    }
+]

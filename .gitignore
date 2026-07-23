@@ -330,3 +330,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vendor/
+
+# Liasoft legacy game exports / heavyweight local builds.
+# Keep full exported builds outside Git because they may contain large files
+# and third-party licensed assets.
+static-apps/liasoft/games/
+# Liasoft excluded legacy/prototype builds
+# SuperWariBrosWebPlayer was a Coursera platformer prototype and is not part of the public Liasoft catalog.
