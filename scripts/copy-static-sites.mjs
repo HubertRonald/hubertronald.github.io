@@ -22,12 +22,6 @@ const copyTasks = [
     source: 'static-sites/liasoft',
     target: 'liasoft',
     mode: 'replace-target'
-  },
-  {
-    name: 'SuperWariBrosWebPlayer game build',
-    source: 'static-apps/liasoft/games/SuperWariBrosWebPlayer',
-    target: 'liasoft/games/SuperWariBrosWebPlayer',
-    mode: 'replace-target'
   }
 ]
 
