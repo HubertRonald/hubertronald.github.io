@@ -542,3 +542,6 @@
 .socicon-hellocoton:before {
   content: "\e0a7";
 }
+.socicon-itch-io::before {
+  content: "\e0a8";
+}
