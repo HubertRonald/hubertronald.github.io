@@ -1,17 +1,6 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/1">
-	<url>
-		<loc>https://hubertronald.github.io/liasoft/index.html</loc>
-	</url>
-	<url>
-		<loc>https://hubertronald.github.io/liasoft/about.html</loc>
-	</url>
-	<url>
-		<loc>https://hubertronald.github.io/liasoft/privacy.html</loc>
-	</url>
-	<url>
-		<loc>https://hubertronald.github.io/liasoft/games.html</loc>
-	</url>
-	<url>
-		<loc>https://hubertronald.github.io/liasoft/experiments.html</loc>
-	</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hubertronald.dev/liasoft/</loc>
+  </url>
 </urlset>
