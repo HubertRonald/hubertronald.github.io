@@ -439,3 +439,59 @@
   color: currentColor;
   flex: 0 0 auto;
 }
+
+/* Landing sections V1 refinements */
+.hr-section-heading p {
+  max-width: 720px;
+  margin-top: 1rem;
+  font-size: 1.04rem;
+}
+
+.hr-work-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr-work-card h3 a {
+  color: var(--hr-landing-ink);
+}
+
+.hr-work-card h3 a:hover {
+  color: var(--hr-landing-accent-hover);
+}
+
+.hr-capability-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.hr-icon-link {
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hr-icon-link .hr-landing-icon,
+.hr-footer-link .hr-landing-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: 0;
+  color: currentColor;
+  flex: 0 0 auto;
+}
+
+.hr-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.hr-landing-footer nav {
+  row-gap: 0.6rem;
+}
+
+@media (max-width: 720px) {
+  .hr-section-heading p {
+    font-size: 1rem;
+  }
+}

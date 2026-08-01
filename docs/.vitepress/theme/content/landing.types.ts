@@ -70,12 +70,14 @@ export interface LandingContent {
   capabilities: {
     eyebrow: string
     title: string
+    description?: string
     items: LandingCapability[]
   }
 
   journey: {
     eyebrow: string
     title: string
+    description?: string
     steps: string[]
     action: LandingLink
   }

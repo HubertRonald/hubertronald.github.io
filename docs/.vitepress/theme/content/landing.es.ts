@@ -59,20 +59,23 @@ export const landingEs: LandingContent = {
       {
         name: 'RetainAI',
         category: 'Producto AI-native',
-        description: 'Plataforma AI-native de inteligencia de decisión para señales de retención, análisis de clientes y criterio de producto.',
-        href: '/retainai/'
+        description: 'Plataforma de inteligencia de decisión que explora señales de retención, análisis de clientes y arquitectura de IA con criterio de producto.',
+        href: '/retainai/',
+        icon: landingIcons.aiProducts
       },
       {
         name: 'VersoVector',
         category: 'Proyecto ML/NLP',
         description: 'Machine learning clásico y NLP aplicados al lenguaje poético, estructura semántica y patrones emocionales.',
-        href: '/versovector/'
+        href: '/versovector/',
+        icon: landingIcons.mlNlp
       },
       {
         name: 'Data & Cloud Engineering',
         category: 'Práctica de arquitectura',
         description: 'Arquitectura cloud y de datos orientada a producción: pipelines, plataformas y sistemas operacionales.',
-        href: '/case-studies/'
+        href: '/case-studies/',
+        icon: landingIcons.dataCloud
       }
     ]
   },
@@ -80,6 +83,7 @@ export const landingEs: LandingContent = {
   capabilities: {
     eyebrow: 'Lo que construyo',
     title: 'Sistemas que conectan datos, cloud e IA en productos funcionales.',
+    description: 'El hilo conductor no es una lista de tecnologías. Es la capacidad de convertir piezas técnicas complejas en sistemas usables y confiables.',
     items: [
       {
         icon: landingIcons.aiProducts,
@@ -107,6 +111,7 @@ export const landingEs: LandingContent = {
   journey: {
     eyebrow: 'Builder Journey',
     title: 'Un camino desde el software creativo hasta plataformas AI-native.',
+    description: 'El trabajo fue evolucionando paso a paso: de experimentos lúdicos de software a sistemas de datos, arquitectura cloud y pensamiento de producto AI-native.',
     steps: [
       'Creative Software',
       'Applied Math & Simulation',
@@ -154,12 +159,13 @@ export const landingEs: LandingContent = {
     title: 'Antes de las plataformas de datos y los sistemas de IA, hubo juegos y experimentos visuales.',
     paragraphs: [
       'Antes de las plataformas de datos y los sistemas de IA, exploré el software mediante juegos indie, aplicaciones móviles, experimentos visuales y creative coding.',
-      'Liasoft preserva esa etapa temprana del camino como builder.'
+      'Liasoft preserva esa etapa temprana del camino como builder: un pequeño archivo de juegos, prototipos e ideas técnicas lúdicas.'
     ],
     action: {
       label: 'Visitar el archivo de Liasoft',
       href: 'https://liasoft.hubertronald.dev/',
-      external: true
+      external: true,
+      icon: landingIcons.liasoft
     }
   },
 

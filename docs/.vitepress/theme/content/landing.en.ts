@@ -59,20 +59,23 @@ export const landingEn: LandingContent = {
       {
         name: 'RetainAI',
         category: 'AI-native product',
-        description: 'AI-native decision-intelligence platform for retention signals, customer insight and product-oriented analysis.',
-        href: '/retainai/'
+        description: 'Decision-intelligence platform exploring retention signals, customer insight and product-oriented AI architecture.',
+        href: '/retainai/',
+        icon: landingIcons.aiProducts
       },
       {
         name: 'VersoVector',
         category: 'ML/NLP research project',
         description: 'Classical machine learning and NLP applied to poetic language, semantic structure and emotional patterns.',
-        href: '/versovector/'
+        href: '/versovector/',
+        icon: landingIcons.mlNlp
       },
       {
         name: 'Data & Cloud Engineering',
         category: 'Architecture practice',
         description: 'Production-oriented cloud and data architecture across pipelines, platforms and operational systems.',
-        href: '/case-studies/'
+        href: '/case-studies/',
+        icon: landingIcons.dataCloud
       }
     ]
   },
@@ -80,6 +83,7 @@ export const landingEn: LandingContent = {
   capabilities: {
     eyebrow: 'What I Build',
     title: 'Systems that connect data, cloud and AI into working products.',
+    description: 'The common thread is not a technology list. It is the ability to turn complex technical pieces into usable, reliable systems.',
     items: [
       {
         icon: landingIcons.aiProducts,
@@ -107,6 +111,7 @@ export const landingEn: LandingContent = {
   journey: {
     eyebrow: 'Builder Journey',
     title: 'A path from creative software to AI-native platforms.',
+    description: 'The work evolved step by step: from playful software experiments into data systems, cloud architecture and AI-native product thinking.',
     steps: [
       'Creative Software',
       'Applied Math & Simulation',
@@ -154,12 +159,13 @@ export const landingEn: LandingContent = {
     title: 'Before data platforms and AI systems, there were games and visual experiments.',
     paragraphs: [
       'Before data platforms and AI systems, I explored software through indie games, mobile applications, visual experiments and creative coding.',
-      'Liasoft preserves that early builder journey.'
+      'Liasoft preserves that early builder journey: a small archive of games, prototypes and playful technical ideas.'
     ],
     action: {
       label: 'Visit the Liasoft archive',
       href: 'https://liasoft.hubertronald.dev/',
-      external: true
+      external: true,
+      icon: landingIcons.liasoft
     }
   },
 
