@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import LandingIcon from './components/LandingIcon.vue'
 import { getLandingContent } from './content/landing.content'
 import type { LandingLocale, LandingLink } from './content/landing.types'
 
@@ -41,47 +42,62 @@ function linkRel(link: LandingLink): string | undefined {
         </a>
       </nav>
 
-      <a class="hr-locale-switch" :href="content.alternateHref">
+      <a class="hr-locale-switch" :href="content.alternateHref" :aria-label="content.locale === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'">
         {{ content.locale === 'en' ? 'ES' : 'EN' }}
       </a>
     </header>
 
     <main class="hr-landing-main">
-      <section class="hr-landing-section hr-hero" aria-labelledby="landing-title">
-        <p class="hr-eyebrow">
-          {{ content.hero.eyebrow }}
-        </p>
+      <section class="hr-landing-hero" aria-labelledby="landing-title">
+        <div class="hr-hero-copy">
+          <p class="hr-eyebrow">
+            {{ content.hero.eyebrow }}
+          </p>
 
-        <h1 id="landing-title">
-          {{ content.hero.title }}
-        </h1>
+          <h1 id="landing-title">
+            {{ content.hero.title }}
+          </h1>
 
-        <ul class="hr-role-list" aria-label="Professional roles">
-          <li v-for="role in content.hero.roles" :key="role">
-            {{ role }}
-          </li>
-        </ul>
+          <ul class="hr-role-list" aria-label="Professional roles">
+            <li v-for="role in content.hero.roles" :key="role">
+              {{ role }}
+            </li>
+          </ul>
 
-        <p class="hr-hero-summary">
-          {{ content.hero.summary }}
-        </p>
+          <p class="hr-hero-summary">
+            {{ content.hero.summary }}
+          </p>
 
-        <p class="hr-signature">
-          {{ content.hero.signature }}
-        </p>
+          <p class="hr-signature">
+            {{ content.hero.signature }}
+          </p>
 
-        <div class="hr-actions" aria-label="Primary actions">
-          <a :href="content.hero.primaryAction.href">
-            {{ content.hero.primaryAction.label }}
-          </a>
-          <a
-            :href="content.hero.secondaryAction.href"
-            :target="linkTarget(content.hero.secondaryAction)"
-            :rel="linkRel(content.hero.secondaryAction)"
-          >
-            {{ content.hero.secondaryAction.label }}
-          </a>
+          <div class="hr-actions" aria-label="Primary actions">
+            <a class="hr-action-primary" :href="content.hero.primaryAction.href">
+              {{ content.hero.primaryAction.label }}
+            </a>
+            <a
+              class="hr-action-secondary"
+              :href="content.hero.secondaryAction.href"
+              :target="linkTarget(content.hero.secondaryAction)"
+              :rel="linkRel(content.hero.secondaryAction)"
+            >
+              {{ content.hero.secondaryAction.label }}
+            </a>
+          </div>
         </div>
+
+        <figure class="hr-hero-photo-wrap">
+          <img
+            class="hr-hero-photo"
+            :src="content.hero.image.src"
+            :alt="content.hero.image.alt"
+            :width="content.hero.image.width"
+            :height="content.hero.image.height"
+            decoding="async"
+            fetchpriority="high"
+          >
+        </figure>
       </section>
 
       <section class="hr-landing-section" aria-labelledby="selected-work-title">
@@ -89,16 +105,19 @@ function linkRel(link: LandingLink): string | undefined {
           {{ content.selectedWork.eyebrow }}
         </p>
 
-        <h2 id="selected-work-title">
-          {{ content.selectedWork.title }}
-        </h2>
+        <div class="hr-section-heading">
+          <h2 id="selected-work-title">
+            {{ content.selectedWork.title }}
+          </h2>
 
-        <p>
-          {{ content.selectedWork.description }}
-        </p>
+          <p>
+            {{ content.selectedWork.description }}
+          </p>
+        </div>
 
-        <div class="hr-simple-grid">
-          <article v-for="item in content.selectedWork.items" :key="item.name">
+        <div class="hr-work-grid">
+          <article v-for="item in content.selectedWork.items" :key="item.name" class="hr-card hr-work-card">
+            <LandingIcon :src="item.icon" />
             <p class="hr-item-category">
               {{ item.category }}
             </p>
@@ -123,12 +142,15 @@ function linkRel(link: LandingLink): string | undefined {
           {{ content.capabilities.eyebrow }}
         </p>
 
-        <h2 id="capabilities-title">
-          {{ content.capabilities.title }}
-        </h2>
+        <div class="hr-section-heading">
+          <h2 id="capabilities-title">
+            {{ content.capabilities.title }}
+          </h2>
+        </div>
 
-        <div class="hr-simple-grid">
-          <article v-for="item in content.capabilities.items" :key="item.title">
+        <div class="hr-capability-grid">
+          <article v-for="item in content.capabilities.items" :key="item.title" class="hr-card hr-capability-card">
+            <LandingIcon :src="item.icon" />
             <h3>
               {{ item.title }}
             </h3>
@@ -144,9 +166,11 @@ function linkRel(link: LandingLink): string | undefined {
           {{ content.journey.eyebrow }}
         </p>
 
-        <h2 id="journey-title">
-          {{ content.journey.title }}
-        </h2>
+        <div class="hr-section-heading">
+          <h2 id="journey-title">
+            {{ content.journey.title }}
+          </h2>
+        </div>
 
         <ol class="hr-journey-list">
           <li v-for="step in content.journey.steps" :key="step">
@@ -154,8 +178,8 @@ function linkRel(link: LandingLink): string | undefined {
           </li>
         </ol>
 
-        <a :href="content.journey.action.href">
-          {{ content.journey.action.label }}
+        <a class="hr-inline-link" :href="content.journey.action.href">
+          {{ content.journey.action.label }} →
         </a>
       </section>
 
@@ -164,15 +188,17 @@ function linkRel(link: LandingLink): string | undefined {
           {{ content.foundations.eyebrow }}
         </p>
 
-        <h2 id="foundations-title">
-          {{ content.foundations.title }}
-        </h2>
+        <div class="hr-section-heading">
+          <h2 id="foundations-title">
+            {{ content.foundations.title }}
+          </h2>
 
-        <p>
-          {{ content.foundations.description }}
-        </p>
+          <p>
+            {{ content.foundations.description }}
+          </p>
+        </div>
 
-        <div class="hr-simple-grid">
+        <div class="hr-foundation-list">
           <article v-for="item in content.foundations.items" :key="item.name">
             <h3>
               {{ item.name }}
@@ -183,36 +209,39 @@ function linkRel(link: LandingLink): string | undefined {
           </article>
         </div>
 
-        <a :href="content.foundations.action.href">
-          {{ content.foundations.action.label }}
+        <a class="hr-inline-link" :href="content.foundations.action.href">
+          {{ content.foundations.action.label }} →
         </a>
       </section>
 
-      <section class="hr-landing-section" aria-labelledby="creative-title">
+      <section class="hr-landing-section hr-creative-section" aria-labelledby="creative-title">
         <p class="hr-eyebrow">
           {{ content.creativeOrigins.eyebrow }}
         </p>
 
-        <h2 id="creative-title">
-          {{ content.creativeOrigins.title }}
-        </h2>
+        <div class="hr-section-heading">
+          <h2 id="creative-title">
+            {{ content.creativeOrigins.title }}
+          </h2>
+        </div>
 
         <p v-for="paragraph in content.creativeOrigins.paragraphs" :key="paragraph">
           {{ paragraph }}
         </p>
 
         <a
+          class="hr-inline-link"
           :href="content.creativeOrigins.action.href"
           :target="linkTarget(content.creativeOrigins.action)"
           :rel="linkRel(content.creativeOrigins.action)"
         >
-          {{ content.creativeOrigins.action.label }}
+          {{ content.creativeOrigins.action.label }} →
         </a>
       </section>
     </main>
 
     <footer class="hr-landing-footer">
-      <p>
+      <p class="hr-footer-title">
         {{ content.footer.title }}
       </p>
 
@@ -220,15 +249,17 @@ function linkRel(link: LandingLink): string | undefined {
         <a
           v-for="link in content.footer.links"
           :key="link.label"
+          class="hr-footer-link"
           :href="link.href"
           :target="linkTarget(link)"
           :rel="linkRel(link)"
         >
-          {{ link.label }}
+          <LandingIcon :src="link.icon" />
+          <span>{{ link.label }}</span>
         </a>
       </nav>
 
-      <p>
+      <p class="hr-footer-closing">
         {{ content.footer.closing }}
       </p>
     </footer>

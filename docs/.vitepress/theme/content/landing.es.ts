@@ -1,4 +1,5 @@
 import type { LandingContent } from './landing.types'
+import { landingIcons } from './landing.icons'
 
 export const landingEs: LandingContent = {
   locale: 'es',
@@ -41,6 +42,12 @@ export const landingEs: LandingContent = {
       label: 'GitHub',
       href: 'https://github.com/HubertRonald',
       external: true
+    },
+    image: {
+      src: '/images/profile/rony-white-shirt-green-bg.jpg',
+      alt: 'Hubert Ronald sonriendo, con gafas y camisa blanca.',
+      width: 1536,
+      height: 1024
     }
   },
 
@@ -75,18 +82,22 @@ export const landingEs: LandingContent = {
     title: 'Sistemas que conectan datos, cloud e IA en productos funcionales.',
     items: [
       {
+        icon: landingIcons.aiProducts,
         title: 'AI Products & Platforms',
         description: 'Sistemas de IA con visión de producto, arquitectura y entrega pragmática.'
       },
       {
+        icon: landingIcons.dataCloud,
         title: 'Data & Cloud Architecture',
         description: 'Plataformas, pipelines y servicios cloud-native diseñados para restricciones operacionales reales.'
       },
       {
+        icon: landingIcons.mlNlp,
         title: 'ML / NLP Engineering',
         description: 'Machine learning aplicado y sistemas orientados a lenguaje con flujos reproducibles.'
       },
       {
+        icon: landingIcons.developerEnablement,
         title: 'Developer Enablement',
         description: 'Documentación, tooling, ambientes y prácticas que facilitan reproducir y extender el trabajo técnico.'
       }
@@ -158,27 +169,32 @@ export const landingEs: LandingContent = {
       {
         label: 'GitHub',
         href: 'https://github.com/HubertRonald',
-        external: true
+        external: true,
+        icon: landingIcons.github
       },
       {
         label: 'Kaggle',
         href: 'https://www.kaggle.com/hubertronald/competitions',
-        external: true
+        external: true,
+        icon: landingIcons.kaggle
       },
       {
         label: 'Stack Overflow',
         href: 'https://es.stackoverflow.com/users/88852/hubertronald',
-        external: true
+        external: true,
+        icon: landingIcons.stackOverflow
       },
       {
         label: 'Liasoft',
         href: 'https://liasoft.hubertronald.dev/',
-        external: true
+        external: true,
+        icon: landingIcons.liasoft
       },
       {
         label: 'itch.io',
         href: 'https://liasoft.itch.io/',
-        external: true
+        external: true,
+        icon: landingIcons.itch
       }
     ],
     closing: 'logic meets creativity 💾🎸🌻'

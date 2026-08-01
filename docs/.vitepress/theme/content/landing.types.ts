@@ -4,6 +4,14 @@ export interface LandingLink {
   label: string
   href: string
   external?: boolean
+  icon?: string
+}
+
+export interface LandingImage {
+  src: string
+  alt: string
+  width: number
+  height: number
 }
 
 export interface LandingHero {
@@ -14,9 +22,11 @@ export interface LandingHero {
   signature: string
   primaryAction: LandingLink
   secondaryAction: LandingLink
+  image: LandingImage
 }
 
 export interface LandingWorkItem {
+  icon?: string
   name: string
   category: string
   description: string
@@ -25,6 +35,7 @@ export interface LandingWorkItem {
 }
 
 export interface LandingCapability {
+  icon?: string
   title: string
   description: string
 }
