@@ -80,3 +80,19 @@ TODO
 
 Add findings from the audit here before starting implementation.
 
+
+## H1 archive note
+
+The original `static-sites/root-under-construction/` page was preserved as a static snapshot under:
+
+```text
+docs/public/legacy/root-under-construction/
+```
+
+An English archive note was added under:
+
+```text
+docs/archive/under-construction.md
+```
+
+The source folder `static-sites/root-under-construction/` remains untouched. The root page has not been replaced yet.
