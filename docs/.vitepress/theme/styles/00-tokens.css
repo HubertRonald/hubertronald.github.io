@@ -1,66 +1,55 @@
 :root {
-    /* Core brand palette */
-    --hr-color-ink: #111827;
-    --hr-color-ink-2: #1f2937;
-    --hr-color-ink-3: #374151;
-    --hr-color-paper: #ffffff;
+  /* Core neutral palette */
+  --hr-color-ink: #111827;
+  --hr-color-ink-2: #1f2937;
+  --hr-color-ink-3: #374151;
+  --hr-color-paper: #ffffff;
 
-    /* Semantic brand tokens */
-    --hr-brand-primary: var(--hr-color-ink);
-    --hr-brand-primary-hover: var(--hr-color-ink-2);
-    --hr-brand-primary-muted: var(--hr-color-ink-3);
-    --hr-brand-soft: rgba(17, 24, 39, 0.08);
+  /* Semantic brand tokens */
+  --hr-brand-primary: var(--hr-color-ink);
+  --hr-brand-primary-hover: var(--hr-color-ink-2);
+  --hr-brand-primary-muted: var(--hr-color-ink-3);
+  --hr-brand-soft: rgba(17, 24, 39, 0.08);
+  --hr-brand-on-primary: #ffffff;
 
-    /* Text / icon semantic tokens */
-    --hr-text-strong: var(--vp-c-text-1);
-    --hr-text-body: var(--vp-c-text-2);
-    --hr-text-muted: var(--vp-c-text-3);
+  /* Text / icon semantic tokens */
+  --hr-text-strong: var(--vp-c-text-1);
+  --hr-text-body: var(--vp-c-text-2);
+  --hr-text-muted: var(--vp-c-text-3);
 
-    --hr-icon-color: var(--hr-brand-primary);
-    --hr-icon-muted: rgba(17, 24, 39, 0.76);
+  --hr-icon-color: var(--hr-brand-primary);
+  --hr-icon-muted: rgba(17, 24, 39, 0.76);
 
-    /* Shape / layout tokens */
-    --hr-radius-card: 16px;
-    --hr-card-padding: 18px;
-    --hr-card-gap: 18px;
-    --hr-icon-size-sm: 16px;
-    --hr-icon-size-md: 22px;
-    --hr-icon-gap: 10px;
+  /* Shape / layout tokens */
+  --hr-radius-card: 16px;
+  --hr-card-padding: 18px;
+  --hr-card-gap: 18px;
+  --hr-icon-size-sm: 16px;
+  --hr-icon-size-md: 22px;
+  --hr-icon-gap: 10px;
 
-    /* VitePress brand bridge */
-    --vp-c-brand-1: var(--hr-brand-primary);
-    --vp-c-brand-2: var(--hr-brand-primary-hover);
-    --vp-c-brand-3: var(--hr-brand-primary-muted);
-    --vp-c-brand-soft: var(--hr-brand-soft);
+  /* VitePress brand bridge */
+  --vp-c-brand-1: var(--hr-brand-primary);
+  --vp-c-brand-2: var(--hr-brand-primary-hover);
+  --vp-c-brand-3: var(--hr-brand-primary-muted);
+  --vp-c-brand-soft: var(--hr-brand-soft);
 
-    --vp-home-hero-name-color: var(--hr-brand-primary);
-    --vp-home-hero-name-background: transparent;
-}
+  --vp-home-hero-name-color: var(--hr-brand-primary);
+  --vp-home-hero-name-background: transparent;
 
-.dark {
-    --hr-brand-primary: #f9fafb;
-    --hr-brand-primary-hover: #e5e7eb;
-    --hr-brand-primary-muted: #d1d5db;
-    --hr-brand-soft: rgba(249, 250, 251, 0.10);
+  /* Hubert Ronald Landing V1 tokens */
+  --hr-landing-bg: var(--vp-c-bg);
+  --hr-landing-surface: var(--vp-c-bg-soft);
+  --hr-landing-surface-soft: var(--vp-c-bg-elv);
+  --hr-landing-ink: var(--vp-c-text-1);
+  --hr-landing-muted: var(--vp-c-text-2);
+  --hr-landing-border: var(--vp-c-divider);
 
-    --hr-icon-color: var(--hr-brand-primary);
-    --hr-icon-muted: rgba(249, 250, 251, 0.72);
+  --hr-landing-accent: var(--hr-brand-primary);
+  --hr-landing-accent-hover: var(--hr-brand-primary-hover);
+  --hr-landing-accent-soft: var(--hr-brand-soft);
+  --hr-landing-on-accent: var(--hr-brand-on-primary);
 
-    --vp-c-brand-1: var(--hr-brand-primary);
-    --vp-c-brand-2: var(--hr-brand-primary-hover);
-    --vp-c-brand-3: var(--hr-brand-primary-muted);
-    --vp-c-brand-soft: var(--hr-brand-soft);
-}
-/* Hubert Ronald Landing V1 tokens */
-:root {
-  --hr-landing-bg: #fcfcfb;
-  --hr-landing-surface: #f3f4f6;
-  --hr-landing-surface-soft: #ffffff;
-  --hr-landing-ink: #111827;
-  --hr-landing-muted: #6b7280;
-  --hr-landing-border: #e5e7eb;
-  --hr-landing-accent: #5b5bd6;
-  --hr-landing-accent-hover: #4338ca;
   --hr-landing-radius-sm: 0.75rem;
   --hr-landing-radius-md: 1rem;
   --hr-landing-radius-lg: 1.5rem;
@@ -68,13 +57,31 @@
 }
 
 .dark {
-  --hr-landing-bg: #0b0f14;
-  --hr-landing-surface: #111827;
-  --hr-landing-surface-soft: #0f172a;
-  --hr-landing-ink: #f8fafc;
-  --hr-landing-muted: #94a3b8;
-  --hr-landing-border: #1f2937;
-  --hr-landing-accent: #a5b4fc;
-  --hr-landing-accent-hover: #c7d2fe;
+  --hr-brand-primary: #f9fafb;
+  --hr-brand-primary-hover: #e5e7eb;
+  --hr-brand-primary-muted: #d1d5db;
+  --hr-brand-soft: rgba(249, 250, 251, 0.10);
+  --hr-brand-on-primary: #111827;
+
+  --hr-icon-color: var(--hr-brand-primary);
+  --hr-icon-muted: rgba(249, 250, 251, 0.72);
+
+  --vp-c-brand-1: var(--hr-brand-primary);
+  --vp-c-brand-2: var(--hr-brand-primary-hover);
+  --vp-c-brand-3: var(--hr-brand-primary-muted);
+  --vp-c-brand-soft: var(--hr-brand-soft);
+
+  --hr-landing-bg: var(--vp-c-bg);
+  --hr-landing-surface: var(--vp-c-bg-soft);
+  --hr-landing-surface-soft: var(--vp-c-bg-elv);
+  --hr-landing-ink: var(--vp-c-text-1);
+  --hr-landing-muted: var(--vp-c-text-2);
+  --hr-landing-border: var(--vp-c-divider);
+
+  --hr-landing-accent: var(--hr-brand-primary);
+  --hr-landing-accent-hover: var(--hr-brand-primary-hover);
+  --hr-landing-accent-soft: var(--hr-brand-soft);
+  --hr-landing-on-accent: var(--hr-brand-on-primary);
+
   --hr-landing-shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.32);
 }
