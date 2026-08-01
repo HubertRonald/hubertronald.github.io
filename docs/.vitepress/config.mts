@@ -43,6 +43,12 @@ export default withMermaid(
         { text: 'LuaSF', link: '/luasf/' }
       ],
       */
+      nav: [
+        { text: 'Projects', link: '/projects/' },
+        { text: 'Journey', link: '/journey/' },
+        { text: 'Case Studies', link: '/case-studies/' },
+        { text: 'Archive', link: '/archive/' }
+      ],
 
       sidebar: {
         '/retainai/': [
