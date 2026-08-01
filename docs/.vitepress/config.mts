@@ -1,10 +1,33 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
+const siteUrl = 'https://hubertronald.dev'
+const defaultOgImage = `${siteUrl}/images/profile/rony-white-shirt-green-bg.jpg`
+
+function normalizePagePath(page: string): string {
+  if (page === 'index.md') return '/'
+
+  const withoutIndex = page
+    .replace(/(^|\/)index\.md$/, '$1')
+    .replace(/\.md$/, '')
+
+  return `/${withoutIndex}/`.replace(/\/+/g, '/')
+}
+
+function canonicalUrlForPage(page: string): string {
+  return new URL(normalizePagePath(page), siteUrl).href
+}
+
+function localeForPage(page: string): string {
+  return page === 'es/index.md' || page.startsWith('es/')
+    ? 'es_CO'
+    : 'en_US'
+}
+
 export default withMermaid(
   defineConfig({
     title: 'Hubert Ronald',
-    description: 'Personal technical portfolio, documentation, and creative software hub.',
+    description: 'Data platforms, cloud-native systems and AI products.',
 
     // User/organization GitHub Pages site:
     // https://hubertronald.github.io/
@@ -33,7 +56,10 @@ export default withMermaid(
     ],
 
     themeConfig: {
-      logo: '/icons/common/home.svg',
+      logo: {
+        src: '/icons/common/home.svg',
+        alt: 'Hubert Ronald'
+      },
       /* 
       nav: [
         { text: 'RetainAI', link: '/retainai/' },
@@ -43,6 +69,12 @@ export default withMermaid(
         { text: 'LuaSF', link: '/luasf/' }
       ],
       */
+      nav: [
+        { text: 'Projects', link: '/projects/' },
+        { text: 'Journey', link: '/journey/' },
+        { text: 'Case Studies', link: '/case-studies/' },
+        { text: 'Archive', link: '/archive/' }
+      ],
 
       sidebar: {
         '/retainai/': [
@@ -206,6 +238,30 @@ export default withMermaid(
       search: {
         provider: 'local'
       }
-    }
+    },
+
+    transformHead({ page, pageData, siteConfig }) {
+      const canonicalUrl = canonicalUrlForPage(page)
+      const description = pageData.description || siteConfig.site.description
+      const title = pageData.title || siteConfig.site.title
+      const locale = localeForPage(page)
+    
+      return [
+        ['link', { rel: 'canonical', href: canonicalUrl }],
+    
+        ['meta', { property: 'og:type', content: 'website' }],
+        ['meta', { property: 'og:site_name', content: 'Hubert Ronald' }],
+        ['meta', { property: 'og:title', content: title }],
+        ['meta', { property: 'og:description', content: description }],
+        ['meta', { property: 'og:url', content: canonicalUrl }],
+        ['meta', { property: 'og:image', content: defaultOgImage }],
+        ['meta', { property: 'og:locale', content: locale }],
+    
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+        ['meta', { name: 'twitter:title', content: title }],
+        ['meta', { name: 'twitter:description', content: description }],
+        ['meta', { name: 'twitter:image', content: defaultOgImage }]
+      ]
+    },
   })
 )

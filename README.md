@@ -1,4 +1,4 @@
-# GitHub Pages
+# hubertronald.dev
 
 <p align="left">
     <a href="https://nodejs.org/" target="_blank">
@@ -30,45 +30,80 @@
     </a>
 </p>
 
-This repository powers the personal GitHub Pages site for **Hubert Ronald**.
+Source repository for the public technical portfolio and documentation hub of **Hubert Ronald**.
 
-Public site:
+Live site:
 
-```text
-https://hubertronald.github.io/
-```
+<https://hubertronald.dev/>
 
-The site is designed as a hybrid portfolio and documentation hub. It combines:
+---
 
-* a personal technical landing page;
-* VitePress-based documentation sections;
-* creative-coding documentation for visual and experimental projects;
-* standalone static websites;
-* static game/app builds;
-* legacy archived content.
+## What this site contains
+
+- Landing page in English and Spanish.
+- Project Atlas.
+- Builder Journey.
+- Case-study index.
+- Historical archive.
+- Technical documentation for selected projects:
+  - RetainAI
+  - VersoVector
+  - RelationalStats
+  - GradientMesh
+  - LuaSF
 
 ---
 
 ## Target URL structure
 
 ```text
-https://hubertronald.github.io/
-  Personal hub / technical portfolio / landing page
+https://hubertronald.dev/
+  Main landing page in English
 
-https://hubertronald.github.io/gradientmesh/
-  GradientMesh creative-coding documentation for Gideros procedural gradients
+https://hubertronald.dev/es/
+  Spanish landing page
 
-https://hubertronald.github.io/luasf/
+https://hubertronald.dev/projects/
+  Project Atlas: curated map of projects, repositories and technical artifacts
+
+https://hubertronald.dev/journey/
+  Builder Journey: narrative path from creative software to AI-native platforms
+
+https://hubertronald.dev/case-studies/
+  Case-study index for deeper technical writeups
+
+https://hubertronald.dev/archive/
+  Historical archive for creative roots, older artifacts and site history
+
+https://hubertronald.dev/archive/under-construction/
+  Archive note for the original under-construction root page
+
+https://hubertronald.dev/legacy/root-under-construction/
+  Preserved static snapshot of the original under-construction page
+
+https://hubertronald.dev/retainai/
+  RetainAI public documentation
+
+https://hubertronald.dev/versovector/
+  VersoVector public documentation
+
+https://hubertronald.dev/relationalstats/
+  RelationalStats public documentation
+
+https://hubertronald.dev/gradientmesh/
+  GradientMesh creative-coding documentation
+
+https://hubertronald.dev/luasf/
   LuaSF technical documentation
 
-https://hubertronald.github.io/versovector/
-  VersoVector public repository documentation
+https://liasoft.hubertronald.dev/
+  Standalone Liasoft creative archive for indie games and experiments
+```
 
-https://hubertronald.github.io/liasoft/
-  LiaSoft standalone static website for indie games, apps, demos, and future publishing links
+Liasoft is no longer maintained as the main source under `/liasoft/` in this repository. If `/liasoft/` exists in the generated site, it should behave only as a lightweight bridge to:
 
-https://hubertronald.github.io/liasoft/games/SuperWariBrosWebPlayer/
-  Static browser game build
+```text
+https://liasoft.hubertronald.dev/
 ```
 
 ---
@@ -79,36 +114,42 @@ https://hubertronald.github.io/liasoft/games/SuperWariBrosWebPlayer/
 .
 ├── docs/
 │   ├── index.md
+│   ├── es/
+│   ├── projects/
+│   ├── journey/
+│   ├── case-studies/
+│   ├── archive/
+│   ├── retainai/
+│   ├── versovector/
+│   ├── relationalstats/
 │   ├── gradientmesh/
 │   ├── luasf/
-│   ├── versovector/
 │   ├── public/
 │   │   ├── icons/
 │   │   │   ├── common/
 │   │   │   ├── gradientmesh/
 │   │   │   ├── luasf/
+│   │   │   ├── relationalstats/
+│   │   │   ├── retainai/
+│   │   │   ├── social/
 │   │   │   └── versovector/
-│   │   └── images/
-│   │       ├── gradientmesh/
-│   │       └── versovector/
+│   │   ├── images/
+│   │   │   └── profile/
+│   │   └── legacy/
+│   │       └── root-under-construction/
 │   └── .vitepress/
+│       ├── config.mts
+│       └── theme/
 │
 ├── static-sites/
 │   ├── liasoft/
 │   └── root-under-construction/
 │
-├── static-apps/
-│   └── liasoft/
-│       └── games/
-│
 ├── legacy/
-│   ├── EdaSalary/
-│   ├── MyPage/
-│   ├── SuperWariBrosWebPlayer/
-│   └── under-construction-template/
 │
 ├── scripts/
-│   └── copy-static-sites.mjs
+│   ├── copy-static-sites.mjs
+│   └── audit/
 │
 ├── package.json
 ├── package-lock.json
@@ -120,50 +161,90 @@ https://hubertronald.github.io/liasoft/games/SuperWariBrosWebPlayer/
 
 ## Architecture
 
-This repository intentionally uses a hybrid architecture.
+The site is built with **VitePress**.
 
-### VitePress-managed sections
-
-VitePress owns the root documentation and portfolio shell:
+The landing uses a custom Vue component with `layout: false`, while technical documentation keeps the default VitePress documentation experience.
 
 ```text
-/
- /gradientmesh/
- /luasf/
- /versovector/
+docs/
+├── index.md
+├── es/
+├── projects/
+├── journey/
+├── case-studies/
+├── archive/
+├── retainai/
+├── versovector/
+├── relationalstats/
+├── gradientmesh/
+├── luasf/
+└── .vitepress/
 ```
 
-These sections are built from Markdown and VitePress configuration.
+### Landing pages
 
-### Standalone static sites
+The root landing pages are VitePress pages with custom Vue rendering:
 
-LiaSoft is not treated as documentation.
+```text
+docs/index.md
+  -> /
 
-It is a standalone HTML/CSS/JavaScript website copied into the final deployment output:
+docs/es/index.md
+  -> /es/
+```
+
+Both pages use the same landing component system and language-specific content files.
+
+### Documentation sections
+
+The technical documentation sections keep the default VitePress layout, navigation, sidebar and search behavior.
+
+Current documentation sections:
+
+```text
+/retainai/
+/versovector/
+/relationalstats/
+/gradientmesh/
+/luasf/
+```
+
+### Static bridge
+
+The static copy script may keep a lightweight bridge for older static paths, such as:
 
 ```text
 static-sites/liasoft/
   -> docs/.vitepress/dist/liasoft/
 ```
 
-### Static apps and games
-
-Static games and app builds are copied into the final deployment output without being converted to Markdown:
+This bridge should not be treated as the canonical Liasoft site. The canonical Liasoft archive is:
 
 ```text
-static-apps/liasoft/games/SuperWariBrosWebPlayer/
-  -> docs/.vitepress/dist/liasoft/games/SuperWariBrosWebPlayer/
+https://liasoft.hubertronald.dev/
 ```
 
-### Legacy archive
+### Historical root
 
-Older projects and historical static folders are preserved under:
+The original under-construction page is preserved as part of the archive:
 
-```text
-legacy/
-```
+- Source: `static-sites/root-under-construction/`
+- Preserved snapshot: `/legacy/root-under-construction/`
+- Archive note: `/archive/under-construction/`
 
-These files are kept for reference and migration safety.
+The under-construction page should not overwrite `/` anymore.
+
+---
+
+## Liasoft
+
+Liasoft is now maintained as a standalone creative archive:
+
+<https://liasoft.hubertronald.dev/>
+
+The main site links to Liasoft externally.
+
+Liasoft represents the creative origin layer of this portfolio: indie games, mobile experiments, visual software, browser-friendly builds and old playful technical ideas.
 
 ---
 
@@ -187,11 +268,19 @@ Run the VitePress development server:
 npm run docs:dev
 ```
 
-Build the VitePress site and copy standalone static sites/apps into the generated output:
+---
+
+## Build
+
+Build the VitePress site and copy intentional static bridges into the generated output:
 
 ```bash
 npm run docs:build
 ```
+
+---
+
+## Preview
 
 Preview the built site:
 
@@ -199,15 +288,21 @@ Preview the built site:
 npm run docs:preview
 ```
 
-Run the standalone copy step manually only when needed:
+---
+
+## Quality check
+
+Run the landing and launch quality script after building:
 
 ```bash
-node scripts/copy-static-sites.mjs
+python3 scripts/audit/landing-quality-check.py
 ```
 
-### Clean local preview build
+---
 
-When updating static assets such as icons, images, or standalone site files, the browser may keep cached versions of files that use the same URL.
+## Clean local preview build
+
+When updating static assets such as icons, images or bridge files, the browser may keep cached versions of files that use the same URL.
 
 To force a clean local build:
 
@@ -232,6 +327,12 @@ This is especially useful after replacing SVG icons under:
 docs/public/icons/
 ```
 
+or profile images under:
+
+```text
+docs/public/images/profile/
+```
+
 ---
 
 ## Deployment
@@ -242,13 +343,13 @@ The workflow validates the site by:
 
 1. installing dependencies;
 2. building the VitePress site;
-3. copying standalone static sites and apps;
+3. copying intentional static bridges;
 4. validating the generated output;
 5. optionally deploying to GitHub Pages.
 
 Manual deployment should be triggered from GitHub Actions using the deploy input.
 
-Recommended flow:
+Recommended validation flow:
 
 ```text
 Actions -> Validate and Deploy Site -> Run workflow
@@ -263,35 +364,6 @@ deploy: true
 ```
 
 The deployment target is GitHub Pages.
-
----
-
-## Legacy deployment note
-
-This repository previously used `ghp-import` directly:
-
-```bash
-ghp-import -n -p -f _build/html -b master
-git config --global http.postBuffer 524288000
-```
-
-That approach is now considered legacy for this repository because `master` is used as the source branch.
-
-The preferred approach is to keep source files in `master` and let GitHub Actions deploy only the generated output from:
-
-```text
-docs/.vitepress/dist/
-```
-
-This avoids overwriting source folders such as:
-
-```text
-docs/
-static-sites/
-static-apps/
-legacy/
-scripts/
-```
 
 ---
 
@@ -310,9 +382,17 @@ Do not commit dependencies:
 node_modules/
 ```
 
-Do not convert LiaSoft into Markdown documentation.
+Do not reintroduce the original under-construction page as the root page.
 
-Do not place static game builds inside VitePress Markdown folders.
+Do not use `static-sites/root-under-construction/` to overwrite `/`.
+
+Do not move existing documentation directories without validating routes.
+
+Do not create a local `/kaggle/` route. Kaggle remains an external profile link.
+
+Do not treat Liasoft as RetainAI or as part of the RetainAI product identity.
+
+Do not place heavy static game builds inside VitePress Markdown folders.
 
 Do not delete legacy folders until replacements and redirects are confirmed.
 
@@ -320,47 +400,42 @@ Do not use destructive deployment commands that overwrite the source branch with
 
 ---
 
-## Future custom domain strategy
+## Legacy deployment note
 
-The site may later move from:
+This repository previously used `ghp-import` directly:
 
-```text
-https://hubertronald.github.io/
+```bash
+ghp-import -n -p -f _build/html -b master
+git config --global http.postBuffer 524288000
 ```
 
-to:
+That approach is now considered legacy for this repository because the source branch should remain source-controlled.
+
+The preferred approach is to keep source files in the production branch and let GitHub Actions deploy only the generated output from:
 
 ```text
-https://hubertronald.dev/
+docs/.vitepress/dist/
 ```
 
-Potential future structure:
+This avoids overwriting source folders such as:
 
 ```text
-https://hubertronald.dev/
-https://hubertronald.dev/gradientmesh/
-https://hubertronald.dev/luasf/
-https://hubertronald.dev/versovector/
-https://hubertronald.dev/liasoft/
-```
-
-Product-specific subdomains may be used later when a project grows enough to justify an independent identity:
-
-```text
-https://gradientmesh.hubertronald.dev/
-https://versovector.hubertronald.dev/
-https://api.versovector.hubertronald.dev/
-https://liasoft.hubertronald.dev/
+docs/
+static-sites/
+legacy/
+scripts/
 ```
 
 ---
 
 ## Related projects
 
-* [VersoVector](https://github.com/HubertRonald/VersoVector)
-* [LuaSF](https://github.com/HubertRonald/LuaSF)
-* [GradientMesh](https://github.com/HubertRonald/GradientMesh)
-* [Liasoft static site source](https://github.com/HubertRonald/hubertronald.github.io/tree/master/static-sites/liasoft)
+- [RetainAI](https://github.com/HubertRonald/RetainAI)
+- [VersoVector](https://github.com/HubertRonald/VersoVector)
+- [RelationalStats](https://github.com/HubertRonald/relationalstats)
+- [LuaSF](https://github.com/HubertRonald/LuaSF)
+- [GradientMesh](https://github.com/HubertRonald/GradientMesh)
+- [Liasoft](https://liasoft.hubertronald.dev/)
 
 ---
 
@@ -376,6 +451,6 @@ GitHub: [HubertRonald](https://github.com/HubertRonald)
 
 This repository uses the MIT License for the source code of the GitHub Pages site, unless otherwise noted.
 
-Personal branding, personal written content, project names, logos, screenshots, third-party assets, datasets, external project documentation, and generated artifacts may be subject to separate rights or licenses.
+Project names, personal branding, written content, logos, screenshots, third-party assets, datasets, external project documentation and generated artifacts may be subject to separate rights or licenses unless explicitly stated otherwise.
 
 See [LICENSE](./LICENSE) for details.

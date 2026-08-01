@@ -7,17 +7,6 @@ const distDir = path.resolve(repoRoot, 'docs/.vitepress/dist')
 
 const copyTasks = [
   {
-    name: 'Root under construction page',
-    source: 'static-sites/root-under-construction',
-    target: '.',
-    mode: 'overlay-root',
-    ignore: [
-      '.github',
-      'README.md',
-      'LICENSE'
-    ]
-  },
-  {
     name: 'LiaSoft static site',
     source: 'static-sites/liasoft',
     target: 'liasoft',
