@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import './custom.css'
+import LandingPage from './LandingPage.vue'
 
 function shouldForceStaticRoot(anchor: HTMLAnchorElement): boolean {
   const url = new URL(anchor.href, window.location.href)
@@ -27,6 +28,8 @@ const theme: Theme = {
 
   enhanceApp(ctx) {
     DefaultTheme.enhanceApp?.(ctx)
+
+    ctx.app.component('LandingPage', LandingPage)
 
     if (typeof window === 'undefined') {
       return
