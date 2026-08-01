@@ -1,6 +1,8 @@
 ---
 title: Project Atlas
 description: A curated map of projects, repositories, documentation and technical artifacts by Hubert Ronald.
+lang: en-US
+
 ---
 
 # Project Atlas

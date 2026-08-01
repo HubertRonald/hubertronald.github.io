@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LandingThemeToggle from './LandingThemeToggle.vue'
 import type { LandingContent } from '../content/landing.types'
 import { linkRel, linkTarget } from '../utils/landingLinks'
 
@@ -29,14 +30,18 @@ defineProps<{
       </a>
     </nav>
 
-    <a
-      class="hr-locale-switch"
-      :href="content.alternateHref"
-      :aria-label="content.locale === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'"
-    >
-      <span>{{ content.locale === 'en' ? 'EN' : 'ES' }}</span>
-      <span aria-hidden="true">|</span>
-      <strong>{{ content.locale === 'en' ? 'ES' : 'EN' }}</strong>
-    </a>
+    <div class="hr-landing-controls">
+      <LandingThemeToggle />
+
+      <a
+        class="hr-locale-switch"
+        :href="content.alternateHref"
+        :aria-label="content.locale === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'"
+      >
+        <span>{{ content.locale === 'en' ? 'EN' : 'ES' }}</span>
+        <span aria-hidden="true">|</span>
+        <strong>{{ content.locale === 'en' ? 'ES' : 'EN' }}</strong>
+      </a>
+    </div>
   </header>
 </template>

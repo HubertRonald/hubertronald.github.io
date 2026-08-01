@@ -415,6 +415,17 @@
   .hr-foundation-list article {
     grid-template-columns: 1fr;
   }
+
+  .hr-landing-controls {
+    position: absolute;
+    top: 1.1rem;
+    right: 0;
+  }
+
+  .hr-landing-header {
+    position: relative;
+    padding-right: 6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -494,4 +505,87 @@
   .hr-section-heading p {
     font-size: 1rem;
   }
+}
+
+/* Landing accessibility refinements */
+.hr-landing :where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--hr-landing-accent) 52%, transparent);
+  outline-offset: 4px;
+}
+
+.hr-action-primary:focus-visible {
+  outline-color: color-mix(in srgb, var(--hr-landing-accent-hover) 72%, white);
+}
+
+.hr-locale-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.hr-landing [aria-hidden="true"] {
+  user-select: none;
+}
+
+.hr-hero-photo {
+  background: var(--hr-landing-surface);
+}
+
+/* Landing header controls */
+.hr-landing-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hr-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.05rem;
+  height: 2.05rem;
+  border: 1px solid var(--hr-landing-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--hr-landing-surface-soft) 82%, transparent);
+  color: var(--hr-landing-muted);
+  font: inherit;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.hr-theme-toggle:hover {
+  border-color: var(--hr-landing-accent);
+  color: var(--hr-landing-accent-hover);
+}
+
+.hr-theme-toggle:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--hr-landing-accent) 52%, transparent);
+  outline-offset: 4px;
+}
+
+.hr-locale-switch {
+  background: color-mix(in srgb, var(--hr-landing-surface-soft) 82%, transparent);
+}
+
+.hr-landing-brand {
+  color: var(--hr-landing-accent);
+}
+
+.hr-action-primary {
+  background: var(--hr-landing-accent);
+  color: var(--hr-landing-on-accent) !important;
+}
+
+.hr-action-primary:hover {
+  background: var(--hr-landing-accent-hover);
+  color: var(--hr-landing-on-accent) !important;
+  text-decoration: none !important;
+}
+
+.hr-role-list li {
+  background: color-mix(in srgb, var(--hr-landing-accent-soft) 42%, var(--hr-landing-surface));
+}
+
+.hr-hero-photo-wrap::before {
+  background: color-mix(in srgb, var(--hr-landing-accent-soft) 68%, var(--hr-landing-surface));
 }

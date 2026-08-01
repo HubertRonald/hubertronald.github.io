@@ -1,6 +1,8 @@
 ---
 title: Builder Journey
 description: A narrative path from creative software and applied mathematics to cloud data architecture and AI-native platforms.
+lang: en-US
+
 ---
 
 # Builder Journey

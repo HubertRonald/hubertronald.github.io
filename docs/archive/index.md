@@ -1,6 +1,8 @@
 ---
 title: Archive
 description: Historical projects, creative roots, and early public versions of Hubert Ronald's site.
+lang: en-US
+
 ---
 
 # Archive

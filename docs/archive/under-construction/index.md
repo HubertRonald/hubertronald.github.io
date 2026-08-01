@@ -1,6 +1,8 @@
 ---
 title: Before the Landing
 description: The original under-construction page preserved as part of the hubertronald.dev archive.
+lang: en-US
+
 ---
 
 # Before the Landing

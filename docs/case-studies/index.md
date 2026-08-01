@@ -1,6 +1,8 @@
 ---
 title: Case Studies
 description: Technical case studies and deep dives around AI products, cloud data architecture, ML/NLP and platform engineering.
+lang: en-US
+
 ---
 
 # Case Studies
