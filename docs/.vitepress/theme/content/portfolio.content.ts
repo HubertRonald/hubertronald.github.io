@@ -32,7 +32,7 @@ export const portfolioProjects: Record<string, PortfolioProject> = {
     "tagline": "Emotional-semantic NLP and local MLOps system with packaged inference and a sanitized cloud blueprint.",
     "summary": "VersoVector combines supervised and unsupervised NLP workflows, reproducible training, model artifacts, packaged inference, FastAPI, Gradio, tests, Docker services, optional MLflow tracking, and a sanitized cloud deployment blueprint. It is retained as primary ML/NLP/MLOps evidence, while the future VersoVector Platform remains outside the frozen scope.",
     "repository": "https://github.com/HubertRonald/VersoVector",
-    "documentation": "/versovector/",
+    "documentation": "/technical-docs/versovector/",
     "release": "https://github.com/HubertRonald/VersoVector/releases/tag/v0.9.0-atlas-readiness-remediation",
     "stages": [
       "ML / NLP & MLOps",

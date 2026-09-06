@@ -52,9 +52,14 @@ if (!fs.existsSync(gitignorePath)) {
 const hubIndex = path.join(repositoryRoot, 'docs/technical-docs/index.md')
 if (!fs.existsSync(hubIndex)) errors.push('Technical Docs hub index is missing')
 
+const approvedMigratedProjectIds = new Set(['versovector'])
 for (const source of published) {
   const migratedPath = path.join(repositoryRoot, 'docs/technical-docs', source.project_id)
-  if (fs.existsSync(migratedPath)) {
+  if (approvedMigratedProjectIds.has(source.project_id)) {
+    if (!fs.existsSync(migratedPath)) {
+      errors.push(`${source.project_id}: approved migrated source tree is missing at docs/technical-docs/${source.project_id}`)
+    }
+  } else if (fs.existsSync(migratedPath)) {
     errors.push(`${source.project_id}: unapproved route migration detected at docs/technical-docs/${source.project_id}`)
   }
 }

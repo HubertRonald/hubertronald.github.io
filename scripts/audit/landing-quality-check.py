@@ -21,7 +21,7 @@ PORTFOLIO_PAGES = {
 
 TECH_DOC_ROUTES = {
     "/retainai/": DIST / "retainai" / "index.html",
-    "/versovector/": DIST / "versovector" / "index.html",
+    "/technical-docs/versovector/": DIST / "technical-docs" / "versovector" / "index.html",
     "/relationalstats/": DIST / "relationalstats" / "index.html",
     "/gradientmesh/": DIST / "gradientmesh" / "index.html",
     "/luasf/": DIST / "luasf" / "index.html",

@@ -16,8 +16,8 @@
       "source_repository": "https://github.com/HubertRonald/VersoVector",
       "source_ref": null,
       "source_mode": "local_curated",
-      "site_source_path": "docs/versovector",
-      "current_public_route": "/versovector/",
+      "site_source_path": "docs/technical-docs/versovector",
+      "current_public_route": "/technical-docs/versovector/",
       "proposed_public_route": "/technical-docs/versovector/",
       "legacy_routes": ["/versovector/"],
       "sync_strategy": "none",
@@ -35,7 +35,7 @@
       ],
       "update_policy": "manual_curated; verify source alignment before material technical changes",
       "ownership": {
-        "curated_targets": ["docs/versovector/**"],
+        "curated_targets": ["docs/technical-docs/versovector/**"],
         "generated_targets": []
       },
       "provenance_lock_policy": "not_applicable_local_curated",

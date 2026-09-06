@@ -14,8 +14,18 @@ function normalizePagePath(page: string): string {
   return `/${withoutIndex}/`.replace(/\/+/g, '/')
 }
 
+function canonicalPathForPage(page: string): string {
+  const normalized = normalizePagePath(page)
+
+  if (normalized.startsWith('/versovector/')) {
+    return normalized.replace('/versovector/', '/technical-docs/versovector/')
+  }
+
+  return normalized
+}
+
 function canonicalUrlForPage(page: string): string {
-  return new URL(normalizePagePath(page), siteUrl).href
+  return new URL(canonicalPathForPage(page), siteUrl).href
 }
 
 function localeForPage(page: string): string {
@@ -65,7 +75,7 @@ export default withMermaid(
         { text: 'RetainAI', link: '/retainai/' },
         { text: 'RelationalStats', link: '/relationalstats/' },
         { text: 'GradientMesh', link: '/gradientmesh/' },
-        { text: 'VersoVector', link: '/versovector/' },
+        { text: 'VersoVector', link: '/technical-docs/versovector/' },
         { text: 'LuaSF', link: '/luasf/' }
       ],
       */
@@ -93,19 +103,19 @@ export default withMermaid(
           }
         ],
 
-        '/versovector/': [
+        '/technical-docs/versovector/': [
           {
             text: 'VersoVector',
             items: [
-              { text: 'Overview', link: '/versovector/' },
-              { text: 'Local Setup', link: '/versovector/setup' },
-              { text: 'Dataset', link: '/versovector/data' },
-              { text: 'Notebook Guide', link: '/versovector/notebooks' },
-              { text: 'Model Topology', link: '/versovector/model-topology' },
-              { text: 'Pipeline', link: '/versovector/pipeline' },
-              { text: 'Architecture', link: '/versovector/architecture' },
-              { text: 'Results Guide', link: '/versovector/results' },
-              { text: 'Serving & Demo', link: '/versovector/serving' }
+              { text: 'Overview', link: '/technical-docs/versovector/' },
+              { text: 'Local Setup', link: '/technical-docs/versovector/setup' },
+              { text: 'Dataset', link: '/technical-docs/versovector/data' },
+              { text: 'Notebook Guide', link: '/technical-docs/versovector/notebooks' },
+              { text: 'Model Topology', link: '/technical-docs/versovector/model-topology' },
+              { text: 'Pipeline', link: '/technical-docs/versovector/pipeline' },
+              { text: 'Architecture', link: '/technical-docs/versovector/architecture' },
+              { text: 'Results Guide', link: '/technical-docs/versovector/results' },
+              { text: 'Serving & Demo', link: '/technical-docs/versovector/serving' }
             ]
           }
         ],

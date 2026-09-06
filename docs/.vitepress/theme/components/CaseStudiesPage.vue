@@ -23,7 +23,7 @@ import PortfolioIcon from './PortfolioIcon.vue'
         <div class="hr-case-study-rows">
           <article>
             <div><h3>VersoVector</h3><p>Technical documentation for the frozen ML/NLP/MLOps evidence chain.</p></div>
-            <a class="hr-case-study-action" href="/versovector/">
+            <a class="hr-case-study-action" href="/technical-docs/versovector/">
               <PortfolioIcon name="book" :size="17" />
               <span>Technical Docs</span>
               <span class="hr-case-study-action-arrow" aria-hidden="true">→</span>

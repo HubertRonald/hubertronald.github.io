@@ -32,15 +32,24 @@ check(
 )
 
 check('hub route', fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/index.md')), 'docs/technical-docs/index.md is missing')
+const versovector = published.find((source) => source.project_id === 'versovector')
 check(
-  'no route migration',
-  published.every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
-  'a project tree was moved under docs/technical-docs/'
+  'approved route migration state',
+  versovector?.site_source_path === 'docs/technical-docs/versovector' &&
+    versovector?.current_public_route === '/technical-docs/versovector/' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/versovector/index.md')) &&
+    published
+      .filter((source) => source.project_id !== 'versovector')
+      .every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
+  'R-TD5.1 route state is not limited to VersoVector'
 )
 check(
   'legacy project routes',
-  published.every((source) => fs.existsSync(path.join(repositoryRoot, source.site_source_path, 'index.md'))),
-  'one or more current project route roots are missing'
+  fs.existsSync(path.join(repositoryRoot, 'docs/versovector/index.md')) &&
+    published
+      .filter((source) => source.project_id !== 'versovector')
+      .every((source) => fs.existsSync(path.join(repositoryRoot, source.site_source_path, 'index.md'))),
+  'VersoVector compatibility root or another current project route root is missing'
 )
 
 const config = read('docs/.vitepress/config.mts')
