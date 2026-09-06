@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const siteUrl = 'https://hubertronald.dev'
-const defaultOgImage = `${siteUrl}/images/profile/rony-white-shirt-green-bg.jpg`
+const defaultOgImage = `${siteUrl}/icons/common/home.svg`
 
 function normalizePagePath(page: string): string {
   if (page === 'index.md') return '/'
@@ -27,7 +27,7 @@ function localeForPage(page: string): string {
 export default withMermaid(
   defineConfig({
     title: 'Hubert Ronald',
-    description: 'Data platforms, cloud-native systems and AI products.',
+    description: 'Evidence systems across data, cloud, ML and AI-native products.',
 
     // User/organization GitHub Pages site:
     // https://hubertronald.github.io/
@@ -70,10 +70,13 @@ export default withMermaid(
       ],
       */
       nav: [
-        { text: 'Projects', link: '/projects/' },
-        { text: 'Journey', link: '/journey/' },
-        { text: 'Case Studies', link: '/case-studies/' },
-        { text: 'Archive', link: '/archive/' }
+        { text: 'Work', link: '/projects/', activeMatch: '^/projects(/|$)' },
+        { text: 'Journey', link: '/journey/', activeMatch: '^/journey(/|$)' },
+        {
+          text: 'Docs',
+          link: '/technical-docs/',
+          activeMatch: '^/(technical-docs|retainai|versovector|relationalstats|gradientmesh|luasf)(/|$)'
+        }
       ],
 
       sidebar: {
@@ -229,11 +232,6 @@ export default withMermaid(
       socialLinks: [
         { icon: 'github', link: 'https://github.com/HubertRonald' }
       ],
-
-      footer: {
-        message: 'Built with VitePress and deployed with GitHub Pages.',
-        copyright: 'Copyright © Hubert Ronald'
-      },
 
       search: {
         provider: 'local'

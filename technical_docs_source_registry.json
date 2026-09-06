@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "registry_purpose": "Canonical declaration of current Technical Docs sources, ownership, provenance, publication state, and portfolio relationships.",
+  "public_hub_route": "/technical-docs/",
+  "target_project_namespace": "/technical-docs/<project>/",
+  "ownership_contract": {
+    "curated": "Portfolio-owned content. Registry tooling must never overwrite it.",
+    "generated": "Source-derived content. Only explicitly declared generated targets may be replaced by a future sync runner.",
+    "vendor": ".vendor/technical-docs/<project_id>/ is transient working state and must remain untracked."
+  },
+  "sources": [
+    {
+      "project_id": "versovector",
+      "display_name": "VersoVector",
+      "integration_state": "confirmed_current",
+      "source_repository": "https://github.com/HubertRonald/VersoVector",
+      "source_ref": null,
+      "source_mode": "local_curated",
+      "site_source_path": "docs/versovector",
+      "current_public_route": "/versovector/",
+      "proposed_public_route": "/technical-docs/versovector/",
+      "legacy_routes": ["/versovector/"],
+      "sync_strategy": "none",
+      "sync_scopes": [],
+      "publication_status": "published",
+      "documentation_type": "project_documentation",
+      "technical_domain": ["NLP", "ML", "MLOps"],
+      "documentation_scope": "Local setup, data, notebooks, model topology, pipeline, architecture, results, and local serving.",
+      "evidence_scope": "Atlas evidence includes local execution and a sanitized cloud blueprint; no current production deployment is claimed.",
+      "provenance": "Source repository is linked from the local documentation; no source commit/tag lock is established by the supplied implementation source.",
+      "project_atlas_relationship": "confirmed_existing_context",
+      "builder_journey_stages": [
+        { "label": "ML / NLP & MLOps", "href": "/journey/#stage-06" },
+        { "label": "Cloud Data Architecture", "href": "/journey/#stage-05" }
+      ],
+      "update_policy": "manual_curated; verify source alignment before material technical changes",
+      "ownership": {
+        "curated_targets": ["docs/versovector/**"],
+        "generated_targets": []
+      },
+      "provenance_lock_policy": "not_applicable_local_curated",
+      "enabled": true
+    },
+    {
+      "project_id": "retainai",
+      "display_name": "RetainAI",
+      "integration_state": "confirmed_current",
+      "source_repository": "https://github.com/HubertRonald/RetainAI",
+      "source_ref": "v0.4.0-alpha.1",
+      "source_mode": "snapshot_sync",
+      "site_source_path": "docs/retainai",
+      "current_public_route": "/retainai/",
+      "proposed_public_route": "/technical-docs/retainai/",
+      "legacy_routes": ["/retainai/"],
+      "sync_strategy": "git_clone_transform",
+      "sync_adapter": "retainai_v1",
+      "sync_scopes": ["README.md", "docs/**/*.md", "artifacts/reports/**/*.md", "figs/**"],
+      "publication_status": "published",
+      "documentation_type": "project_documentation",
+      "technical_domain": ["ML", "MLOps", "AI-native products", "Multicloud"],
+      "documentation_scope": "Synchronized project README, technical documentation, reports, and release notes for the published snapshot.",
+      "evidence_scope": "Frozen portfolio evidence boundary remains tied to v0.4.0-alpha.1.",
+      "provenance": "Fetch and link rewriting are pinned by default to v0.4.0-alpha.1.",
+      "project_atlas_relationship": "confirmed_frozen_boundary",
+      "builder_journey_stages": [
+        { "label": "ML / NLP & MLOps", "href": "/journey/#stage-06" },
+        { "label": "AI-native Products & Platforms", "href": "/journey/#stage-07" }
+      ],
+      "update_policy": "explicit_ref_change_only; Atlas evidence boundary must not move implicitly",
+      "ownership": {
+        "curated_targets": ["docs/retainai/index.md", "docs/retainai/releases.md"],
+        "generated_targets": ["docs/retainai/package.md", "docs/retainai/reference/**"]
+      },
+      "provenance_lock_policy": "required_when_sync_is_normalized_in_rtd4",
+      "enabled": true
+    },
+    {
+      "project_id": "relationalstats",
+      "display_name": "relationalstats",
+      "integration_state": "confirmed_current",
+      "source_repository": "https://github.com/HubertRonald/relationalstats",
+      "source_ref": "main",
+      "source_mode": "moving_ref_sync",
+      "site_source_path": "docs/relationalstats",
+      "current_public_route": "/relationalstats/",
+      "proposed_public_route": "/technical-docs/relationalstats/",
+      "legacy_routes": ["/relationalstats/"],
+      "sync_strategy": "git_clone_transform",
+      "sync_adapter": "relationalstats_v1",
+      "sync_scopes": ["README.md", "docs/**/*.md", "examples/**/*.md", "notebooks/**/*.md"],
+      "publication_status": "published",
+      "documentation_type": "library_reference",
+      "technical_domain": ["Python", "Network statistics", "Applied mathematics", "Data science"],
+      "documentation_scope": "Package overview plus synchronized link prediction, QAP, ERGM/STERGM approximation, methodology, examples, notebooks, and releases.",
+      "evidence_scope": "Atlas context describes 2026 Python network-statistical software with explicit approximation boundaries.",
+      "provenance": "Current fetch follows the moving main branch; generated output is not reproducible from a stable ref alone until an immutable resolved commit is recorded.",
+      "project_atlas_relationship": "confirmed_existing_context",
+      "builder_journey_stages": [
+        { "label": "Applied Mathematics, Simulation & Data Science", "href": "/journey/#stage-02" }
+      ],
+      "update_policy": "resolve and record immutable commit for every future normalized update; retain explicit release/evidence boundaries",
+      "ownership": {
+        "curated_targets": ["docs/relationalstats/index.md", "docs/relationalstats/releases.md"],
+        "generated_targets": ["docs/relationalstats/package.md", "docs/relationalstats/reference/**"]
+      },
+      "provenance_lock_policy": "required_when_sync_is_normalized_in_rtd4",
+      "enabled": true
+    },
+    {
+      "project_id": "luasf",
+      "display_name": "LuaSF",
+      "integration_state": "confirmed_current",
+      "source_repository": "https://github.com/HubertRonald/LuaSF",
+      "source_ref": null,
+      "source_mode": "local_curated",
+      "site_source_path": "docs/luasf",
+      "current_public_route": "/luasf/",
+      "proposed_public_route": "/technical-docs/luasf/",
+      "legacy_routes": ["/luasf/"],
+      "sync_strategy": "none",
+      "sync_scopes": [],
+      "publication_status": "published",
+      "documentation_type": "library_reference",
+      "technical_domain": ["Lua", "Statistics", "Simulation"],
+      "documentation_scope": "Getting started, API overview, architecture, examples, contributing guidance, and releases for the pure-Lua statistics library.",
+      "evidence_scope": "Strategic Builder Journey bridge in Atlas governance; not absorbed into the Liasoft collection.",
+      "provenance": "Source repository is linked; no machine-readable source ref is established by the supplied implementation source.",
+      "project_atlas_relationship": "confirmed_existing_context",
+      "builder_journey_stages": [
+        { "label": "Creative Software & Product Instinct", "href": "/journey/#stage-01" }
+      ],
+      "update_policy": "manual_curated; release alignment should be verified before updates",
+      "ownership": {
+        "curated_targets": ["docs/luasf/**"],
+        "generated_targets": []
+      },
+      "provenance_lock_policy": "not_applicable_local_curated",
+      "enabled": true
+    },
+    {
+      "project_id": "gradientmesh",
+      "display_name": "GradientMesh",
+      "integration_state": "confirmed_current",
+      "source_repository": "https://github.com/HubertRonald/GradientMesh",
+      "source_ref": "master",
+      "source_mode": "local_curated_remote_assets",
+      "site_source_path": "docs/gradientmesh",
+      "current_public_route": "/gradientmesh/",
+      "proposed_public_route": "/technical-docs/gradientmesh/",
+      "legacy_routes": ["/gradientmesh/"],
+      "sync_strategy": "none",
+      "sync_scopes": [],
+      "publication_status": "published",
+      "documentation_type": "library_reference",
+      "technical_domain": ["Lua", "Gideros", "Creative coding"],
+      "documentation_scope": "Getting started, examples, mesh behavior, API reference, architecture, and releases for the Gideros Lua utility.",
+      "evidence_scope": "Creative Roots evidence inside the main portfolio; not a current product showcase.",
+      "provenance": "Local documentation links to the source repository; some visual assets are referenced from the moving master branch.",
+      "project_atlas_relationship": "confirmed_existing_context",
+      "builder_journey_stages": [
+        { "label": "Creative Software & Product Instinct", "href": "/journey/#stage-01" }
+      ],
+      "update_policy": "manual_curated; pin remote asset URLs to immutable commit/tag when practical",
+      "ownership": {
+        "curated_targets": ["docs/gradientmesh/**"],
+        "generated_targets": []
+      },
+      "provenance_lock_policy": "not_applicable_local_curated",
+      "enabled": true
+    }
+  ],
+  "candidates": [
+    {
+      "project_id": "fde-roadmap",
+      "display_name": "FDE Roadmap",
+      "integration_state": "candidate_future",
+      "publication_status": "candidate",
+      "enabled": false,
+      "site_source_path": null,
+      "current_public_route": null,
+      "proposed_public_route": "/technical-docs/fde-roadmap/",
+      "onboarding_policy": "Blocked until source inspection, source-mode decision, ref policy, and Atlas relationship decision are separately approved."
+    }
+  ]
+}

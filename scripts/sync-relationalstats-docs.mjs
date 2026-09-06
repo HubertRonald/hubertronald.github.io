@@ -7,7 +7,22 @@ const sourceRoot = process.env.RELATIONALSTATS_REPO
   ? path.resolve(process.env.RELATIONALSTATS_REPO)
   : path.resolve('../relationalstats')
 
-const targetRoot = path.resolve('docs/relationalstats')
+const targetRootEnv = process.env.TECHNICAL_DOCS_TARGET_ROOT
+
+if (!targetRootEnv) {
+  throw new Error(
+    'sync-relationalstats-docs.mjs is a stage-only transformer. ' +
+    'Use npm run relationalstats:sync or the generic Technical Docs lifecycle runner.'
+  )
+}
+
+const targetRoot = path.resolve(targetRootEnv)
+const publicTargetRoot = path.resolve('docs/relationalstats')
+
+if (targetRoot === publicTargetRoot) {
+  throw new Error('relationalstats transformer refuses to write directly to docs/relationalstats.')
+}
+
 const referenceRoot = path.join(targetRoot, 'reference')
 
 const sourceScopes = ['docs', 'examples', 'notebooks']
@@ -210,19 +225,19 @@ async function copyMarkdownFile(sourceFile) {
 
 async function assertGeneratedFiles() {
   const requiredFiles = [
-    'docs/relationalstats/package.md',
-    'docs/relationalstats/reference/docs/index.md',
-    'docs/relationalstats/reference/docs/qap/formulas.md',
-    'docs/relationalstats/reference/docs/ergm/formulas.md',
-    'docs/relationalstats/reference/docs/stergm/formulas.md',
-    'docs/relationalstats/reference/docs/linkprediction/metrics.md',
-    'docs/relationalstats/reference/examples/linkprediction/experimental-ml-workflow.md'
+    path.join(targetRoot, 'package.md'),
+    path.join(targetRoot, 'reference/docs/index.md'),
+    path.join(targetRoot, 'reference/docs/qap/formulas.md'),
+    path.join(targetRoot, 'reference/docs/ergm/formulas.md'),
+    path.join(targetRoot, 'reference/docs/stergm/formulas.md'),
+    path.join(targetRoot, 'reference/docs/linkprediction/metrics.md'),
+    path.join(targetRoot, 'reference/examples/linkprediction/experimental-ml-workflow.md')
   ]
 
   const missing = []
 
   for (const file of requiredFiles) {
-    if (!(await pathExists(path.resolve(file)))) {
+    if (!(await pathExists(file))) {
       missing.push(file)
     }
   }

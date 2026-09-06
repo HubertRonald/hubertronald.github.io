@@ -1,47 +1,46 @@
 <script setup lang="ts">
 import LandingThemeToggle from './LandingThemeToggle.vue'
-import type { LandingContent } from '../content/landing.types'
-import { linkRel, linkTarget } from '../utils/landingLinks'
+import PortfolioIcon from './PortfolioIcon.vue'
 
-defineProps<{
-  content: LandingContent
-}>()
+withDefaults(defineProps<{
+  locale?: 'en' | 'es'
+  active?: 'work' | 'journey' | 'docs' | null
+  showLanguage?: boolean
+}>(), {
+  locale: 'en',
+  active: null,
+  showLanguage: false
+})
 </script>
 
 <template>
-  <header class="hr-landing-header" aria-label="Landing navigation">
-    <a class="hr-landing-brand" href="/" aria-label="Hubert Ronald home">
-      {{ content.siteName }}
-    </a>
+  <header class="hr-portfolio-header">
+    <div class="hr-shell-wide hr-header-inner">
+      <a class="hr-portfolio-brand" href="/" aria-label="Hubert Ronald home">Hubert Ronald</a>
 
-    <nav class="hr-landing-nav" aria-label="Primary">
-      <a :href="content.nav.work.href">
-        {{ content.nav.work.label }}
-      </a>
-      <a :href="content.nav.journey.href">
-        {{ content.nav.journey.label }}
-      </a>
-      <a
-        :href="content.nav.github.href"
-        :target="linkTarget(content.nav.github)"
-        :rel="linkRel(content.nav.github)"
-      >
-        {{ content.nav.github.label }}
-      </a>
-    </nav>
+      <nav class="hr-portfolio-nav" aria-label="Primary">
+        <a href="/projects/" :aria-current="active === 'work' ? 'page' : undefined">Work</a>
+        <a href="/journey/" :aria-current="active === 'journey' ? 'page' : undefined">Journey</a>
+        <a href="/technical-docs/" :aria-current="active === 'docs' ? 'page' : undefined">Docs</a>
+      </nav>
 
-    <div class="hr-landing-controls">
-      <LandingThemeToggle />
-
-      <a
-        class="hr-locale-switch"
-        :href="content.alternateHref"
-        :aria-label="content.locale === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'"
-      >
-        <span>{{ content.locale === 'en' ? 'EN' : 'ES' }}</span>
-        <span aria-hidden="true">|</span>
-        <strong>{{ content.locale === 'en' ? 'ES' : 'EN' }}</strong>
-      </a>
+      <div class="hr-header-utilities">
+        <a class="hr-github-link" href="https://github.com/HubertRonald" target="_blank" rel="noopener noreferrer">
+          <PortfolioIcon name="github" :size="17" />
+          <span>GitHub</span>
+        </a>
+        <LandingThemeToggle />
+        <a
+          v-if="showLanguage"
+          class="hr-locale-switch"
+          :href="locale === 'en' ? '/es/' : '/'"
+          :aria-label="locale === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'"
+        >
+          <span :class="{ 'is-current': locale === 'en' }">EN</span>
+          <span aria-hidden="true">/</span>
+          <span :class="{ 'is-current': locale === 'es' }">ES</span>
+        </a>
+      </div>
     </div>
   </header>
 </template>

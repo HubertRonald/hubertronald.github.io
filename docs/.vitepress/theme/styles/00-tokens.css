@@ -1,87 +1,120 @@
 :root {
-  /* Core neutral palette */
-  --hr-color-ink: #111827;
-  --hr-color-ink-2: #1f2937;
-  --hr-color-ink-3: #374151;
+  --hr-color-ink: #111417;
+  --hr-color-ink-2: #242a30;
+  --hr-color-ink-3: #4d5660;
   --hr-color-paper: #ffffff;
 
-  /* Semantic brand tokens */
   --hr-brand-primary: var(--hr-color-ink);
   --hr-brand-primary-hover: var(--hr-color-ink-2);
   --hr-brand-primary-muted: var(--hr-color-ink-3);
-  --hr-brand-soft: rgba(17, 24, 39, 0.08);
-  --hr-brand-on-primary: #ffffff;
+  --hr-brand-soft: rgba(17, 20, 23, 0.07);
+  --hr-brand-on-primary: #f8f8f6;
 
-  /* Text / icon semantic tokens */
+  --hr-color-canvas: #f5f5f2;
+  --hr-color-surface-quiet: #eceeea;
+  --hr-color-surface-evidence: #fbfbf9;
+  --hr-color-text-strong: #111417;
+  --hr-color-text-body: #383f46;
+  --hr-color-text-muted: #707982;
+  --hr-color-border-subtle: rgba(17, 20, 23, 0.14);
+  --hr-color-border-strong: rgba(17, 20, 23, 0.34);
+  --hr-color-signal: #526575;
+  --hr-color-signal-strong: #394b5a;
+  --hr-color-signal-soft: rgba(82, 101, 117, 0.10);
+  --hr-color-focus: #61798d;
+
   --hr-text-strong: var(--vp-c-text-1);
   --hr-text-body: var(--vp-c-text-2);
   --hr-text-muted: var(--vp-c-text-3);
+  --hr-icon-color: var(--hr-color-signal-strong);
+  --hr-icon-muted: rgba(17, 20, 23, 0.72);
 
-  --hr-icon-color: var(--hr-brand-primary);
-  --hr-icon-muted: rgba(17, 24, 39, 0.76);
+  --hr-space-1: 0.25rem;
+  --hr-space-2: 0.5rem;
+  --hr-space-3: 0.75rem;
+  --hr-space-4: 1rem;
+  --hr-space-6: 1.5rem;
+  --hr-space-8: 2rem;
+  --hr-space-12: 3rem;
+  --hr-space-16: 4rem;
+  --hr-space-24: 6rem;
+  --hr-space-32: 8rem;
 
-  /* Shape / layout tokens */
-  --hr-radius-card: 16px;
+  --hr-shell-wide: 1180px;
+  --hr-shell-reading: 760px;
+  --hr-shell-compact: 920px;
+
+  --hr-radius-sm: 0.45rem;
+  --hr-radius-md: 0.75rem;
+  --hr-radius-lg: 1rem;
+  --hr-motion-short: 160ms;
+
+  --hr-radius-card: 12px;
   --hr-card-padding: 18px;
   --hr-card-gap: 18px;
   --hr-icon-size-sm: 16px;
   --hr-icon-size-md: 22px;
   --hr-icon-gap: 10px;
 
-  /* VitePress brand bridge */
-  --vp-c-brand-1: var(--hr-brand-primary);
-  --vp-c-brand-2: var(--hr-brand-primary-hover);
-  --vp-c-brand-3: var(--hr-brand-primary-muted);
-  --vp-c-brand-soft: var(--hr-brand-soft);
-
+  --vp-c-brand-1: var(--hr-color-signal-strong);
+  --vp-c-brand-2: #455b6c;
+  --vp-c-brand-3: #334653;
+  --vp-c-brand-soft: var(--hr-color-signal-soft);
   --vp-home-hero-name-color: var(--hr-brand-primary);
   --vp-home-hero-name-background: transparent;
 
-  /* Hubert Ronald Landing V1 tokens */
-  --hr-landing-bg: var(--vp-c-bg);
-  --hr-landing-surface: var(--vp-c-bg-soft);
-  --hr-landing-surface-soft: var(--vp-c-bg-elv);
-  --hr-landing-ink: var(--vp-c-text-1);
-  --hr-landing-muted: var(--vp-c-text-2);
-  --hr-landing-border: var(--vp-c-divider);
-
-  --hr-landing-accent: var(--hr-brand-primary);
-  --hr-landing-accent-hover: var(--hr-brand-primary-hover);
-  --hr-landing-accent-soft: var(--hr-brand-soft);
-  --hr-landing-on-accent: var(--hr-brand-on-primary);
-
-  --hr-landing-radius-sm: 0.75rem;
-  --hr-landing-radius-md: 1rem;
-  --hr-landing-radius-lg: 1.5rem;
-  --hr-landing-shadow-soft: 0 24px 80px rgba(17, 24, 39, 0.10);
+  --hr-landing-bg: var(--hr-color-canvas);
+  --hr-landing-surface: var(--hr-color-surface-quiet);
+  --hr-landing-surface-soft: var(--hr-color-surface-evidence);
+  --hr-landing-ink: var(--hr-color-text-strong);
+  --hr-landing-muted: var(--hr-color-text-body);
+  --hr-landing-border: var(--hr-color-border-subtle);
+  --hr-landing-accent: var(--hr-color-signal-strong);
+  --hr-landing-accent-hover: #2d3f4c;
+  --hr-landing-accent-soft: var(--hr-color-signal-soft);
+  --hr-landing-on-accent: #ffffff;
+  --hr-landing-radius-sm: var(--hr-radius-sm);
+  --hr-landing-radius-md: var(--hr-radius-md);
+  --hr-landing-radius-lg: var(--hr-radius-lg);
+  --hr-landing-shadow-soft: 0 22px 55px rgba(17, 20, 23, 0.11);
 }
 
 .dark {
-  --hr-brand-primary: #f9fafb;
-  --hr-brand-primary-hover: #e5e7eb;
-  --hr-brand-primary-muted: #d1d5db;
-  --hr-brand-soft: rgba(249, 250, 251, 0.10);
-  --hr-brand-on-primary: #111827;
+  --hr-brand-primary: #f1f2ef;
+  --hr-brand-primary-hover: #ffffff;
+  --hr-brand-primary-muted: #c7ccd0;
+  --hr-brand-soft: rgba(241, 242, 239, 0.08);
+  --hr-brand-on-primary: #101214;
 
-  --hr-icon-color: var(--hr-brand-primary);
-  --hr-icon-muted: rgba(249, 250, 251, 0.72);
+  --hr-color-canvas: #101214;
+  --hr-color-surface-quiet: #171a1d;
+  --hr-color-surface-evidence: #1d2125;
+  --hr-color-text-strong: #f1f2ef;
+  --hr-color-text-body: #cbd0d3;
+  --hr-color-text-muted: #929aa2;
+  --hr-color-border-subtle: rgba(241, 242, 239, 0.14);
+  --hr-color-border-strong: rgba(241, 242, 239, 0.30);
+  --hr-color-signal: #a2b2bf;
+  --hr-color-signal-strong: #b8c5cf;
+  --hr-color-signal-soft: rgba(162, 178, 191, 0.12);
+  --hr-color-focus: #bdd0df;
 
-  --vp-c-brand-1: var(--hr-brand-primary);
-  --vp-c-brand-2: var(--hr-brand-primary-hover);
-  --vp-c-brand-3: var(--hr-brand-primary-muted);
-  --vp-c-brand-soft: var(--hr-brand-soft);
+  --hr-icon-color: var(--hr-color-signal-strong);
+  --hr-icon-muted: rgba(241, 242, 239, 0.74);
+  --vp-c-brand-1: var(--hr-color-signal-strong);
+  --vp-c-brand-2: #c4cfd7;
+  --vp-c-brand-3: #d3dbe1;
+  --vp-c-brand-soft: var(--hr-color-signal-soft);
 
-  --hr-landing-bg: var(--vp-c-bg);
-  --hr-landing-surface: var(--vp-c-bg-soft);
-  --hr-landing-surface-soft: var(--vp-c-bg-elv);
-  --hr-landing-ink: var(--vp-c-text-1);
-  --hr-landing-muted: var(--vp-c-text-2);
-  --hr-landing-border: var(--vp-c-divider);
-
-  --hr-landing-accent: var(--hr-brand-primary);
-  --hr-landing-accent-hover: var(--hr-brand-primary-hover);
-  --hr-landing-accent-soft: var(--hr-brand-soft);
-  --hr-landing-on-accent: var(--hr-brand-on-primary);
-
-  --hr-landing-shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.32);
+  --hr-landing-bg: var(--hr-color-canvas);
+  --hr-landing-surface: var(--hr-color-surface-quiet);
+  --hr-landing-surface-soft: var(--hr-color-surface-evidence);
+  --hr-landing-ink: var(--hr-color-text-strong);
+  --hr-landing-muted: var(--hr-color-text-body);
+  --hr-landing-border: var(--hr-color-border-subtle);
+  --hr-landing-accent: var(--hr-color-signal-strong);
+  --hr-landing-accent-hover: #d0d9df;
+  --hr-landing-accent-soft: var(--hr-color-signal-soft);
+  --hr-landing-on-accent: #101214;
+  --hr-landing-shadow-soft: 0 24px 65px rgba(0, 0, 0, 0.34);
 }

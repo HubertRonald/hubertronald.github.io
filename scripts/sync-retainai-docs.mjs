@@ -15,7 +15,22 @@ const sourceRepoRawBase =
   process.env.RETAINAI_RAW_BASE ??
   `https://raw.githubusercontent.com/HubertRonald/RetainAI/${sourceRef}`
 
-const targetRoot = path.resolve('docs/retainai')
+const targetRootEnv = process.env.TECHNICAL_DOCS_TARGET_ROOT
+
+if (!targetRootEnv) {
+  throw new Error(
+    'sync-retainai-docs.mjs is a stage-only transformer. ' +
+    'Use npm run retainai:sync or the generic Technical Docs lifecycle runner.'
+  )
+}
+
+const targetRoot = path.resolve(targetRootEnv)
+const publicTargetRoot = path.resolve('docs/retainai')
+
+if (targetRoot === publicTargetRoot) {
+  throw new Error('RetainAI transformer refuses to write directly to docs/retainai.')
+}
+
 const referenceRoot = path.join(targetRoot, 'reference')
 
 const sourceScopes = [
@@ -573,16 +588,16 @@ async function ensureDirectoryIndexes(rootDir, sectionTitle) {
 
 async function assertGeneratedFiles() {
   const requiredFiles = [
-    'docs/retainai/package.md',
-    'docs/retainai/reference/docs/index.md',
-    'docs/retainai/reference/reports/index.md',
-    'docs/retainai/reference/figs'
+    path.join(targetRoot, 'package.md'),
+    path.join(targetRoot, 'reference/docs/index.md'),
+    path.join(targetRoot, 'reference/reports/index.md'),
+    path.join(targetRoot, 'reference/figs')
   ]
 
   const missing = []
 
   for (const file of requiredFiles) {
-    if (!(await pathExists(path.resolve(file)))) {
+    if (!(await pathExists(file))) {
       missing.push(file)
     }
   }

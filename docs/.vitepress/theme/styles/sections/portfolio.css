@@ -1,0 +1,3192 @@
+.hr-portfolio-main { padding: var(--hr-space-16) 0 var(--hr-space-24); }
+.hr-page-masthead { max-width: 900px; padding: var(--hr-space-12) 0 var(--hr-space-16); }
+.hr-page-masthead h1 { margin: 0; font-size: clamp(3rem, 7vw, 6rem); line-height: .95; letter-spacing: -.07em; }
+.hr-masthead-summary { max-width: 760px; margin: var(--hr-space-6) 0 0; color: var(--hr-color-text-body); font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.65; }
+
+.hr-local-index { display: grid; grid-template-columns: 150px 1fr; gap: var(--hr-space-6); padding: var(--hr-space-6) 0; border-top: 1px solid var(--hr-color-border-strong); border-bottom: 1px solid var(--hr-color-border-strong); }
+.hr-local-index > span { color: var(--hr-color-text-muted); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.hr-local-index ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--hr-space-3) var(--hr-space-6); padding: 0; margin: 0; list-style: none; }
+.hr-local-index a { display: flex; gap: var(--hr-space-2); color: var(--hr-color-text-body); font-size: .88rem; text-decoration: none; }
+.hr-local-index a span { color: var(--hr-color-signal); font-size: .72rem; font-weight: 800; }
+
+.hr-atlas-section { position: relative; padding: var(--hr-space-24) 0; border-bottom: 1px solid var(--hr-color-border-subtle); scroll-margin-top: 84px; }
+.hr-section-number { position: absolute; right: 0; top: var(--hr-space-24); color: var(--hr-color-signal); }
+.hr-primary-evidence-list { margin-top: var(--hr-space-12); border-top: 1px solid var(--hr-color-border-strong); }
+.hr-primary-evidence { display: grid; grid-template-columns: minmax(240px, .8fr) minmax(0, 1.2fr); gap: var(--hr-space-12); padding: var(--hr-space-12) 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+.hr-primary-evidence h3, .hr-supporting-row h3, .hr-evidence-ledger h3, .hr-community-list h3, .hr-creative-artifacts h3, .hr-historical-strip h3 { margin: 0; letter-spacing: -.025em; }
+.hr-primary-tagline { color: var(--hr-color-text-body); font-size: 1.08rem; line-height: 1.6; }
+.hr-primary-detail > p:first-child { margin-top: 0; color: var(--hr-color-text-body); line-height: 1.7; }
+
+.hr-supporting-list { margin-top: var(--hr-space-12); }
+.hr-supporting-row { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.2fr) auto; gap: var(--hr-space-8); align-items: start; padding: var(--hr-space-6) 0; border-top: 1px solid var(--hr-color-border-subtle); }
+.hr-supporting-row p { margin: .35rem 0; color: var(--hr-color-text-body); line-height: 1.6; }
+.hr-supporting-row .hr-scope-note { padding: var(--hr-space-2) 0 var(--hr-space-2) var(--hr-space-3); background: transparent; }
+
+.hr-evidence-ledger { margin: var(--hr-space-12) 0 var(--hr-space-6); border-top: 1px solid var(--hr-color-border-strong); }
+.hr-evidence-ledger article { display: grid; grid-template-columns: minmax(260px, 1.1fr) minmax(180px, .8fr) auto; gap: var(--hr-space-6); align-items: center; padding: var(--hr-space-5, 1.25rem) 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+.hr-evidence-ledger p { margin: .35rem 0 0; color: var(--hr-color-text-muted); font-size: .9rem; }
+.hr-ledger-stage { color: var(--hr-color-text-body) !important; }
+
+.hr-community-band { display: grid; grid-template-columns: .7fr 1.3fr; gap: var(--hr-space-12); }
+.hr-community-band .hr-section-number { grid-column: 1 / -1; }
+.hr-community-list { border-top: 1px solid var(--hr-color-border-strong); }
+.hr-community-list article { padding: var(--hr-space-6) 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+.hr-community-list p { color: var(--hr-color-text-body); }
+
+.hr-creative-collection { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: var(--hr-space-12); }
+.hr-creative-collection .hr-section-number { grid-column: 1 / -1; }
+.hr-creative-anchor h2 { margin-top: 0; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.05em; }
+.hr-creative-anchor > p { color: var(--hr-color-text-body); line-height: 1.72; }
+.hr-creative-artifacts { border-top: 1px solid var(--hr-color-border-strong); }
+.hr-creative-artifacts article { padding: var(--hr-space-5, 1.25rem) 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+.hr-creative-artifacts p { color: var(--hr-color-text-muted); font-size: .9rem; }
+.hr-bridge-note { grid-column: 1 / -1; padding-top: var(--hr-space-4); color: var(--hr-color-text-body); }
+
+.hr-historical-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: var(--hr-space-8); border-top: 1px solid var(--hr-color-border-strong); border-bottom: 1px solid var(--hr-color-border-strong); }
+.hr-historical-strip article { padding: var(--hr-space-6); border-right: 1px solid var(--hr-color-border-subtle); }
+.hr-historical-strip article:last-child { border-right: 0; }
+.hr-historical-strip p { color: var(--hr-color-text-muted); font-size: .9rem; line-height: 1.6; }
+
+.hr-archive-gateway { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr); gap: var(--hr-space-12); }
+.hr-archive-gateway nav { display: flex; flex-direction: column; align-items: flex-start; gap: var(--hr-space-4); padding-top: var(--hr-space-8); }
+
+.hr-journey-progression { position: relative; padding: 0; margin: var(--hr-space-8) 0 0; list-style: none; }
+.hr-journey-progression::before { content: ''; position: absolute; left: 28px; top: 2rem; bottom: 4rem; width: 1px; background: var(--hr-color-border-strong); }
+.hr-journey-stage { position: relative; display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: var(--hr-space-8); padding: var(--hr-space-12) 0; scroll-margin-top: 84px; }
+.hr-journey-marker { position: relative; z-index: 1; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 999px; border: 1px solid var(--hr-color-signal); background: var(--hr-color-canvas); color: var(--hr-color-signal); font-weight: 850; }
+.hr-journey-stage h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.045em; }
+.hr-stage-evidence { display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--hr-space-8); margin-top: var(--hr-space-8); }
+.hr-stage-evidence h3 { font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--hr-color-text-muted); }
+.hr-stage-evidence ul { padding: 0; margin: var(--hr-space-3) 0 0; list-style: none; }
+.hr-stage-evidence li { padding: var(--hr-space-3) 0; border-top: 1px solid var(--hr-color-border-subtle); }
+.hr-stage-evidence li a { font-weight: 760; }
+.hr-stage-evidence li span { display: block; margin-top: .25rem; color: var(--hr-color-text-muted); font-size: .88rem; line-height: 1.5; }
+.hr-stage-evidence aside { padding: var(--hr-space-4) var(--hr-space-6); background: var(--hr-color-surface-quiet); border-left: 2px solid var(--hr-color-signal); }
+.hr-journey-transition { display: inline-flex; margin-top: var(--hr-space-4); color: var(--hr-color-text-muted) !important; font-size: .88rem; font-weight: 700; }
+
+.hr-editorial-block, .hr-editorial-empty, .hr-site-history-gateway, .hr-profile-section { padding: var(--hr-space-12) 0; border-top: 1px solid var(--hr-color-border-subtle); }
+.hr-editorial-block h2, .hr-editorial-empty h2, .hr-site-history-gateway h2, .hr-profile-section h2 { margin-top: 0; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -.04em; }
+.hr-editorial-block > p, .hr-editorial-empty > p, .hr-site-history-gateway > p, .hr-profile-section > p { color: var(--hr-color-text-body); line-height: 1.7; }
+.hr-case-study-rows article { display: grid; grid-template-columns: 1fr auto; gap: var(--hr-space-6); align-items: center; padding: var(--hr-space-6) 0; border-top: 1px solid var(--hr-color-border-subtle); }
+.hr-case-study-rows h3 { margin: 0; }
+.hr-case-study-rows p { color: var(--hr-color-text-muted); }
+
+.hr-archive-ledger { padding-top: var(--hr-space-8); }
+.hr-archive-ledger h2 { margin-top: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.045em; }
+.hr-archive-record { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: var(--hr-space-6); align-items: start; padding: var(--hr-space-8) 0; border-top: 1px solid var(--hr-color-border-subtle); }
+.hr-archive-record h3 { margin: 0; }
+.hr-archive-record p, .hr-archive-record details { color: var(--hr-color-text-body); line-height: 1.65; }
+.hr-archive-record summary { cursor: pointer; color: var(--hr-color-text-muted); font-size: .9rem; }
+
+.hr-history-artifact { padding: var(--hr-space-8) 0 var(--hr-space-16); }
+.hr-artifact-frame { min-height: 340px; display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 6vw, 4rem); border: 1px solid var(--hr-color-border-strong); background: var(--hr-color-surface-quiet); }
+.hr-artifact-frame h2 { margin: var(--hr-space-3) 0; font-size: clamp(2rem, 6vw, 4.5rem); letter-spacing: -.06em; }
+.hr-artifact-frame p { max-width: 620px; color: var(--hr-color-text-body); line-height: 1.7; }
+.hr-artifact-kicker, .hr-artifact-stamp { color: var(--hr-color-text-muted) !important; font-size: .78rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.hr-artifact-stamp { margin-top: var(--hr-space-8); }
+
+.hr-profile-evidence { columns: 2; gap: var(--hr-space-8); padding-left: 1.2rem; color: var(--hr-color-text-body); }
+.hr-profile-evidence li { break-inside: avoid; margin-bottom: var(--hr-space-2); }
+.hr-profile-actions { padding-bottom: var(--hr-space-12); }
+
+.hr-depth-context { margin: 0 0 var(--hr-space-8); padding: var(--hr-space-4); border: 1px solid var(--hr-color-border-subtle); border-left: 3px solid var(--hr-color-signal); background: var(--hr-color-surface-quiet); }
+.hr-depth-context-main { display: flex; justify-content: space-between; gap: var(--hr-space-4); align-items: baseline; }
+.hr-depth-context .hr-context-label { margin: 0; color: var(--hr-color-signal); }
+.hr-depth-context nav { display: flex; flex-wrap: wrap; gap: var(--hr-space-3) var(--hr-space-4); margin-top: var(--hr-space-3); }
+.hr-depth-context nav a { font-size: .86rem; font-weight: 650; }
+.hr-depth-context > p { margin: var(--hr-space-3) 0 0; color: var(--vp-c-text-2); font-size: .82rem; line-height: 1.5; }
+.hr-docs-footer { display: flex; justify-content: space-between; gap: var(--hr-space-4); margin-top: var(--hr-space-12); padding-top: var(--hr-space-6); border-top: 1px solid var(--vp-c-divider); color: var(--vp-c-text-3); font-size: .85rem; }
+.hr-docs-footer nav { display: flex; gap: var(--hr-space-4); }
+
+@media (max-width: 1024px) {
+  .hr-local-index ol { grid-template-columns: repeat(2, 1fr); }
+  .hr-primary-evidence { grid-template-columns: 1fr; gap: var(--hr-space-4); }
+  .hr-community-band, .hr-creative-collection, .hr-archive-gateway { grid-template-columns: 1fr; }
+  .hr-stage-evidence { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .hr-portfolio-main { padding-top: var(--hr-space-8); }
+  .hr-page-masthead { padding: var(--hr-space-8) 0 var(--hr-space-12); }
+  .hr-page-masthead h1 { font-size: clamp(2.8rem, 15vw, 4.7rem); }
+  .hr-local-index { grid-template-columns: 1fr; }
+  .hr-local-index ol { grid-template-columns: 1fr; }
+  .hr-atlas-section { padding: var(--hr-space-16) 0; }
+  .hr-section-number { position: static; margin-bottom: var(--hr-space-3); }
+  .hr-supporting-row, .hr-evidence-ledger article, .hr-archive-record, .hr-case-study-rows article { grid-template-columns: 1fr; gap: var(--hr-space-3); }
+  .hr-historical-strip { grid-template-columns: 1fr; }
+  .hr-historical-strip article { border-right: 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+  .hr-historical-strip article:last-child { border-bottom: 0; }
+  .hr-journey-progression::before { left: 20px; }
+  .hr-journey-stage { grid-template-columns: 42px minmax(0, 1fr); gap: var(--hr-space-4); }
+  .hr-journey-marker { width: 42px; height: 42px; font-size: .8rem; }
+  .hr-stage-evidence aside { padding: var(--hr-space-4); }
+  .hr-profile-evidence { columns: 1; }
+  .hr-depth-context-main, .hr-docs-footer { flex-direction: column; align-items: flex-start; }
+}
+
+.hr-end-nav { display: flex; flex-wrap: wrap; gap: var(--hr-space-4); padding: var(--hr-space-8) 0; border-top: 1px solid var(--hr-color-border-strong); }
+.hr-end-nav a { font-weight: 750; }
+
+
+/* Project Atlas R8 — compact evidence map + mobile navigation -------------- */
+.hr-atlas-mobile-index,
+.hr-mobile-portfolio-nav { display: none; }
+
+.hr-atlas-page .hr-portfolio-main { padding-top: var(--hr-space-12); }
+
+.hr-atlas-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(180px, .45fr) minmax(230px, .55fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  padding-bottom: var(--hr-space-10, 2.5rem);
+  border-bottom: 1px solid var(--hr-color-border-strong);
+}
+
+.hr-atlas-intro-grid .hr-page-masthead { max-width: none; padding: var(--hr-space-6) 0 0; }
+.hr-atlas-intro-grid .hr-page-masthead h1 {
+  max-width: 860px;
+  font-size: clamp(3rem, 5.3vw, 5rem);
+  line-height: .95;
+}
+.hr-atlas-intro-grid .hr-masthead-summary {
+  max-width: 760px;
+  margin-top: var(--hr-space-4);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+.hr-atlas-intro-grid .hr-page-masthead .hr-scope-note {
+  width: fit-content;
+  max-width: 100%;
+  margin: var(--hr-space-4) 0 0;
+  padding: .55rem .75rem;
+  font-size: .76rem;
+  line-height: 1.35;
+}
+
+.hr-atlas-role-note {
+  margin-top: var(--hr-space-12);
+  padding-top: var(--hr-space-4);
+  border-top: 1px solid var(--hr-color-border-strong);
+}
+.hr-atlas-role-note p:last-child {
+  margin: var(--hr-space-3) 0 0;
+  color: var(--hr-color-text-body);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+.hr-atlas-intro-grid .hr-local-index {
+  display: block;
+  margin-top: var(--hr-space-6);
+  padding: var(--hr-space-4) 0 var(--hr-space-4) var(--hr-space-6);
+  border: 0;
+  border-left: 1px solid var(--hr-color-border-strong);
+}
+.hr-atlas-intro-grid .hr-local-index > span {
+  display: block;
+  margin-bottom: var(--hr-space-4);
+  color: var(--hr-color-signal-strong);
+}
+.hr-atlas-intro-grid .hr-local-index ol { grid-template-columns: 1fr; gap: .55rem; }
+.hr-atlas-intro-grid .hr-local-index a { align-items: baseline; font-size: .82rem; line-height: 1.3; }
+
+.hr-atlas-page .hr-atlas-section {
+  padding: clamp(2.75rem, 4.2vw, 4rem) 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-page .hr-section-number {
+  position: static;
+  display: inline-block;
+  margin: 0 0 .55rem;
+  color: var(--hr-color-text-muted);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.hr-atlas-page .hr-section-heading { max-width: 760px; }
+.hr-atlas-page .hr-section-heading h2 {
+  margin: 0 0 .35rem;
+  font-size: clamp(1.9rem, 3.25vw, 3.05rem);
+  line-height: 1.03;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.hr-atlas-page .hr-section-heading > p:last-child {
+  margin: 0;
+  color: var(--hr-color-text-muted);
+  font-size: .87rem;
+  line-height: 1.45;
+}
+
+/* Featured ---------------------------------------------------------------- */
+.hr-atlas-page .hr-atlas-featured-stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--hr-space-3);
+  margin-top: var(--hr-space-6);
+}
+.hr-atlas-page .hr-atlas-featured-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--hr-space-5);
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-evidence);
+  border-radius: 0;
+}
+.hr-atlas-page .hr-atlas-featured-card.is-technical-dossier { border-top: 2px solid var(--hr-color-text-strong); }
+.hr-atlas-page .hr-atlas-featured-card.is-architecture-boundary { background: var(--hr-color-surface-quiet); }
+.hr-atlas-page .hr-atlas-featured-card.is-release-system { border-top-color: var(--hr-color-signal-strong); }
+
+.hr-atlas-featured-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--hr-space-2);
+  align-items: center;
+  min-height: 30px;
+  padding-bottom: var(--hr-space-3);
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-featured-header .hr-featured-index {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-signal-strong);
+  font-size: .68rem;
+  font-weight: 850;
+}
+.hr-atlas-featured-header .hr-item-family {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--hr-color-text-muted);
+  font-size: .62rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .07em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.hr-atlas-release-chip {
+  padding: .35rem .45rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-body);
+  font-size: .64rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+.hr-atlas-page .hr-atlas-featured-card .hr-featured-title {
+  margin: var(--hr-space-4) 0 .35rem;
+  overflow-wrap: anywhere;
+  font-size: clamp(1.35rem, 1.9vw, 1.8rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.hr-atlas-page .hr-atlas-featured-card .hr-featured-tagline {
+  display: -webkit-box;
+  min-height: 2.55em;
+  margin: 0;
+  overflow: hidden;
+  font-size: .82rem;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.hr-atlas-mini-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: .3rem;
+  align-items: center;
+  margin-top: var(--hr-space-4);
+  padding: var(--hr-space-3);
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-quiet);
+}
+.hr-atlas-mini-flow span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  min-width: 0;
+  padding: .4rem .25rem;
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-canvas);
+  font-size: .66rem;
+  font-weight: 800;
+}
+.hr-atlas-mini-flow i { color: var(--hr-color-text-muted); font-style: normal; font-size: .7rem; }
+
+.hr-atlas-mini-stack {
+  display: grid;
+  gap: .3rem;
+  margin-top: var(--hr-space-4);
+  padding: var(--hr-space-3);
+  border: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-mini-stack div {
+  display: grid;
+  grid-template-columns: minmax(92px, .7fr) 1fr;
+  gap: .55rem;
+  align-items: center;
+  min-height: 32px;
+  padding: .42rem .5rem;
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-quiet);
+}
+.hr-atlas-mini-stack strong { font-size: .64rem; text-transform: uppercase; letter-spacing: .05em; }
+.hr-atlas-mini-stack small { color: var(--hr-color-text-muted); font-size: .64rem; line-height: 1.2; }
+
+.hr-atlas-release-summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .25rem .55rem;
+  align-items: baseline;
+  margin-top: var(--hr-space-4);
+  padding: var(--hr-space-3);
+  border-left: 2px solid var(--hr-color-signal);
+  background: var(--hr-color-signal-soft);
+}
+.hr-atlas-release-summary span { color: var(--hr-color-text-muted); font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.hr-atlas-release-summary strong { justify-self: end; font-size: .7rem; }
+.hr-atlas-release-summary small { grid-column: 1 / -1; color: var(--hr-color-text-body); font-size: .7rem; line-height: 1.3; }
+
+.hr-atlas-boundary-row,
+.hr-atlas-evidence-mini {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .3rem;
+  margin-top: var(--hr-space-3);
+}
+.hr-atlas-boundary-row span,
+.hr-atlas-evidence-mini span {
+  min-width: 0;
+  padding: .42rem .48rem;
+  border: 1px solid var(--hr-color-border-subtle);
+  color: var(--hr-color-text-body);
+  font-size: .64rem;
+  line-height: 1.22;
+}
+.hr-atlas-page .hr-atlas-featured-card .hr-link-row { margin-top: auto; padding-top: var(--hr-space-4); }
+
+/* Primary + Supporting ----------------------------------------------------- */
+.hr-atlas-primary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: var(--hr-space-6);
+  border: 1px solid var(--hr-color-border-strong);
+  background: var(--hr-color-surface-evidence);
+}
+.hr-atlas-primary-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: var(--hr-space-3);
+  align-items: center;
+  padding: var(--hr-space-4);
+  border-right: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-primary-card:last-child { border-right: 0; }
+
+.hr-atlas-project-symbol {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--hr-color-border-subtle);
+  color: var(--hr-color-signal-strong);
+}
+.hr-atlas-primary-card h3,
+.hr-atlas-supporting-card h3,
+.hr-atlas-mini-list h3,
+.hr-atlas-historical-strip h3 {
+  margin: 0 0 .18rem;
+  overflow: hidden;
+  font-size: .94rem;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hr-atlas-primary-card p,
+.hr-atlas-supporting-card p,
+.hr-atlas-mini-list p,
+.hr-atlas-historical-strip p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--hr-color-text-muted);
+  font-size: .7rem;
+  line-height: 1.28;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.hr-atlas-primary-card > a,
+.hr-atlas-supporting-card > a,
+.hr-atlas-mini-list article > a,
+.hr-atlas-historical-strip article > a {
+  color: var(--hr-color-text-muted);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hr-atlas-supporting-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hr-space-3);
+  margin-top: var(--hr-space-6);
+}
+.hr-atlas-supporting-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto auto;
+  gap: var(--hr-space-3);
+  align-items: center;
+  padding: var(--hr-space-4);
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-evidence);
+}
+.hr-atlas-supporting-evidence { color: var(--hr-color-text-muted); font-size: .65rem; font-weight: 750; white-space: nowrap; }
+
+/* Journey evidence -------------------------------------------------------- */
+.hr-atlas-stage-line {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0;
+  margin-top: var(--hr-space-6);
+  padding-top: var(--hr-space-5);
+  border-top: 1px solid var(--hr-color-border-strong);
+}
+.hr-atlas-stage-line::before {
+  content: '';
+  position: absolute;
+  top: 3.15rem;
+  left: 2.5%;
+  right: 2.5%;
+  border-top: 1px dashed var(--hr-color-border-strong);
+}
+.hr-atlas-stage-line article { position: relative; min-width: 0; padding: 0 .55rem; }
+.hr-atlas-stage-line header { min-height: 80px; }
+.hr-atlas-stage-line header > span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-bottom: .45rem;
+  border: 1px solid var(--hr-color-border-strong);
+  border-radius: 999px;
+  background: var(--hr-color-canvas);
+  color: var(--hr-color-text-muted);
+  font-size: .6rem;
+  font-weight: 800;
+}
+.hr-atlas-stage-line h3 { margin: 0; font-size: .67rem; line-height: 1.23; letter-spacing: -.01em; }
+.hr-atlas-stage-line ul { padding: .55rem 0 0; margin: 0; list-style: none; }
+.hr-atlas-stage-line li { margin-top: .28rem; font-size: .63rem; line-height: 1.2; }
+.hr-atlas-stage-line a { color: var(--hr-color-text-body); text-decoration: none; }
+.hr-atlas-journey-map > .hr-inline-link { display: inline-flex; margin-top: var(--hr-space-5); }
+
+/* Community + Creative Roots --------------------------------------------- */
+.hr-atlas-dual-band {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hr-space-4);
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-page .hr-atlas-dual-band .hr-atlas-section { border-bottom: 0; }
+.hr-atlas-compact-band { display: block !important; min-width: 0; }
+.hr-atlas-compact-band .hr-section-heading h2 { font-size: clamp(1.6rem, 2.4vw, 2.3rem); }
+.hr-atlas-mini-list { margin-top: var(--hr-space-5); border-top: 1px solid var(--hr-color-border-strong); }
+.hr-atlas-mini-list article {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: var(--hr-space-3);
+  align-items: center;
+  padding: var(--hr-space-3) 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-mini-list article > span:first-child { display: grid; place-items: center; color: var(--hr-color-signal-strong); }
+.hr-atlas-creative-list { margin-bottom: var(--hr-space-3); }
+.hr-atlas-compact-band .hr-bridge-note { padding-top: 0; margin: .65rem 0 0; color: var(--hr-color-text-muted); font-size: .7rem; }
+
+/* Historical + Archive ---------------------------------------------------- */
+.hr-atlas-historical-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--hr-space-5);
+  border: 1px solid var(--hr-color-border-strong);
+}
+.hr-atlas-historical-strip article {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: var(--hr-space-3);
+  align-items: center;
+  padding: var(--hr-space-4);
+  border-right: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-historical-strip article:last-child { border-right: 0; }
+.hr-atlas-historical-strip article > span:first-child { display: grid; place-items: center; color: var(--hr-color-signal-strong); }
+
+.hr-atlas-archive-compact {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: var(--hr-space-4);
+  align-items: center;
+  padding-top: var(--hr-space-6) !important;
+  padding-bottom: var(--hr-space-6) !important;
+}
+.hr-atlas-archive-compact h2 { margin: .2rem 0 .25rem; font-size: 1.3rem !important; line-height: 1.12; }
+.hr-atlas-archive-compact p:last-child { margin: 0; color: var(--hr-color-text-muted); font-size: .76rem; }
+.hr-atlas-archive-compact nav { display: flex; flex-direction: column; gap: .4rem; align-items: flex-end; }
+.hr-atlas-archive-compact nav a:first-child { padding: .62rem .82rem; border: 1px solid var(--hr-color-border-strong); text-decoration: none; font-weight: 800; }
+.hr-atlas-archive-compact nav a:last-child { color: var(--hr-color-text-muted); font-size: .7rem; }
+
+@media (max-width: 1100px) {
+  .hr-atlas-intro-grid { grid-template-columns: minmax(0, 1fr) 220px; }
+  .hr-atlas-role-note { grid-column: 2; grid-row: 1; }
+  .hr-atlas-intro-grid .hr-local-index {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    padding: var(--hr-space-5) 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--hr-color-border-subtle);
+  }
+  .hr-atlas-intro-grid .hr-local-index ol { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hr-atlas-primary-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hr-atlas-primary-card:nth-child(2) { border-right: 0; }
+  .hr-atlas-primary-card:nth-child(-n + 2) { border-bottom: 1px solid var(--hr-color-border-subtle); }
+  .hr-atlas-stage-line {
+    overflow-x: auto;
+    grid-template-columns: repeat(7, minmax(150px, 1fr));
+    padding-bottom: var(--hr-space-3);
+  }
+  .hr-atlas-stage-line::before { right: auto; width: calc(7 * 150px - 3rem); }
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-page { padding-bottom: calc(4.7rem + env(safe-area-inset-bottom)); }
+  .hr-atlas-page .hr-portfolio-main { padding-top: var(--hr-space-6); padding-bottom: var(--hr-space-12); }
+  .hr-atlas-page .hr-atlas-intro-grid { display: block; padding-bottom: var(--hr-space-6); }
+  .hr-atlas-page .hr-atlas-intro-grid .hr-page-masthead { padding-top: 0; }
+  .hr-atlas-page .hr-atlas-intro-grid .hr-page-masthead h1 {
+    max-width: 15ch;
+    font-size: clamp(2.35rem, 11vw, 3.45rem);
+    line-height: .98;
+  }
+  .hr-atlas-page .hr-atlas-intro-grid .hr-masthead-summary { font-size: .9rem; line-height: 1.48; }
+  .hr-atlas-role-note,
+  .hr-atlas-intro-grid > .hr-local-index { display: none; }
+
+  .hr-atlas-mobile-index {
+    display: grid;
+    margin-top: var(--hr-space-5);
+    border: 1px solid var(--hr-color-border-strong);
+    background: var(--hr-color-surface-evidence);
+  }
+  .hr-atlas-mobile-index a {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    gap: var(--hr-space-3);
+    align-items: center;
+    min-height: 66px;
+    padding: .72rem .88rem;
+    border-bottom: 1px solid var(--hr-color-border-subtle);
+    color: var(--hr-color-text-strong);
+    text-decoration: none;
+  }
+  .hr-atlas-mobile-index a:last-child { border-bottom: 0; }
+  .hr-atlas-mobile-index-icon { display: grid; place-items: center; width: 34px; height: 34px; color: var(--hr-color-signal-strong); }
+  .hr-atlas-mobile-index-copy strong,
+  .hr-atlas-mobile-index-copy small { display: block; }
+  .hr-atlas-mobile-index-copy strong { font-size: .88rem; line-height: 1.15; }
+  .hr-atlas-mobile-index-copy small { margin-top: .18rem; color: var(--hr-color-text-muted); font-size: .67rem; line-height: 1.22; }
+  .hr-atlas-mobile-index-arrow { color: var(--hr-color-text-muted); }
+
+  .hr-atlas-page .hr-atlas-section { padding: var(--hr-space-10, 2.5rem) 0; }
+  .hr-atlas-page .hr-section-heading h2 { font-size: clamp(1.65rem, 8vw, 2.2rem); }
+  .hr-atlas-page .hr-section-heading > p:last-child { font-size: .76rem; }
+  .hr-atlas-page .hr-atlas-featured-stack,
+  .hr-atlas-supporting-strip,
+  .hr-atlas-dual-band,
+  .hr-atlas-historical-strip { grid-template-columns: 1fr; }
+  .hr-atlas-page .hr-atlas-featured-card { padding: var(--hr-space-4); }
+  .hr-atlas-page .hr-atlas-featured-card .hr-featured-tagline { min-height: 0; }
+  .hr-atlas-mini-flow { grid-template-columns: 1fr; }
+  .hr-atlas-mini-flow i { transform: rotate(90deg); justify-self: center; }
+
+  .hr-atlas-primary-strip { grid-template-columns: 1fr; border-left: 1px solid var(--hr-color-border-strong); }
+  .hr-atlas-primary-card,
+  .hr-atlas-primary-card:nth-child(2),
+  .hr-atlas-primary-card:nth-child(-n + 2) { border-right: 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+  .hr-atlas-primary-card:last-child { border-bottom: 0; }
+  .hr-atlas-supporting-card { grid-template-columns: 36px minmax(0, 1fr) auto; }
+  .hr-atlas-supporting-evidence { grid-column: 2 / -1; white-space: normal; }
+
+  .hr-atlas-stage-line {
+    margin-inline: calc(-1 * var(--hr-space-2));
+    padding-inline: var(--hr-space-2);
+  }
+  .hr-atlas-stage-line article { min-width: 148px; }
+
+  .hr-atlas-dual-band { gap: 0; }
+  .hr-atlas-dual-band > .hr-atlas-section:first-child { border-bottom: 1px solid var(--hr-color-border-subtle); }
+  .hr-atlas-historical-strip article { border-right: 0; border-bottom: 1px solid var(--hr-color-border-subtle); }
+  .hr-atlas-historical-strip article:last-child { border-bottom: 0; }
+  .hr-atlas-archive-compact { grid-template-columns: 38px minmax(0, 1fr); align-items: start; }
+  .hr-atlas-archive-compact nav { grid-column: 2; align-items: flex-start; margin-top: var(--hr-space-2); }
+
+  /* Global mobile chrome: every portfolio page and technical-doc route
+     reserves space for the persistent bottom navigation so content/footer
+     never sits underneath it. */
+  .hr-portfolio-page {
+    padding-bottom: calc(4.4rem + env(safe-area-inset-bottom));
+  }
+  .VPDoc {
+    padding-bottom: calc(4.4rem + env(safe-area-inset-bottom));
+  }
+
+  .hr-mobile-portfolio-nav {
+    position: fixed;
+    z-index: 80;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: .42rem max(.65rem, env(safe-area-inset-right)) calc(.42rem + env(safe-area-inset-bottom)) max(.65rem, env(safe-area-inset-left));
+    border-top: 1px solid var(--hr-color-border-strong);
+    background: color-mix(in srgb, var(--hr-color-canvas) 94%, transparent);
+    backdrop-filter: blur(14px);
+  }
+  .hr-mobile-portfolio-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .18rem;
+    min-height: 46px;
+    color: var(--hr-color-text-muted);
+    font-size: .6rem;
+    font-weight: 750;
+    line-height: 1;
+    text-decoration: none;
+  }
+  .hr-mobile-portfolio-nav a[aria-current='page'] { color: var(--hr-color-text-strong); }
+  .hr-mobile-portfolio-nav a[aria-current='page']::after { content: ''; width: 18px; border-bottom: 2px solid currentColor; }
+}
+
+/* Project Atlas R9r — icon-led compact evidence board --------------------- */
+.hr-atlas-page .hr-atlas-section {
+  padding: clamp(1.55rem, 2.25vw, 2.15rem) 0;
+}
+
+.hr-atlas-band-heading {
+  display: grid;
+  grid-template-columns: 24px 32px minmax(0, 1fr);
+  gap: .5rem;
+  align-items: center;
+  margin: 0 0 var(--hr-space-4);
+}
+.hr-atlas-band-number {
+  color: var(--hr-color-text-muted);
+  font-size: .58rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+.hr-atlas-band-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--hr-color-border-subtle);
+  color: var(--hr-color-signal-strong);
+  background: var(--hr-color-surface-quiet);
+}
+.hr-atlas-band-heading h2 {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.22rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.02em !important;
+}
+.hr-atlas-band-heading p {
+  margin: .1rem 0 0;
+  overflow: hidden;
+  color: var(--hr-color-text-muted);
+  font-size: .65rem;
+  line-height: 1.22;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Featured: compact technical artifacts with explicit visual identity. */
+.hr-atlas-page .hr-atlas-featured-stack {
+  gap: .55rem;
+  margin-top: 0;
+}
+.hr-atlas-page .hr-atlas-featured-card {
+  padding: .82rem;
+}
+.hr-atlas-featured-header {
+  grid-template-columns: 24px 22px minmax(0, 1fr) auto;
+  gap: .38rem;
+  min-height: 24px;
+  padding-bottom: .48rem;
+}
+.hr-atlas-featured-header .hr-featured-index {
+  width: 22px;
+  height: 22px;
+  font-size: .56rem;
+}
+.hr-atlas-featured-icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--hr-color-signal-strong);
+}
+.hr-atlas-featured-header .hr-item-family {
+  font-size: .52rem;
+  letter-spacing: .052em;
+}
+.hr-atlas-release-chip { padding: .26rem .34rem; font-size: .55rem; }
+.hr-atlas-page .hr-atlas-featured-card .hr-featured-title {
+  margin: .62rem 0 .18rem;
+  font-size: clamp(1.08rem, 1.35vw, 1.32rem);
+  line-height: 1.05;
+}
+.hr-atlas-page .hr-atlas-featured-card .hr-featured-tagline {
+  min-height: 0;
+  font-size: .68rem;
+  line-height: 1.28;
+  -webkit-line-clamp: 1;
+}
+.hr-atlas-page .hr-atlas-mini-flow,
+.hr-atlas-page .hr-atlas-mini-stack,
+.hr-atlas-page .hr-atlas-release-summary { margin-top: .58rem; }
+.hr-atlas-page .hr-atlas-mini-flow { padding: .42rem; }
+.hr-atlas-page .hr-atlas-mini-flow span { padding: .31rem .18rem; font-size: .57rem; }
+.hr-atlas-page .hr-atlas-mini-stack { gap: .2rem; padding: .42rem; }
+.hr-atlas-page .hr-atlas-mini-stack div {
+  min-height: 27px;
+  padding: .28rem .38rem;
+  grid-template-columns: minmax(78px, .68fr) 1fr;
+}
+.hr-atlas-page .hr-atlas-mini-stack strong,
+.hr-atlas-page .hr-atlas-mini-stack small { font-size: .54rem; }
+.hr-atlas-page .hr-atlas-release-summary { padding: .48rem; }
+.hr-atlas-page .hr-atlas-release-summary span,
+.hr-atlas-page .hr-atlas-release-summary strong,
+.hr-atlas-page .hr-atlas-release-summary small { font-size: .56rem; }
+.hr-atlas-page .hr-atlas-boundary-row,
+.hr-atlas-page .hr-atlas-evidence-mini { margin-top: .38rem; gap: .2rem; }
+.hr-atlas-page .hr-atlas-boundary-row span,
+.hr-atlas-page .hr-atlas-evidence-mini span { padding: .29rem .34rem; font-size: .55rem; }
+.hr-atlas-page .hr-atlas-featured-card .hr-link-row { padding-top: .7rem; }
+
+/* Strip sections should read as evidence bands, not prose chapters. */
+.hr-atlas-page .hr-atlas-primary-strip,
+.hr-atlas-page .hr-atlas-supporting-strip,
+.hr-atlas-page .hr-atlas-historical-strip,
+.hr-atlas-page .hr-atlas-mini-list,
+.hr-atlas-page .hr-atlas-stage-line { margin-top: 0; }
+.hr-atlas-page .hr-atlas-primary-card,
+.hr-atlas-page .hr-atlas-supporting-card,
+.hr-atlas-page .hr-atlas-historical-strip article {
+  padding-top: .7rem;
+  padding-bottom: .7rem;
+}
+.hr-atlas-page .hr-atlas-primary-card h3,
+.hr-atlas-page .hr-atlas-supporting-card h3,
+.hr-atlas-page .hr-atlas-mini-list h3,
+.hr-atlas-page .hr-atlas-historical-strip h3 { font-size: .82rem; }
+.hr-atlas-page .hr-atlas-primary-card p,
+.hr-atlas-page .hr-atlas-supporting-card p,
+.hr-atlas-page .hr-atlas-mini-list p,
+.hr-atlas-page .hr-atlas-historical-strip p { font-size: .63rem; }
+
+.hr-atlas-page .hr-atlas-stage-line {
+  padding-top: .9rem;
+}
+.hr-atlas-page .hr-atlas-stage-line::before { top: 2.15rem; }
+.hr-atlas-page .hr-atlas-stage-line header { min-height: 60px; }
+.hr-atlas-page .hr-atlas-stage-line header > span {
+  width: 21px;
+  height: 21px;
+  margin-bottom: .3rem;
+  font-size: .53rem;
+}
+.hr-atlas-page .hr-atlas-stage-line h3 { font-size: .59rem; }
+.hr-atlas-page .hr-atlas-stage-line ul { padding-top: .35rem; }
+.hr-atlas-page .hr-atlas-stage-line li { margin-top: .18rem; font-size: .56rem; }
+.hr-atlas-page .hr-atlas-journey-map > .hr-inline-link { margin-top: .8rem; font-size: .66rem; }
+
+.hr-atlas-page .hr-atlas-mini-list article { padding: .52rem 0; }
+.hr-atlas-page .hr-atlas-historical-strip article { min-height: 58px; }
+.hr-atlas-page .hr-bridge-note { font-size: .62rem; }
+
+.hr-atlas-page .hr-atlas-archive-compact {
+  grid-template-columns: 26px 34px minmax(0, 1fr) auto;
+  gap: .55rem;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.hr-atlas-page .hr-atlas-archive-compact .hr-atlas-project-symbol {
+  width: 30px;
+  height: 30px;
+}
+.hr-atlas-page .hr-atlas-archive-compact h2 {
+  margin: .08rem 0 .16rem;
+  font-size: 1rem !important;
+}
+.hr-atlas-page .hr-atlas-archive-compact p:last-child { font-size: .63rem; }
+.hr-atlas-page .hr-atlas-archive-compact nav {
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+}
+.hr-atlas-page .hr-atlas-archive-compact nav a:first-child { padding: .48rem .65rem; }
+
+@media (max-width: 720px) {
+  .hr-atlas-page .hr-atlas-section { padding: 1.55rem 0; }
+  .hr-atlas-band-heading {
+    grid-template-columns: 20px 30px minmax(0, 1fr);
+    margin-bottom: .8rem;
+  }
+  .hr-atlas-band-icon { width: 28px; height: 28px; }
+  .hr-atlas-band-heading h2 { font-size: 1rem !important; }
+  .hr-atlas-band-heading p {
+    font-size: .62rem;
+    white-space: normal;
+  }
+
+  .hr-atlas-mobile-index a {
+    min-height: 54px;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    padding: .58rem .72rem;
+  }
+  .hr-atlas-mobile-index-icon { width: 30px; height: 30px; }
+  .hr-atlas-mobile-index-copy strong { font-size: .8rem; }
+  .hr-atlas-mobile-index-copy small { font-size: .61rem; }
+
+  .hr-atlas-page .hr-atlas-featured-stack {
+    grid-template-columns: 1fr;
+  }
+  .hr-atlas-page .hr-atlas-featured-card { padding: .75rem; }
+  .hr-atlas-page .hr-atlas-featured-card .hr-featured-tagline {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+  }
+
+  /* Mobile Journey becomes a compact evidence list instead of a horizontal
+     pseudo-desktop timeline. */
+  .hr-atlas-page .hr-atlas-stage-line {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    overflow: visible;
+    margin-inline: 0;
+    padding: 0;
+    border-top: 1px solid var(--hr-color-border-strong);
+  }
+  .hr-atlas-page .hr-atlas-stage-line::before { display: none; }
+  .hr-atlas-page .hr-atlas-stage-line article {
+    display: grid;
+    grid-template-columns: 28px minmax(0, .85fr) minmax(0, 1.15fr);
+    gap: .45rem;
+    align-items: start;
+    min-width: 0;
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--hr-color-border-subtle);
+  }
+  .hr-atlas-page .hr-atlas-stage-line header {
+    display: contents;
+    min-height: 0;
+  }
+  .hr-atlas-page .hr-atlas-stage-line header > span { margin: 0; }
+  .hr-atlas-page .hr-atlas-stage-line h3 { font-size: .63rem; line-height: 1.18; }
+  .hr-atlas-page .hr-atlas-stage-line ul {
+    padding: 0;
+    border-left: 1px solid var(--hr-color-border-subtle);
+    padding-left: .5rem;
+  }
+  .hr-atlas-page .hr-atlas-stage-line li { font-size: .58rem; }
+  .hr-atlas-page .hr-atlas-stage-line li:nth-child(n + 3) { display: none; }
+
+  .hr-atlas-page .hr-atlas-archive-compact {
+    grid-template-columns: 24px 30px minmax(0, 1fr);
+    align-items: start;
+  }
+  .hr-atlas-page .hr-atlas-archive-compact nav {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 100%;
+    margin-top: .25rem;
+  }
+  .hr-atlas-page .hr-atlas-archive-compact nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+  }
+  .hr-atlas-page .hr-atlas-archive-compact nav a:last-child {
+    padding: .48rem .65rem;
+    border: 1px solid var(--hr-color-border-subtle);
+  }
+}
+
+/* Project Atlas R10 — featured proof cards + journey alignment ------------- */
+.hr-atlas-featured-kind {
+  justify-self: end;
+  padding: .25rem .38rem;
+  border: 1px solid var(--hr-color-border-subtle);
+  color: var(--hr-color-text-muted);
+  background: var(--hr-color-canvas);
+  font-size: .5rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hr-atlas-proof-panel {
+  position: relative;
+  display: grid;
+  gap: .38rem;
+  margin-top: .62rem;
+  padding-top: .5rem;
+  border-top: 1px solid var(--hr-color-border-subtle);
+}
+.hr-atlas-proof-label {
+  margin: 0;
+  color: var(--hr-color-text-muted);
+  font-size: .52rem;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+
+/* Each Featured card keeps one proof grammar: pipeline, architecture, release. */
+.hr-atlas-page .hr-atlas-proof-panel .hr-atlas-mini-flow,
+.hr-atlas-page .hr-atlas-proof-panel .hr-atlas-mini-stack,
+.hr-atlas-page .hr-atlas-proof-panel .hr-atlas-release-summary {
+  margin-top: 0;
+}
+.hr-atlas-page .hr-atlas-proof-panel.is-dossier .hr-atlas-mini-flow {
+  background:
+    linear-gradient(90deg, transparent 0 49.8%, var(--hr-color-border-subtle) 49.8% 50.2%, transparent 50.2% 100%),
+    var(--hr-color-surface-quiet);
+}
+.hr-atlas-page .hr-atlas-proof-panel.is-architecture .hr-atlas-mini-stack div:nth-child(2) {
+  border-color: var(--hr-color-border-strong);
+}
+.hr-atlas-page .hr-atlas-proof-panel.is-release {
+  border-top-style: dashed;
+}
+
+.hr-atlas-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .22rem;
+}
+.hr-atlas-evidence-grid span {
+  min-width: 0;
+  padding: .34rem .38rem;
+  border: 1px solid var(--hr-color-border-subtle);
+  color: var(--hr-color-text-body);
+  background: color-mix(in srgb, var(--hr-color-surface-quiet) 72%, transparent);
+  font-size: .53rem;
+  line-height: 1.2;
+}
+.hr-atlas-evidence-grid.is-release-grid span::before {
+  content: '◇';
+  margin-right: .3rem;
+  color: var(--hr-color-signal-strong);
+}
+
+/* Keep the three anchors optically balanced without padding them with prose. */
+.hr-atlas-page .hr-atlas-featured-card {
+  min-height: 330px;
+}
+.hr-atlas-page .hr-atlas-featured-card.is-technical-dossier {
+  box-shadow: inset 0 3px 0 -2px var(--hr-color-text-strong);
+}
+.hr-atlas-page .hr-atlas-featured-card.is-architecture-boundary {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--hr-color-border-subtle) 68%, transparent);
+}
+.hr-atlas-page .hr-atlas-featured-card.is-release-system {
+  box-shadow: inset 0 3px 0 -2px var(--hr-color-signal-strong);
+}
+
+/* Explicit numeric centering: capture scaling previously made the stage
+   numbers look top-biased inside the circular marker. */
+.hr-atlas-page .hr-atlas-stage-line header > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-featured-header {
+    grid-template-columns: 24px 22px minmax(0, 1fr) auto;
+  }
+  .hr-atlas-featured-kind {
+    max-width: 7.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hr-atlas-page .hr-atlas-featured-card {
+    min-height: 0;
+  }
+  .hr-atlas-evidence-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hr-atlas-page .hr-atlas-stage-line header > span {
+    display: inline-flex;
+  }
+}
+
+/* Project Atlas R11 — featured alignment + numbering clarity ---------------- */
+.hr-atlas-page .hr-atlas-featured-stack {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+.hr-atlas-featured-header {
+  grid-template-columns: 28px 18px minmax(0, 1fr) auto;
+  align-items: start;
+}
+
+.hr-atlas-featured-header .hr-featured-index {
+  grid-column: 1;
+  align-self: start;
+  width: 28px;
+  height: 20px;
+  font-size: .58rem;
+  letter-spacing: .04em;
+}
+
+.hr-atlas-featured-icon {
+  grid-column: 2;
+  align-self: center;
+}
+
+.hr-atlas-featured-header .hr-item-family {
+  grid-column: 3;
+  align-self: center;
+}
+
+.hr-atlas-featured-kind,
+.hr-atlas-release-chip {
+  grid-column: 4;
+  justify-self: end;
+  align-self: start;
+}
+
+.hr-atlas-page .hr-atlas-featured-card {
+  height: 100%;
+  min-height: 346px;
+}
+
+.hr-atlas-page .hr-atlas-featured-card .hr-featured-tagline {
+  min-height: 2.8em;
+}
+
+.hr-atlas-proof-panel {
+  flex: 1 0 auto;
+  min-height: 132px;
+}
+
+.hr-atlas-page .hr-atlas-proof-panel.is-dossier .hr-atlas-mini-flow {
+  align-items: stretch;
+}
+
+.hr-atlas-page .hr-atlas-proof-panel.is-architecture {
+  min-height: 144px;
+}
+
+.hr-atlas-page .hr-atlas-proof-panel.is-release {
+  min-height: 144px;
+}
+
+.hr-atlas-page .hr-atlas-proof-panel.is-architecture .hr-atlas-boundary-row,
+.hr-atlas-page .hr-atlas-proof-panel.is-release .hr-atlas-evidence-grid {
+  margin-top: auto;
+}
+
+.hr-atlas-page .hr-atlas-stage-line header > span {
+  line-height: 1;
+  font-feature-settings: 'tnum' 1;
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-featured-header {
+    grid-template-columns: 24px 18px minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .hr-atlas-featured-header .hr-featured-index {
+    width: 24px;
+    height: 18px;
+    font-size: .53rem;
+  }
+
+  .hr-atlas-page .hr-atlas-featured-card {
+    min-height: 0;
+  }
+
+  .hr-atlas-page .hr-atlas-featured-card .hr-featured-tagline {
+    min-height: 0;
+  }
+
+  .hr-atlas-proof-panel,
+  .hr-atlas-page .hr-atlas-proof-panel.is-architecture,
+  .hr-atlas-page .hr-atlas-proof-panel.is-release {
+    min-height: 0;
+  }
+}
+
+
+/* Project Atlas R12 — Home/Work Featured consistency ----------------------- */
+.hr-atlas-page .hr-atlas-featured-stack {
+  gap: 1rem;
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+/* The generic architecture treatment carries a vertical margin from the Home
+   grammar. Work uses a three-column evidence board, so every anchor must share
+   the same top and bottom edge. */
+.hr-atlas-page .hr-atlas-featured-card.is-architecture-boundary {
+  margin: 0;
+  padding: .82rem;
+  align-self: stretch;
+}
+
+.hr-atlas-featured-header {
+  grid-template-columns: 28px 22px minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.hr-atlas-featured-header .hr-featured-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 20px;
+  min-width: 28px;
+  min-height: 20px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  font-feature-settings: 'tnum' 1;
+}
+
+.hr-atlas-featured-icon {
+  width: 22px;
+  height: 22px;
+  align-self: center;
+}
+
+.hr-atlas-featured-header .hr-item-family {
+  align-self: center;
+}
+
+/* Home only uses a release chip on F3. Work follows the same hierarchy. */
+.hr-atlas-release-chip {
+  align-self: center;
+}
+
+.hr-atlas-page .hr-atlas-featured-card {
+  height: 100%;
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-page .hr-atlas-featured-stack {
+    gap: 1rem;
+  }
+
+  .hr-atlas-page .hr-atlas-featured-card,
+  .hr-atlas-page .hr-atlas-featured-card.is-architecture-boundary {
+    padding: 1rem;
+  }
+
+  .hr-atlas-featured-header {
+    grid-template-columns: 24px 22px minmax(0, 1fr) auto;
+  }
+
+  .hr-atlas-featured-header .hr-featured-index {
+    width: 24px;
+    height: 19px;
+    min-width: 24px;
+    min-height: 19px;
+    font-size: .53rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .hr-atlas-release-chip {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: .2rem;
+  }
+}
+
+/* Project Atlas R13 — Featured header + proof-flow alignment ----------------
+   Home owns the visual grammar. Prevent legacy Home selectors from forcing the
+   VersoVector family label onto its own row inside Work, and remove the
+   ornamental centre rule that cuts through the Package step. */
+.hr-atlas-page .hr-atlas-featured-card.is-technical-dossier .hr-item-family {
+  grid-column: 3;
+  grid-row: auto;
+}
+
+.hr-atlas-page .hr-atlas-featured-header {
+  min-height: 2.75rem;
+  box-sizing: border-box;
+}
+
+.hr-atlas-page .hr-atlas-featured-header .hr-item-family {
+  display: flex;
+  align-items: center;
+  min-height: 2.4em;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+.hr-atlas-page .hr-atlas-proof-panel.is-dossier .hr-atlas-mini-flow {
+  background: var(--hr-color-surface-quiet);
+}
+
+/* Keep the three project anchors on the same vertical rhythm after the header
+   correction, without adding copy merely to fill space. */
+.hr-atlas-page .hr-atlas-featured-card .hr-featured-title {
+  margin-top: .9rem;
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-page .hr-atlas-featured-header {
+    min-height: auto;
+  }
+
+  .hr-atlas-page .hr-atlas-featured-header .hr-item-family {
+    min-height: 0;
+    white-space: normal;
+  }
+}
+
+
+/* Project Atlas R14 — Journey evidence matches Home preview ----------------- */
+.hr-atlas-page .hr-atlas-stage-line {
+  --hr-atlas-stage-marker-size: 22px;
+}
+
+.hr-atlas-page .hr-atlas-stage-line::before {
+  /* .9rem section inset + half of the marker diameter: line crosses centre. */
+  top: calc(.9rem + (var(--hr-atlas-stage-marker-size) / 2));
+}
+
+.hr-atlas-page .hr-atlas-stage-line header {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: .28rem;
+  text-align: center;
+  min-height: 82px;
+}
+
+.hr-atlas-page .hr-atlas-stage-line header > .hr-atlas-stage-number {
+  width: var(--hr-atlas-stage-marker-size);
+  height: var(--hr-atlas-stage-marker-size);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .53rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.02em;
+}
+
+.hr-atlas-page .hr-atlas-stage-icon {
+  display: grid;
+  place-items: center;
+  color: var(--hr-color-signal-strong);
+}
+
+.hr-atlas-page .hr-atlas-stage-line h3 {
+  text-align: center;
+}
+
+.hr-atlas-page .hr-atlas-archive-compact nav a {
+  gap: .4rem;
+}
+
+.hr-atlas-page .hr-atlas-archive-compact nav a .hr-portfolio-icon {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-page .hr-atlas-stage-line article {
+    grid-template-columns: 30px 28px minmax(0, .9fr) minmax(0, 1.1fr);
+  }
+
+  .hr-atlas-page .hr-atlas-stage-line header {
+    display: contents;
+    min-height: 0;
+  }
+
+  .hr-atlas-page .hr-atlas-stage-line header > .hr-atlas-stage-number {
+    grid-column: 1;
+    align-self: start;
+  }
+
+  .hr-atlas-page .hr-atlas-stage-icon {
+    grid-column: 2;
+    align-self: start;
+    justify-self: center;
+    padding-top: .12rem;
+  }
+
+  .hr-atlas-page .hr-atlas-stage-line h3 {
+    grid-column: 3;
+    text-align: left;
+  }
+
+  .hr-atlas-page .hr-atlas-stage-line ul {
+    grid-column: 4;
+  }
+}
+
+
+/* Project Atlas R15 — Journey icon parity with Home ------------------------- */
+.hr-atlas-page .hr-atlas-stage-line header > .hr-atlas-stage-icon {
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  line-height: 1;
+}
+
+.hr-atlas-page .hr-atlas-stage-icon .hr-portfolio-icon {
+  display: block;
+}
+
+/* Project Atlas R17 — Journey desktop centering -----------------------------
+   Project anchors sit directly under their B-marker/icon axis on desktop.
+   Mobile deliberately retains left alignment for scanability. */
+@media (min-width: 721px) {
+  .hr-atlas-page .hr-atlas-stage-line ul {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hr-atlas-page .hr-atlas-stage-line li,
+  .hr-atlas-page .hr-atlas-stage-line li a {
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-atlas-page .hr-atlas-stage-line ul,
+  .hr-atlas-page .hr-atlas-stage-line li,
+  .hr-atlas-page .hr-atlas-stage-line li a {
+    text-align: left;
+  }
+}
+
+/* Project Atlas R18 — Builder Journey fidelity pass ------------------------- */
+.hr-journey-main {
+  padding-top: var(--hr-space-10, 2.5rem);
+}
+
+.hr-journey-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .42fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  padding: var(--hr-space-8) 0 var(--hr-space-12);
+  border-bottom: 1px solid var(--hr-color-border-strong);
+}
+
+.hr-journey-intro-copy {
+  max-width: 780px;
+}
+
+.hr-journey-intro h1 {
+  max-width: 760px;
+  margin: var(--hr-space-3) 0 0;
+  font-size: clamp(3.2rem, 6.2vw, 5.5rem);
+  line-height: .94;
+  letter-spacing: -.065em;
+}
+
+.hr-journey-summary {
+  max-width: 720px;
+  margin: var(--hr-space-6) 0 0;
+  color: var(--hr-color-text-body);
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.hr-journey-freeze-note {
+  max-width: 680px;
+  margin: var(--hr-space-5) 0 0;
+  padding: var(--hr-space-3) var(--hr-space-4);
+  border-left: 2px solid var(--hr-color-signal);
+  background: var(--hr-color-surface-quiet);
+  color: var(--hr-color-text-muted);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+
+.hr-journey-legend {
+  display: grid;
+  gap: var(--hr-space-4);
+  padding: var(--hr-space-5);
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-journey-legend > div {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: var(--hr-space-3);
+  align-items: center;
+  color: var(--hr-color-text-body);
+  font-size: .86rem;
+}
+
+.hr-journey-legend-badge {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 22px;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-signal);
+  font-size: .62rem;
+  font-weight: 850;
+  letter-spacing: .05em;
+}
+
+.hr-journey-board {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hr-journey-board::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 2.7rem;
+  bottom: 2.7rem;
+  width: 1px;
+  background: var(--hr-color-border-strong);
+}
+
+.hr-journey-band {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(220px, .82fr) minmax(220px, 1fr) minmax(260px, 1.12fr);
+  gap: clamp(1rem, 2.3vw, 2rem);
+  align-items: start;
+  padding: var(--hr-space-8) 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+  scroll-margin-top: 84px;
+}
+
+.hr-journey-rail {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: .15rem;
+}
+
+.hr-journey-band-badge {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--hr-color-border-strong);
+  background: var(--hr-color-canvas);
+  color: var(--hr-color-signal);
+  font-size: .62rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.hr-journey-band-intro {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: var(--hr-space-3);
+  align-items: start;
+}
+
+.hr-journey-band-intro > .hr-portfolio-icon {
+  margin-top: .2rem;
+  color: var(--hr-color-signal);
+}
+
+.hr-journey-band-intro .hr-eyebrow {
+  margin: 0 0 .35rem;
+}
+
+.hr-journey-band-intro h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.hr-journey-band-intro p:last-child {
+  margin: var(--hr-space-3) 0 0;
+  color: var(--hr-color-text-body);
+  font-size: .88rem;
+  line-height: 1.48;
+}
+
+.hr-journey-evidence-group {
+  min-width: 0;
+}
+
+.hr-journey-evidence-group h3 {
+  margin: .15rem 0 var(--hr-space-3);
+  color: var(--hr-color-signal);
+  font-size: .68rem;
+  font-weight: 820;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.hr-journey-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hr-space-2);
+}
+
+.hr-journey-evidence-group.is-primary .hr-journey-project-grid {
+  grid-template-columns: 1fr;
+}
+
+.hr-journey-project-card {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  gap: var(--hr-space-2);
+  align-items: center;
+  min-height: 44px;
+  padding: .55rem .65rem;
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-canvas);
+  color: var(--hr-color-text-strong);
+  font-size: .78rem;
+  font-weight: 720;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.hr-journey-project-card:hover {
+  border-color: var(--hr-color-border-strong);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-journey-project-card > span:last-child {
+  color: var(--hr-color-text-muted);
+  font-weight: 600;
+}
+
+.hr-journey-bridge-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--hr-space-2);
+  align-items: center;
+  margin-top: var(--hr-space-3);
+}
+
+.hr-journey-bridge-row > span {
+  color: var(--hr-color-text-muted);
+  font-size: .62rem;
+  font-weight: 820;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hr-journey-boundary {
+  grid-column: 2 / -1;
+  display: flex;
+  gap: var(--hr-space-3);
+  margin: 0;
+  padding: var(--hr-space-3) var(--hr-space-4);
+  border-left: 2px solid var(--hr-color-border-strong);
+  background: var(--hr-color-surface-quiet);
+  color: var(--hr-color-text-muted);
+  font-size: .7rem;
+  line-height: 1.42;
+}
+
+.hr-journey-boundary strong {
+  flex: 0 0 auto;
+  color: var(--hr-color-text-body);
+  font-size: .62rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 1024px) {
+  .hr-journey-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(230px, .48fr);
+  }
+
+  .hr-journey-band {
+    grid-template-columns: 42px minmax(210px, .85fr) minmax(0, 1.15fr);
+  }
+
+  .hr-journey-evidence-group.is-supporting {
+    grid-column: 3;
+  }
+
+  .hr-journey-boundary {
+    grid-column: 2 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-journey-main {
+    padding-top: var(--hr-space-6);
+  }
+
+  .hr-journey-intro {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-5);
+    padding: var(--hr-space-5) 0 var(--hr-space-8);
+  }
+
+  .hr-journey-intro h1 {
+    font-size: clamp(2.55rem, 13vw, 4rem);
+  }
+
+  .hr-journey-summary {
+    margin-top: var(--hr-space-4);
+    font-size: .95rem;
+  }
+
+  .hr-journey-legend {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-3);
+    padding: var(--hr-space-4);
+  }
+
+  .hr-journey-board::before {
+    left: 15px;
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .hr-journey-band {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: var(--hr-space-3);
+    padding: var(--hr-space-6) 0;
+  }
+
+  .hr-journey-rail {
+    justify-content: flex-start;
+    padding-top: .1rem;
+  }
+
+  .hr-journey-band-badge {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hr-journey-band-intro,
+  .hr-journey-evidence-group,
+  .hr-journey-evidence-group.is-supporting,
+  .hr-journey-boundary {
+    grid-column: 2;
+  }
+
+  .hr-journey-band-intro {
+    grid-template-columns: 24px minmax(0, 1fr);
+  }
+
+  .hr-journey-band-intro h2 {
+    font-size: 1.32rem;
+  }
+
+  .hr-journey-band-intro p:last-child {
+    font-size: .82rem;
+  }
+
+  .hr-journey-evidence-group {
+    margin-top: var(--hr-space-3);
+  }
+
+  .hr-journey-project-grid,
+  .hr-journey-evidence-group.is-primary .hr-journey-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hr-journey-project-card {
+    min-height: 42px;
+    font-size: .76rem;
+  }
+
+  .hr-journey-boundary {
+    display: block;
+    margin-top: var(--hr-space-3);
+    padding: var(--hr-space-3);
+  }
+
+  .hr-journey-boundary strong {
+    display: block;
+    margin-bottom: .3rem;
+  }
+
+}
+
+/* Project Atlas R19 — Journey evidence harmony + end-nav cleanup ----------- */
+.hr-journey-project-card > span:nth-child(2) {
+  min-width: 0;
+  line-height: 1.22;
+  text-wrap: pretty;
+}
+
+.hr-journey-evidence-group.is-supporting .hr-journey-project-grid {
+  grid-auto-rows: 1fr;
+}
+
+.hr-journey-evidence-group.is-supporting .hr-journey-project-card {
+  height: 100%;
+}
+
+.hr-journey-band:last-child {
+  border-bottom: 0;
+  padding-bottom: var(--hr-space-6);
+}
+
+
+@media (min-width: 1025px) {
+  .hr-journey-page .hr-journey-main {
+    width: min(calc(100% - 3rem), var(--hr-shell-wide));
+  }
+
+  .hr-journey-band {
+    grid-template-columns:
+      46px
+      minmax(240px, .9fr)
+      minmax(250px, 1fr)
+      minmax(340px, 1.35fr);
+    gap: clamp(1rem, 2vw, 1.8rem);
+  }
+
+  .hr-journey-project-card {
+    min-height: 50px;
+  }
+
+  .hr-journey-evidence-group.is-supporting .hr-journey-project-card {
+    padding-inline: .72rem;
+    font-size: .75rem;
+  }
+
+  .hr-journey-bridge-row {
+    grid-template-columns: 52px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-journey-band:last-child {
+    padding-bottom: var(--hr-space-5);
+  }
+
+}
+
+/* Project Atlas R20 — shared display scale + Journey closure polish --------
+   Desktop display headings now share one restrained scale across Home, Work
+   and Journey. Journey's legend aligns with the title datum, mobile intro
+   breathing is restored, and the page closes directly into the global footer. */
+@media (min-width: 1025px) {
+  .hr-atlas-intro-grid .hr-page-masthead h1,
+  .hr-journey-intro h1 {
+    font-size: clamp(3rem, 4.65vw, 4.7rem);
+  }
+
+  .hr-journey-legend {
+    margin-top: 2.15rem;
+  }
+}
+
+.hr-journey-board {
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+@media (max-width: 720px) {
+  .hr-journey-intro {
+    gap: 1.75rem;
+  }
+
+  .hr-journey-legend {
+    margin-top: .25rem;
+  }
+
+  .hr-journey-board {
+    margin-bottom: 1.9rem;
+  }
+}
+
+/* Project Atlas R21 — Journey footer rhythm + legend breathing -------------
+   Normalize Journey's closing rhythm to the shared portfolio shell, give the
+   desktop legend more internal breathing room, and let the footer surface
+   extend cleanly to the persistent mobile navigation without a canvas gap. */
+.hr-journey-board {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1025px) {
+  .hr-journey-legend {
+    gap: var(--hr-space-5);
+    padding: var(--hr-space-6);
+  }
+
+  .hr-journey-legend > div {
+    column-gap: var(--hr-space-4);
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-journey-page .hr-journey-main {
+    padding-bottom: var(--hr-space-12);
+  }
+
+  /* The global portfolio page reserves space for the fixed nav. Extend the
+     footer through that reserve so no canvas-colored strip appears between
+     footer and navigation. */
+  .hr-portfolio-page .hr-portfolio-footer {
+    margin-bottom: calc(-4.4rem - env(safe-area-inset-bottom));
+    padding-bottom: calc(4.4rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* Project Atlas R22 — shared note rhythm + Journey legend alignment --------
+   Match Journey's freeze note to the Atlas evidence-note cadence, give the
+   legend a consistent marker axis, and preserve the same breathing system
+   across desktop and mobile without changing the evidence model. */
+.hr-journey-freeze-note {
+  width: fit-content;
+  max-width: 100%;
+  margin: var(--hr-space-4) 0 0;
+  padding: .55rem .75rem;
+  border-left-width: 3px;
+  font-size: .76rem;
+  line-height: 1.35;
+}
+
+.hr-journey-legend > div {
+  min-height: 2rem;
+}
+
+.hr-journey-legend > div > :first-child {
+  justify-self: center;
+  align-self: center;
+}
+
+.hr-journey-legend-badge {
+  justify-self: center;
+}
+
+@media (min-width: 1025px) {
+  .hr-journey-legend {
+    padding: var(--hr-space-8);
+  }
+
+  .hr-journey-legend > div {
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: var(--hr-space-4);
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-journey-freeze-note {
+    width: 100%;
+  }
+
+  .hr-journey-legend > div {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: var(--hr-space-3);
+  }
+}
+
+/* Project Atlas R23 — Work / Atlas desktop breathing -----------------------
+   The compact evidence board remains dense by design, but its section bands
+   need the same editorial breathing established on Home. Mobile stays compact. */
+@media (min-width: 1025px) {
+  .hr-atlas-page .hr-atlas-section {
+    padding-top: var(--hr-space-12);
+    padding-bottom: var(--hr-space-12);
+  }
+
+  .hr-atlas-page .hr-atlas-featured-stack {
+    margin-top: var(--hr-space-8);
+  }
+}
+
+/* Project Atlas R24 — Archive foundation / fidelity pass -------------------
+   Archive is a quiet preserved-context grammar: a concise orientation block,
+   a scan-friendly frozen ledger, and a single site-history gateway. It shares
+   Home / Work / Journey rhythm without promoting archived work as evidence. */
+.hr-archive-page .hr-archive-main {
+  max-width: 1180px;
+  padding-top: var(--hr-space-12);
+}
+
+.hr-archive-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: end;
+  padding: var(--hr-space-8) 0 var(--hr-space-16);
+  border-bottom: 1px solid var(--hr-color-border-strong);
+}
+
+.hr-archive-intro-copy h1 {
+  margin: .6rem 0 0;
+  font-size: clamp(3rem, 4.65vw, 4.7rem);
+  line-height: .94;
+  letter-spacing: -.065em;
+}
+
+.hr-archive-title-rule {
+  display: block;
+  width: 2rem;
+  margin: var(--hr-space-6) 0;
+  border-top: 1px solid var(--hr-color-signal-strong);
+}
+
+.hr-archive-summary {
+  max-width: 650px;
+  margin: 0;
+  color: var(--hr-color-text-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.hr-archive-intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hr-space-3);
+  margin-top: var(--hr-space-8);
+}
+
+.hr-archive-action {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .6rem;
+  align-items: center;
+  min-height: 44px;
+  padding: .7rem .85rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-body);
+  font-size: .82rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.hr-archive-action:hover {
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-archive-action.is-primary {
+  border-color: var(--hr-color-signal-strong);
+}
+
+.hr-archive-about {
+  padding: var(--hr-space-7, 1.75rem);
+  border: 1px solid var(--hr-color-border-strong);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-archive-about-heading {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+
+.hr-archive-about h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -.02em;
+}
+
+.hr-archive-about p {
+  margin: var(--hr-space-4) 0 0;
+  color: var(--hr-color-text-body);
+  font-size: .86rem;
+  line-height: 1.58;
+}
+
+.hr-archive-about .hr-archive-about-caution {
+  color: var(--hr-color-text-muted);
+}
+
+.hr-archive-ledger {
+  padding: var(--hr-space-16) 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+
+.hr-archive-ledger-heading,
+.hr-site-history-gateway > header {
+  display: flex;
+  gap: .45rem;
+  align-items: baseline;
+  margin-bottom: var(--hr-space-6);
+}
+
+.hr-archive-ledger-heading .hr-eyebrow,
+.hr-site-history-gateway .hr-eyebrow {
+  margin: 0;
+}
+
+.hr-archive-heading-mark {
+  color: var(--hr-color-signal-strong);
+  font-size: .8rem;
+  line-height: 1;
+}
+
+.hr-archive-table {
+  border: 1px solid var(--hr-color-border-subtle);
+}
+
+.hr-archive-table-head,
+.hr-archive-record {
+  display: grid;
+  grid-template-columns: minmax(260px, .9fr) minmax(0, 1.35fr) minmax(220px, .75fr);
+  gap: var(--hr-space-8);
+}
+
+.hr-archive-table-head {
+  padding: .9rem var(--hr-space-6);
+  border-bottom: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-muted);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.hr-archive-record {
+  align-items: center;
+  min-height: 118px;
+  padding: var(--hr-space-6);
+  border-top: 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+
+.hr-archive-record:last-child {
+  border-bottom: 0;
+}
+
+.hr-archive-project-cell {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: var(--hr-space-4);
+  align-items: baseline;
+}
+
+.hr-archive-index {
+  color: var(--hr-color-text-muted);
+  font-size: .72rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.hr-archive-record h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.1rem;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+}
+
+.hr-archive-gate {
+  display: block;
+  margin-top: .35rem;
+  color: var(--hr-color-text-muted);
+  font-size: .65rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.hr-archive-context-label {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  color: var(--hr-color-signal-strong);
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.hr-archive-context-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.hr-archive-context-cell p {
+  margin: .45rem 0 0;
+  color: var(--hr-color-text-body);
+  font-size: .83rem;
+  line-height: 1.5;
+}
+
+.hr-archive-action-cell a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .65rem;
+  align-items: center;
+  min-height: 42px;
+  padding: .6rem .7rem;
+  border: 1px solid transparent;
+  color: var(--hr-color-text-body);
+  font-size: .8rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.hr-archive-action-cell a:hover {
+  border-color: var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-archive-ledger-note {
+  display: flex;
+  gap: .65rem;
+  align-items: center;
+  margin: var(--hr-space-6) 0 0;
+  color: var(--hr-color-text-muted);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+.hr-site-history-gateway {
+  padding: var(--hr-space-12) 0 var(--hr-space-16);
+  border-top: 0;
+}
+
+.hr-site-history-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(220px, .45fr) auto;
+  gap: var(--hr-space-5);
+  align-items: center;
+  min-height: 92px;
+  padding: var(--hr-space-5) var(--hr-space-6);
+  border: 1px solid var(--hr-color-border-subtle);
+  color: var(--hr-color-text-body);
+  text-decoration: none;
+}
+
+.hr-site-history-row:hover {
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-site-history-copy,
+.hr-site-history-action {
+  display: grid;
+  gap: .28rem;
+}
+
+.hr-site-history-copy strong,
+.hr-site-history-action strong {
+  font-size: .84rem;
+}
+
+.hr-site-history-copy small,
+.hr-site-history-action small {
+  color: var(--hr-color-text-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+.hr-visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .hr-archive-intro {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-8);
+    align-items: start;
+  }
+
+  .hr-archive-about {
+    max-width: 680px;
+  }
+
+  .hr-archive-table-head {
+    display: none;
+  }
+
+  .hr-archive-record {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, .75fr);
+  }
+
+  .hr-archive-context-cell {
+    grid-column: 1;
+  }
+
+  .hr-archive-action-cell {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-archive-page .hr-archive-main {
+    padding-top: var(--hr-space-6);
+    padding-bottom: var(--hr-space-12);
+  }
+
+  .hr-archive-intro {
+    gap: var(--hr-space-6);
+    padding: var(--hr-space-6) 0 var(--hr-space-10);
+  }
+
+  .hr-archive-intro-copy h1 {
+    font-size: clamp(2.8rem, 15vw, 4rem);
+  }
+
+  .hr-archive-title-rule {
+    margin: var(--hr-space-4) 0;
+  }
+
+  .hr-archive-summary {
+    font-size: .94rem;
+    line-height: 1.58;
+  }
+
+  .hr-archive-intro-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: var(--hr-space-6);
+  }
+
+  .hr-archive-action {
+    min-height: 46px;
+  }
+
+  .hr-archive-about {
+    padding: var(--hr-space-5);
+  }
+
+  .hr-archive-ledger {
+    padding: var(--hr-space-12) 0;
+  }
+
+  .hr-archive-ledger-heading,
+  .hr-site-history-gateway > header {
+    margin-bottom: var(--hr-space-4);
+  }
+
+  .hr-archive-table {
+    border: 0;
+  }
+
+  .hr-archive-record {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-4);
+    min-height: 0;
+    padding: var(--hr-space-5) 0;
+    border-top: 1px solid var(--hr-color-border-subtle);
+  }
+
+  .hr-archive-record:last-child {
+    border-bottom: 1px solid var(--hr-color-border-subtle);
+  }
+
+  .hr-archive-action-cell {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .hr-archive-action-cell a {
+    border-color: var(--hr-color-border-subtle);
+  }
+
+  .hr-archive-ledger-note {
+    align-items: flex-start;
+  }
+
+  .hr-site-history-gateway {
+    padding: var(--hr-space-10) 0 var(--hr-space-12);
+  }
+
+  .hr-site-history-row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: var(--hr-space-3);
+    min-height: 0;
+    padding: var(--hr-space-4);
+  }
+
+  .hr-site-history-action {
+    grid-column: 2;
+  }
+
+  .hr-site-history-row > span:last-child {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+/* Project Atlas R25 — Archive ledger cadence / gateway breathing -----------
+   Preserve the R24 archive grammar while giving the site-history gateway more
+   interior air and making the mobile frozen ledger scan like Work evidence:
+   bounded records, quiet context, and a compact GitHub action at the edge. */
+@media (min-width: 721px) {
+  .hr-archive-page .hr-site-history-row {
+    grid-template-columns: 32px minmax(0, 1fr) minmax(230px, .45fr) 28px;
+    gap: var(--hr-space-6);
+    min-height: 104px;
+    padding: var(--hr-space-7, 1.75rem) var(--hr-space-8);
+  }
+
+  .hr-archive-page .hr-site-history-copy,
+  .hr-archive-page .hr-site-history-action {
+    gap: .4rem;
+  }
+
+  .hr-archive-page .hr-site-history-action {
+    padding-left: var(--hr-space-3);
+  }
+
+  .hr-archive-page .hr-site-history-row > span:last-child {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-archive-page .hr-archive-about {
+    padding: var(--hr-space-6);
+  }
+
+  .hr-archive-page .hr-archive-about-heading {
+    gap: .8rem;
+    margin-bottom: .2rem;
+  }
+
+  .hr-archive-page .hr-archive-about p {
+    margin-top: .9rem;
+    line-height: 1.68;
+  }
+
+  .hr-archive-page .hr-archive-ledger-heading {
+    margin-bottom: var(--hr-space-6);
+  }
+
+  .hr-archive-page .hr-archive-table {
+    display: grid;
+    gap: .75rem;
+  }
+
+  .hr-archive-page .hr-archive-record,
+  .hr-archive-page .hr-archive-record:last-child {
+    grid-template-columns: minmax(0, 1fr) 36px;
+    grid-template-areas:
+      "project action"
+      "context context";
+    gap: .85rem var(--hr-space-3);
+    padding: 1rem;
+    border: 1px solid var(--hr-color-border-subtle);
+    background: transparent;
+  }
+
+  .hr-archive-page .hr-archive-project-cell {
+    grid-area: project;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: .7rem;
+    align-items: start;
+  }
+
+  .hr-archive-page .hr-archive-context-cell {
+    grid-area: context;
+    padding-top: .8rem;
+    border-top: 1px solid var(--hr-color-border-subtle);
+  }
+
+  .hr-archive-page .hr-archive-context-label {
+    gap: .55rem;
+  }
+
+  .hr-archive-page .hr-archive-context-cell p {
+    margin-top: .55rem;
+    line-height: 1.55;
+  }
+
+  .hr-archive-page .hr-archive-action-cell {
+    grid-area: action;
+    align-self: start;
+    justify-self: end;
+  }
+
+  .hr-archive-page .hr-archive-action-cell a {
+    display: grid;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--hr-color-border-subtle);
+  }
+
+  .hr-archive-page .hr-archive-action-cell a span {
+    display: none;
+  }
+
+  .hr-archive-page .hr-archive-ledger-note {
+    margin-top: var(--hr-space-6);
+  }
+
+  .hr-archive-page .hr-site-history-row {
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: var(--hr-space-4);
+    padding: var(--hr-space-6);
+  }
+
+  .hr-archive-page .hr-site-history-copy,
+  .hr-archive-page .hr-site-history-action {
+    gap: .4rem;
+  }
+
+  .hr-archive-page .hr-site-history-action {
+    margin-top: .35rem;
+  }
+
+  .hr-archive-page .hr-site-history-row > span:last-child {
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+/* Project Atlas R26 — Archive mobile action / site-history rhythm ----------
+   Keep the approved desktop archive intact. On mobile, make the repository
+   affordance a quiet circular GitHub action and restore breathing room between
+   the Frozen Atlas Archive boundary and the Site History gateway. */
+@media (max-width: 720px) {
+  .hr-archive-page .hr-archive-action-cell a {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    min-height: 38px;
+    border-radius: 50%;
+    place-items: center;
+    line-height: 0;
+  }
+
+  .hr-archive-page .hr-archive-action-cell a svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+  }
+
+  .hr-archive-page .hr-site-history-gateway {
+    padding-top: 3.5rem;
+  }
+
+  .hr-archive-page .hr-site-history-gateway > header {
+    margin-bottom: var(--hr-space-6);
+  }
+}
+
+/* Project Atlas R27b — Archive mobile optical centering --------------------
+   Preserve the approved R26 archive composition. This pass only corrects the
+   mobile GitHub affordance and vertically centers the Site History edge icons
+   against the complete two-row content block. */
+@media (max-width: 720px) {
+  .hr-archive-page .hr-archive-action-cell a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: 0;
+    line-height: 1;
+  }
+
+  .hr-archive-page .hr-archive-action-cell a svg {
+    position: static;
+    display: block;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    transform: translate(.25px, .25px);
+  }
+
+  .hr-archive-page .hr-site-history-row {
+    align-items: stretch;
+  }
+
+  .hr-archive-page .hr-site-history-row > :first-child {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .hr-archive-page .hr-site-history-action {
+    margin-top: .35rem;
+  }
+
+  .hr-archive-page .hr-site-history-row > span:last-child {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
+
+/* Project Atlas R28 — Site History actions / editorial cadence -------------
+   Keep the preserved-history page quiet. Align its section breathing with the
+   established Home / Work / Journey / Archive rhythm and make every terminal
+   navigation action explicit through the shared icon language. */
+.hr-site-history-page .hr-history-artifact,
+.hr-site-history-page .hr-site-history-change {
+  padding-top: var(--hr-space-12);
+  padding-bottom: var(--hr-space-12);
+}
+
+.hr-site-history-page .hr-site-history-change > h2 {
+  margin-bottom: var(--hr-space-3);
+  line-height: 1.02;
+}
+
+.hr-site-history-page .hr-site-history-change > p:not(.hr-eyebrow) {
+  max-width: 760px;
+  margin-top: 0;
+}
+
+.hr-site-history-page .hr-site-history-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--hr-space-3);
+  width: min(100%, 640px);
+  margin-top: var(--hr-space-6);
+}
+
+.hr-site-history-page .hr-site-history-actions a {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 44px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .55rem;
+  padding: .72rem .85rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-strong);
+  font-size: .86rem;
+  font-weight: 750;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.hr-site-history-page .hr-site-history-actions a:hover {
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-site-history-page .hr-site-history-actions .hr-portfolio-icon {
+  flex: 0 0 auto;
+}
+
+.hr-site-history-page .hr-site-history-actions span {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .hr-site-history-page .hr-history-artifact,
+  .hr-site-history-page .hr-site-history-change {
+    padding-top: var(--hr-space-10, 2.5rem);
+    padding-bottom: var(--hr-space-10, 2.5rem);
+  }
+
+  .hr-site-history-page .hr-site-history-actions {
+    gap: .5rem;
+    width: 100%;
+  }
+
+  .hr-site-history-page .hr-site-history-actions a {
+    min-height: 42px;
+    gap: .4rem;
+    justify-content: center;
+    padding: .65rem .4rem;
+    font-size: .76rem;
+  }
+
+  .hr-site-history-page .hr-site-history-actions .hr-portfolio-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Project Atlas R29 — Site History preserved-artifact rhythm ----------------
+   Keep the historical page quiet while restoring the same section cadence used
+   across Home / Work / Journey: a visible boundary, equal air on both sides,
+   and an artifact title that reads as preserved context rather than compressed
+   display type. */
+.hr-site-history-page .hr-page-masthead {
+  padding-bottom: var(--hr-space-10, 2.5rem);
+}
+
+.hr-site-history-page .hr-history-artifact {
+  border-top: 1px solid var(--hr-color-border-subtle);
+  padding-top: var(--hr-space-10, 2.5rem);
+  padding-bottom: var(--hr-space-12);
+}
+
+.hr-site-history-page .hr-artifact-label {
+  margin-bottom: var(--hr-space-5, 1.25rem);
+}
+
+.hr-site-history-page .hr-artifact-frame {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+}
+
+.hr-site-history-page .hr-artifact-kicker {
+  margin: 0 0 var(--hr-space-3);
+}
+
+.hr-site-history-page .hr-artifact-frame h2 {
+  max-width: 13ch;
+  margin: 0 0 var(--hr-space-4);
+  font-size: clamp(2.45rem, 5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+
+.hr-site-history-page .hr-artifact-frame > p:not(.hr-artifact-kicker) {
+  margin: 0;
+}
+
+.hr-site-history-page .hr-artifact-stamp {
+  margin-top: var(--hr-space-7, 1.75rem);
+}
+
+@media (max-width: 720px) {
+  .hr-site-history-page .hr-page-masthead {
+    padding-bottom: var(--hr-space-8);
+  }
+
+  .hr-site-history-page .hr-history-artifact {
+    padding-top: var(--hr-space-8);
+    padding-bottom: var(--hr-space-10, 2.5rem);
+  }
+
+  .hr-site-history-page .hr-artifact-label {
+    margin-bottom: var(--hr-space-4);
+  }
+
+  .hr-site-history-page .hr-artifact-frame {
+    min-height: 0;
+    padding: 2rem 1.5rem;
+  }
+
+  .hr-site-history-page .hr-artifact-frame h2 {
+    max-width: none;
+    font-size: clamp(2rem, 10.5vw, 2.75rem);
+    line-height: 1.04;
+    letter-spacing: -.05em;
+  }
+
+  .hr-site-history-page .hr-artifact-stamp {
+    margin-top: var(--hr-space-6);
+  }
+}
+
+/* Project Atlas R30 — Case Studies action grammar / publication-state rhythm
+   Preserve the quiet editorial index while borrowing the resolved interaction
+   language from Archive and Site History: every action has an icon, rows breathe,
+   and display copy never collides with section rules. */
+.hr-case-studies-page .hr-editorial-block,
+.hr-case-studies-page .hr-editorial-empty {
+  padding-block: var(--hr-space-12);
+}
+
+.hr-case-studies-page .hr-editorial-block h2,
+.hr-case-studies-page .hr-editorial-empty h2 {
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.hr-case-studies-page .hr-case-study-rows {
+  margin-top: var(--hr-space-5, 1.25rem);
+  border-top: 1px solid var(--hr-color-border-subtle);
+}
+
+.hr-case-studies-page .hr-case-study-rows article {
+  grid-template-columns: minmax(0, 1fr) minmax(176px, auto);
+  gap: var(--hr-space-8);
+  padding-block: var(--hr-space-6);
+  border-top: 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+
+.hr-case-studies-page .hr-case-study-rows article:last-child {
+  border-bottom: 0;
+}
+
+.hr-case-studies-page .hr-case-study-rows h3 {
+  line-height: 1.2;
+}
+
+.hr-case-studies-page .hr-case-study-rows p {
+  margin: .35rem 0 0;
+  line-height: 1.55;
+}
+
+.hr-case-studies-page .hr-case-study-action {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .55rem;
+  align-items: center;
+  min-height: 42px;
+  padding: .65rem .75rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-body);
+  font-size: .82rem;
+  font-weight: 750;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.hr-case-studies-page .hr-case-study-action:hover,
+.hr-case-studies-page .hr-case-study-state-actions a:hover {
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-case-studies-page .hr-case-study-action .hr-portfolio-icon,
+.hr-case-studies-page .hr-case-study-state-actions .hr-portfolio-icon {
+  flex: 0 0 auto;
+}
+
+.hr-case-studies-page .hr-case-study-action-arrow {
+  justify-self: end;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.hr-case-studies-page .hr-editorial-empty h2 {
+  max-width: 21ch;
+  margin-bottom: var(--hr-space-4);
+}
+
+.hr-case-studies-page .hr-editorial-empty > p:not(.hr-eyebrow) {
+  max-width: 760px;
+  margin-top: 0;
+}
+
+.hr-case-studies-page .hr-case-study-state-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hr-space-3);
+  width: min(100%, 390px);
+  margin-top: var(--hr-space-6);
+}
+
+.hr-case-studies-page .hr-case-study-state-actions a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .55rem;
+  padding: .65rem .75rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-body);
+  font-size: .82rem;
+  font-weight: 750;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  .hr-case-studies-page .hr-editorial-block,
+  .hr-case-studies-page .hr-editorial-empty {
+    padding-block: var(--hr-space-10, 2.5rem);
+  }
+
+  .hr-case-studies-page .hr-editorial-block h2,
+  .hr-case-studies-page .hr-editorial-empty h2 {
+    font-size: clamp(1.95rem, 9.5vw, 2.45rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+  }
+
+  .hr-case-studies-page .hr-case-study-rows {
+    margin-top: var(--hr-space-5, 1.25rem);
+  }
+
+  .hr-case-studies-page .hr-case-study-rows article {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-4);
+    padding-block: var(--hr-space-6);
+  }
+
+  .hr-case-studies-page .hr-case-study-action {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .hr-case-studies-page .hr-editorial-empty h2 {
+    max-width: 18ch;
+    margin-bottom: var(--hr-space-4);
+  }
+
+  .hr-case-studies-page .hr-case-study-state-actions {
+    width: 100%;
+    margin-top: var(--hr-space-6);
+  }
+
+  .hr-case-studies-page .hr-case-study-state-actions a {
+    min-width: 0;
+    justify-content: center;
+    padding-inline: .55rem;
+    font-size: .78rem;
+  }
+}
+
+/* Phase 5E R-TD2/R-TD3 — Technical Docs hub ------------------------------ */
+.hr-technical-docs-page .hr-portfolio-main {
+  padding-top: var(--hr-space-12);
+}
+
+.hr-technical-docs-page .hr-page-masthead {
+  max-width: 820px;
+  padding-top: var(--hr-space-8);
+  padding-bottom: var(--hr-space-12);
+}
+
+.hr-technical-docs-ledger {
+  padding: var(--hr-space-12) 0 var(--hr-space-16);
+  border-top: 1px solid var(--hr-color-border-strong);
+}
+
+.hr-technical-docs-section-heading {
+  max-width: 720px;
+  padding-bottom: var(--hr-space-6);
+}
+
+.hr-technical-docs-section-heading h2,
+.hr-technical-docs-context h2 {
+  max-width: 21ch;
+  margin: var(--hr-space-3) 0 var(--hr-space-4);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.hr-technical-docs-section-heading > p:last-child,
+.hr-technical-docs-context > p {
+  max-width: 760px;
+  margin-top: 0;
+  color: var(--hr-color-text-body);
+  line-height: 1.68;
+}
+
+.hr-technical-docs-rows {
+  margin-top: var(--hr-space-5, 1.25rem);
+  border-top: 1px solid var(--hr-color-border-strong);
+}
+
+.hr-technical-docs-row {
+  display: grid;
+  grid-template-columns: minmax(180px, .58fr) minmax(0, 1.45fr) minmax(190px, .72fr);
+  gap: var(--hr-space-8);
+  align-items: start;
+  padding: var(--hr-space-8) 0;
+  border-bottom: 1px solid var(--hr-color-border-subtle);
+}
+
+.hr-technical-docs-identity {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: var(--hr-space-3);
+  align-items: start;
+}
+
+.hr-technical-docs-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--hr-color-signal-strong);
+  border: 1px solid var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-technical-docs-type {
+  margin: 0 0 .28rem;
+  color: var(--hr-color-text-muted);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.hr-technical-docs-identity h3 {
+  margin: 0;
+  font-size: 1.03rem;
+  letter-spacing: -.02em;
+}
+
+.hr-technical-docs-copy p {
+  margin: 0;
+}
+
+.hr-technical-docs-scope {
+  color: var(--hr-color-text-body);
+  line-height: 1.62;
+}
+
+.hr-technical-docs-domains {
+  margin-top: var(--hr-space-3) !important;
+  color: var(--hr-color-text-muted);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.hr-technical-docs-boundary {
+  margin-top: var(--hr-space-4) !important;
+  padding-left: var(--hr-space-3);
+  border-left: 2px solid var(--hr-color-signal);
+  color: var(--hr-color-text-muted);
+  font-size: .82rem;
+  line-height: 1.52;
+}
+
+.hr-technical-docs-boundary strong {
+  color: var(--hr-color-text-body);
+}
+
+.hr-technical-docs-meta {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--hr-space-3);
+  align-items: stretch;
+}
+
+.hr-technical-docs-meta > span {
+  color: var(--hr-color-text-muted);
+  font-size: .74rem;
+  line-height: 1.4;
+}
+
+.hr-technical-docs-meta nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--hr-space-2);
+  width: 100%;
+}
+
+.hr-technical-docs-action {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: .55rem;
+  align-items: center;
+  min-height: 42px;
+  padding: .65rem .75rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-body);
+  font-size: .8rem;
+  font-weight: 750;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.hr-technical-docs-action:hover,
+.hr-technical-docs-action:focus-visible {
+  color: var(--hr-color-text-strong);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-technical-docs-action.is-primary {
+  border-color: var(--hr-color-signal-strong);
+}
+
+.hr-technical-docs-action .hr-portfolio-icon {
+  flex: 0 0 auto;
+}
+
+.hr-technical-docs-action-arrow {
+  justify-self: end;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.hr-technical-docs-context {
+  max-width: 760px;
+  padding: var(--hr-space-12) 0 var(--hr-space-16);
+  border-top: 1px solid var(--hr-color-border-strong);
+}
+
+.hr-technical-docs-context nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--hr-space-3);
+  width: min(100%, 390px);
+  margin-top: var(--hr-space-6);
+}
+
+.hr-technical-docs-context nav a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .55rem;
+  padding: .65rem .75rem;
+  border: 1px solid var(--hr-color-border-strong);
+  color: var(--hr-color-text-body);
+  font-size: .82rem;
+  font-weight: 750;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.hr-technical-docs-context nav a:hover,
+.hr-technical-docs-context nav a:focus-visible {
+  color: var(--hr-color-text-strong);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-technical-docs-context nav .hr-portfolio-icon {
+  flex: 0 0 auto;
+}
+
+.hr-docs-footer nav {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .hr-technical-docs-row {
+    grid-template-columns: minmax(160px, .7fr) minmax(0, 1.3fr);
+  }
+
+  .hr-technical-docs-meta {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .hr-technical-docs-page .hr-portfolio-main {
+    padding-top: var(--hr-space-6);
+  }
+
+  .hr-technical-docs-page .hr-page-masthead {
+    padding-top: var(--hr-space-6);
+    padding-bottom: var(--hr-space-10, 2.5rem);
+  }
+
+  .hr-technical-docs-ledger {
+    padding-top: var(--hr-space-10, 2.5rem);
+    padding-bottom: var(--hr-space-12);
+  }
+
+  .hr-technical-docs-section-heading {
+    padding-bottom: var(--hr-space-5, 1.25rem);
+  }
+
+  .hr-technical-docs-section-heading h2,
+  .hr-technical-docs-context h2 {
+    max-width: 18ch;
+    font-size: clamp(1.95rem, 9.5vw, 2.45rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+  }
+
+  .hr-technical-docs-rows {
+    margin-top: var(--hr-space-4);
+  }
+
+  .hr-technical-docs-row {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-4);
+    padding: var(--hr-space-6) 0;
+  }
+
+  .hr-technical-docs-meta {
+    grid-column: auto;
+    gap: var(--hr-space-3);
+  }
+
+  .hr-technical-docs-meta nav {
+    gap: var(--hr-space-2);
+  }
+
+  .hr-technical-docs-action {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .hr-technical-docs-context {
+    padding-top: var(--hr-space-10, 2.5rem);
+    padding-bottom: var(--hr-space-12);
+  }
+
+  .hr-technical-docs-context nav {
+    width: 100%;
+    margin-top: var(--hr-space-6);
+  }
+
+  .hr-technical-docs-context nav a {
+    min-width: 0;
+    min-height: 44px;
+    justify-content: center;
+    padding-inline: .55rem;
+    font-size: .78rem;
+  }
+
+  .hr-technical-docs-context nav .hr-portfolio-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
