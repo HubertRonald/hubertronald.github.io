@@ -339,7 +339,7 @@ export const portfolioProjects: Record<string, PortfolioProject> = {
     "tagline": "Pure-Lua statistics library preserving historical library engineering and later package/community evolution.",
     "summary": "LuaSF preserves 2017–2018 Lua statistics/probability library engineering, later outside contribution and compatibility maintenance, and a 2026 LuaRocks revival. The README's earlier-origin statement is kept separate from commit-backed public history.",
     "repository": "https://github.com/HubertRonald/LuaSF",
-    "documentation": "/luasf/",
+    "documentation": "/technical-docs/luasf/",
     "release": null,
     "stages": [
       "Creative Software & Product Instinct"

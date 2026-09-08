@@ -484,7 +484,7 @@ const currentRoutes = Object.fromEntries(registry.sources.map((source) => [sourc
 check('route state: VersoVector (authorized R-TD5.1)', currentRoutes.versovector === '/technical-docs/versovector/', 'unexpected route state')
 check('route freeze: RetainAI', currentRoutes.retainai === '/retainai/', 'route changed')
 check('route freeze: relationalstats', currentRoutes.relationalstats === '/relationalstats/', 'route changed')
-check('route freeze: LuaSF', currentRoutes.luasf === '/luasf/', 'route changed')
+check('route state: LuaSF (authorized R-TD5.2)', currentRoutes.luasf === '/technical-docs/luasf/', 'unexpected route state')
 check('route freeze: GradientMesh', currentRoutes.gradientmesh === '/gradientmesh/', 'route changed')
 
 await runLifecycleSelfTest()

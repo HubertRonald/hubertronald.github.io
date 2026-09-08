@@ -183,7 +183,7 @@ const journeyStageIcons = ['gamepad', 'sigma', 'terminal', 'database', 'cloud', 
               <a :href="projectHref(id)" :target="project(id).documentation ? undefined : '_blank'" :rel="project(id).documentation ? undefined : 'noopener noreferrer'">→</a>
             </article>
           </div>
-          <p class="hr-bridge-note"><strong>Bridge:</strong> <a href="/luasf/">LuaSF</a></p>
+          <p class="hr-bridge-note"><strong>Bridge:</strong> <a href="/technical-docs/luasf/">LuaSF</a></p>
         </section>
       </div>
 

@@ -55,13 +55,21 @@ check('VersoVector source mode unchanged', versovector?.source_mode === 'local_c
 const expectedOtherRoutes = {
   retainai: { route: '/retainai/', sourcePath: 'docs/retainai' },
   relationalstats: { route: '/relationalstats/', sourcePath: 'docs/relationalstats' },
-  luasf: { route: '/luasf/', sourcePath: 'docs/luasf' },
   gradientmesh: { route: '/gradientmesh/', sourcePath: 'docs/gradientmesh' }
 }
 for (const [id, expected] of Object.entries(expectedOtherRoutes)) {
   const source = registry.sources.find((item) => item.project_id === id)
-  check(`no other project migrated: ${id}`, source?.current_public_route === expected.route && source?.site_source_path === expected.sourcePath && !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', id)), `route/source path changed for ${id}`)
+  check(`no later migration outside approved scope: ${id}`, source?.current_public_route === expected.route && source?.site_source_path === expected.sourcePath && !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', id)), `route/source path changed for ${id}`)
 }
+const luasf = registry.sources.find((item) => item.project_id === 'luasf')
+check(
+  'authorized later migration: LuaSF R-TD5.2',
+  luasf?.current_public_route === '/technical-docs/luasf/' &&
+    luasf?.site_source_path === 'docs/technical-docs/luasf' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/luasf/index.md')),
+  'LuaSF is not in the authorized R-TD5.2 canonical + legacy compatibility state'
+)
 
 const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')
 check(

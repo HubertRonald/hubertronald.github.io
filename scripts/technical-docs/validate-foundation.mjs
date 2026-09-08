@@ -33,23 +33,29 @@ check(
 
 check('hub route', fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/index.md')), 'docs/technical-docs/index.md is missing')
 const versovector = published.find((source) => source.project_id === 'versovector')
+const luasf = published.find((source) => source.project_id === 'luasf')
+const completedRouteMigrations = new Set(['versovector', 'luasf'])
 check(
   'approved route migration state',
   versovector?.site_source_path === 'docs/technical-docs/versovector' &&
     versovector?.current_public_route === '/technical-docs/versovector/' &&
+    luasf?.site_source_path === 'docs/technical-docs/luasf' &&
+    luasf?.current_public_route === '/technical-docs/luasf/' &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/versovector/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
     published
-      .filter((source) => source.project_id !== 'versovector')
+      .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
-  'R-TD5.1 route state is not limited to VersoVector'
+  'approved route migration state differs from closed R-TD5.1 + R-TD5.2 scope'
 )
 check(
   'legacy project routes',
   fs.existsSync(path.join(repositoryRoot, 'docs/versovector/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/luasf/index.md')) &&
     published
-      .filter((source) => source.project_id !== 'versovector')
+      .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => fs.existsSync(path.join(repositoryRoot, source.site_source_path, 'index.md'))),
-  'VersoVector compatibility root or another current project route root is missing'
+  'a completed migration compatibility root or a frozen current route root is missing'
 )
 
 const config = read('docs/.vitepress/config.mts')

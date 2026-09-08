@@ -113,8 +113,8 @@
       "source_repository": "https://github.com/HubertRonald/LuaSF",
       "source_ref": null,
       "source_mode": "local_curated",
-      "site_source_path": "docs/luasf",
-      "current_public_route": "/luasf/",
+      "site_source_path": "docs/technical-docs/luasf",
+      "current_public_route": "/technical-docs/luasf/",
       "proposed_public_route": "/technical-docs/luasf/",
       "legacy_routes": ["/luasf/"],
       "sync_strategy": "none",
@@ -131,7 +131,7 @@
       ],
       "update_policy": "manual_curated; release alignment should be verified before updates",
       "ownership": {
-        "curated_targets": ["docs/luasf/**"],
+        "curated_targets": ["docs/technical-docs/luasf/**"],
         "generated_targets": []
       },
       "provenance_lock_policy": "not_applicable_local_curated",

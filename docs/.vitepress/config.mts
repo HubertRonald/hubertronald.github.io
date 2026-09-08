@@ -21,6 +21,10 @@ function canonicalPathForPage(page: string): string {
     return normalized.replace('/versovector/', '/technical-docs/versovector/')
   }
 
+  if (normalized.startsWith('/luasf/')) {
+    return normalized.replace('/luasf/', '/technical-docs/luasf/')
+  }
+
   return normalized
 }
 
@@ -76,7 +80,7 @@ export default withMermaid(
         { text: 'RelationalStats', link: '/relationalstats/' },
         { text: 'GradientMesh', link: '/gradientmesh/' },
         { text: 'VersoVector', link: '/technical-docs/versovector/' },
-        { text: 'LuaSF', link: '/luasf/' }
+        { text: 'LuaSF', link: '/technical-docs/luasf/' }
       ],
       */
       nav: [
@@ -208,17 +212,17 @@ export default withMermaid(
           }
         ],
 
-        '/luasf/': [
+        '/technical-docs/luasf/': [
           {
             text: 'LuaSF',
             items: [
-              { text: 'Overview', link: '/luasf/' },
-              { text: 'Getting Started', link: '/luasf/getting-started' },
-              { text: 'API Overview', link: '/luasf/api-overview' },
-              { text: 'Architecture', link: '/luasf/architecture' },
-              { text: 'Examples', link: '/luasf/examples' },
-              { text: 'Contributing', link: '/luasf/contributing' },
-              { text: 'Releases', link: '/luasf/releases' }
+              { text: 'Overview', link: '/technical-docs/luasf/' },
+              { text: 'Getting Started', link: '/technical-docs/luasf/getting-started' },
+              { text: 'API Overview', link: '/technical-docs/luasf/api-overview' },
+              { text: 'Architecture', link: '/technical-docs/luasf/architecture' },
+              { text: 'Examples', link: '/technical-docs/luasf/examples' },
+              { text: 'Contributing', link: '/technical-docs/luasf/contributing' },
+              { text: 'Releases', link: '/technical-docs/luasf/releases' }
             ]
           }
         ],

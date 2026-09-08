@@ -24,7 +24,7 @@ TECH_DOC_ROUTES = {
     "/technical-docs/versovector/": DIST / "technical-docs" / "versovector" / "index.html",
     "/relationalstats/": DIST / "relationalstats" / "index.html",
     "/gradientmesh/": DIST / "gradientmesh" / "index.html",
-    "/luasf/": DIST / "luasf" / "index.html",
+    "/technical-docs/luasf/": DIST / "technical-docs" / "luasf" / "index.html",
 }
 
 SENSITIVE_PATTERNS = [
