@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "work_item": "R-TD5.3",
+  "project_id": "gradientmesh",
+  "source_checkpoint": "9461b3d8bb4fb916e5feb09c340eb9c5720e5203",
+  "source_root_before": "docs/gradientmesh",
+  "canonical_root_after": "docs/technical-docs/gradientmesh",
+  "document_count": 7,
+  "documents": [
+    {
+      "relative_path": "api-reference.md",
+      "sha256": "7882eac09889c8b9b77897b7452d4096861a0db21d2d8613575361d1b4549a46",
+      "remote_urls": []
+    },
+    {
+      "relative_path": "architecture.md",
+      "sha256": "11b6551b9284b71acedf41d5fbaa5f52eb04afde5a5581a7667b6da96732652d",
+      "remote_urls": []
+    },
+    {
+      "relative_path": "examples.md",
+      "sha256": "09647885103ba416f504203c47bfef967124a482d738a2f03183ba0e2fe57e70",
+      "remote_urls": [
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-overlay-landscape.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/texture-mask-rotated-mesh.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/hexagon-portrait-texture-mask.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/radial-shapes-hole-deform.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/radial-gradient-splash-masks.png"
+      ]
+    },
+    {
+      "relative_path": "getting-started.md",
+      "sha256": "713a2d71f9103ad9daf171faad7784bdf1f60d4d7a8c187de15afcce86279304",
+      "remote_urls": []
+    },
+    {
+      "relative_path": "how-it-works.md",
+      "sha256": "db73238a99eb297e04f3b776e4d512514d476220a9bb14a2ca2a32a070c9ca58",
+      "remote_urls": []
+    },
+    {
+      "relative_path": "index.md",
+      "sha256": "f4bb424a9546cd9393156e9af9e71130cd7f3d5e0ba87d824025db63650da1e1",
+      "remote_urls": [
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/assets/images/landscapes/pexels-photo-89432.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-big-rainbow-fog.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-royal-blue.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-firewatch.png",
+        "https://raw.githubusercontent.com/HubertRonald/GradientMesh/master/docs/images/gradient-mesh-mango.png",
+        "https://github.com/HubertRonald/GradientMesh"
+      ]
+    },
+    {
+      "relative_path": "releases.md",
+      "sha256": "68744b491a3428ee735f6e4f609fe5be48846786170a15cbaca0426bed9c5b86",
+      "remote_urls": []
+    }
+  ]
+}

@@ -144,8 +144,8 @@
       "source_repository": "https://github.com/HubertRonald/GradientMesh",
       "source_ref": "master",
       "source_mode": "local_curated_remote_assets",
-      "site_source_path": "docs/gradientmesh",
-      "current_public_route": "/gradientmesh/",
+      "site_source_path": "docs/technical-docs/gradientmesh",
+      "current_public_route": "/technical-docs/gradientmesh/",
       "proposed_public_route": "/technical-docs/gradientmesh/",
       "legacy_routes": ["/gradientmesh/"],
       "sync_strategy": "none",
@@ -162,7 +162,7 @@
       ],
       "update_policy": "manual_curated; pin remote asset URLs to immutable commit/tag when practical",
       "ownership": {
-        "curated_targets": ["docs/gradientmesh/**"],
+        "curated_targets": ["docs/technical-docs/gradientmesh/**"],
         "generated_targets": []
       },
       "provenance_lock_policy": "not_applicable_local_curated",

@@ -34,24 +34,29 @@ check(
 check('hub route', fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/index.md')), 'docs/technical-docs/index.md is missing')
 const versovector = published.find((source) => source.project_id === 'versovector')
 const luasf = published.find((source) => source.project_id === 'luasf')
-const completedRouteMigrations = new Set(['versovector', 'luasf'])
+const gradientmesh = published.find((source) => source.project_id === 'gradientmesh')
+const completedRouteMigrations = new Set(['versovector', 'luasf', 'gradientmesh'])
 check(
   'approved route migration state',
   versovector?.site_source_path === 'docs/technical-docs/versovector' &&
     versovector?.current_public_route === '/technical-docs/versovector/' &&
     luasf?.site_source_path === 'docs/technical-docs/luasf' &&
     luasf?.current_public_route === '/technical-docs/luasf/' &&
+    gradientmesh?.site_source_path === 'docs/technical-docs/gradientmesh' &&
+    gradientmesh?.current_public_route === '/technical-docs/gradientmesh/' &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/versovector/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/gradientmesh/index.md')) &&
     published
       .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
-  'approved route migration state differs from closed R-TD5.1 + R-TD5.2 scope'
+  'approved route migration state differs from closed R-TD5.1 + R-TD5.2 + R-TD5.3 scope'
 )
 check(
   'legacy project routes',
   fs.existsSync(path.join(repositoryRoot, 'docs/versovector/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/luasf/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/gradientmesh/index.md')) &&
     published
       .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => fs.existsSync(path.join(repositoryRoot, source.site_source_path, 'index.md'))),

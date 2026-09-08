@@ -738,7 +738,7 @@ export const portfolioProjects: Record<string, PortfolioProject> = {
     "tagline": "Historical Lua/Gideros gradient-mesh experiment demonstrating geometry and color interpolation.",
     "summary": "GradientMesh preserves 2017–2018 graphics programming around procedural meshes, vertex/color interpolation and multiple gradient forms, with a separate 2026 documentation/provenance refresh. Limited provenance for some historical demonstration assets is accepted and explicitly separated from source-code licensing.",
     "repository": "https://github.com/HubertRonald/GradientMesh",
-    "documentation": "/gradientmesh/",
+    "documentation": "/technical-docs/gradientmesh/",
     "release": null,
     "stages": [
       "Creative Software & Product Instinct"

@@ -54,8 +54,7 @@ check('VersoVector source mode unchanged', versovector?.source_mode === 'local_c
 
 const expectedOtherRoutes = {
   retainai: { route: '/retainai/', sourcePath: 'docs/retainai' },
-  relationalstats: { route: '/relationalstats/', sourcePath: 'docs/relationalstats' },
-  gradientmesh: { route: '/gradientmesh/', sourcePath: 'docs/gradientmesh' }
+  relationalstats: { route: '/relationalstats/', sourcePath: 'docs/relationalstats' }
 }
 for (const [id, expected] of Object.entries(expectedOtherRoutes)) {
   const source = registry.sources.find((item) => item.project_id === id)
@@ -69,6 +68,15 @@ check(
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/luasf/index.md')),
   'LuaSF is not in the authorized R-TD5.2 canonical + legacy compatibility state'
+)
+const gradientmesh = registry.sources.find((item) => item.project_id === 'gradientmesh')
+check(
+  'authorized later migration: GradientMesh R-TD5.3',
+  gradientmesh?.current_public_route === '/technical-docs/gradientmesh/' &&
+    gradientmesh?.site_source_path === 'docs/technical-docs/gradientmesh' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/gradientmesh/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/gradientmesh/index.md')),
+  'GradientMesh is not in the authorized R-TD5.3 canonical + legacy compatibility state'
 )
 
 const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')

@@ -25,6 +25,10 @@ function canonicalPathForPage(page: string): string {
     return normalized.replace('/luasf/', '/technical-docs/luasf/')
   }
 
+  if (normalized.startsWith('/gradientmesh/')) {
+    return normalized.replace('/gradientmesh/', '/technical-docs/gradientmesh/')
+  }
+
   return normalized
 }
 
@@ -78,7 +82,7 @@ export default withMermaid(
       nav: [
         { text: 'RetainAI', link: '/retainai/' },
         { text: 'RelationalStats', link: '/relationalstats/' },
-        { text: 'GradientMesh', link: '/gradientmesh/' },
+        { text: 'GradientMesh', link: '/technical-docs/gradientmesh/' },
         { text: 'VersoVector', link: '/technical-docs/versovector/' },
         { text: 'LuaSF', link: '/technical-docs/luasf/' }
       ],
@@ -227,17 +231,17 @@ export default withMermaid(
           }
         ],
 
-        '/gradientmesh/': [
+        '/technical-docs/gradientmesh/': [
           {
             text: 'GradientMesh',
             items: [
-              { text: 'Overview', link: '/gradientmesh/' },
-              { text: 'Getting Started', link: '/gradientmesh/getting-started' },
-              { text: 'Examples', link: '/gradientmesh/examples' },
-              { text: 'How It Works', link: '/gradientmesh/how-it-works' },
-              { text: 'API Reference', link: '/gradientmesh/api-reference' },
-              { text: 'Architecture', link: '/gradientmesh/architecture' },
-              { text: 'Releases', link: '/gradientmesh/releases' }
+              { text: 'Overview', link: '/technical-docs/gradientmesh/' },
+              { text: 'Getting Started', link: '/technical-docs/gradientmesh/getting-started' },
+              { text: 'Examples', link: '/technical-docs/gradientmesh/examples' },
+              { text: 'How It Works', link: '/technical-docs/gradientmesh/how-it-works' },
+              { text: 'API Reference', link: '/technical-docs/gradientmesh/api-reference' },
+              { text: 'Architecture', link: '/technical-docs/gradientmesh/architecture' },
+              { text: 'Releases', link: '/technical-docs/gradientmesh/releases' }
             ]
           }
         ]
