@@ -25,10 +25,10 @@ if (!targetRootEnv) {
 }
 
 const targetRoot = path.resolve(targetRootEnv)
-const publicTargetRoot = path.resolve('docs/retainai')
+const publicTargetRoot = path.resolve('docs/technical-docs/retainai')
 
 if (targetRoot === publicTargetRoot) {
-  throw new Error('RetainAI transformer refuses to write directly to docs/retainai.')
+  throw new Error('RetainAI transformer refuses to write directly to docs/technical-docs/retainai.')
 }
 
 const referenceRoot = path.join(targetRoot, 'reference')

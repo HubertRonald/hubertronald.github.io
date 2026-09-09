@@ -1,3 +1,16 @@
-# Dashboard Validation Report
+---
+layout: false
+search: false
+title: RetainAI
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/retainai/reference/reports/dashboard_validation"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Generated from notebook validation workflow.
+<!-- R-TD5.5 legacy compatibility stub. Canonical content lives under /technical-docs/retainai/. -->
+
+<p>RetainAI documentation moved to <a href="/technical-docs/retainai/reference/reports/dashboard_validation">/technical-docs/retainai/reference/reports/dashboard_validation</a>.</p>

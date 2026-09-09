@@ -33,6 +33,10 @@ function canonicalPathForPage(page: string): string {
     return normalized.replace('/relationalstats/', '/technical-docs/relationalstats/')
   }
 
+  if (normalized.startsWith('/retainai/')) {
+    return normalized.replace('/retainai/', '/technical-docs/retainai/')
+  }
+
   return normalized
 }
 
@@ -84,7 +88,7 @@ export default withMermaid(
       },
       /* 
       nav: [
-        { text: 'RetainAI', link: '/retainai/' },
+        { text: 'RetainAI', link: '/technical-docs/retainai/' },
         { text: 'RelationalStats', link: '/technical-docs/relationalstats/' },
         { text: 'GradientMesh', link: '/technical-docs/gradientmesh/' },
         { text: 'VersoVector', link: '/technical-docs/versovector/' },
@@ -102,15 +106,15 @@ export default withMermaid(
       ],
 
       sidebar: {
-        '/retainai/': [
+        '/technical-docs/retainai/': [
           {
             text: 'RetainAI',
             items: [
-              { text: 'Overview', link: '/retainai/' },
-              { text: 'Project README', link: '/retainai/package' },
-              { text: 'Documentation Index', link: '/retainai/reference/docs/' },
-              { text: 'Reports', link: '/retainai/reference/reports/' },
-              { text: 'Releases', link: '/retainai/releases' }
+              { text: 'Overview', link: '/technical-docs/retainai/' },
+              { text: 'Project README', link: '/technical-docs/retainai/package' },
+              { text: 'Documentation Index', link: '/technical-docs/retainai/reference/docs/' },
+              { text: 'Reports', link: '/technical-docs/retainai/reference/reports/' },
+              { text: 'Releases', link: '/technical-docs/retainai/releases' }
             ]
           }
         ],

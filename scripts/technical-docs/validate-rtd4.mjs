@@ -482,7 +482,7 @@ check(
 
 const currentRoutes = Object.fromEntries(registry.sources.map((source) => [source.project_id, source.current_public_route]))
 check('route state: VersoVector (authorized R-TD5.1)', currentRoutes.versovector === '/technical-docs/versovector/', 'unexpected route state')
-check('route freeze: RetainAI', currentRoutes.retainai === '/retainai/', 'route changed')
+check('route state: RetainAI (authorized R-TD5.5)', currentRoutes.retainai === '/technical-docs/retainai/', 'unexpected route state')
 check('route state: relationalstats (authorized R-TD5.4)', currentRoutes.relationalstats === '/technical-docs/relationalstats/', 'unexpected route state')
 check('route state: LuaSF (authorized R-TD5.2)', currentRoutes.luasf === '/technical-docs/luasf/', 'unexpected route state')
 check('route state: GradientMesh (authorized R-TD5.3)', currentRoutes.gradientmesh === '/technical-docs/gradientmesh/', 'unexpected route state')

@@ -20,7 +20,7 @@ PORTFOLIO_PAGES = {
 }
 
 TECH_DOC_ROUTES = {
-    "/retainai/": DIST / "retainai" / "index.html",
+    "/technical-docs/retainai/": DIST / "technical-docs" / "retainai" / "index.html",
     "/technical-docs/versovector/": DIST / "technical-docs" / "versovector" / "index.html",
     "/technical-docs/relationalstats/": DIST / "technical-docs" / "relationalstats" / "index.html",
     "/technical-docs/gradientmesh/": DIST / "technical-docs" / "gradientmesh" / "index.html",
@@ -185,9 +185,9 @@ def main() -> int:
     legacy_dir = DIST / "legacy" / "root-under-construction"
     if legacy_dir.exists(): errors.append("Build output exposes /legacy/root-under-construction/ as a generated public directory")
 
-    retainai_html = read_page(TECH_DOC_ROUTES["/retainai/"]) if TECH_DOC_ROUTES["/retainai/"].exists() else ""
+    retainai_html = read_page(TECH_DOC_ROUTES["/technical-docs/retainai/"]) if TECH_DOC_ROUTES["/technical-docs/retainai/"].exists() else ""
     if retainai_html and "v0.4.0-alpha.1" not in retainai_html:
-        errors.append("/retainai/: missing Atlas release-scope context v0.4.0-alpha.1")
+        errors.append("/technical-docs/retainai/: missing Atlas release-scope context v0.4.0-alpha.1")
 
     if errors:
         print("Quality check failed:")

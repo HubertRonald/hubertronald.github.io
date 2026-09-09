@@ -23,7 +23,8 @@
         "technical-docs:validate-rtd5-1": "node scripts/technical-docs/validate-rtd5-1.mjs",
         "technical-docs:validate-rtd5-2": "node scripts/technical-docs/validate-rtd5-2.mjs",
         "technical-docs:validate-rtd5-3": "node scripts/technical-docs/validate-rtd5-3.mjs",
-        "technical-docs:validate-rtd5-4": "node scripts/technical-docs/validate-rtd5-4.mjs"
+        "technical-docs:validate-rtd5-4": "node scripts/technical-docs/validate-rtd5-4.mjs",
+        "technical-docs:validate-rtd5-5": "node scripts/technical-docs/validate-rtd5-5.mjs"
     },
     "devDependencies": {
         "gray-matter": "^4.0.3",

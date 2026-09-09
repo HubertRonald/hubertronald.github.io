@@ -178,13 +178,14 @@ for (const [id, expected] of Object.entries({
 
 const retainai = registry.sources.find((source) => source.project_id === 'retainai')
 sourceCheck(
-  'RetainAI not migrated',
-  retainai?.current_public_route === '/retainai/' &&
-    retainai?.site_source_path === 'docs/retainai' &&
+  'authorized later migration: RetainAI R-TD5.5',
+  retainai?.current_public_route === '/technical-docs/retainai/' &&
+    retainai?.site_source_path === 'docs/technical-docs/retainai' &&
     retainai?.source_mode === 'snapshot_sync' &&
     retainai?.source_ref === 'v0.4.0-alpha.1' &&
-    !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/retainai')),
-  'RetainAI R-TD5.5 boundary changed'
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/retainai/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/retainai/index.md')),
+  'RetainAI is not in the authorized R-TD5.5 canonical + legacy compatibility state'
 )
 
 const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')

@@ -108,7 +108,7 @@ export const portfolioProjects: Record<string, PortfolioProject> = {
     "tagline": "Release-scoped AI-native decision-intelligence product evidence.",
     "summary": "RetainAI is frozen strictly at release v0.4.0-alpha.1 as AI-native product and decision-intelligence evidence. Later roadmap work—including later RAG, AI Advisor, Gemini/Bedrock runtime, drift monitoring and automated retraining ideas—is outside this freeze.",
     "repository": "https://github.com/HubertRonald/RetainAI",
-    "documentation": "/retainai/",
+    "documentation": "/technical-docs/retainai/",
     "release": "https://github.com/HubertRonald/RetainAI/releases/tag/v0.4.0-alpha.1",
     "stages": [
       "ML / NLP & MLOps",

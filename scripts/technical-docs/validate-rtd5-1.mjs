@@ -52,13 +52,6 @@ check('VersoVector canonical source path', versovector?.site_source_path === 'do
 check('VersoVector curated ownership path', JSON.stringify(versovector?.ownership?.curated_targets) === JSON.stringify(['docs/technical-docs/versovector/**']), `found ${JSON.stringify(versovector?.ownership?.curated_targets)}`)
 check('VersoVector source mode unchanged', versovector?.source_mode === 'local_curated' && versovector?.sync_strategy === 'none' && !versovector?.sync_adapter, 'VersoVector lifecycle ownership changed')
 
-const expectedOtherRoutes = {
-  retainai: { route: '/retainai/', sourcePath: 'docs/retainai' }
-}
-for (const [id, expected] of Object.entries(expectedOtherRoutes)) {
-  const source = registry.sources.find((item) => item.project_id === id)
-  check(`no later migration outside approved scope: ${id}`, source?.current_public_route === expected.route && source?.site_source_path === expected.sourcePath && !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', id)), `route/source path changed for ${id}`)
-}
 const luasf = registry.sources.find((item) => item.project_id === 'luasf')
 check(
   'authorized later migration: LuaSF R-TD5.2',
@@ -85,6 +78,16 @@ check(
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/relationalstats/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/relationalstats/index.md')),
   'relationalstats is not in the authorized R-TD5.4 canonical + legacy compatibility state'
+)
+
+const retainai = registry.sources.find((item) => item.project_id === 'retainai')
+check(
+  'authorized later migration: RetainAI R-TD5.5',
+  retainai?.current_public_route === '/technical-docs/retainai/' &&
+    retainai?.site_source_path === 'docs/technical-docs/retainai' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/retainai/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/retainai/index.md')),
+  'RetainAI is not in the authorized R-TD5.5 canonical + legacy compatibility state'
 )
 
 const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')

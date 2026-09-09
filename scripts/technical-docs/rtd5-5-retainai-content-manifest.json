@@ -1,0 +1,532 @@
+{
+  "all_files": [
+    {
+      "bytes": 2539,
+      "kind": "markdown",
+      "relative_path": "index.md",
+      "sha256": "cbaaf61c3e731016cefe16e586fd8dbc5a05df1bb2d7167387e722e9a2506701"
+    },
+    {
+      "bytes": 10029,
+      "kind": "markdown",
+      "relative_path": "package.md",
+      "sha256": "cc79aadd7016fded15cb44642ab33f08d571f63159b744b59d2485910db7ff8f"
+    },
+    {
+      "bytes": 1453,
+      "kind": "markdown",
+      "relative_path": "reference/docs/architecture/assets/vendor/NOTICE.md",
+      "sha256": "93f343e95d511624e5dd4a709293fa6a9e92fe13268a2a5fd3f35770efd083a2"
+    },
+    {
+      "bytes": 102,
+      "kind": "markdown",
+      "relative_path": "reference/docs/architecture/assets/vendor/index.md",
+      "sha256": "b9b160450e213c952da4de1cd3ea4bef9b51441f1a57b7308f3073b9e7bf9043"
+    },
+    {
+      "bytes": 932,
+      "kind": "markdown",
+      "relative_path": "reference/docs/architecture/diagrams/index.md",
+      "sha256": "50da01682cf310d6683a8781919fdd98880b65cd4a5fbcc645b8220a9a99bc2e"
+    },
+    {
+      "bytes": 16562,
+      "kind": "markdown",
+      "relative_path": "reference/docs/architecture/index.md",
+      "sha256": "a54bb224dbd9e1c31f25955985a8ecf3f527cd75a9b153e0523201d994c40918"
+    },
+    {
+      "bytes": 3901,
+      "kind": "markdown",
+      "relative_path": "reference/docs/dashboard/index.md",
+      "sha256": "b070a863741dc924564d209c91560d6c84a4185174bfbb3c7d055075410b9642"
+    },
+    {
+      "bytes": 1575,
+      "kind": "markdown",
+      "relative_path": "reference/docs/data/index.md",
+      "sha256": "5e898dff4c3aecfe3d28bebd2e61e705d8de9bd78119b19356585b24de7313ea"
+    },
+    {
+      "bytes": 1344,
+      "kind": "markdown",
+      "relative_path": "reference/docs/eda/index.md",
+      "sha256": "3e571fda7e5e67440a0eb2b7ae7d4c03e8584721f86b801eedc2608767a8ebcb"
+    },
+    {
+      "bytes": 1633,
+      "kind": "markdown",
+      "relative_path": "reference/docs/index.md",
+      "sha256": "0fd0b47f0550b5f122e21b8d774632b1eb3c0b89a162c56ffe44142c2627b1aa"
+    },
+    {
+      "bytes": 1751,
+      "kind": "markdown",
+      "relative_path": "reference/docs/mlops/index.md",
+      "sha256": "ce2bf4d683b9ed834b420b6b56720b92bb030b0262e6b48151b6c670624de8da"
+    },
+    {
+      "bytes": 1715,
+      "kind": "markdown",
+      "relative_path": "reference/docs/modeling/index.md",
+      "sha256": "1f5f6bee5d6ed955e900f871e438781c38a761309379ad6388da14854e2612e2"
+    },
+    {
+      "bytes": 3163,
+      "kind": "markdown",
+      "relative_path": "reference/docs/multicloud/index.md",
+      "sha256": "0b8f5fdd390da20cd549006a67df9ab2aaede717b62794551fb68775ec350a3f"
+    },
+    {
+      "bytes": 1775,
+      "kind": "markdown",
+      "relative_path": "reference/docs/multicloud/manual_application_release.md",
+      "sha256": "1e3e488a9bae0e060a52ef03dd30bbe2079cf07a96b2f1d1267ee9d4b416582b"
+    },
+    {
+      "bytes": 1805,
+      "kind": "markdown",
+      "relative_path": "reference/docs/prompts/index.md",
+      "sha256": "1afa0afa3280cc4258aa8a991fec739dbb602f71493d7c3206f782516185ca22"
+    },
+    {
+      "bytes": 141,
+      "kind": "markdown",
+      "relative_path": "reference/docs/releases/index.md",
+      "sha256": "14dcb4fbbf5fc889b45f11e6b172d2cf453f1c30f03d2ae1b5c75ad151788998"
+    },
+    {
+      "bytes": 2220,
+      "kind": "markdown",
+      "relative_path": "reference/docs/releases/v0.4.0-alpha.1.md",
+      "sha256": "c4281761e2d361513f5d736a9920dcf73800c52db31e26af9af4d00c35fcb6c1"
+    },
+    {
+      "bytes": 1728,
+      "kind": "markdown",
+      "relative_path": "reference/docs/releases/v0.4.0.md",
+      "sha256": "3873b75de41c9058ddfed6bc95f961c4ae03d7f948cca3a3e413753fcc7650b1"
+    },
+    {
+      "bytes": 1831434,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_data_model_evidence_pipeline.png",
+      "sha256": "2525c2a9b9ad4e1df919512864471a983670df49e4e5a5c153eda0c2cee5364b"
+    },
+    {
+      "bytes": 52472,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_data_model_evidence_pipeline.svg",
+      "sha256": "7ad00a6d6a00933c12354af7cac3154a24ae8b4fe89b21b611957faff9ff791d"
+    },
+    {
+      "bytes": 1791335,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_delivery_architecture.png",
+      "sha256": "7111af6dbd633847fe8e86aaf33ed890470c6a9cbf3f90f4a6da0674ab16888a"
+    },
+    {
+      "bytes": 65125,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_delivery_architecture.svg",
+      "sha256": "0dbef4fbf6dd831b68944c5e3b7f8713357f2f735528cfc6ca634796405b4145"
+    },
+    {
+      "bytes": 1758393,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_multicloud_runtime_v0_4.png",
+      "sha256": "a7e66bba7d079c9b1a59c0c17b4c83e0517617a7367c378489e54931565b5289"
+    },
+    {
+      "bytes": 96488,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_multicloud_runtime_v0_4.svg",
+      "sha256": "da9ef8725a4f09e53ea0ac37c01aa1c3f2be8095b48dbe7ca1a4ef5c496d2424"
+    },
+    {
+      "bytes": 1567910,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_runtime_sequence.png",
+      "sha256": "946f0ba6a47d96b32b670af8795ebf331c4b418de464a98cd31c1e2e184e732a"
+    },
+    {
+      "bytes": 53821,
+      "kind": "asset",
+      "relative_path": "reference/figs/architecture/retainai_runtime_sequence.svg",
+      "sha256": "99af0c2f4b5be698598d5d232e7860fcbf181d59f9ce0822d57049ca0be3b02d"
+    },
+    {
+      "bytes": 1804734,
+      "kind": "asset",
+      "relative_path": "reference/figs/retainai_decision_intelligence_architecture.png",
+      "sha256": "8504a62993d6d1fac9bda4e730400b57c3c91d53dff19ab0b7b2b6b9392019f5"
+    },
+    {
+      "bytes": 48449,
+      "kind": "asset",
+      "relative_path": "reference/figs/retainai_decision_intelligence_architecture.svg",
+      "sha256": "df4025b15bd72527ceea274542326bb61268d9ae35d421d6afd6f8b5253710d0"
+    },
+    {
+      "bytes": 5354,
+      "kind": "asset",
+      "relative_path": "reference/figs/retainai_decision_intelligence_core_architecture.svg",
+      "sha256": "de31baf24fac3b744073ecd1e2dab2932c549e638665fb4834a35efd071811d9"
+    },
+    {
+      "bytes": 909,
+      "kind": "markdown",
+      "relative_path": "reference/reports/classification_report.md",
+      "sha256": "c95e854ca05ad277d2761cb972ed92e6fcb2d759a0bd15a5c0886082e1d238e5"
+    },
+    {
+      "bytes": 76,
+      "kind": "markdown",
+      "relative_path": "reference/reports/dashboard_validation.md",
+      "sha256": "35c4bba16a11faa81e1953d8b69f2f7bd56bc3156cd3595f1fcbc31807537f04"
+    },
+    {
+      "bytes": 16620,
+      "kind": "markdown",
+      "relative_path": "reference/reports/eda_summary.md",
+      "sha256": "8eb8aa375481aa1837c1e8411a579b9f7dc42e04b38ac57d7eba82318f1c50f0"
+    },
+    {
+      "bytes": 2973,
+      "kind": "markdown",
+      "relative_path": "reference/reports/explainability_report.md",
+      "sha256": "b5a4f350cf407668566dbd7e927255745418f27fcf3e7b39f0ec7bb6abb3c593"
+    },
+    {
+      "bytes": 2147,
+      "kind": "markdown",
+      "relative_path": "reference/reports/explainability_report_logistic_regression.md",
+      "sha256": "52687f92b7d3bd9b3575465fbc7dc13a87f0b0bfe77c5d78ffde5ac4df269131"
+    },
+    {
+      "bytes": 1898,
+      "kind": "markdown",
+      "relative_path": "reference/reports/explainability_report_random_forest.md",
+      "sha256": "79c4a71df668f07ca4461ffeeb7f7493592136e18a49c20a876332f009336d4c"
+    },
+    {
+      "bytes": 2162,
+      "kind": "markdown",
+      "relative_path": "reference/reports/explainability_report_xgboost.md",
+      "sha256": "b1a10f19a02903f1d09b0cf1745d4a26203180f9946d9c5b22dd482064db9248"
+    },
+    {
+      "bytes": 540,
+      "kind": "markdown",
+      "relative_path": "reference/reports/index.md",
+      "sha256": "7aa712bf326e455af952df5187075ca39f0afcb567c41c79ffa3e0022b01ccb6"
+    },
+    {
+      "bytes": 3966,
+      "kind": "markdown",
+      "relative_path": "reference/reports/survival_report.md",
+      "sha256": "29ae4a4b3cf00df2cb8190e84b671f4976ecfa935877a981d9787134ff11c579"
+    },
+    {
+      "bytes": 1257,
+      "kind": "markdown",
+      "relative_path": "releases.md",
+      "sha256": "cab3e6e7f2609111109e2e104946af87827cf87942e5b0be49d1d6034a237b37"
+    }
+  ],
+  "canonical_root_after": "docs/technical-docs/retainai",
+  "document_count": 28,
+  "documents": [
+    {
+      "bytes": 2539,
+      "canonical_path_after": "docs/technical-docs/retainai/index.md",
+      "canonical_route": "/technical-docs/retainai/",
+      "nested_depth": 0,
+      "old_route": "/retainai/",
+      "relative_path": "index.md",
+      "sha256": "cbaaf61c3e731016cefe16e586fd8dbc5a05df1bb2d7167387e722e9a2506701",
+      "source_path_before": "docs/retainai/index.md"
+    },
+    {
+      "bytes": 10029,
+      "canonical_path_after": "docs/technical-docs/retainai/package.md",
+      "canonical_route": "/technical-docs/retainai/package",
+      "nested_depth": 0,
+      "old_route": "/retainai/package",
+      "relative_path": "package.md",
+      "sha256": "cc79aadd7016fded15cb44642ab33f08d571f63159b744b59d2485910db7ff8f",
+      "source_path_before": "docs/retainai/package.md"
+    },
+    {
+      "bytes": 1453,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/architecture/assets/vendor/NOTICE.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/architecture/assets/vendor/NOTICE",
+      "nested_depth": 5,
+      "old_route": "/retainai/reference/docs/architecture/assets/vendor/NOTICE",
+      "relative_path": "reference/docs/architecture/assets/vendor/NOTICE.md",
+      "sha256": "93f343e95d511624e5dd4a709293fa6a9e92fe13268a2a5fd3f35770efd083a2",
+      "source_path_before": "docs/retainai/reference/docs/architecture/assets/vendor/NOTICE.md"
+    },
+    {
+      "bytes": 102,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/architecture/assets/vendor/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/architecture/assets/vendor/",
+      "nested_depth": 5,
+      "old_route": "/retainai/reference/docs/architecture/assets/vendor/",
+      "relative_path": "reference/docs/architecture/assets/vendor/index.md",
+      "sha256": "b9b160450e213c952da4de1cd3ea4bef9b51441f1a57b7308f3073b9e7bf9043",
+      "source_path_before": "docs/retainai/reference/docs/architecture/assets/vendor/index.md"
+    },
+    {
+      "bytes": 932,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/architecture/diagrams/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/architecture/diagrams/",
+      "nested_depth": 4,
+      "old_route": "/retainai/reference/docs/architecture/diagrams/",
+      "relative_path": "reference/docs/architecture/diagrams/index.md",
+      "sha256": "50da01682cf310d6683a8781919fdd98880b65cd4a5fbcc645b8220a9a99bc2e",
+      "source_path_before": "docs/retainai/reference/docs/architecture/diagrams/index.md"
+    },
+    {
+      "bytes": 16562,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/architecture/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/architecture/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/architecture/",
+      "relative_path": "reference/docs/architecture/index.md",
+      "sha256": "a54bb224dbd9e1c31f25955985a8ecf3f527cd75a9b153e0523201d994c40918",
+      "source_path_before": "docs/retainai/reference/docs/architecture/index.md"
+    },
+    {
+      "bytes": 3901,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/dashboard/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/dashboard/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/dashboard/",
+      "relative_path": "reference/docs/dashboard/index.md",
+      "sha256": "b070a863741dc924564d209c91560d6c84a4185174bfbb3c7d055075410b9642",
+      "source_path_before": "docs/retainai/reference/docs/dashboard/index.md"
+    },
+    {
+      "bytes": 1575,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/data/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/data/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/data/",
+      "relative_path": "reference/docs/data/index.md",
+      "sha256": "5e898dff4c3aecfe3d28bebd2e61e705d8de9bd78119b19356585b24de7313ea",
+      "source_path_before": "docs/retainai/reference/docs/data/index.md"
+    },
+    {
+      "bytes": 1344,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/eda/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/eda/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/eda/",
+      "relative_path": "reference/docs/eda/index.md",
+      "sha256": "3e571fda7e5e67440a0eb2b7ae7d4c03e8584721f86b801eedc2608767a8ebcb",
+      "source_path_before": "docs/retainai/reference/docs/eda/index.md"
+    },
+    {
+      "bytes": 1633,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/docs/",
+      "relative_path": "reference/docs/index.md",
+      "sha256": "0fd0b47f0550b5f122e21b8d774632b1eb3c0b89a162c56ffe44142c2627b1aa",
+      "source_path_before": "docs/retainai/reference/docs/index.md"
+    },
+    {
+      "bytes": 1751,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/mlops/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/mlops/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/mlops/",
+      "relative_path": "reference/docs/mlops/index.md",
+      "sha256": "ce2bf4d683b9ed834b420b6b56720b92bb030b0262e6b48151b6c670624de8da",
+      "source_path_before": "docs/retainai/reference/docs/mlops/index.md"
+    },
+    {
+      "bytes": 1715,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/modeling/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/modeling/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/modeling/",
+      "relative_path": "reference/docs/modeling/index.md",
+      "sha256": "1f5f6bee5d6ed955e900f871e438781c38a761309379ad6388da14854e2612e2",
+      "source_path_before": "docs/retainai/reference/docs/modeling/index.md"
+    },
+    {
+      "bytes": 3163,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/multicloud/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/multicloud/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/multicloud/",
+      "relative_path": "reference/docs/multicloud/index.md",
+      "sha256": "0b8f5fdd390da20cd549006a67df9ab2aaede717b62794551fb68775ec350a3f",
+      "source_path_before": "docs/retainai/reference/docs/multicloud/index.md"
+    },
+    {
+      "bytes": 1775,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/multicloud/manual_application_release.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/multicloud/manual_application_release",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/multicloud/manual_application_release",
+      "relative_path": "reference/docs/multicloud/manual_application_release.md",
+      "sha256": "1e3e488a9bae0e060a52ef03dd30bbe2079cf07a96b2f1d1267ee9d4b416582b",
+      "source_path_before": "docs/retainai/reference/docs/multicloud/manual_application_release.md"
+    },
+    {
+      "bytes": 1805,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/prompts/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/prompts/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/prompts/",
+      "relative_path": "reference/docs/prompts/index.md",
+      "sha256": "1afa0afa3280cc4258aa8a991fec739dbb602f71493d7c3206f782516185ca22",
+      "source_path_before": "docs/retainai/reference/docs/prompts/index.md"
+    },
+    {
+      "bytes": 141,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/releases/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/releases/",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/releases/",
+      "relative_path": "reference/docs/releases/index.md",
+      "sha256": "14dcb4fbbf5fc889b45f11e6b172d2cf453f1c30f03d2ae1b5c75ad151788998",
+      "source_path_before": "docs/retainai/reference/docs/releases/index.md"
+    },
+    {
+      "bytes": 2220,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/releases/v0.4.0-alpha.1.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/releases/v0.4.0-alpha.1",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/releases/v0.4.0-alpha.1",
+      "relative_path": "reference/docs/releases/v0.4.0-alpha.1.md",
+      "sha256": "c4281761e2d361513f5d736a9920dcf73800c52db31e26af9af4d00c35fcb6c1",
+      "source_path_before": "docs/retainai/reference/docs/releases/v0.4.0-alpha.1.md"
+    },
+    {
+      "bytes": 1728,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/docs/releases/v0.4.0.md",
+      "canonical_route": "/technical-docs/retainai/reference/docs/releases/v0.4.0",
+      "nested_depth": 3,
+      "old_route": "/retainai/reference/docs/releases/v0.4.0",
+      "relative_path": "reference/docs/releases/v0.4.0.md",
+      "sha256": "3873b75de41c9058ddfed6bc95f961c4ae03d7f948cca3a3e413753fcc7650b1",
+      "source_path_before": "docs/retainai/reference/docs/releases/v0.4.0.md"
+    },
+    {
+      "bytes": 909,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/classification_report.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/classification_report",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/classification_report",
+      "relative_path": "reference/reports/classification_report.md",
+      "sha256": "c95e854ca05ad277d2761cb972ed92e6fcb2d759a0bd15a5c0886082e1d238e5",
+      "source_path_before": "docs/retainai/reference/reports/classification_report.md"
+    },
+    {
+      "bytes": 76,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/dashboard_validation.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/dashboard_validation",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/dashboard_validation",
+      "relative_path": "reference/reports/dashboard_validation.md",
+      "sha256": "35c4bba16a11faa81e1953d8b69f2f7bd56bc3156cd3595f1fcbc31807537f04",
+      "source_path_before": "docs/retainai/reference/reports/dashboard_validation.md"
+    },
+    {
+      "bytes": 16620,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/eda_summary.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/eda_summary",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/eda_summary",
+      "relative_path": "reference/reports/eda_summary.md",
+      "sha256": "8eb8aa375481aa1837c1e8411a579b9f7dc42e04b38ac57d7eba82318f1c50f0",
+      "source_path_before": "docs/retainai/reference/reports/eda_summary.md"
+    },
+    {
+      "bytes": 2973,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/explainability_report.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/explainability_report",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/explainability_report",
+      "relative_path": "reference/reports/explainability_report.md",
+      "sha256": "b5a4f350cf407668566dbd7e927255745418f27fcf3e7b39f0ec7bb6abb3c593",
+      "source_path_before": "docs/retainai/reference/reports/explainability_report.md"
+    },
+    {
+      "bytes": 2147,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/explainability_report_logistic_regression.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/explainability_report_logistic_regression",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/explainability_report_logistic_regression",
+      "relative_path": "reference/reports/explainability_report_logistic_regression.md",
+      "sha256": "52687f92b7d3bd9b3575465fbc7dc13a87f0b0bfe77c5d78ffde5ac4df269131",
+      "source_path_before": "docs/retainai/reference/reports/explainability_report_logistic_regression.md"
+    },
+    {
+      "bytes": 1898,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/explainability_report_random_forest.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/explainability_report_random_forest",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/explainability_report_random_forest",
+      "relative_path": "reference/reports/explainability_report_random_forest.md",
+      "sha256": "79c4a71df668f07ca4461ffeeb7f7493592136e18a49c20a876332f009336d4c",
+      "source_path_before": "docs/retainai/reference/reports/explainability_report_random_forest.md"
+    },
+    {
+      "bytes": 2162,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/explainability_report_xgboost.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/explainability_report_xgboost",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/explainability_report_xgboost",
+      "relative_path": "reference/reports/explainability_report_xgboost.md",
+      "sha256": "b1a10f19a02903f1d09b0cf1745d4a26203180f9946d9c5b22dd482064db9248",
+      "source_path_before": "docs/retainai/reference/reports/explainability_report_xgboost.md"
+    },
+    {
+      "bytes": 540,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/index.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/",
+      "relative_path": "reference/reports/index.md",
+      "sha256": "7aa712bf326e455af952df5187075ca39f0afcb567c41c79ffa3e0022b01ccb6",
+      "source_path_before": "docs/retainai/reference/reports/index.md"
+    },
+    {
+      "bytes": 3966,
+      "canonical_path_after": "docs/technical-docs/retainai/reference/reports/survival_report.md",
+      "canonical_route": "/technical-docs/retainai/reference/reports/survival_report",
+      "nested_depth": 2,
+      "old_route": "/retainai/reference/reports/survival_report",
+      "relative_path": "reference/reports/survival_report.md",
+      "sha256": "29ae4a4b3cf00df2cb8190e84b671f4976ecfa935877a981d9787134ff11c579",
+      "source_path_before": "docs/retainai/reference/reports/survival_report.md"
+    },
+    {
+      "bytes": 1257,
+      "canonical_path_after": "docs/technical-docs/retainai/releases.md",
+      "canonical_route": "/technical-docs/retainai/releases",
+      "nested_depth": 0,
+      "old_route": "/retainai/releases",
+      "relative_path": "releases.md",
+      "sha256": "cab3e6e7f2609111109e2e104946af87827cf87942e5b0be49d1d6034a237b37",
+      "source_path_before": "docs/retainai/releases.md"
+    }
+  ],
+  "legacy_root_after": "docs/retainai",
+  "phase": "R-TD5.5",
+  "project_id": "retainai",
+  "provenance_lock_state_after": "absent",
+  "provenance_lock_state_before": "absent",
+  "requested_ref": "v0.4.0-alpha.1",
+  "schema_version": 1,
+  "source_checkpoint": "968e76aff8397d96c3ca066b6c07458a4f74b579",
+  "source_root_before": "docs/retainai",
+  "total_file_count": 39
+}

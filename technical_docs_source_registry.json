@@ -48,8 +48,8 @@
       "source_repository": "https://github.com/HubertRonald/RetainAI",
       "source_ref": "v0.4.0-alpha.1",
       "source_mode": "snapshot_sync",
-      "site_source_path": "docs/retainai",
-      "current_public_route": "/retainai/",
+      "site_source_path": "docs/technical-docs/retainai",
+      "current_public_route": "/technical-docs/retainai/",
       "proposed_public_route": "/technical-docs/retainai/",
       "legacy_routes": ["/retainai/"],
       "sync_strategy": "git_clone_transform",
@@ -68,8 +68,8 @@
       ],
       "update_policy": "explicit_ref_change_only; Atlas evidence boundary must not move implicitly",
       "ownership": {
-        "curated_targets": ["docs/retainai/index.md", "docs/retainai/releases.md"],
-        "generated_targets": ["docs/retainai/package.md", "docs/retainai/reference/**"]
+        "curated_targets": ["docs/technical-docs/retainai/index.md", "docs/technical-docs/retainai/releases.md"],
+        "generated_targets": ["docs/technical-docs/retainai/package.md", "docs/technical-docs/retainai/reference/**"]
       },
       "provenance_lock_policy": "required_when_sync_is_normalized_in_rtd4",
       "enabled": true

@@ -1,12 +1,16 @@
-# Reports
+---
+layout: false
+search: false
+title: RetainAI
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/retainai/reference/reports/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Generated index for the synchronized RetainAI documentation snapshot.
+<!-- R-TD5.5 legacy compatibility stub. Canonical content lives under /technical-docs/retainai/. -->
 
-- [Classification Report](./classification_report)
-- [Dashboard Validation](./dashboard_validation)
-- [Eda Summary](./eda_summary)
-- [Explainability Report](./explainability_report)
-- [Explainability Report Logistic Regression](./explainability_report_logistic_regression)
-- [Explainability Report Random Forest](./explainability_report_random_forest)
-- [Explainability Report Xgboost](./explainability_report_xgboost)
-- [Survival Report](./survival_report)
+<p>RetainAI documentation moved to <a href="/technical-docs/retainai/reference/reports/">/technical-docs/retainai/reference/reports/</a>.</p>

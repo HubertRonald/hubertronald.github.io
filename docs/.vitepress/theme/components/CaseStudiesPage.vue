@@ -31,7 +31,7 @@ import PortfolioIcon from './PortfolioIcon.vue'
           </article>
           <article>
             <div><h3>RetainAI</h3><p>Technical documentation is broader than the Atlas release boundary; portfolio evidence remains frozen to v0.4.0-alpha.1.</p></div>
-            <a class="hr-case-study-action" href="/retainai/">
+            <a class="hr-case-study-action" href="/technical-docs/retainai/">
               <PortfolioIcon name="book" :size="17" />
               <span>Technical Docs</span>
               <span class="hr-case-study-action-arrow" aria-hidden="true">→</span>
