@@ -76,8 +76,7 @@ check(
 )
 
 const expectedOtherRoutes = {
-  retainai: { route: '/retainai/', sourcePath: 'docs/retainai' },
-  relationalstats: { route: '/relationalstats/', sourcePath: 'docs/relationalstats' }
+  retainai: { route: '/retainai/', sourcePath: 'docs/retainai' }
 }
 for (const [id, expected] of Object.entries(expectedOtherRoutes)) {
   const source = registry.sources.find((item) => item.project_id === id)
@@ -92,6 +91,15 @@ check(
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/gradientmesh/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/gradientmesh/index.md')),
   'GradientMesh is not in the authorized R-TD5.3 canonical + legacy compatibility state'
+)
+const relationalstats = registry.sources.find((item) => item.project_id === 'relationalstats')
+check(
+  'authorized later migration: relationalstats R-TD5.4',
+  relationalstats?.current_public_route === '/technical-docs/relationalstats/' &&
+    relationalstats?.site_source_path === 'docs/technical-docs/relationalstats' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/relationalstats/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/relationalstats/index.md')),
+  'relationalstats is not in the authorized R-TD5.4 canonical + legacy compatibility state'
 )
 
 const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')

@@ -1,16 +1,16 @@
-# Notebooks
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/notebooks/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-This directory is reserved for public notebooks only.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-Solved academic notebooks, private experiments, raw course material, and
-non-public validation work should not be committed to this repository.
-
-Use local-only ignored folders such as:
-
-```text
-notebooks/legacy/
-notebooks/private/
-```
-
-Public notebooks should be rewritten as clean, synthetic, reusable examples that
-do not expose solved academic assignments.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/notebooks/">/technical-docs/relationalstats/reference/notebooks/</a>.</p>

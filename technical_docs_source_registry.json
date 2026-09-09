@@ -81,8 +81,8 @@
       "source_repository": "https://github.com/HubertRonald/relationalstats",
       "source_ref": "main",
       "source_mode": "moving_ref_sync",
-      "site_source_path": "docs/relationalstats",
-      "current_public_route": "/relationalstats/",
+      "site_source_path": "docs/technical-docs/relationalstats",
+      "current_public_route": "/technical-docs/relationalstats/",
       "proposed_public_route": "/technical-docs/relationalstats/",
       "legacy_routes": ["/relationalstats/"],
       "sync_strategy": "git_clone_transform",
@@ -100,8 +100,8 @@
       ],
       "update_policy": "resolve and record immutable commit for every future normalized update; retain explicit release/evidence boundaries",
       "ownership": {
-        "curated_targets": ["docs/relationalstats/index.md", "docs/relationalstats/releases.md"],
-        "generated_targets": ["docs/relationalstats/package.md", "docs/relationalstats/reference/**"]
+        "curated_targets": ["docs/technical-docs/relationalstats/index.md", "docs/technical-docs/relationalstats/releases.md"],
+        "generated_targets": ["docs/technical-docs/relationalstats/package.md", "docs/technical-docs/relationalstats/reference/**"]
       },
       "provenance_lock_policy": "required_when_sync_is_normalized_in_rtd4",
       "enabled": true

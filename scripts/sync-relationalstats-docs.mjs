@@ -17,10 +17,10 @@ if (!targetRootEnv) {
 }
 
 const targetRoot = path.resolve(targetRootEnv)
-const publicTargetRoot = path.resolve('docs/relationalstats')
+const publicTargetRoot = path.resolve('docs/technical-docs/relationalstats')
 
 if (targetRoot === publicTargetRoot) {
-  throw new Error('relationalstats transformer refuses to write directly to docs/relationalstats.')
+  throw new Error('relationalstats transformer refuses to write directly to docs/technical-docs/relationalstats.')
 }
 
 const referenceRoot = path.join(targetRoot, 'reference')

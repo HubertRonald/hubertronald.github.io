@@ -29,6 +29,10 @@ function canonicalPathForPage(page: string): string {
     return normalized.replace('/gradientmesh/', '/technical-docs/gradientmesh/')
   }
 
+  if (normalized.startsWith('/relationalstats/')) {
+    return normalized.replace('/relationalstats/', '/technical-docs/relationalstats/')
+  }
+
   return normalized
 }
 
@@ -81,7 +85,7 @@ export default withMermaid(
       /* 
       nav: [
         { text: 'RetainAI', link: '/retainai/' },
-        { text: 'RelationalStats', link: '/relationalstats/' },
+        { text: 'RelationalStats', link: '/technical-docs/relationalstats/' },
         { text: 'GradientMesh', link: '/technical-docs/gradientmesh/' },
         { text: 'VersoVector', link: '/technical-docs/versovector/' },
         { text: 'LuaSF', link: '/technical-docs/luasf/' }
@@ -128,26 +132,26 @@ export default withMermaid(
           }
         ],
 
-        '/relationalstats/': [
+        '/technical-docs/relationalstats/': [
           {
             text: 'RelationalStats',
             items: [
-              { text: 'Overview', link: '/relationalstats/' },
-              { text: 'Package README', link: '/relationalstats/package' },
-              { text: 'Documentation Index', link: '/relationalstats/reference/docs/' },
+              { text: 'Overview', link: '/technical-docs/relationalstats/' },
+              { text: 'Package README', link: '/technical-docs/relationalstats/package' },
+              { text: 'Documentation Index', link: '/technical-docs/relationalstats/reference/docs/' },
 
               {
                 text: 'Link Prediction',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/linkprediction/' },
-                  { text: 'ProxFun Full', link: '/relationalstats/reference/docs/linkprediction/proxfun-full' },
-                  { text: 'Metrics', link: '/relationalstats/reference/docs/linkprediction/metrics' },
-                  { text: 'Results', link: '/relationalstats/reference/docs/linkprediction/results' },
-                  { text: 'Scalability', link: '/relationalstats/reference/docs/linkprediction/scalability' },
-                  { text: 'Manual Small-Graph Tests', link: '/relationalstats/reference/docs/linkprediction/manual-small-graph-tests' },
-                  { text: 'Internal Refactor', link: '/relationalstats/reference/docs/linkprediction/internal-refactor' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/linkprediction/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/linkprediction/' },
+                  { text: 'ProxFun Full', link: '/technical-docs/relationalstats/reference/docs/linkprediction/proxfun-full' },
+                  { text: 'Metrics', link: '/technical-docs/relationalstats/reference/docs/linkprediction/metrics' },
+                  { text: 'Results', link: '/technical-docs/relationalstats/reference/docs/linkprediction/results' },
+                  { text: 'Scalability', link: '/technical-docs/relationalstats/reference/docs/linkprediction/scalability' },
+                  { text: 'Manual Small-Graph Tests', link: '/technical-docs/relationalstats/reference/docs/linkprediction/manual-small-graph-tests' },
+                  { text: 'Internal Refactor', link: '/technical-docs/relationalstats/reference/docs/linkprediction/internal-refactor' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/linkprediction/validation-against-r' }
                 ]
               },
 
@@ -155,9 +159,9 @@ export default withMermaid(
                 text: 'QAP',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/qap/' },
-                  { text: 'Formulas', link: '/relationalstats/reference/docs/qap/formulas' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/qap/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/qap/' },
+                  { text: 'Formulas', link: '/technical-docs/relationalstats/reference/docs/qap/formulas' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/qap/validation-against-r' }
                 ]
               },
 
@@ -165,12 +169,12 @@ export default withMermaid(
                 text: 'ERGM',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/ergm/' },
-                  { text: 'Formulas', link: '/relationalstats/reference/docs/ergm/formulas' },
-                  { text: 'Terms', link: '/relationalstats/reference/docs/ergm/terms' },
-                  { text: 'Goodness of Fit', link: '/relationalstats/reference/docs/ergm/gof' },
-                  { text: 'Limitations', link: '/relationalstats/reference/docs/ergm/limitations' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/ergm/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/ergm/' },
+                  { text: 'Formulas', link: '/technical-docs/relationalstats/reference/docs/ergm/formulas' },
+                  { text: 'Terms', link: '/technical-docs/relationalstats/reference/docs/ergm/terms' },
+                  { text: 'Goodness of Fit', link: '/technical-docs/relationalstats/reference/docs/ergm/gof' },
+                  { text: 'Limitations', link: '/technical-docs/relationalstats/reference/docs/ergm/limitations' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/ergm/validation-against-r' }
                 ]
               },
 
@@ -178,11 +182,11 @@ export default withMermaid(
                 text: 'STERGM',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/stergm/' },
-                  { text: 'Formulas', link: '/relationalstats/reference/docs/stergm/formulas' },
-                  { text: 'Temporal Dyads', link: '/relationalstats/reference/docs/stergm/temporal-dyads' },
-                  { text: 'Limitations', link: '/relationalstats/reference/docs/stergm/limitations' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/stergm/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/stergm/' },
+                  { text: 'Formulas', link: '/technical-docs/relationalstats/reference/docs/stergm/formulas' },
+                  { text: 'Temporal Dyads', link: '/technical-docs/relationalstats/reference/docs/stergm/temporal-dyads' },
+                  { text: 'Limitations', link: '/technical-docs/relationalstats/reference/docs/stergm/limitations' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/stergm/validation-against-r' }
                 ]
               },
 
@@ -190,10 +194,10 @@ export default withMermaid(
                 text: 'Methodology',
                 collapsed: false,
                 items: [
-                  { text: 'Equivalence vs Approximation', link: '/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
-                  { text: 'Reproducibility', link: '/relationalstats/reference/docs/methodology/reproducibility' },
-                  { text: 'Release Checklist', link: '/relationalstats/reference/docs/methodology/release-checklist' },
-                  { text: 'Roadmap', link: '/relationalstats/reference/docs/methodology/roadmap' }
+                  { text: 'Equivalence vs Approximation', link: '/technical-docs/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
+                  { text: 'Reproducibility', link: '/technical-docs/relationalstats/reference/docs/methodology/reproducibility' },
+                  { text: 'Release Checklist', link: '/technical-docs/relationalstats/reference/docs/methodology/release-checklist' },
+                  { text: 'Roadmap', link: '/technical-docs/relationalstats/reference/docs/methodology/roadmap' }
                 ]
               },
 
@@ -201,17 +205,17 @@ export default withMermaid(
                 text: 'Examples',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/examples/' },
-                  { text: 'Link Prediction', link: '/relationalstats/reference/examples/linkprediction/' },
-                  { text: 'Experimental ML Workflow', link: '/relationalstats/reference/examples/linkprediction/experimental-ml-workflow' },
-                  { text: 'QAP', link: '/relationalstats/reference/examples/qap/' },
-                  { text: 'ERGM', link: '/relationalstats/reference/examples/ergm/' },
-                  { text: 'STERGM', link: '/relationalstats/reference/examples/stergm/' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/examples/' },
+                  { text: 'Link Prediction', link: '/technical-docs/relationalstats/reference/examples/linkprediction/' },
+                  { text: 'Experimental ML Workflow', link: '/technical-docs/relationalstats/reference/examples/linkprediction/experimental-ml-workflow' },
+                  { text: 'QAP', link: '/technical-docs/relationalstats/reference/examples/qap/' },
+                  { text: 'ERGM', link: '/technical-docs/relationalstats/reference/examples/ergm/' },
+                  { text: 'STERGM', link: '/technical-docs/relationalstats/reference/examples/stergm/' }
                 ]
               },
 
-              { text: 'Notebooks', link: '/relationalstats/reference/notebooks/' },
-              { text: 'Releases', link: '/relationalstats/releases' }
+              { text: 'Notebooks', link: '/technical-docs/relationalstats/reference/notebooks/' },
+              { text: 'Releases', link: '/technical-docs/relationalstats/releases' }
             ]
           }
         ],

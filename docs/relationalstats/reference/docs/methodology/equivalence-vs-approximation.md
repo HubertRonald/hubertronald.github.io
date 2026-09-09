@@ -1,16 +1,16 @@
-# Equivalence vs approximation
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/methodology/equivalence-vs-approximation"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-This project distinguishes between equivalent implementations, validated
-approximations, and exploratory approximations.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-## Current module status
-
-| Module | Status |
-|---|---|
-| Link prediction | Python implementation with manual tests; R validation pending |
-| QAPLogit | Python implementation with unit tests; R `sna::netlogit` validation pending |
-| ERGM | Dyadic-logistic approximation; not full MCMC-MLE |
-| STERGM | Separable dyadic-logistic approximation; not full MCMC-MLE |
-
-The initial ERGM and STERGM modules should not be presented as full equivalents
-to R `ergm`, `tergm`, or `stergm`.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/methodology/equivalence-vs-approximation">/technical-docs/relationalstats/reference/docs/methodology/equivalence-vs-approximation</a>.</p>

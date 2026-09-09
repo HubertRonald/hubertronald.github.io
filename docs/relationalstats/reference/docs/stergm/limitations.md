@@ -1,5 +1,16 @@
-# STERGM limitations
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/stergm/limitations"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-The current STERGM module is a separable dyadic-logistic approximation. It does
-not implement full temporal ERGM MCMC-MLE or equivalence with R `tergm` /
-`stergm`.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
+
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/stergm/limitations">/technical-docs/relationalstats/reference/docs/stergm/limitations</a>.</p>

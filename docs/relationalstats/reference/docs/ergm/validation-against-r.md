@@ -1,6 +1,16 @@
-# ERGM validation against R
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/ergm/validation-against-r"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Future validation should compare selected statistics against R `ergm` and
-`network`.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-Initial validation should focus on statistics, not full model equivalence.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/ergm/validation-against-r">/technical-docs/relationalstats/reference/docs/ergm/validation-against-r</a>.</p>

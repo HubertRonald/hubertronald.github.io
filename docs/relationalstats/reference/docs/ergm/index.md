@@ -1,31 +1,16 @@
-# ERGM approximation
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/ergm/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-The `relationalstats.ergm` module provides an initial ERGM-inspired
-dyadic-logistic approximation.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-It is not a full MCMC-MLE implementation equivalent to R `ergm`.
-
-## Public API
-
-```python
-from relationalstats.datasets import make_florentine_like_graph
-from relationalstats.ergm import ERGM
-
-G = make_florentine_like_graph()
-
-result = ERGM(
-    terms=["edges", "common_neighbors", "degree1", "gwesp", "nodematch:faction"],
-    backend="sklearn",
-    random_state=42,
-).fit(G)
-
-result.to_dataframe()
-gof = result.gof(n_sim=100, seed=123)
-```
-
-## Documentation
-
-- [Terms](./terms)
-- [GOF](./gof)
-- [Limitations](./limitations)
-- [Validation against R](./validation-against-r)
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/ergm/">/technical-docs/relationalstats/reference/docs/ergm/</a>.</p>

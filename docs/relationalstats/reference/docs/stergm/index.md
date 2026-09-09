@@ -1,31 +1,16 @@
-# STERGM approximation
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/stergm/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-The `relationalstats.stergm` module provides an initial separable temporal
-dyadic-logistic approximation.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-It is not a full MCMC-MLE implementation equivalent to R `tergm` or `stergm`.
-
-## Public API
-
-```python
-from relationalstats.datasets import make_stergm_temporal_toy
-from relationalstats.stergm import STERGM
-
-G1, G2 = make_stergm_temporal_toy()
-
-result = STERGM(
-    formation_terms=["edges", "common_neighbors", "degree1", "gwesp"],
-    dissolution_terms=["edges", "common_neighbors", "degree1", "gwesp"],
-    backend="sklearn",
-    random_state=42,
-).fit(G1, G2)
-
-result.to_dataframe()
-simulated = result.simulate(seed=123)
-```
-
-## Documentation
-
-- [Temporal dyads](./temporal-dyads)
-- [Limitations](./limitations)
-- [Validation against R](./validation-against-r)
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/stergm/">/technical-docs/relationalstats/reference/docs/stergm/</a>.</p>

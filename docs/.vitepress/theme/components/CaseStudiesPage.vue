@@ -39,7 +39,7 @@ import PortfolioIcon from './PortfolioIcon.vue'
           </article>
           <article>
             <div><h3>relationalstats</h3><p>Statistical-network package documentation with explicit equivalence and approximation boundaries.</p></div>
-            <a class="hr-case-study-action" href="/relationalstats/">
+            <a class="hr-case-study-action" href="/technical-docs/relationalstats/">
               <PortfolioIcon name="book" :size="17" />
               <span>Technical Docs</span>
               <span class="hr-case-study-action-arrow" aria-hidden="true">→</span>

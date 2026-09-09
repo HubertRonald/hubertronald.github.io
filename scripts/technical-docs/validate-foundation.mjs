@@ -35,7 +35,8 @@ check('hub route', fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/
 const versovector = published.find((source) => source.project_id === 'versovector')
 const luasf = published.find((source) => source.project_id === 'luasf')
 const gradientmesh = published.find((source) => source.project_id === 'gradientmesh')
-const completedRouteMigrations = new Set(['versovector', 'luasf', 'gradientmesh'])
+const relationalstats = published.find((source) => source.project_id === 'relationalstats')
+const completedRouteMigrations = new Set(['versovector', 'luasf', 'gradientmesh', 'relationalstats'])
 check(
   'approved route migration state',
   versovector?.site_source_path === 'docs/technical-docs/versovector' &&
@@ -44,19 +45,23 @@ check(
     luasf?.current_public_route === '/technical-docs/luasf/' &&
     gradientmesh?.site_source_path === 'docs/technical-docs/gradientmesh' &&
     gradientmesh?.current_public_route === '/technical-docs/gradientmesh/' &&
+    relationalstats?.site_source_path === 'docs/technical-docs/relationalstats' &&
+    relationalstats?.current_public_route === '/technical-docs/relationalstats/' &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/versovector/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/gradientmesh/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/relationalstats/index.md')) &&
     published
       .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
-  'approved route migration state differs from closed R-TD5.1 + R-TD5.2 + R-TD5.3 scope'
+  'approved route migration state differs from closed R-TD5.1 + R-TD5.2 + R-TD5.3 + R-TD5.4 scope'
 )
 check(
   'legacy project routes',
   fs.existsSync(path.join(repositoryRoot, 'docs/versovector/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/luasf/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/gradientmesh/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/relationalstats/index.md')) &&
     published
       .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => fs.existsSync(path.join(repositoryRoot, source.site_source_path, 'index.md'))),

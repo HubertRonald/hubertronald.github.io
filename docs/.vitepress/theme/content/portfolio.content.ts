@@ -247,7 +247,7 @@ export const portfolioProjects: Record<string, PortfolioProject> = {
     "tagline": "Python toolkit for statistical social-network analysis with explicit approximation boundaries.",
     "summary": "A 2026 alpha Python package implementing network link prediction, QAP and documented ERGM/STERGM approximation workflows. It is strategic modern statistical software evidence, not proof of earlier historical R roots.",
     "repository": "https://github.com/HubertRonald/relationalstats",
-    "documentation": "/relationalstats/",
+    "documentation": "/technical-docs/relationalstats/",
     "release": null,
     "stages": [
       "Applied Mathematics, Simulation & Data Science"
