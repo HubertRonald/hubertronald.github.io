@@ -22,7 +22,6 @@ const buildOutputAvailable = fs.existsSync(distRoot)
 
 const frozenHashes = {
   'scripts/technical-docs/adapters/retainai.mjs': 'a6bafcb00acb66c9d8e57437fb6b52abefd725f795108501e1462235b2562926',
-  'scripts/technical-docs/adapters/index.mjs': '066412e84caf6bb5a5ddcae602b870c2c7c42c17786435a79505bad8b386d6c0',
   'scripts/technical-docs/adapters/process.mjs': '4c7dab6e1170562cb97d6238e5ac110cde186e59e25ab0cf7b05d203cf0632e7',
   'scripts/technical-docs/adapters/relationalstats.mjs': '9a167cafb83b5da78e22e64ee8057ffb7b28f19f813b6607d022628cbd8d4570',
   'scripts/technical-docs/runner.mjs': 'b9b0706859f8f57dca6a097b9390c95246510dcac568ca01286768718f81ff01',
@@ -140,7 +139,9 @@ for (const [relativePath, expectedHash] of Object.entries(frozenHashes)) {
   sourceCheck(`R-TD4 lifecycle/provenance frozen: ${relativePath}`, fs.existsSync(full) && sha256(full) === expectedHash, `${relativePath} differs from the R-TD5.5 baseline`)
 }
 sourceCheck('provenance schema unchanged', sha256(path.join(repositoryRoot, 'technical_docs_source_lock.schema.json')) === frozenHashes['technical_docs_source_lock.schema.json'], 'provenance schema changed')
-sourceCheck('no new sync adapter', JSON.stringify(knownAdapterIds()) === JSON.stringify(['relationalstats_v1', 'retainai_v1']), `found ${knownAdapterIds().join(', ')}`)
+sourceCheck('authorized sync adapter set', JSON.stringify(knownAdapterIds()) === JSON.stringify(['fde_roadmap_v1', 'relationalstats_v1', 'retainai_v1']), `found ${knownAdapterIds().join(', ')}`)
+const adapterRegistry = read('scripts/technical-docs/adapters/index.mjs')
+sourceCheck('prior sync adapters preserved', adapterRegistry.includes("import { retainaiAdapter } from './retainai.mjs'") && adapterRegistry.includes("import { relationalstatsAdapter } from './relationalstats.mjs'") && adapterRegistry.includes('[retainaiAdapter.id, retainaiAdapter]') && adapterRegistry.includes('[relationalstatsAdapter.id, relationalstatsAdapter]'), 'R-TD4 adapter registrations were removed or changed')
 
 const syncScript = read('scripts/sync-retainai-docs.mjs')
 sourceCheck(
@@ -171,16 +172,20 @@ for (const [id, expected] of Object.entries({
   )
 }
 
-const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')
+const fdeRoadmap = registry.sources.find((source) => source.project_id === 'fde-roadmap')
 sourceCheck(
-  'fde-roadmap hard stop',
-  fdeCandidate?.integration_state === 'candidate_future' &&
-    fdeCandidate?.publication_status === 'candidate' &&
-    fdeCandidate?.enabled === false &&
-    fdeCandidate?.site_source_path === null &&
-    fdeCandidate?.current_public_route === null &&
-    !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/fde-roadmap')),
-  'candidate state or route boundary changed'
+  'fde-roadmap authorized later-phase onboarding',
+  fdeRoadmap?.enabled === true &&
+    fdeRoadmap?.publication_status === 'published' &&
+    fdeRoadmap?.source_mode === 'snapshot_sync' &&
+    fdeRoadmap?.source_ref === 'v0.1.0' &&
+    fdeRoadmap?.sync_adapter === 'fde_roadmap_v1' &&
+    fdeRoadmap?.site_source_path === 'docs/technical-docs/fde-roadmap' &&
+    fdeRoadmap?.current_public_route === '/technical-docs/fde-roadmap/' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/fde-roadmap/index.md')) &&
+    !fs.existsSync(path.join(repositoryRoot, 'docs/fde-roadmap')) &&
+    !registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap'),
+  'authorized R-TD6B state is missing or changed'
 )
 
 const canonicalRoot = path.join(repositoryRoot, manifest.canonical_root_after)

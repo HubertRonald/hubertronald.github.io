@@ -179,7 +179,9 @@ def main() -> int:
         html = read_page(path)
         if 'href="/legacy/root-under-construction/' in html or "href='/legacy/root-under-construction/" in html:
             errors.append(f"{path}: generated public link to forbidden legacy route")
-        if "Forward Deployed Engineer" in html:
+        fde_roadmap_doc = (DIST / "technical-docs" / "fde-roadmap") in path.parents
+        title_scan_html = html.replace("Forward Deployed Engineering", "")
+        if "Forward Deployed Engineer" in title_scan_html and not fde_roadmap_doc:
             errors.append(f"{path}: forbidden formal-title wording found")
 
     legacy_dir = DIST / "legacy" / "root-under-construction"

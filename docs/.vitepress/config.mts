@@ -252,6 +252,21 @@ export default withMermaid(
               { text: 'Releases', link: '/technical-docs/gradientmesh/releases' }
             ]
           }
+        ],
+
+        '/technical-docs/fde-roadmap/': [
+          {
+            text: 'FDE Roadmap',
+            items: [
+              { text: 'Atlas Overview', link: '/technical-docs/fde-roadmap/' },
+              { text: 'Field Guide', link: '/technical-docs/fde-roadmap/guide' },
+              { text: 'Sources & Provenance', link: '/technical-docs/fde-roadmap/reference/sources-and-provenance' },
+              { text: 'Visual Rationale', link: '/technical-docs/fde-roadmap/reference/visual-rationale' },
+              { text: 'Citation', link: '/technical-docs/fde-roadmap/reference/citation' },
+              { text: 'Contributing', link: '/technical-docs/fde-roadmap/reference/contributing' },
+              { text: 'Changelog', link: '/technical-docs/fde-roadmap/reference/changelog' }
+            ]
+          }
         ]
       },
 

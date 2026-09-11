@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "project_id": "fde-roadmap",
+  "source_repository": "https://github.com/HubertRonald/fde-roadmap",
+  "requested_ref": "v0.1.0",
+  "expected_resolved_sha": "f896c19d182f8df03918f2c73a402e27a80ded16",
+  "source_mode": "snapshot_sync",
+  "sync_adapter": "fde_roadmap_v1",
+  "approved_source_inventory": [
+    "README.md",
+    "CHANGELOG.md",
+    "CITATION.md",
+    "CONTRIBUTING.md",
+    "docs/sources-and-provenance.md",
+    "docs/visual-rationale.md",
+    "SOURCES.yml",
+    "LICENSE",
+    "src/img/fde-core-tradeoffs.png",
+    "src/img/fde-delivery-loop.png",
+    "src/img/fde-learning-path.png",
+    "src/img/fde-roadmap-overview.png",
+    "src/img/fde-roadmap-stages.png",
+    "src/img/fde-role-comparison.png",
+    "src/img/fde-skill-pillars.png"
+  ],
+  "route_producing_markdown_mapping": [
+    {
+      "source": "README.md",
+      "target": "guide.md",
+      "route": "/technical-docs/fde-roadmap/guide"
+    },
+    {
+      "source": "CHANGELOG.md",
+      "target": "reference/changelog.md",
+      "route": "/technical-docs/fde-roadmap/reference/changelog"
+    },
+    {
+      "source": "CITATION.md",
+      "target": "reference/citation.md",
+      "route": "/technical-docs/fde-roadmap/reference/citation"
+    },
+    {
+      "source": "CONTRIBUTING.md",
+      "target": "reference/contributing.md",
+      "route": "/technical-docs/fde-roadmap/reference/contributing"
+    },
+    {
+      "source": "docs/sources-and-provenance.md",
+      "target": "reference/sources-and-provenance.md",
+      "route": "/technical-docs/fde-roadmap/reference/sources-and-provenance"
+    },
+    {
+      "source": "docs/visual-rationale.md",
+      "target": "reference/visual-rationale.md",
+      "route": "/technical-docs/fde-roadmap/reference/visual-rationale"
+    }
+  ],
+  "non_route_source_metadata": [
+    "SOURCES.yml",
+    "LICENSE"
+  ],
+  "png_assets": [
+    {
+      "source": "src/img/fde-core-tradeoffs.png",
+      "target": "assets/fde-core-tradeoffs.png",
+      "sha256": "77b879216844813656f68888208fca2071d1a963e66323634fb764cd5082b293"
+    },
+    {
+      "source": "src/img/fde-delivery-loop.png",
+      "target": "assets/fde-delivery-loop.png",
+      "sha256": "e1dd6f8c3c04978f909fe7f0405db46f76039413901fda3134b20c483bbff13a"
+    },
+    {
+      "source": "src/img/fde-learning-path.png",
+      "target": "assets/fde-learning-path.png",
+      "sha256": "ba4be0dbe43326a9dab32ece69391e5998fe9361c2d9d19ee2c69409035ba636"
+    },
+    {
+      "source": "src/img/fde-roadmap-overview.png",
+      "target": "assets/fde-roadmap-overview.png",
+      "sha256": "273e960fc881ab4a88afef936a944495ca16ec4d2fb0a4e74eac001fa349a764"
+    },
+    {
+      "source": "src/img/fde-roadmap-stages.png",
+      "target": "assets/fde-roadmap-stages.png",
+      "sha256": "95b02059a7cb724f327b3ad5b1e346650229f0d54fe4f2b95bf231bcd793dc6d"
+    },
+    {
+      "source": "src/img/fde-role-comparison.png",
+      "target": "assets/fde-role-comparison.png",
+      "sha256": "c0ea6f1d025198affdeffe4de5935008b73f772ddf64f55dca527644ecbc4e6d"
+    },
+    {
+      "source": "src/img/fde-skill-pillars.png",
+      "target": "assets/fde-skill-pillars.png",
+      "sha256": "aa3e4143978cff2feb6287b4b77f0b52624c3a85cf0366c259d2d316815e0919"
+    }
+  ],
+  "canonical_public_routes": [
+    "/technical-docs/fde-roadmap/",
+    "/technical-docs/fde-roadmap/guide",
+    "/technical-docs/fde-roadmap/reference/sources-and-provenance",
+    "/technical-docs/fde-roadmap/reference/visual-rationale",
+    "/technical-docs/fde-roadmap/reference/citation",
+    "/technical-docs/fde-roadmap/reference/contributing",
+    "/technical-docs/fde-roadmap/reference/changelog"
+  ],
+  "ownership": {
+    "curated": [
+      "docs/technical-docs/fde-roadmap/index.md"
+    ],
+    "generated": [
+      "docs/technical-docs/fde-roadmap/guide.md",
+      "docs/technical-docs/fde-roadmap/reference/**",
+      "docs/technical-docs/fde-roadmap/assets/**"
+    ]
+  },
+  "expected_source_markdown_count": 6,
+  "expected_synchronized_markdown_count": 6,
+  "expected_curated_markdown_count": 1,
+  "expected_public_markdown_count": 7,
+  "expected_asset_count": 7,
+  "intentionally_excluded_artifacts": [
+    "docs/source-map.md",
+    "docs/image-generation-prompts.md",
+    "docs/fde-visual-system-contact-sheet.png"
+  ],
+  "immutable_non_route_blob_base": "https://github.com/HubertRonald/fde-roadmap/blob/f896c19d182f8df03918f2c73a402e27a80ded16"
+}

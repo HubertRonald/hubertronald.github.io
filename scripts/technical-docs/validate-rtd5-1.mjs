@@ -90,16 +90,20 @@ check(
   'RetainAI is not in the authorized R-TD5.5 canonical + legacy compatibility state'
 )
 
-const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')
+const fdeRoadmap = registry.sources.find((source) => source.project_id === 'fde-roadmap')
 check(
-  'fde-roadmap hard stop preserved',
-  fdeCandidate?.integration_state === 'candidate_future' &&
-    fdeCandidate?.publication_status === 'candidate' &&
-    fdeCandidate?.enabled === false &&
-    fdeCandidate?.site_source_path === null &&
-    fdeCandidate?.current_public_route === null &&
-    !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/fde-roadmap')),
-  'candidate state or route boundary changed'
+  'fde-roadmap authorized later-phase onboarding',
+  fdeRoadmap?.enabled === true &&
+    fdeRoadmap?.publication_status === 'published' &&
+    fdeRoadmap?.source_mode === 'snapshot_sync' &&
+    fdeRoadmap?.source_ref === 'v0.1.0' &&
+    fdeRoadmap?.sync_adapter === 'fde_roadmap_v1' &&
+    fdeRoadmap?.site_source_path === 'docs/technical-docs/fde-roadmap' &&
+    fdeRoadmap?.current_public_route === '/technical-docs/fde-roadmap/' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/fde-roadmap/index.md')) &&
+    !fs.existsSync(path.join(repositoryRoot, 'docs/fde-roadmap')) &&
+    !registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap'),
+  'authorized R-TD6B state is missing or changed'
 )
 
 const canonicalRoot = path.join(repositoryRoot, manifest.canonical_root_after)

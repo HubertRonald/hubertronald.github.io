@@ -390,21 +390,24 @@ const publishedIds = registry.sources
   .sort()
 check(
   'published source set',
-  JSON.stringify(publishedIds) === JSON.stringify(['gradientmesh', 'luasf', 'relationalstats', 'retainai', 'versovector']),
+  JSON.stringify(publishedIds) === JSON.stringify(['fde-roadmap', 'gradientmesh', 'luasf', 'relationalstats', 'retainai', 'versovector']),
   `unexpected published source set: ${publishedIds.join(', ')}`
 )
 
-const fde = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')
+const fde = registry.sources.find((source) => source.project_id === 'fde-roadmap')
 check(
-  'fde-roadmap hard stop',
-  Boolean(fde) && fde.enabled === false && fde.integration_state === 'candidate_future' && fde.publication_status === 'candidate' && fde.site_source_path === null && fde.current_public_route === null,
-  'fde-roadmap candidate state changed'
+  'fde-roadmap authorized later-phase onboarding',
+  Boolean(fde) && fde.enabled === true && fde.publication_status === 'published' &&
+    fde.source_mode === 'snapshot_sync' && fde.source_ref === 'v0.1.0' &&
+    fde.sync_adapter === 'fde_roadmap_v1' && fde.current_public_route === '/technical-docs/fde-roadmap/' &&
+    !registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap'),
+  'fde-roadmap does not match the authorized R-TD6B later-phase state'
 )
 check(
   'FDE_ROADMAP_LIFECYCLE',
-  Boolean(fde) && !registry.sources.some((source) => source.project_id === 'fde-roadmap') &&
-    read('scripts/technical-docs/runner.mjs').includes('candidate source is disabled and cannot enter the R-TD4 lifecycle'),
-  'fde-roadmap is not isolated to the blocked candidate contract'
+  Boolean(fde) && read('scripts/technical-docs/runner.mjs').includes('candidate source is disabled and cannot enter the R-TD4 lifecycle') &&
+    read('scripts/technical-docs/adapters/index.mjs').includes('fdeRoadmapAdapter'),
+  'generic lifecycle semantics changed or the authorized fde-roadmap adapter is missing'
 )
 
 const retainai = registry.sources.find((source) => source.project_id === 'retainai')
@@ -440,7 +443,7 @@ for (const source of registry.sources) {
 const adapterIds = knownAdapterIds()
 check(
   'adapter registry',
-  JSON.stringify(adapterIds) === JSON.stringify(['relationalstats_v1', 'retainai_v1']),
+  JSON.stringify(adapterIds) === JSON.stringify(['fde_roadmap_v1', 'relationalstats_v1', 'retainai_v1']),
   `unexpected adapter set: ${adapterIds.join(', ')}`
 )
 

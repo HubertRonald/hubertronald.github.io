@@ -9,7 +9,7 @@ import {
 
 const registry = loadTechnicalDocsRegistry()
 const errors = validateTechnicalDocsRegistry(registry)
-const expectedPublishedIds = ['gradientmesh', 'luasf', 'relationalstats', 'retainai', 'versovector']
+const expectedPublishedIds = ['fde-roadmap', 'gradientmesh', 'luasf', 'relationalstats', 'retainai', 'versovector']
 const published = publishedTechnicalDocs(registry)
 const publishedIds = published.map((source) => source.project_id).sort()
 
@@ -17,9 +17,18 @@ if (JSON.stringify(publishedIds) !== JSON.stringify(expectedPublishedIds)) {
   errors.push(`published source set mismatch: expected ${expectedPublishedIds.join(', ')}, got ${publishedIds.join(', ')}`)
 }
 
-const fdeCandidate = registry.candidates.find((candidate) => candidate.project_id === 'fde-roadmap')
-if (!fdeCandidate || fdeCandidate.enabled !== false || fdeCandidate.integration_state !== 'candidate_future') {
-  errors.push('fde-roadmap must remain a disabled candidate_future entry')
+const fde = registry.sources.find((source) => source.project_id === 'fde-roadmap')
+if (
+  !fde ||
+  fde.enabled !== true ||
+  fde.publication_status !== 'published' ||
+  fde.source_mode !== 'snapshot_sync' ||
+  fde.source_ref !== 'v0.1.0' ||
+  fde.sync_adapter !== 'fde_roadmap_v1' ||
+  fde.current_public_route !== '/technical-docs/fde-roadmap/' ||
+  registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap')
+) {
+  errors.push('fde-roadmap must match the authorized R-TD6B published snapshot contract')
 }
 
 for (const source of published) {
@@ -52,7 +61,7 @@ if (!fs.existsSync(gitignorePath)) {
 const hubIndex = path.join(repositoryRoot, 'docs/technical-docs/index.md')
 if (!fs.existsSync(hubIndex)) errors.push('Technical Docs hub index is missing')
 
-const approvedMigratedProjectIds = new Set(['versovector', 'luasf', 'gradientmesh', 'relationalstats', 'retainai'])
+const approvedMigratedProjectIds = new Set(['versovector', 'luasf', 'gradientmesh', 'relationalstats', 'retainai', 'fde-roadmap'])
 for (const source of published) {
   const migratedPath = path.join(repositoryRoot, 'docs/technical-docs', source.project_id)
   if (approvedMigratedProjectIds.has(source.project_id)) {
@@ -70,5 +79,5 @@ if (errors.length) {
   process.exit(1)
 }
 
-console.log(`Technical Docs registry validation: PASS (${published.length} published sources; fde-roadmap disabled candidate)`)
+console.log(`Technical Docs registry validation: PASS (${published.length} published sources; fde-roadmap R-TD6B published)`)
 console.log('Ownership boundaries, current routes, and .vendor policy validated.')

@@ -13,6 +13,7 @@ const sources = technicalDocsRegistry.sources.filter(
 function documentationTypeLabel(type: string) {
   if (type === 'library_reference') return 'Library reference'
   if (type === 'project_documentation') return 'Project documentation'
+  if (type === 'field_guide') return 'Field guide'
   return 'Technical documentation'
 }
 

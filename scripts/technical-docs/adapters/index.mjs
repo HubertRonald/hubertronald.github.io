@@ -1,9 +1,11 @@
 import { retainaiAdapter } from './retainai.mjs'
 import { relationalstatsAdapter } from './relationalstats.mjs'
+import { fdeRoadmapAdapter } from './fde-roadmap.mjs'
 
 const adapters = new Map([
   [retainaiAdapter.id, retainaiAdapter],
-  [relationalstatsAdapter.id, relationalstatsAdapter]
+  [relationalstatsAdapter.id, relationalstatsAdapter],
+  [fdeRoadmapAdapter.id, fdeRoadmapAdapter]
 ])
 
 export function getAdapter(source) {

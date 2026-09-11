@@ -24,11 +24,18 @@ const registryErrors = validateTechnicalDocsRegistry(registry)
 check('registry schema', registryErrors.length === 0, registryErrors.join('; ') || 'valid')
 
 const published = publishedTechnicalDocs(registry)
-check('published docs count', published.length === 5, `expected 5, found ${published.length}`)
+check('published docs count', published.length === 6, `expected 6, found ${published.length}`)
+const fdeRoadmap = published.find((source) => source.project_id === 'fde-roadmap')
 check(
-  'fde-roadmap disabled',
-  registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap' && candidate.enabled === false),
-  'fde-roadmap must remain candidate-only and disabled'
+  'fde-roadmap authorized R-TD6B state',
+  fdeRoadmap?.enabled === true &&
+    fdeRoadmap?.publication_status === 'published' &&
+    fdeRoadmap?.source_mode === 'snapshot_sync' &&
+    fdeRoadmap?.source_ref === 'v0.1.0' &&
+    fdeRoadmap?.sync_adapter === 'fde_roadmap_v1' &&
+    fdeRoadmap?.builder_journey_stages?.length === 0 &&
+    !registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap'),
+  'fde-roadmap does not match the authorized R-TD6B published snapshot state'
 )
 
 check('hub route', fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/index.md')), 'docs/technical-docs/index.md is missing')
@@ -37,7 +44,7 @@ const luasf = published.find((source) => source.project_id === 'luasf')
 const gradientmesh = published.find((source) => source.project_id === 'gradientmesh')
 const relationalstats = published.find((source) => source.project_id === 'relationalstats')
 const retainai = published.find((source) => source.project_id === 'retainai')
-const completedRouteMigrations = new Set(['versovector', 'luasf', 'gradientmesh', 'relationalstats', 'retainai'])
+const completedRouteMigrations = new Set(['versovector', 'luasf', 'gradientmesh', 'relationalstats', 'retainai', 'fde-roadmap'])
 check(
   'approved route migration state',
   versovector?.site_source_path === 'docs/technical-docs/versovector' &&
@@ -50,15 +57,18 @@ check(
     relationalstats?.current_public_route === '/technical-docs/relationalstats/' &&
     retainai?.site_source_path === 'docs/technical-docs/retainai' &&
     retainai?.current_public_route === '/technical-docs/retainai/' &&
+    fdeRoadmap?.site_source_path === 'docs/technical-docs/fde-roadmap' &&
+    fdeRoadmap?.current_public_route === '/technical-docs/fde-roadmap/' &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/versovector/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/gradientmesh/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/relationalstats/index.md')) &&
     fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/retainai/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/fde-roadmap/index.md')) &&
     published
       .filter((source) => !completedRouteMigrations.has(source.project_id))
       .every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
-  'approved route migration state differs from closed R-TD5.1 + R-TD5.2 + R-TD5.3 + R-TD5.4 + R-TD5.5 scope'
+  'approved route migration state differs from closed R-TD5.1 through R-TD5.5 plus authorized R-TD6B scope'
 )
 check(
   'legacy project routes',
