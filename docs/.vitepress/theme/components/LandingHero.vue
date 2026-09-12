@@ -56,18 +56,18 @@ const rail = computed(() => props.locale === 'es'
     <figure class="hr-owner-portrait">
       <div class="hr-owner-portrait-frame">
         <img
-          src="/images/profile/rony-white-shirt-green-bg.jpg"
+          src="/images/profile/rony-white-shirt-portrait-final.png"
           alt="Portrait of Hubert Ronald"
           width="1536"
           height="1024"
         >
         <svg class="hr-owner-blueprint-traces" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true">
-          <path class="is-primary" d="M3 31V8H27 M72 6H95V23 M96 88V108 M88 119H69 M31 120H9V104" />
-          <path class="is-secondary" d="M7 78C14 73 17 64 18 53 M82 17C87 26 89 35 90 45 M13 113C26 108 39 109 51 114" />
-          <path class="is-construction" d="M8 15H22 M11 12V29 M79 11H91 M90 8V18 M8 96H17 M84 112H95" />
-          <path class="is-hatch" d="M70 119L93 96 M76 121L96 101 M82 121L97 106 M88 120L97 111" />
-          <circle cx="18" cy="53" r="1.1" />
-          <circle cx="90" cy="45" r="1.1" />
+          <path class="is-primary" d="M4 29V9H24 M76 7H95V24 M96 87V108 M89 118H70 M30 120H9V104" />
+          <path class="is-secondary" d="M7 53H23 M18 48V59 M78 44H94 M89 39V50 M42 116H58" />
+          <path class="is-construction" d="M10 16H20 M13 12V28 M80 12H91 M90 8V19 M7 96H16 M84 111H95 M94 107V116" />
+          <path class="is-hatch" d="M73 119L93 99 M80 120L96 104 M87 120L97 110" />
+          <circle cx="18" cy="53" r="0.85" />
+          <circle cx="89" cy="44" r="0.85" />
         </svg>
       </div>
       <figcaption>Hubert Ronald</figcaption>

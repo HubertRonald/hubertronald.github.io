@@ -134,14 +134,14 @@ def main() -> int:
     # the original placeholder gate (OWNER PORTRAIT / FINAL ASSET PENDING)
     # was superseded when the owner explicitly approved the existing profile
     # photograph for production use. Validate the approved asset instead.
-    approved_portrait = Path("docs/public/images/profile/rony-white-shirt-green-bg.jpg")
+    approved_portrait = Path("docs/public/images/profile/rony-white-shirt-portrait-final.png")
     if not approved_portrait.exists():
         errors.append(f"/: approved owner portrait asset is missing: {approved_portrait}")
 
     for required in [
         "I build evidence systems that turn complexity into clarity and action.",
         "Data &amp; Cloud Architect · Data/ML Platform Engineer · AI-native Builder",
-        "/images/profile/rony-white-shirt-green-bg.jpg",
+        "/images/profile/rony-white-shirt-portrait-final.png",
         "Portrait of Hubert Ronald",
     ]:
         if required not in root_html: errors.append(f"/: missing approved Home content: {required}")

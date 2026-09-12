@@ -1573,3 +1573,71 @@
     margin-top: var(--hr-space-8);
   }
 }
+
+/* Home portrait integration micro-pass --------------------------------------
+   Keep the accepted hero geometry intact while giving the portrait a touch
+   more desktop/tablet presence. The overlay now reads as sparse drafting
+   metadata: orthogonal datums, registration marks, and one restrained hatch. */
+.hr-owner-blueprint-traces .is-secondary {
+  stroke-width: .82;
+  stroke-dasharray: none;
+  opacity: .44;
+}
+
+.hr-owner-blueprint-traces .is-construction {
+  stroke-width: .7;
+  stroke-dasharray: 1.35 2.2;
+  opacity: .34;
+}
+
+.hr-owner-blueprint-traces .is-hatch {
+  stroke-width: .78;
+  opacity: .44;
+}
+
+.hr-owner-blueprint-traces circle {
+  stroke-width: .78;
+  opacity: .42;
+}
+
+.dark .hr-owner-blueprint-traces .is-primary { opacity: .64; }
+.dark .hr-owner-blueprint-traces .is-secondary { opacity: .48; }
+.dark .hr-owner-blueprint-traces .is-construction { opacity: .4; }
+.dark .hr-owner-blueprint-traces .is-hatch { opacity: .52; }
+.dark .hr-owner-blueprint-traces circle { opacity: .46; }
+
+@media (min-width: 721px) and (max-width: 1024px) {
+  .hr-owner-portrait-frame {
+    border-color: color-mix(in srgb, var(--hr-color-border-strong) 58%, transparent);
+    box-shadow: none;
+  }
+
+  .hr-owner-portrait-frame img {
+    transform: scale(1.05);
+    transform-origin: 50% 38%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hr-owner-portrait-frame img {
+    border-color: color-mix(in srgb, var(--hr-color-border-strong) 54%, transparent);
+    transform: scale(1.05);
+  }
+
+  .hr-owner-portrait-frame::after {
+    background-size: 100% 100%, 31% 26%;
+    opacity: .56;
+  }
+
+  .hr-owner-blueprint-traces .is-primary { opacity: .56; }
+  .hr-owner-blueprint-traces .is-secondary { opacity: .4; }
+  .hr-owner-blueprint-traces .is-construction { opacity: .34; }
+  .hr-owner-blueprint-traces .is-hatch { opacity: .48; }
+  .hr-owner-blueprint-traces circle { opacity: .4; }
+
+  .dark .hr-owner-blueprint-traces .is-primary { opacity: .64; }
+  .dark .hr-owner-blueprint-traces .is-secondary { opacity: .46; }
+  .dark .hr-owner-blueprint-traces .is-construction { opacity: .4; }
+  .dark .hr-owner-blueprint-traces .is-hatch { opacity: .54; }
+  .dark .hr-owner-blueprint-traces circle { opacity: .44; }
+}
