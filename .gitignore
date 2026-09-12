@@ -120,16 +120,6 @@ target/
 profile_default/
 ipython_config.py
 
-# Legacy root folders
-/legacy/EdaSalary/
-/legacy/SuperWariBrosWebPlayer/
-
-# Keep deployable static app builds
-!static-apps/
-!static-apps/liasoft/
-!static-apps/liasoft/games/
-!static-apps/liasoft/games/SuperWariBrosWebPlayer/
-!static-apps/liasoft/games/SuperWariBrosWebPlayer/**
 !static-sites/
 !static-sites/liasoft/
 !static-sites/liasoft/**
@@ -335,5 +325,3 @@ yarn-error.log*
 # Keep full exported builds outside Git because they may contain large files
 # and third-party licensed assets.
 static-apps/liasoft/games/
-# Liasoft excluded legacy/prototype builds
-# SuperWariBrosWebPlayer was a Coursera platformer prototype and is not part of the public Liasoft catalog.
