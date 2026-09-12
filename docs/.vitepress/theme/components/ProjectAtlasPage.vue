@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import LandingHeader from './LandingHeader.vue'
 import LandingFooter from './LandingFooter.vue'
 import PageMasthead from './PageMasthead.vue'
@@ -60,6 +61,51 @@ const journeyEvidenceAnchors: Record<string, string[]> = {
 const stageProjects = (stage: (typeof journeyStages)[number]) => journeyEvidenceAnchors[stage.id] || []
 
 const journeyStageIcons = ['gamepad', 'sigma', 'terminal', 'database', 'cloud', 'ai', 'rocket'] as const
+
+const journeyScroller = ref<HTMLElement | null>(null)
+const canScrollJourneyLeft = ref(false)
+const canScrollJourneyRight = ref(false)
+const journeyScrollEpsilon = 2
+let journeyResizeObserver: ResizeObserver | undefined
+
+function updateJourneyScrollState() {
+  const scroller = journeyScroller.value
+  if (!scroller) {
+    canScrollJourneyLeft.value = false
+    canScrollJourneyRight.value = false
+    return
+  }
+
+  canScrollJourneyLeft.value = scroller.scrollLeft > journeyScrollEpsilon
+  canScrollJourneyRight.value =
+    scroller.scrollLeft + scroller.clientWidth < scroller.scrollWidth - journeyScrollEpsilon
+}
+
+function scrollJourney(direction: -1 | 1) {
+  const scroller = journeyScroller.value
+  if (!scroller) return
+
+  scroller.scrollBy({
+    left: direction * Math.max(220, Math.round(scroller.clientWidth * 0.72)),
+    behavior: 'smooth'
+  })
+}
+
+onMounted(async () => {
+  await nextTick()
+  updateJourneyScrollState()
+  window.addEventListener('resize', updateJourneyScrollState)
+
+  if ('ResizeObserver' in window && journeyScroller.value) {
+    journeyResizeObserver = new ResizeObserver(updateJourneyScrollState)
+    journeyResizeObserver.observe(journeyScroller.value)
+  }
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateJourneyScrollState)
+  journeyResizeObserver?.disconnect()
+})
 </script>
 
 <template>
@@ -137,19 +183,58 @@ const journeyStageIcons = ['gamepad', 'sigma', 'terminal', 'database', 'cloud', 
           <span class="hr-atlas-band-icon" aria-hidden="true"><PortfolioIcon name="journey" :size="21" /></span>
           <div><h2 id="journey-evidence-title">Journey Evidence</h2><p>Seven stages · selected project anchors.</p></div>
         </div>
-        <div class="hr-atlas-stage-line" aria-label="Seven-stage evidence map">
-          <article v-for="(stage, index) in journeyStages" :key="stage.id">
-            <header>
-              <span class="hr-atlas-stage-number">B{{ index + 1 }}</span>
-              <span class="hr-atlas-stage-icon" aria-hidden="true"><PortfolioIcon :name="journeyStageIcons[index]" :size="18" /></span>
-              <h3>{{ stage.name }}</h3>
-            </header>
-            <ul>
-              <li v-for="id in stageProjects(stage)" :key="id">
-                <a :href="projectHref(id)" :target="project(id).documentation ? undefined : '_blank'" :rel="project(id).documentation ? undefined : 'noopener noreferrer'">{{ projectLabel(id) }}</a>
-              </li>
-            </ul>
-          </article>
+        <div
+          class="hr-atlas-stage-scroll"
+          :class="{
+            'can-scroll-left': canScrollJourneyLeft,
+            'can-scroll-right': canScrollJourneyRight
+          }"
+        >
+          <div
+            v-if="canScrollJourneyLeft || canScrollJourneyRight"
+            class="hr-atlas-stage-scroll-controls"
+            aria-label="Journey evidence scroll controls"
+          >
+            <button
+              v-if="canScrollJourneyLeft"
+              class="is-left"
+              type="button"
+              aria-label="Show earlier journey stages"
+              @click="scrollJourney(-1)"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button
+              v-if="canScrollJourneyRight"
+              class="is-right"
+              type="button"
+              aria-label="Show later journey stages"
+              @click="scrollJourney(1)"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+
+          <div
+            ref="journeyScroller"
+            class="hr-atlas-stage-line"
+            aria-label="Seven-stage evidence map"
+            tabindex="0"
+            @scroll.passive="updateJourneyScrollState"
+          >
+            <article v-for="(stage, index) in journeyStages" :key="stage.id">
+              <header>
+                <span class="hr-atlas-stage-number">B{{ index + 1 }}</span>
+                <span class="hr-atlas-stage-icon" aria-hidden="true"><PortfolioIcon :name="journeyStageIcons[index]" :size="18" /></span>
+                <h3>{{ stage.name }}</h3>
+              </header>
+              <ul>
+                <li v-for="id in stageProjects(stage)" :key="id">
+                  <a :href="projectHref(id)" :target="project(id).documentation ? undefined : '_blank'" :rel="project(id).documentation ? undefined : 'noopener noreferrer'">{{ projectLabel(id) }}</a>
+                </li>
+              </ul>
+            </article>
+          </div>
         </div>
         <a class="hr-inline-link" href="/journey/">See the Builder Journey →</a>
       </section>
