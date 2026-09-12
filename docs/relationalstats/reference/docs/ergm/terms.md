@@ -1,13 +1,16 @@
-# ERGM approximation terms
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/ergm/terms"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-| Term | Meaning |
-|---|---|
-| `edges` | Constant edge propensity term |
-| `common_neighbors` | Number of shared neighbors |
-| `transitiveties` | Transitivity proxy based on shared neighbors |
-| `degree1` | Whether either endpoint has degree one |
-| `gwesp` | Simple geometrically weighted shared-partner approximation |
-| `nodematch:<attr>` | Whether both endpoints share a node attribute |
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-These are dyad-level feature approximations, not full incremental ERGM change
-statistics.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/ergm/terms">/technical-docs/relationalstats/reference/docs/ergm/terms</a>.</p>

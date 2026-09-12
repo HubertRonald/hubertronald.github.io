@@ -1,0 +1,141 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import {
+  loadTechnicalDocsRegistry,
+  publishedTechnicalDocs,
+  repositoryRoot,
+  validateTechnicalDocsRegistry
+} from './registry.mjs'
+
+const failures = []
+const checks = []
+
+function check(name, condition, detail) {
+  checks.push({ name, condition, detail })
+  if (!condition) failures.push(`${name}: ${detail}`)
+}
+
+function read(relativePath) {
+  return fs.readFileSync(path.join(repositoryRoot, relativePath), 'utf8')
+}
+
+const registry = loadTechnicalDocsRegistry()
+const registryErrors = validateTechnicalDocsRegistry(registry)
+check('registry schema', registryErrors.length === 0, registryErrors.join('; ') || 'valid')
+
+const published = publishedTechnicalDocs(registry)
+check('published docs count', published.length === 6, `expected 6, found ${published.length}`)
+const fdeRoadmap = published.find((source) => source.project_id === 'fde-roadmap')
+check(
+  'fde-roadmap authorized R-TD6B state',
+  fdeRoadmap?.enabled === true &&
+    fdeRoadmap?.publication_status === 'published' &&
+    fdeRoadmap?.source_mode === 'snapshot_sync' &&
+    fdeRoadmap?.source_ref === 'v0.1.0' &&
+    fdeRoadmap?.sync_adapter === 'fde_roadmap_v1' &&
+    fdeRoadmap?.builder_journey_stages?.length === 0 &&
+    !registry.candidates.some((candidate) => candidate.project_id === 'fde-roadmap'),
+  'fde-roadmap does not match the authorized R-TD6B published snapshot state'
+)
+
+check('hub route', fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/index.md')), 'docs/technical-docs/index.md is missing')
+const versovector = published.find((source) => source.project_id === 'versovector')
+const luasf = published.find((source) => source.project_id === 'luasf')
+const gradientmesh = published.find((source) => source.project_id === 'gradientmesh')
+const relationalstats = published.find((source) => source.project_id === 'relationalstats')
+const retainai = published.find((source) => source.project_id === 'retainai')
+const completedRouteMigrations = new Set(['versovector', 'luasf', 'gradientmesh', 'relationalstats', 'retainai', 'fde-roadmap'])
+check(
+  'approved route migration state',
+  versovector?.site_source_path === 'docs/technical-docs/versovector' &&
+    versovector?.current_public_route === '/technical-docs/versovector/' &&
+    luasf?.site_source_path === 'docs/technical-docs/luasf' &&
+    luasf?.current_public_route === '/technical-docs/luasf/' &&
+    gradientmesh?.site_source_path === 'docs/technical-docs/gradientmesh' &&
+    gradientmesh?.current_public_route === '/technical-docs/gradientmesh/' &&
+    relationalstats?.site_source_path === 'docs/technical-docs/relationalstats' &&
+    relationalstats?.current_public_route === '/technical-docs/relationalstats/' &&
+    retainai?.site_source_path === 'docs/technical-docs/retainai' &&
+    retainai?.current_public_route === '/technical-docs/retainai/' &&
+    fdeRoadmap?.site_source_path === 'docs/technical-docs/fde-roadmap' &&
+    fdeRoadmap?.current_public_route === '/technical-docs/fde-roadmap/' &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/versovector/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/luasf/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/gradientmesh/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/relationalstats/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/retainai/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs/fde-roadmap/index.md')) &&
+    published
+      .filter((source) => !completedRouteMigrations.has(source.project_id))
+      .every((source) => !fs.existsSync(path.join(repositoryRoot, 'docs/technical-docs', source.project_id))),
+  'approved route migration state differs from closed R-TD5.1 through R-TD5.5 plus authorized R-TD6B scope'
+)
+check(
+  'legacy project routes',
+  fs.existsSync(path.join(repositoryRoot, 'docs/versovector/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/luasf/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/gradientmesh/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/relationalstats/index.md')) &&
+    fs.existsSync(path.join(repositoryRoot, 'docs/retainai/index.md')) &&
+    published
+      .filter((source) => !completedRouteMigrations.has(source.project_id))
+      .every((source) => fs.existsSync(path.join(repositoryRoot, source.site_source_path, 'index.md'))),
+  'a completed migration compatibility root or a frozen current route root is missing'
+)
+
+const config = read('docs/.vitepress/config.mts')
+check('desktop Docs nav', config.includes("text: 'Docs'") && config.includes("link: '/technical-docs/'"), 'Docs primary navigation entry is missing')
+check(
+  'Docs legacy active match',
+  config.includes("activeMatch: '^/(technical-docs|retainai|versovector|relationalstats|gradientmesh|luasf)(/|$)'"),
+  'Docs does not activate on hub + legacy documentation roots'
+)
+check(
+  'Work no longer owns docs routes',
+  config.includes("{ text: 'Work', link: '/projects/', activeMatch: '^/projects(/|$)' }"),
+  'Work active match still includes technical documentation roots'
+)
+check('GitHub VitePress utility', config.includes('socialLinks') && config.includes("icon: 'github'"), 'GitHub social utility is missing')
+
+const mobile = read('docs/.vitepress/theme/components/MobilePortfolioNav.vue')
+const mobileIds = [...mobile.matchAll(/\{ id: '([^']+)'/g)].map((match) => match[1])
+check(
+  'mobile primary nav',
+  JSON.stringify(mobileIds) === JSON.stringify(['home', 'work', 'journey', 'docs']),
+  `expected home/work/journey/docs, found ${mobileIds.join('/')}`
+)
+check('mobile Docs internal', mobile.includes("href: '/technical-docs/'") && !mobile.includes("id: 'github'"), 'GitHub still occupies a primary mobile slot')
+
+const header = read('docs/.vitepress/theme/components/LandingHeader.vue')
+check('portfolio header Docs', header.includes('href="/technical-docs/"') && header.includes("active === 'docs'"), 'Docs is missing from the custom portfolio header')
+check('portfolio header GitHub utility', header.includes('https://github.com/HubertRonald'), 'GitHub utility link is missing from the custom header')
+
+const footer = read('docs/.vitepress/theme/components/LandingFooter.vue')
+check('portfolio footer Docs', footer.includes('href="/technical-docs/"'), 'Docs is missing from the portfolio footer navigation')
+
+const layout = read('docs/.vitepress/theme/components/PortfolioThemeLayout.vue')
+check('docs layout registry-driven', layout.includes('technical_docs_source_registry.json'), 'docs route context is not sourced from the registry')
+check('docs mobile active state', layout.includes('active="docs"'), 'technical-doc routes do not activate Docs on mobile')
+
+const contextStrip = read('docs/.vitepress/theme/components/DepthContextStrip.vue')
+check('context back to Docs', contextStrip.includes('Back to Technical Docs'), 'technical-doc context strip lacks hub return link')
+
+const docsFooter = read('docs/.vitepress/theme/components/DocsFooter.vue')
+check('compact docs footer hub link', docsFooter.includes('href="/technical-docs/"'), 'compact docs footer lacks Technical Docs link')
+check('compact docs footer source link', docsFooter.includes('sourceRepository'), 'compact docs footer lacks source-repository utility')
+
+const hubComponent = read('docs/.vitepress/theme/components/TechnicalDocsPage.vue')
+check('hub registry projection', hubComponent.includes('technical_docs_source_registry.json'), 'hub does not project registry data')
+check('hub no candidate hardcode', !hubComponent.includes('fde-roadmap'), 'candidate source was hard-coded into the public hub')
+
+for (const item of checks) {
+  console.log(`${item.condition ? 'PASS' : 'FAIL'}: ${item.name}`)
+}
+
+if (failures.length) {
+  console.error('\nTechnical Docs foundation validation: FAIL')
+  for (const failure of failures) console.error(`- ${failure}`)
+  process.exit(1)
+}
+
+console.log(`\nTechnical Docs foundation validation: PASS (${checks.length} checks)`)

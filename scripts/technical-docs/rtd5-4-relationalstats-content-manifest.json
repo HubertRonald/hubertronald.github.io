@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "work_item": "R-TD5.4",
+  "project_id": "relationalstats",
+  "source_checkpoint": "34d16fb358fcde799dd989b9424f0fb43b3498f8",
+  "source_root_before": "docs/relationalstats",
+  "canonical_root_after": "docs/technical-docs/relationalstats",
+  "source_mode": "moving_ref_sync",
+  "requested_ref": "main",
+  "provenance_lock_state": "absent_historical_pre_rtd4",
+  "document_count": 37,
+  "documents": [
+    {
+      "relative_path": "index.md",
+      "sha256": "42fb11c90cb607c5c5dbd87ec9a58790f506c6b1aa0b6c2b0fcff6f92fe62be9",
+      "size_bytes": 4349,
+      "nested_depth": 0,
+      "legacy_route": "/relationalstats/",
+      "canonical_route": "/technical-docs/relationalstats/"
+    },
+    {
+      "relative_path": "package.md",
+      "sha256": "121309919ee29f77b16ef3243a71e4f334af895fc360adb8a402c776b79dea24",
+      "size_bytes": 7486,
+      "nested_depth": 0,
+      "legacy_route": "/relationalstats/package",
+      "canonical_route": "/technical-docs/relationalstats/package"
+    },
+    {
+      "relative_path": "reference/docs/ergm/formulas.md",
+      "sha256": "2d01b3fc3baa51ffc7f42fa3cadd11ec4d40afc072532c8e25b250e62346ad67",
+      "size_bytes": 1979,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/ergm/formulas",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/ergm/formulas"
+    },
+    {
+      "relative_path": "reference/docs/ergm/gof.md",
+      "sha256": "9e12bd7cff9a87effd6bd2c83924dca675b49e2fa73b77db2c7e4acc2a70d678",
+      "size_bytes": 405,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/ergm/gof",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/ergm/gof"
+    },
+    {
+      "relative_path": "reference/docs/ergm/index.md",
+      "sha256": "a0dac9ef72f11d2be7b797627aeffe0cec89c30182740775bd6d4bca5db7adf4",
+      "size_bytes": 698,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/ergm/",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/ergm/"
+    },
+    {
+      "relative_path": "reference/docs/ergm/limitations.md",
+      "sha256": "31da567f882e5ce30d13d4fbe7199a63da46bfe4b404c2a3a20c670afe03f3b5",
+      "size_bytes": 182,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/ergm/limitations",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/ergm/limitations"
+    },
+    {
+      "relative_path": "reference/docs/ergm/terms.md",
+      "sha256": "2484e37f4c97de9d58ba3f4b9f7fc4c30f660f49d98e13adced6d108cd0adfdb",
+      "size_bytes": 511,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/ergm/terms",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/ergm/terms"
+    },
+    {
+      "relative_path": "reference/docs/ergm/validation-against-r.md",
+      "sha256": "f7c088457eca88239503a8c93d52d8a2aaa4274caa8f16e12032f1115cc534a3",
+      "size_bytes": 190,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/ergm/validation-against-r",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/ergm/validation-against-r"
+    },
+    {
+      "relative_path": "reference/docs/index.md",
+      "sha256": "e4189d399a84d0aa3f2fe6c1ab03c00cebb3ee7d15bbeb1750d38225d8b6a6ab",
+      "size_bytes": 995,
+      "nested_depth": 2,
+      "legacy_route": "/relationalstats/reference/docs/",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/index.md",
+      "sha256": "322fe81d2c7866af111c20e07e5471e617842cd307d860a44b7d7cefb51df499",
+      "size_bytes": 1549,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/internal-refactor.md",
+      "sha256": "11cf0d2f7eca97e8686707fae502842fc0d300fa47188afe34804bf037f98cc4",
+      "size_bytes": 2071,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/internal-refactor",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/internal-refactor"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/manual-small-graph-tests.md",
+      "sha256": "851f7b876503774aef77bc5851627482065732fe30426dcc2f17c312de9c1da9",
+      "size_bytes": 3136,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/manual-small-graph-tests",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/manual-small-graph-tests"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/metrics.md",
+      "sha256": "abe9a72c3620eafa00be90734b40dfb3eda23740044dd103a62fcc63b2b0b464",
+      "size_bytes": 4564,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/metrics",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/metrics"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/proxfun-full.md",
+      "sha256": "9f2e0621acf89392c23e86ad246c4540dbf026ad145ff7135151e8f190b29678",
+      "size_bytes": 1739,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/proxfun-full",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/proxfun-full"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/results.md",
+      "sha256": "e748b8cfb9bb3193b0417af5151c279b6f6573768396024df5c60196fffa6192",
+      "size_bytes": 1678,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/results",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/results"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/scalability.md",
+      "sha256": "12bb0797f7bf9304f4e77d3493aa9d10f94f91fbfa1b702ef93c4bc598895f06",
+      "size_bytes": 1335,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/scalability",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/scalability"
+    },
+    {
+      "relative_path": "reference/docs/linkprediction/validation-against-r.md",
+      "sha256": "6375ed5b050f83565cc2ac58d357ebcaaf287ac90b74c8456d78175dcb44ad65",
+      "size_bytes": 4372,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/linkprediction/validation-against-r",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/linkprediction/validation-against-r"
+    },
+    {
+      "relative_path": "reference/docs/methodology/equivalence-vs-approximation.md",
+      "sha256": "602858e0ef2471ccace73713f752dfd658bb747bf0daedf0ad42a6efb00e8c0b",
+      "size_bytes": 633,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/methodology/equivalence-vs-approximation",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/methodology/equivalence-vs-approximation"
+    },
+    {
+      "relative_path": "reference/docs/methodology/release-checklist.md",
+      "sha256": "dafc67be28503fa75046a8606c3962710332410ead6c7dc198a885b520e75897",
+      "size_bytes": 2065,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/methodology/release-checklist",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/methodology/release-checklist"
+    },
+    {
+      "relative_path": "reference/docs/methodology/reproducibility.md",
+      "sha256": "534dcf9f3544c3a52cc6e1787d099439fd43d05d031eaeaaf3e43e5bc1232d4e",
+      "size_bytes": 270,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/methodology/reproducibility",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/methodology/reproducibility"
+    },
+    {
+      "relative_path": "reference/docs/methodology/roadmap.md",
+      "sha256": "43445d7d2fbc46c2a759ad799dba6408477a0734c89157bb04c89ddfbff67323",
+      "size_bytes": 1754,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/methodology/roadmap",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/methodology/roadmap"
+    },
+    {
+      "relative_path": "reference/docs/qap/formulas.md",
+      "sha256": "511c3b2e159636aa48eac2c4cf09d20de22ebe241cdbefb0df2414d35281e93f",
+      "size_bytes": 1285,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/qap/formulas",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/qap/formulas"
+    },
+    {
+      "relative_path": "reference/docs/qap/index.md",
+      "sha256": "a56b17fde501fae4d4ba770c1d9b2b514e165313adc9736d1e4b21a0fe8250a4",
+      "size_bytes": 1781,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/qap/",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/qap/"
+    },
+    {
+      "relative_path": "reference/docs/qap/validation-against-r.md",
+      "sha256": "cb6dcf8e27e3b86a57286153ad9e7e1e478d8c8dd6c5c606cc0a65efcca6459c",
+      "size_bytes": 999,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/qap/validation-against-r",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/qap/validation-against-r"
+    },
+    {
+      "relative_path": "reference/docs/stergm/formulas.md",
+      "sha256": "9475bdcebf3ab3872fb24da58c144b00a6cc2278619b32ed89e84fa9ea7ec3e3",
+      "size_bytes": 1795,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/stergm/formulas",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/stergm/formulas"
+    },
+    {
+      "relative_path": "reference/docs/stergm/index.md",
+      "sha256": "6fe1a8eacf6bbeff5594ac796c3cc19e7d67e159a0b28756f43179b20b4b6d4d",
+      "size_bytes": 797,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/stergm/",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/stergm/"
+    },
+    {
+      "relative_path": "reference/docs/stergm/limitations.md",
+      "sha256": "eae116543cee3e56c749332435ca43a74ad13ce6ec6e01f2e49570dc4cdda0a3",
+      "size_bytes": 186,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/stergm/limitations",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/stergm/limitations"
+    },
+    {
+      "relative_path": "reference/docs/stergm/temporal-dyads.md",
+      "sha256": "0e369db6149f48ca2603e20cf7ffca405cee4ace87b06c7fcb5e60cd017b8219",
+      "size_bytes": 215,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/stergm/temporal-dyads",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/stergm/temporal-dyads"
+    },
+    {
+      "relative_path": "reference/docs/stergm/validation-against-r.md",
+      "sha256": "60bd97fcb0ea874c2990970728a78fe66f25bec8863ef286c4426c7a79813421",
+      "size_bytes": 175,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/docs/stergm/validation-against-r",
+      "canonical_route": "/technical-docs/relationalstats/reference/docs/stergm/validation-against-r"
+    },
+    {
+      "relative_path": "reference/examples/ergm/index.md",
+      "sha256": "94a12ed292261a857818f743ed24ba652e7f5671031f7b3b4a71ef3522aae8b7",
+      "size_bytes": 183,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/examples/ergm/",
+      "canonical_route": "/technical-docs/relationalstats/reference/examples/ergm/"
+    },
+    {
+      "relative_path": "reference/examples/index.md",
+      "sha256": "1f3c4277f8c420432238ef124b2b35d50c9d5d45c853cbb84e04a5ab1efbb82e",
+      "size_bytes": 664,
+      "nested_depth": 2,
+      "legacy_route": "/relationalstats/reference/examples/",
+      "canonical_route": "/technical-docs/relationalstats/reference/examples/"
+    },
+    {
+      "relative_path": "reference/examples/linkprediction/experimental-ml-workflow.md",
+      "sha256": "5b18a9c21dd3b74befd0ce30362fe3b86fba106ffd9f16de437775b84bdd4a0b",
+      "size_bytes": 1779,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/examples/linkprediction/experimental-ml-workflow",
+      "canonical_route": "/technical-docs/relationalstats/reference/examples/linkprediction/experimental-ml-workflow"
+    },
+    {
+      "relative_path": "reference/examples/linkprediction/index.md",
+      "sha256": "8191f4af44fb9cf46ae87fad0a98e0246e550089241ebab461f5c94457bd235d",
+      "size_bytes": 1960,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/examples/linkprediction/",
+      "canonical_route": "/technical-docs/relationalstats/reference/examples/linkprediction/"
+    },
+    {
+      "relative_path": "reference/examples/qap/index.md",
+      "sha256": "6b29d373573083a4dd9f621fe62b5338f09eba5cd1075372591e1ff26d3efde7",
+      "size_bytes": 834,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/examples/qap/",
+      "canonical_route": "/technical-docs/relationalstats/reference/examples/qap/"
+    },
+    {
+      "relative_path": "reference/examples/stergm/index.md",
+      "sha256": "b7be6d0294405e49cccde67d0552c800787db28fe3597456e259887f6cc06327",
+      "size_bytes": 213,
+      "nested_depth": 3,
+      "legacy_route": "/relationalstats/reference/examples/stergm/",
+      "canonical_route": "/technical-docs/relationalstats/reference/examples/stergm/"
+    },
+    {
+      "relative_path": "reference/notebooks/index.md",
+      "sha256": "501661221fc94b0180e314270f1096f96985eeb55b465856818d45479179a876",
+      "size_bytes": 427,
+      "nested_depth": 2,
+      "legacy_route": "/relationalstats/reference/notebooks/",
+      "canonical_route": "/technical-docs/relationalstats/reference/notebooks/"
+    },
+    {
+      "relative_path": "releases.md",
+      "sha256": "4764cd9232c4e64148b30c76fb87a76c735d48528bf99b4d291d8af5e2b28bcb",
+      "size_bytes": 1129,
+      "nested_depth": 0,
+      "legacy_route": "/relationalstats/releases",
+      "canonical_route": "/technical-docs/relationalstats/releases"
+    }
+  ]
+}

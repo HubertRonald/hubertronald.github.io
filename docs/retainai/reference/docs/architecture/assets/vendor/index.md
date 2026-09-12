@@ -1,5 +1,16 @@
-# Vendor
+---
+layout: false
+search: false
+title: RetainAI
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/retainai/reference/docs/architecture/assets/vendor/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Generated index for the synchronized RetainAI documentation snapshot.
+<!-- R-TD5.5 legacy compatibility stub. Canonical content lives under /technical-docs/retainai/. -->
 
-- [NOTICE](./NOTICE)
+<p>RetainAI documentation moved to <a href="/technical-docs/retainai/reference/docs/architecture/assets/vendor/">/technical-docs/retainai/reference/docs/architecture/assets/vendor/</a>.</p>

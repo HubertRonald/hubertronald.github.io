@@ -1,51 +1,16 @@
+---
+layout: false
+search: false
+title: GradientMesh
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/gradientmesh/releases"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-# Releases
+<!-- R-TD5.3 legacy compatibility stub. Canonical content lives under /technical-docs/gradientmesh/. -->
 
-This page tracks documentation releases for the GradientMesh section of the Hubert Ronald GitHub Pages site.
-
-## Documentation versioning
-
-GradientMesh documentation releases use the following tag pattern:
-
-```text
-gradientmesh-docs-vMAJOR.MINOR.PATCH
-```
-
-These tags describe the GitHub Pages documentation site, not necessarily the GradientMesh Lua library itself.
-
-## Suggested first tag
-
-```text
-gradientmesh-docs-v0.1.0
-```
-
-## Suggested release title
-
-```text
-GradientMesh Documentation Launch
-```
-
-## Suggested release scope
-
-The first documentation release should include:
-
-* VitePress documentation pages for GradientMesh;
-* sidebar navigation;
-* reusable documentation cards;
-* GradientMesh-specific icons;
-* example documentation;
-* architecture overview;
-* API reference summary;
-* image references to the original GradientMesh repository.
-
-## Notes
-
-This documentation site does not duplicate rendered GradientMesh screenshots.
-
-Visual examples are referenced from the original GradientMesh repository under:
-
-```text
-docs/images/
-```
-
-This keeps the GitHub Pages repository lighter and avoids maintaining duplicate image assets.
+<p>GradientMesh documentation moved to <a href="/technical-docs/gradientmesh/releases">/technical-docs/gradientmesh/releases</a>.</p>

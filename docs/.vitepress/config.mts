@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const siteUrl = 'https://hubertronald.dev'
-const defaultOgImage = `${siteUrl}/images/profile/rony-white-shirt-green-bg.jpg`
+const defaultOgImage = `${siteUrl}/icons/common/home.svg`
 
 function normalizePagePath(page: string): string {
   if (page === 'index.md') return '/'
@@ -14,8 +14,34 @@ function normalizePagePath(page: string): string {
   return `/${withoutIndex}/`.replace(/\/+/g, '/')
 }
 
+function canonicalPathForPage(page: string): string {
+  const normalized = normalizePagePath(page)
+
+  if (normalized.startsWith('/versovector/')) {
+    return normalized.replace('/versovector/', '/technical-docs/versovector/')
+  }
+
+  if (normalized.startsWith('/luasf/')) {
+    return normalized.replace('/luasf/', '/technical-docs/luasf/')
+  }
+
+  if (normalized.startsWith('/gradientmesh/')) {
+    return normalized.replace('/gradientmesh/', '/technical-docs/gradientmesh/')
+  }
+
+  if (normalized.startsWith('/relationalstats/')) {
+    return normalized.replace('/relationalstats/', '/technical-docs/relationalstats/')
+  }
+
+  if (normalized.startsWith('/retainai/')) {
+    return normalized.replace('/retainai/', '/technical-docs/retainai/')
+  }
+
+  return normalized
+}
+
 function canonicalUrlForPage(page: string): string {
-  return new URL(normalizePagePath(page), siteUrl).href
+  return new URL(canonicalPathForPage(page), siteUrl).href
 }
 
 function localeForPage(page: string): string {
@@ -27,7 +53,7 @@ function localeForPage(page: string): string {
 export default withMermaid(
   defineConfig({
     title: 'Hubert Ronald',
-    description: 'Data platforms, cloud-native systems and AI products.',
+    description: 'Evidence systems across data, cloud, ML and AI-native products.',
 
     // User/organization GitHub Pages site:
     // https://hubertronald.github.io/
@@ -62,71 +88,74 @@ export default withMermaid(
       },
       /* 
       nav: [
-        { text: 'RetainAI', link: '/retainai/' },
-        { text: 'RelationalStats', link: '/relationalstats/' },
-        { text: 'GradientMesh', link: '/gradientmesh/' },
-        { text: 'VersoVector', link: '/versovector/' },
-        { text: 'LuaSF', link: '/luasf/' }
+        { text: 'RetainAI', link: '/technical-docs/retainai/' },
+        { text: 'RelationalStats', link: '/technical-docs/relationalstats/' },
+        { text: 'GradientMesh', link: '/technical-docs/gradientmesh/' },
+        { text: 'VersoVector', link: '/technical-docs/versovector/' },
+        { text: 'LuaSF', link: '/technical-docs/luasf/' }
       ],
       */
       nav: [
-        { text: 'Projects', link: '/projects/' },
-        { text: 'Journey', link: '/journey/' },
-        { text: 'Case Studies', link: '/case-studies/' },
-        { text: 'Archive', link: '/archive/' }
+        { text: 'Work', link: '/projects/', activeMatch: '^/projects(/|$)' },
+        { text: 'Journey', link: '/journey/', activeMatch: '^/journey(/|$)' },
+        {
+          text: 'Docs',
+          link: '/technical-docs/',
+          activeMatch: '^/(technical-docs|retainai|versovector|relationalstats|gradientmesh|luasf)(/|$)'
+        }
       ],
 
       sidebar: {
-        '/retainai/': [
+        '/technical-docs/retainai/': [
           {
             text: 'RetainAI',
             items: [
-              { text: 'Overview', link: '/retainai/' },
-              { text: 'Project README', link: '/retainai/package' },
-              { text: 'Documentation Index', link: '/retainai/reference/docs/' },
-              { text: 'Reports', link: '/retainai/reference/reports/' },
-              { text: 'Releases', link: '/retainai/releases' }
+              { text: 'Overview', link: '/technical-docs/retainai/' },
+              { text: 'Project README', link: '/technical-docs/retainai/package' },
+              { text: 'Documentation Index', link: '/technical-docs/retainai/reference/docs/' },
+              { text: 'Reports', link: '/technical-docs/retainai/reference/reports/' },
+              { text: 'Releases', link: '/technical-docs/retainai/releases' }
             ]
           }
         ],
 
-        '/versovector/': [
+        '/technical-docs/versovector/': [
           {
             text: 'VersoVector',
             items: [
-              { text: 'Overview', link: '/versovector/' },
-              { text: 'Local Setup', link: '/versovector/setup' },
-              { text: 'Dataset', link: '/versovector/data' },
-              { text: 'Notebook Guide', link: '/versovector/notebooks' },
-              { text: 'Model Topology', link: '/versovector/model-topology' },
-              { text: 'Pipeline', link: '/versovector/pipeline' },
-              { text: 'Architecture', link: '/versovector/architecture' },
-              { text: 'Results Guide', link: '/versovector/results' },
-              { text: 'Serving & Demo', link: '/versovector/serving' }
+              { text: 'Overview', link: '/technical-docs/versovector/' },
+              { text: 'Local Setup', link: '/technical-docs/versovector/setup' },
+              { text: 'Dataset', link: '/technical-docs/versovector/data' },
+              { text: 'Notebook Guide', link: '/technical-docs/versovector/notebooks' },
+              { text: 'Model Topology', link: '/technical-docs/versovector/model-topology' },
+              { text: 'Pipeline', link: '/technical-docs/versovector/pipeline' },
+              { text: 'Architecture', link: '/technical-docs/versovector/architecture' },
+              { text: 'Results Guide', link: '/technical-docs/versovector/results' },
+              { text: 'Serving & Demo', link: '/technical-docs/versovector/serving' }
             ]
           }
         ],
 
-        '/relationalstats/': [
+        '/technical-docs/relationalstats/': [
           {
             text: 'RelationalStats',
             items: [
-              { text: 'Overview', link: '/relationalstats/' },
-              { text: 'Package README', link: '/relationalstats/package' },
-              { text: 'Documentation Index', link: '/relationalstats/reference/docs/' },
+              { text: 'Overview', link: '/technical-docs/relationalstats/' },
+              { text: 'Package README', link: '/technical-docs/relationalstats/package' },
+              { text: 'Documentation Index', link: '/technical-docs/relationalstats/reference/docs/' },
 
               {
                 text: 'Link Prediction',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/linkprediction/' },
-                  { text: 'ProxFun Full', link: '/relationalstats/reference/docs/linkprediction/proxfun-full' },
-                  { text: 'Metrics', link: '/relationalstats/reference/docs/linkprediction/metrics' },
-                  { text: 'Results', link: '/relationalstats/reference/docs/linkprediction/results' },
-                  { text: 'Scalability', link: '/relationalstats/reference/docs/linkprediction/scalability' },
-                  { text: 'Manual Small-Graph Tests', link: '/relationalstats/reference/docs/linkprediction/manual-small-graph-tests' },
-                  { text: 'Internal Refactor', link: '/relationalstats/reference/docs/linkprediction/internal-refactor' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/linkprediction/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/linkprediction/' },
+                  { text: 'ProxFun Full', link: '/technical-docs/relationalstats/reference/docs/linkprediction/proxfun-full' },
+                  { text: 'Metrics', link: '/technical-docs/relationalstats/reference/docs/linkprediction/metrics' },
+                  { text: 'Results', link: '/technical-docs/relationalstats/reference/docs/linkprediction/results' },
+                  { text: 'Scalability', link: '/technical-docs/relationalstats/reference/docs/linkprediction/scalability' },
+                  { text: 'Manual Small-Graph Tests', link: '/technical-docs/relationalstats/reference/docs/linkprediction/manual-small-graph-tests' },
+                  { text: 'Internal Refactor', link: '/technical-docs/relationalstats/reference/docs/linkprediction/internal-refactor' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/linkprediction/validation-against-r' }
                 ]
               },
 
@@ -134,9 +163,9 @@ export default withMermaid(
                 text: 'QAP',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/qap/' },
-                  { text: 'Formulas', link: '/relationalstats/reference/docs/qap/formulas' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/qap/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/qap/' },
+                  { text: 'Formulas', link: '/technical-docs/relationalstats/reference/docs/qap/formulas' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/qap/validation-against-r' }
                 ]
               },
 
@@ -144,12 +173,12 @@ export default withMermaid(
                 text: 'ERGM',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/ergm/' },
-                  { text: 'Formulas', link: '/relationalstats/reference/docs/ergm/formulas' },
-                  { text: 'Terms', link: '/relationalstats/reference/docs/ergm/terms' },
-                  { text: 'Goodness of Fit', link: '/relationalstats/reference/docs/ergm/gof' },
-                  { text: 'Limitations', link: '/relationalstats/reference/docs/ergm/limitations' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/ergm/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/ergm/' },
+                  { text: 'Formulas', link: '/technical-docs/relationalstats/reference/docs/ergm/formulas' },
+                  { text: 'Terms', link: '/technical-docs/relationalstats/reference/docs/ergm/terms' },
+                  { text: 'Goodness of Fit', link: '/technical-docs/relationalstats/reference/docs/ergm/gof' },
+                  { text: 'Limitations', link: '/technical-docs/relationalstats/reference/docs/ergm/limitations' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/ergm/validation-against-r' }
                 ]
               },
 
@@ -157,11 +186,11 @@ export default withMermaid(
                 text: 'STERGM',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/docs/stergm/' },
-                  { text: 'Formulas', link: '/relationalstats/reference/docs/stergm/formulas' },
-                  { text: 'Temporal Dyads', link: '/relationalstats/reference/docs/stergm/temporal-dyads' },
-                  { text: 'Limitations', link: '/relationalstats/reference/docs/stergm/limitations' },
-                  { text: 'Validation Against R', link: '/relationalstats/reference/docs/stergm/validation-against-r' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/docs/stergm/' },
+                  { text: 'Formulas', link: '/technical-docs/relationalstats/reference/docs/stergm/formulas' },
+                  { text: 'Temporal Dyads', link: '/technical-docs/relationalstats/reference/docs/stergm/temporal-dyads' },
+                  { text: 'Limitations', link: '/technical-docs/relationalstats/reference/docs/stergm/limitations' },
+                  { text: 'Validation Against R', link: '/technical-docs/relationalstats/reference/docs/stergm/validation-against-r' }
                 ]
               },
 
@@ -169,10 +198,10 @@ export default withMermaid(
                 text: 'Methodology',
                 collapsed: false,
                 items: [
-                  { text: 'Equivalence vs Approximation', link: '/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
-                  { text: 'Reproducibility', link: '/relationalstats/reference/docs/methodology/reproducibility' },
-                  { text: 'Release Checklist', link: '/relationalstats/reference/docs/methodology/release-checklist' },
-                  { text: 'Roadmap', link: '/relationalstats/reference/docs/methodology/roadmap' }
+                  { text: 'Equivalence vs Approximation', link: '/technical-docs/relationalstats/reference/docs/methodology/equivalence-vs-approximation' },
+                  { text: 'Reproducibility', link: '/technical-docs/relationalstats/reference/docs/methodology/reproducibility' },
+                  { text: 'Release Checklist', link: '/technical-docs/relationalstats/reference/docs/methodology/release-checklist' },
+                  { text: 'Roadmap', link: '/technical-docs/relationalstats/reference/docs/methodology/roadmap' }
                 ]
               },
 
@@ -180,47 +209,62 @@ export default withMermaid(
                 text: 'Examples',
                 collapsed: false,
                 items: [
-                  { text: 'Overview', link: '/relationalstats/reference/examples/' },
-                  { text: 'Link Prediction', link: '/relationalstats/reference/examples/linkprediction/' },
-                  { text: 'Experimental ML Workflow', link: '/relationalstats/reference/examples/linkprediction/experimental-ml-workflow' },
-                  { text: 'QAP', link: '/relationalstats/reference/examples/qap/' },
-                  { text: 'ERGM', link: '/relationalstats/reference/examples/ergm/' },
-                  { text: 'STERGM', link: '/relationalstats/reference/examples/stergm/' }
+                  { text: 'Overview', link: '/technical-docs/relationalstats/reference/examples/' },
+                  { text: 'Link Prediction', link: '/technical-docs/relationalstats/reference/examples/linkprediction/' },
+                  { text: 'Experimental ML Workflow', link: '/technical-docs/relationalstats/reference/examples/linkprediction/experimental-ml-workflow' },
+                  { text: 'QAP', link: '/technical-docs/relationalstats/reference/examples/qap/' },
+                  { text: 'ERGM', link: '/technical-docs/relationalstats/reference/examples/ergm/' },
+                  { text: 'STERGM', link: '/technical-docs/relationalstats/reference/examples/stergm/' }
                 ]
               },
 
-              { text: 'Notebooks', link: '/relationalstats/reference/notebooks/' },
-              { text: 'Releases', link: '/relationalstats/releases' }
+              { text: 'Notebooks', link: '/technical-docs/relationalstats/reference/notebooks/' },
+              { text: 'Releases', link: '/technical-docs/relationalstats/releases' }
             ]
           }
         ],
 
-        '/luasf/': [
+        '/technical-docs/luasf/': [
           {
             text: 'LuaSF',
             items: [
-              { text: 'Overview', link: '/luasf/' },
-              { text: 'Getting Started', link: '/luasf/getting-started' },
-              { text: 'API Overview', link: '/luasf/api-overview' },
-              { text: 'Architecture', link: '/luasf/architecture' },
-              { text: 'Examples', link: '/luasf/examples' },
-              { text: 'Contributing', link: '/luasf/contributing' },
-              { text: 'Releases', link: '/luasf/releases' }
+              { text: 'Overview', link: '/technical-docs/luasf/' },
+              { text: 'Getting Started', link: '/technical-docs/luasf/getting-started' },
+              { text: 'API Overview', link: '/technical-docs/luasf/api-overview' },
+              { text: 'Architecture', link: '/technical-docs/luasf/architecture' },
+              { text: 'Examples', link: '/technical-docs/luasf/examples' },
+              { text: 'Contributing', link: '/technical-docs/luasf/contributing' },
+              { text: 'Releases', link: '/technical-docs/luasf/releases' }
             ]
           }
         ],
 
-        '/gradientmesh/': [
+        '/technical-docs/gradientmesh/': [
           {
             text: 'GradientMesh',
             items: [
-              { text: 'Overview', link: '/gradientmesh/' },
-              { text: 'Getting Started', link: '/gradientmesh/getting-started' },
-              { text: 'Examples', link: '/gradientmesh/examples' },
-              { text: 'How It Works', link: '/gradientmesh/how-it-works' },
-              { text: 'API Reference', link: '/gradientmesh/api-reference' },
-              { text: 'Architecture', link: '/gradientmesh/architecture' },
-              { text: 'Releases', link: '/gradientmesh/releases' }
+              { text: 'Overview', link: '/technical-docs/gradientmesh/' },
+              { text: 'Getting Started', link: '/technical-docs/gradientmesh/getting-started' },
+              { text: 'Examples', link: '/technical-docs/gradientmesh/examples' },
+              { text: 'How It Works', link: '/technical-docs/gradientmesh/how-it-works' },
+              { text: 'API Reference', link: '/technical-docs/gradientmesh/api-reference' },
+              { text: 'Architecture', link: '/technical-docs/gradientmesh/architecture' },
+              { text: 'Releases', link: '/technical-docs/gradientmesh/releases' }
+            ]
+          }
+        ],
+
+        '/technical-docs/fde-roadmap/': [
+          {
+            text: 'FDE Roadmap',
+            items: [
+              { text: 'Atlas Overview', link: '/technical-docs/fde-roadmap/' },
+              { text: 'Field Guide', link: '/technical-docs/fde-roadmap/guide' },
+              { text: 'Sources & Provenance', link: '/technical-docs/fde-roadmap/reference/sources-and-provenance' },
+              { text: 'Visual Rationale', link: '/technical-docs/fde-roadmap/reference/visual-rationale' },
+              { text: 'Citation', link: '/technical-docs/fde-roadmap/reference/citation' },
+              { text: 'Contributing', link: '/technical-docs/fde-roadmap/reference/contributing' },
+              { text: 'Changelog', link: '/technical-docs/fde-roadmap/reference/changelog' }
             ]
           }
         ]
@@ -229,11 +273,6 @@ export default withMermaid(
       socialLinks: [
         { icon: 'github', link: 'https://github.com/HubertRonald' }
       ],
-
-      footer: {
-        message: 'Built with VitePress and deployed with GitHub Pages.',
-        copyright: 'Copyright © Hubert Ronald'
-      },
 
       search: {
         provider: 'local'

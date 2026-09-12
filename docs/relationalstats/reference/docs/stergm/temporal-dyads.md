@@ -1,25 +1,16 @@
-# Temporal dyads
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/stergm/temporal-dyads"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Formation risk set:
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-```text
-dyads where y_t1 = 0
-```
-
-Outcome:
-
-```text
-formation = y_t2
-```
-
-Dissolution risk set:
-
-```text
-dyads where y_t1 = 1
-```
-
-Outcome:
-
-```text
-dissolution = 1 - y_t2
-```
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/stergm/temporal-dyads">/technical-docs/relationalstats/reference/docs/stergm/temporal-dyads</a>.</p>

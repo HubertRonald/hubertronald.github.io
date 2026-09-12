@@ -1,6 +1,16 @@
-# Releases
+---
+layout: false
+search: false
+title: RetainAI
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/retainai/reference/docs/releases/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Generated index for the synchronized RetainAI documentation snapshot.
+<!-- R-TD5.5 legacy compatibility stub. Canonical content lives under /technical-docs/retainai/. -->
 
-- [V0.4.0 Alpha.1](./v0.4.0-alpha.1)
-- [V0.4.0](./v0.4.0)
+<p>RetainAI documentation moved to <a href="/technical-docs/retainai/reference/docs/releases/">/technical-docs/retainai/reference/docs/releases/</a>.</p>

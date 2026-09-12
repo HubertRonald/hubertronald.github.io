@@ -1,63 +1,63 @@
 /* VersoVector sidebar icons */
-.VPSidebarItem a.link[href="/versovector/"]::before,
-.VPSidebarItem a.link[href="/versovector"]::before,
-.VPSidebarItem a.link[href="/versovector/index.html"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/index.html"]::before {
     mask-image: url("/icons/versovector/overview.svg");
     -webkit-mask-image: url("/icons/versovector/overview.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/setup"]::before,
-.VPSidebarItem a.link[href="/versovector/setup.html"]::before,
-.VPSidebarItem a.link[href="/versovector/setup/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/setup"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/setup.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/setup/"]::before {
     mask-image: url("/icons/versovector/setup.svg");
     -webkit-mask-image: url("/icons/versovector/setup.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/data"]::before,
-.VPSidebarItem a.link[href="/versovector/data.html"]::before,
-.VPSidebarItem a.link[href="/versovector/data/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/data"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/data.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/data/"]::before {
     mask-image: url("/icons/versovector/data.svg");
     -webkit-mask-image: url("/icons/versovector/data.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/notebooks"]::before,
-.VPSidebarItem a.link[href="/versovector/notebooks.html"]::before,
-.VPSidebarItem a.link[href="/versovector/notebooks/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/notebooks"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/notebooks.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/notebooks/"]::before {
     mask-image: url("/icons/versovector/notebook.svg");
     -webkit-mask-image: url("/icons/versovector/notebook.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/model-topology"]::before,
-.VPSidebarItem a.link[href="/versovector/model-topology.html"]::before,
-.VPSidebarItem a.link[href="/versovector/model-topology/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/model-topology"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/model-topology.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/model-topology/"]::before {
     mask-image: url("/icons/versovector/topology.svg");
     -webkit-mask-image: url("/icons/versovector/topology.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/pipeline"]::before,
-.VPSidebarItem a.link[href="/versovector/pipeline.html"]::before,
-.VPSidebarItem a.link[href="/versovector/pipeline/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/pipeline"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/pipeline.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/pipeline/"]::before {
     mask-image: url("/icons/versovector/pipeline.svg");
     -webkit-mask-image: url("/icons/versovector/pipeline.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/architecture"]::before,
-.VPSidebarItem a.link[href="/versovector/architecture.html"]::before,
-.VPSidebarItem a.link[href="/versovector/architecture/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/architecture"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/architecture.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/architecture/"]::before {
     mask-image: url("/icons/versovector/architecture.svg");
     -webkit-mask-image: url("/icons/versovector/architecture.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/results"]::before,
-.VPSidebarItem a.link[href="/versovector/results.html"]::before,
-.VPSidebarItem a.link[href="/versovector/results/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/results"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/results.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/results/"]::before {
     mask-image: url("/icons/versovector/results.svg");
     -webkit-mask-image: url("/icons/versovector/results.svg");
 }
 
-.VPSidebarItem a.link[href="/versovector/serving"]::before,
-.VPSidebarItem a.link[href="/versovector/serving.html"]::before,
-.VPSidebarItem a.link[href="/versovector/serving/"]::before {
+.VPSidebarItem a.link[href="/technical-docs/versovector/serving"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/serving.html"]::before,
+.VPSidebarItem a.link[href="/technical-docs/versovector/serving/"]::before {
     mask-image: url("/icons/versovector/serving.svg");
     -webkit-mask-image: url("/icons/versovector/serving.svg");
 }

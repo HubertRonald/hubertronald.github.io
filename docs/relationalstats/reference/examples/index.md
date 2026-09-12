@@ -1,30 +1,16 @@
-# Examples
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/examples/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-This directory contains public, synthetic, and reusable examples for
-`relationalstats`.
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-The examples are intentionally separated from the package core.
-
-They may demonstrate:
-
-- practical workflows;
-- optional ML experiments;
-- plotting;
-- validation ideas;
-- reproducible toy datasets.
-
-## Academic and private material
-
-Solved academic notebooks, private experiments, and raw course material should
-not be committed to this repository.
-
-Local-only material should remain under ignored paths such as:
-
-```text
-notebooks/legacy/
-notebooks/private/
-scratch/
-experiments/
-```
-
-Public examples should be rewritten as clean, synthetic, reusable examples.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/examples/">/technical-docs/relationalstats/reference/examples/</a>.</p>

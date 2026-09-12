@@ -10,18 +10,32 @@
         "docs:build": "vitepress build docs && npm run static:copy",
         "docs:preview": "vitepress preview docs",
         "static:copy": "node scripts/copy-static-sites.mjs",
-        "relationalstats:fetch": "rm -rf .vendor/relationalstats && mkdir -p .vendor && git clone --depth 1 https://github.com/HubertRonald/relationalstats.git .vendor/relationalstats",
-        "relationalstats:sync": "RELATIONALSTATS_REPO=.vendor/relationalstats node scripts/sync-relationalstats-docs.mjs",
-        "relationalstats:update": "npm run relationalstats:fetch && npm run relationalstats:sync",
-        "retainai:fetch": "bash scripts/fetch-retainai-docs.sh",
-        "retainai:sync": "RETAINAI_REPO=.vendor/retainai node scripts/sync-retainai-docs.mjs",
-        "retainai:update": "npm run retainai:fetch && npm run retainai:sync"
+        "relationalstats:fetch": "node scripts/technical-docs/runner.mjs fetch relationalstats",
+        "relationalstats:sync": "node scripts/technical-docs/runner.mjs sync relationalstats",
+        "relationalstats:update": "node scripts/technical-docs/runner.mjs update relationalstats",
+        "retainai:fetch": "node scripts/technical-docs/runner.mjs fetch retainai",
+        "retainai:sync": "node scripts/technical-docs/runner.mjs sync retainai",
+        "retainai:update": "node scripts/technical-docs/runner.mjs update retainai",
+        "technical-docs:validate": "node scripts/technical-docs/validate-registry.mjs",
+        "technical-docs:validate-foundation": "node scripts/technical-docs/validate-foundation.mjs",
+        "technical-docs:lifecycle": "node scripts/technical-docs/runner.mjs",
+        "technical-docs:validate-rtd4": "node scripts/technical-docs/validate-rtd4.mjs",
+        "technical-docs:validate-rtd5-1": "node scripts/technical-docs/validate-rtd5-1.mjs",
+        "technical-docs:validate-rtd5-2": "node scripts/technical-docs/validate-rtd5-2.mjs",
+        "technical-docs:validate-rtd5-3": "node scripts/technical-docs/validate-rtd5-3.mjs",
+        "technical-docs:validate-rtd5-4": "node scripts/technical-docs/validate-rtd5-4.mjs",
+        "technical-docs:validate-rtd5-5": "node scripts/technical-docs/validate-rtd5-5.mjs",
+        "technical-docs:validate-rtd6": "node scripts/technical-docs/validate-rtd6.mjs"
     },
     "devDependencies": {
         "gray-matter": "^4.0.3",
-        "markdown-it-mathjax3": "^4.3.2",
-        "mermaid": "^11.15.0",
+        "mermaid": "^11.17.2",
         "vitepress": "1.6.4",
         "vitepress-plugin-mermaid": "^2.0.17"
+    },
+    "overrides": {
+        "speech-rule-engine": {
+            "@xmldom/xmldom": "0.9.12"
+        }
     }
 }

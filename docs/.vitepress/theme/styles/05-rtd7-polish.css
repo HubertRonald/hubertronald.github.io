@@ -1,0 +1,662 @@
+/*
+ * Project Atlas Phase 5E — R-TD7 responsive / documentation polish.
+ *
+ * Presentation-only normalization. This layer deliberately does not alter
+ * registry, lifecycle, provenance, routing, evidence or synchronized content
+ * semantics from R-TD1 through R-TD6.
+ */
+
+/* White-dominant reading surfaces ---------------------------------------- */
+.hr-portfolio-page {
+  background: var(--hr-color-paper);
+}
+
+/* Keep site chrome visibly distinct from the white reading field. */
+.hr-portfolio-header {
+  background: color-mix(in srgb, var(--hr-color-canvas) 94%, transparent);
+}
+
+/* Default VitePress documentation already uses a white content surface;
+   make that relationship explicit without changing the neutral sidebar. */
+.VPDoc,
+.VPDoc .container,
+.VPDoc .content-container {
+  background: var(--hr-color-paper);
+}
+
+.dark .hr-portfolio-page,
+.dark .VPDoc,
+.dark .VPDoc .container,
+.dark .VPDoc .content-container {
+  background: var(--hr-color-canvas);
+}
+
+/* Technical Docs sidebar -------------------------------------------------
+   R-TD7 owner decision: one semantic project/group icon + text-only child
+   routes. Existing route-level masks remain available to card components,
+   but never render in the VitePress sidebar. */
+.VPSidebarItem a.link::before {
+  content: none !important;
+  display: none !important;
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/versovector"]) {
+  --hr-docs-project-icon: url("/icons/versovector/topology.svg");
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/luasf"]) {
+  --hr-docs-project-icon: url("/icons/luasf/architecture.svg");
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/gradientmesh"]) {
+  --hr-docs-project-icon: url("/icons/gradientmesh/how-it-works.svg");
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/relationalstats"]) {
+  --hr-docs-project-icon: url("/icons/relationalstats/ergm.svg");
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/retainai"]) {
+  --hr-docs-project-icon: url("/icons/retainai/overview.svg");
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/fde-roadmap"]) {
+  --hr-docs-project-icon: url("/icons/common/field-guide.svg");
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/"])
+  .VPSidebarItem.level-0 > .item > .text {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+.VPSidebar:has(a.link[href^="/technical-docs/"])
+  .VPSidebarItem.level-0 > .item > .text::before {
+  content: "";
+  width: var(--hr-icon-size-sm);
+  height: var(--hr-icon-size-sm);
+  flex: 0 0 var(--hr-icon-size-sm);
+  background-color: currentColor;
+  opacity: .78;
+  mask-image: var(--hr-docs-project-icon);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--hr-docs-project-icon);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+/* Documentation shell parity -------------------------------------------- */
+.hr-depth-context {
+  border-color: var(--hr-color-border-subtle);
+  background: var(--hr-color-surface-quiet);
+}
+
+.hr-depth-context nav a,
+.hr-docs-footer nav a {
+  color: var(--hr-color-text-body);
+  text-decoration: none;
+}
+
+.hr-depth-context nav a:hover,
+.hr-docs-footer nav a:hover {
+  color: var(--hr-color-text-strong);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.hr-docs-footer {
+  border-top-color: var(--hr-color-border-subtle);
+}
+
+/* Long repository URLs, SHAs and inline-code identifiers must never force
+   page-level horizontal overflow. Code blocks retain their own scrolling. */
+.vp-doc a,
+.hr-depth-context,
+.hr-docs-footer {
+  overflow-wrap: anywhere;
+}
+
+.vp-doc :not(pre) > code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Tablet ----------------------------------------------------------------- */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .hr-depth-context {
+    padding: var(--hr-space-4) var(--hr-space-5, 1.25rem);
+  }
+
+  .hr-depth-context nav {
+    gap: var(--hr-space-2) var(--hr-space-4);
+  }
+
+  .hr-docs-footer {
+    gap: var(--hr-space-3);
+  }
+}
+
+/* Mobile ----------------------------------------------------------------- */
+@media (max-width: 720px) {
+  /* Same persistent navigation component is used by Home/Work/Journey/Docs.
+     Neutral chrome stays visually separate from the white reading field. */
+  .hr-mobile-portfolio-nav {
+    border-top-color: var(--hr-color-border-subtle);
+    background: color-mix(in srgb, var(--hr-color-surface-quiet) 94%, transparent);
+  }
+
+  .hr-mobile-portfolio-nav a {
+    min-height: 48px;
+  }
+
+  .hr-mobile-portfolio-nav a[aria-current='page'] {
+    color: var(--hr-color-signal-strong);
+  }
+
+  /* The docs context card becomes a compact 2-column touch grid rather than
+     a row of small inline text links. */
+  .hr-depth-context {
+    margin-bottom: var(--hr-space-6);
+    padding: var(--hr-space-4);
+  }
+
+  .hr-depth-context nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 var(--hr-space-3);
+    width: 100%;
+    margin-top: var(--hr-space-3);
+    border-top: 1px solid var(--hr-color-border-subtle);
+  }
+
+  .hr-depth-context nav a {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    min-height: 44px;
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--hr-color-border-subtle);
+    font-size: .78rem;
+    line-height: 1.3;
+  }
+
+  /* Compact docs footer uses the same touch-target and separator language as
+     the Project Atlas mobile shell while leaving the full landing footer out
+     of long-form documentation pages. */
+  .hr-docs-footer {
+    width: 100%;
+    gap: var(--hr-space-3);
+    margin-top: var(--hr-space-8);
+    padding-top: var(--hr-space-4);
+    padding-bottom: var(--hr-space-3);
+  }
+
+  .hr-docs-footer > span {
+    color: var(--hr-color-text-muted);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .hr-docs-footer nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 var(--hr-space-3);
+    width: 100%;
+    border-top: 1px solid var(--hr-color-border-subtle);
+  }
+
+  .hr-docs-footer nav a {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    min-height: 44px;
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--hr-color-border-subtle);
+    font-size: .76rem;
+    line-height: 1.3;
+  }
+
+  /* Reserve a little more than the nav's visual height on long docs pages so
+     previous/next and the compact footer never sit beneath fixed chrome. */
+  .VPDoc {
+    padding-bottom: calc(5.2rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 430px) {
+  .hr-depth-context nav,
+  .hr-docs-footer nav {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Final refinement — Editorial Monochrome + Slate ------------------------
+   One restrained surface/control vocabulary is shared across the portfolio
+   without flattening primary, secondary and utility actions into one style. */
+:root {
+  --hr-rtd7-card-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 64%,
+    var(--hr-color-surface-quiet)
+  );
+  --hr-rtd7-control-border: color-mix(
+    in srgb,
+    var(--hr-color-text-strong) 52%,
+    var(--hr-color-paper)
+  );
+  --hr-rtd7-nav-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 82%,
+    var(--hr-color-canvas)
+  );
+}
+
+.dark {
+  --hr-rtd7-card-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 72%,
+    var(--hr-color-surface-quiet)
+  );
+  --hr-rtd7-control-border: color-mix(
+    in srgb,
+    var(--hr-color-text-strong) 40%,
+    var(--hr-color-canvas)
+  );
+  --hr-rtd7-nav-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 78%,
+    var(--hr-color-canvas)
+  );
+}
+
+/* Reading cards use a single calm neutral instead of unrelated gray blocks. */
+.hr-home-featured-item,
+.hr-atlas-page .hr-atlas-featured-card,
+.hr-atlas-page .hr-atlas-featured-card.is-architecture-boundary,
+.hr-atlas-primary-strip,
+.hr-atlas-supporting-card,
+.hr-atlas-historical-strip {
+  background: var(--hr-rtd7-card-surface);
+}
+
+/* Slate belongs to signals and semantic icon containers, not decoration. */
+.hr-atlas-band-icon,
+.hr-atlas-project-symbol,
+.hr-technical-docs-icon {
+  color: var(--hr-color-signal-strong);
+  background: var(--hr-color-signal-soft);
+}
+
+/* Shared action family ---------------------------------------------------- */
+.hr-action-primary,
+.hr-action-secondary,
+.hr-link-row a,
+.hr-home-link-row a,
+.hr-technical-docs-action,
+.hr-technical-docs-context nav a,
+.hr-atlas-archive-compact nav a {
+  border-radius: var(--hr-radius-sm);
+  font-weight: 760;
+}
+
+.hr-action-secondary,
+.hr-link-row a,
+.hr-home-link-row a,
+.hr-technical-docs-action,
+.hr-technical-docs-context nav a,
+.hr-atlas-archive-compact nav a {
+  border-color: var(--hr-rtd7-control-border);
+}
+
+/* Secondary actions carry a quiet slate cue while utility actions stay calm. */
+.hr-home-link-row a:first-child,
+.hr-atlas-featured-card .hr-link-row a:first-child,
+.hr-technical-docs-action.is-primary,
+.hr-atlas-archive-compact nav a:first-child {
+  border-color: var(--hr-color-signal-strong);
+  background: var(--hr-color-signal-soft);
+  color: var(--hr-color-text-strong) !important;
+}
+
+.hr-home-link-row a:hover,
+.hr-atlas-featured-card .hr-link-row a:hover,
+.hr-technical-docs-action:hover,
+.hr-technical-docs-action:focus-visible,
+.hr-technical-docs-context nav a:hover,
+.hr-technical-docs-context nav a:focus-visible,
+.hr-atlas-archive-compact nav a:hover,
+.hr-atlas-archive-compact nav a:focus-visible {
+  border-color: var(--hr-color-signal-strong);
+  background: var(--hr-color-signal-soft);
+  text-decoration: none;
+}
+
+/* Archive Gateway is a two-level utility pair, not a button plus footnote. */
+.hr-atlas-archive-compact nav {
+  gap: var(--hr-space-2);
+}
+
+.hr-atlas-archive-compact nav a:first-child,
+.hr-atlas-archive-compact nav a:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 2.25rem;
+  padding: .48rem .65rem;
+  border: 1px solid var(--hr-rtd7-control-border);
+  color: var(--hr-color-text-strong);
+  font-size: .76rem;
+  font-weight: 760;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.hr-atlas-archive-compact nav a:first-child {
+  border-color: var(--hr-color-signal-strong);
+}
+
+/* Work — Journey Evidence discoverability --------------------------------
+   The sequence stays horizontally scrollable, but the available direction is
+   explicit and updates at both boundaries. Native touch/trackpad scrolling is
+   unchanged, and the scroller itself is keyboard-focusable. */
+.hr-atlas-stage-scroll {
+  position: relative;
+}
+
+.hr-atlas-stage-scroll-controls {
+  position: absolute;
+  z-index: 4;
+  top: .15rem;
+  left: .05rem;
+  right: .05rem;
+  display: flex;
+  gap: var(--hr-space-1);
+  pointer-events: none;
+}
+
+.hr-atlas-stage-scroll-controls button {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--hr-rtd7-control-border);
+  border-radius: 999px;
+  background: var(--hr-rtd7-nav-surface);
+  color: var(--hr-color-text-strong);
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.hr-atlas-stage-scroll-controls .is-left {
+  margin-right: auto;
+}
+
+.hr-atlas-stage-scroll-controls .is-right {
+  margin-left: auto;
+}
+
+.hr-atlas-stage-scroll-controls button:hover {
+  border-color: var(--hr-color-signal-strong);
+  background: var(--hr-color-signal-soft);
+}
+
+.hr-atlas-stage-scroll-controls button:focus-visible {
+  outline: 3px solid var(--hr-color-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1100px) {
+  .hr-atlas-stage-line {
+    scroll-behavior: smooth;
+    scroll-padding-inline: var(--hr-space-2);
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  .hr-atlas-stage-line article {
+    scroll-snap-align: start;
+  }
+
+  .hr-atlas-stage-scroll::before,
+  .hr-atlas-stage-scroll::after {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    top: 2.2rem;
+    bottom: .15rem;
+    width: 1.65rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--hr-motion-short) ease;
+  }
+
+  .hr-atlas-stage-scroll::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--hr-color-paper), transparent);
+  }
+
+  .hr-atlas-stage-scroll::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--hr-color-paper), transparent);
+  }
+
+  .dark .hr-atlas-stage-scroll::before {
+    background: linear-gradient(90deg, var(--hr-color-canvas), transparent);
+  }
+
+  .dark .hr-atlas-stage-scroll::after {
+    background: linear-gradient(270deg, var(--hr-color-canvas), transparent);
+  }
+
+  .hr-atlas-stage-scroll.can-scroll-left::before,
+  .hr-atlas-stage-scroll.can-scroll-right::after {
+    opacity: 1;
+  }
+}
+
+/* Home — Builder Journey connector geometry ------------------------------
+   In the 4 + 3 responsive topology, each row owns its connector. The line is
+   derived from the node size/inset and therefore crosses the circle center at
+   nearby widths instead of relying on a viewport-specific pixel offset. */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .hr-journey-preview {
+    --hr-rtd7-journey-node-size: 2rem;
+    --hr-rtd7-journey-node-radius: 1rem;
+    --hr-rtd7-journey-node-inset: var(--hr-space-3);
+  }
+
+  .hr-journey-preview li {
+    position: relative;
+    padding-top: var(--hr-rtd7-journey-node-inset);
+    border-top: 0;
+  }
+
+  .hr-journey-preview li::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: calc(var(--hr-rtd7-journey-node-inset) + var(--hr-rtd7-journey-node-radius));
+    left: 0;
+    right: 0;
+    border-top: 1px dashed var(--hr-color-border-strong);
+  }
+
+  .hr-journey-preview li:nth-child(4n + 1)::before {
+    left: 50%;
+  }
+
+  .hr-journey-preview li:nth-child(4)::before,
+  .hr-journey-preview li:last-child::before {
+    right: 50%;
+  }
+
+  .hr-journey-stage-number {
+    width: var(--hr-rtd7-journey-node-size);
+    height: var(--hr-rtd7-journey-node-size);
+  }
+}
+
+/* Footer / fixed mobile navigation separation ---------------------------- */
+@media (max-width: 720px) {
+  .hr-portfolio-footer {
+    background: var(--hr-color-surface-quiet);
+  }
+
+  .hr-mobile-portfolio-nav {
+    border-top-color: var(--hr-rtd7-control-border);
+    background: var(--hr-rtd7-nav-surface);
+    box-shadow: 0 -1px 0 color-mix(in srgb, var(--hr-color-text-strong) 8%, transparent);
+  }
+
+  .hr-docs-footer {
+    padding-inline: var(--hr-space-4);
+    border: 1px solid var(--hr-color-border-subtle);
+    background: var(--hr-color-surface-quiet);
+  }
+}
+
+/* R-TD7 final micro-pass ---------------------------------------------------
+   Surgical visual normalization only: Journey scope/intro breathing and the
+   neutral Featured/Repository hierarchy. No component or responsive behavior
+   outside these presentation selectors is changed. */
+:root {
+  --hr-rtd7-card-surface: color-mix(
+    in srgb,
+    var(--hr-color-paper) 96%,
+    var(--hr-color-ink)
+  );
+  --hr-rtd7-scope-surface: color-mix(
+    in srgb,
+    var(--hr-color-paper) 94%,
+    var(--hr-color-signal)
+  );
+  --hr-rtd7-utility-surface: var(--hr-color-paper);
+  --hr-rtd7-utility-border: var(--hr-rtd7-control-border);
+}
+
+.dark {
+  --hr-rtd7-card-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 82%,
+    var(--hr-color-canvas)
+  );
+  --hr-rtd7-scope-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 94%,
+    var(--hr-color-signal)
+  );
+  --hr-rtd7-utility-surface: color-mix(
+    in srgb,
+    var(--hr-color-surface-evidence) 94%,
+    var(--hr-color-text-body)
+  );
+  --hr-rtd7-utility-border: color-mix(
+    in srgb,
+    var(--hr-color-text-strong) 44%,
+    var(--hr-color-canvas)
+  );
+}
+
+/* Journey scope boundaries share the documentation scope vocabulary without
+   becoming a colored panel. The fill stays near-paper; slate is only a cue. */
+.hr-journey-boundary {
+  border-left-color: var(--hr-color-signal);
+  background: var(--hr-rtd7-scope-surface);
+  color: var(--hr-color-text-body);
+}
+
+.hr-journey-boundary strong {
+  color: var(--hr-color-text-strong);
+}
+
+/* Restore the intended intermediate inset: --hr-space-5 is not a declared
+   token, so use the project's established 1.25rem fallback for 721–1024px. */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .hr-journey-legend {
+    padding: var(--hr-space-5, 1.25rem);
+  }
+}
+
+/* Tablet portrait benefits from a clean stacked reading order. Nearby
+   landscape widths retain the two-column composition with deliberate air. */
+@media (min-width: 721px) and (max-width: 820px) {
+  .hr-journey-intro {
+    grid-template-columns: 1fr;
+    gap: var(--hr-space-8);
+  }
+
+  .hr-journey-legend {
+    width: min(100%, 30rem);
+    margin-top: 0;
+    justify-self: start;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1024px) {
+  .hr-journey-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(245px, .44fr);
+    gap: clamp(3rem, 6.5vw, 4rem);
+  }
+
+  .hr-journey-legend {
+    margin-top: .35rem;
+  }
+}
+
+/* Featured evidence remains neutral; remove variant fills that can read as
+   gray/green on the white-dominant canvas. Semantics stay in borders/icons. */
+.hr-home-featured-item.is-technical-dossier,
+.hr-home-featured-item.is-architecture-boundary,
+.hr-home-featured-item.is-release-system,
+.hr-atlas-page .hr-atlas-featured-card,
+.hr-atlas-page .hr-atlas-featured-card.is-architecture-boundary {
+  background: var(--hr-rtd7-card-surface);
+}
+
+/* Repository is a quieter external/source utility, not a peer slate CTA. */
+.hr-home-link-row a:nth-child(2),
+.hr-atlas-featured-card .hr-link-row a:nth-child(2) {
+  border-color: var(--hr-rtd7-utility-border);
+  background: var(--hr-rtd7-utility-surface);
+  color: var(--hr-color-text-body) !important;
+}
+
+.hr-home-link-row a:nth-child(2):hover,
+.hr-home-link-row a:nth-child(2):focus-visible,
+.hr-atlas-featured-card .hr-link-row a:nth-child(2):hover,
+.hr-atlas-featured-card .hr-link-row a:nth-child(2):focus-visible {
+  border-color: var(--hr-color-signal-strong);
+  background: color-mix(
+    in srgb,
+    var(--hr-rtd7-utility-surface) 92%,
+    var(--hr-color-signal)
+  );
+  color: var(--hr-color-text-strong) !important;
+}
+
+/* R-TD7 featured tablet action scale --------------------------------------
+   At tablet portrait, Featured cards remain three-up while their actions
+   wrap into a vertical pair. Keep the accepted action semantics, but reduce
+   only that pair's control density so it stays subordinate to card evidence. */
+@media (min-width: 721px) and (max-width: 820px) {
+  .hr-atlas-page .hr-atlas-featured-card .hr-link-row {
+    gap: .5rem;
+  }
+
+  .hr-atlas-page .hr-atlas-featured-card .hr-link-row a {
+    min-height: 2.25rem;
+    padding: .5rem .72rem;
+    font-size: .8rem;
+  }
+}

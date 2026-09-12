@@ -1,18 +1,16 @@
-# Classification Report
+---
+layout: false
+search: false
+title: RetainAI
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/retainai/reference/reports/classification_report"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-This report summarizes baseline classification results for employee attrition prediction.
+<!-- R-TD5.5 legacy compatibility stub. Canonical content lives under /technical-docs/retainai/. -->
 
-## Model Comparison
-
-| model               |   accuracy |   precision |    recall |       f1 |   roc_auc |   pr_auc |
-|:--------------------|-----------:|------------:|----------:|---------:|----------:|---------:|
-| logistic_regression |   0.795455 |    0.410714 | 0.657143  | 0.505495 |  0.803552 | 0.57677  |
-| xgboost             |   0.840909 |    0.5      | 0.142857  | 0.222222 |  0.719691 | 0.376778 |
-| random_forest       |   0.840909 |    0.5      | 0.0571429 | 0.102564 |  0.718687 | 0.35309  |
-
-## Notes
-
-- Accuracy is not the main metric because the target is imbalanced.
-- PR AUC, recall and F1-score are especially relevant for attrition detection.
-- Logistic Regression is used as the interpretable baseline.
-- Random Forest and XGBoost are used as nonlinear tabular baselines.
+<p>RetainAI documentation moved to <a href="/technical-docs/retainai/reference/reports/classification_report">/technical-docs/retainai/reference/reports/classification_report</a>.</p>

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "project_id": "luasf",
+  "baseline_checkpoint": "655a924cb1ee73b8dc79ad640509e835fc8d3f1f",
+  "source_root_before": "docs/luasf",
+  "canonical_root_after": "docs/technical-docs/luasf",
+  "document_count": 7,
+  "documents": [
+    {
+      "relative_path": "api-overview.md",
+      "sha256": "f627bfe530386fe916bfe49b52b9c0b7a9cfa396e36203fe88b96635b250ba8d",
+      "bytes": 4972
+    },
+    {
+      "relative_path": "architecture.md",
+      "sha256": "b1c0e7c1b34bd0ed486f08a2dda04933f45d546900b1c2255d13a8d8c86778d0",
+      "bytes": 2356
+    },
+    {
+      "relative_path": "contributing.md",
+      "sha256": "4bb99fc159c2751658cbfa8a3bcc34ad985bfabde7a5e18f369c1ee1d896cfdd",
+      "bytes": 1773
+    },
+    {
+      "relative_path": "examples.md",
+      "sha256": "084a8c9ab5a5d81949093d441009361ac716154daf7d3d3a172c7326247268d0",
+      "bytes": 2113
+    },
+    {
+      "relative_path": "getting-started.md",
+      "sha256": "7c27fc6eaeee35e1c7c4f23c391a50d85db54bdb46c1564bc195336673589a98",
+      "bytes": 1702
+    },
+    {
+      "relative_path": "index.md",
+      "sha256": "69869557c3db7cbb7f9e46f100dd56e273b3cac85db79a47904491a2c1ba3654",
+      "bytes": 2767
+    },
+    {
+      "relative_path": "releases.md",
+      "sha256": "04b15674bcf93faf671e1b0944f5e711a85681d5050441681a935dd3e8a94f07",
+      "bytes": 1699
+    }
+  ]
+}

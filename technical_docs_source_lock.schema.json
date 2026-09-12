@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "technical_docs_source_lock.schema.json",
+  "title": "Project Atlas Technical Docs Source Provenance Lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_id",
+    "source_repository",
+    "source_mode",
+    "requested_ref",
+    "resolved_sha",
+    "source_scopes",
+    "sync_strategy",
+    "generated_targets",
+    "sync_adapter"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_repository": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_mode": {
+      "enum": [
+        "snapshot_sync",
+        "moving_ref_sync"
+      ]
+    },
+    "requested_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolved_sha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "source_scopes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "generated_targets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "sync_strategy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sync_adapter": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

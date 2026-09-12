@@ -2,7 +2,7 @@
 
 <p align="left">
     <a href="https://nodejs.org/" target="_blank">
-        <img src="https://img.shields.io/badge/Node.js-20.x%20local%20%2F%2024.x%20CI-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 20.x local / 24.x CI" />
+        <img src="https://img.shields.io/badge/Node.js-20.x-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js 20.x" />
     </a>
     <a href="https://www.npmjs.com/" target="_blank">
         <img src="https://img.shields.io/badge/npm-package%20scripts-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm scripts" />
@@ -32,6 +32,10 @@
 
 Source repository for the public technical portfolio and documentation hub of **Hubert Ronald**.
 
+**Data & Cloud Architect · Data/ML Platform Engineer · AI-native Builder**
+
+> I build evidence systems that turn complexity into clarity and action.
+
 Live site:
 
 <https://hubertronald.dev/>
@@ -40,71 +44,81 @@ Live site:
 
 ## What this site contains
 
-- Landing page in English and Spanish.
-- Project Atlas.
-- Builder Journey.
-- Case-study index.
-- Historical archive.
-- Technical documentation for selected projects:
-  - RetainAI
-  - VersoVector
-  - RelationalStats
-  - GradientMesh
-  - LuaSF
+- English and Spanish landing pages.
+- **Project Atlas**, a curated map of projects, repositories and technical artifacts.
+- **Builder Journey**, connecting creative software roots with data, cloud and AI-native engineering.
+- Case studies and historical archive material.
+- A canonical **Technical Docs** hub for selected projects and technical field guides.
+- A standalone bridge to **Liasoft**, the creative archive at `liasoft.hubertronald.dev`.
+
+Current Technical Docs publications:
+
+- VersoVector
+- LuaSF
+- GradientMesh
+- RelationalStats
+- RetainAI
+- FDE Roadmap
 
 ---
 
-## Target URL structure
+## Public URL model
 
 ```text
 https://hubertronald.dev/
-  Main landing page in English
+  Main landing page
 
 https://hubertronald.dev/es/
   Spanish landing page
 
 https://hubertronald.dev/projects/
-  Project Atlas: curated map of projects, repositories and technical artifacts
+  Project Atlas / Work
 
 https://hubertronald.dev/journey/
-  Builder Journey: narrative path from creative software to AI-native platforms
+  Builder Journey
 
 https://hubertronald.dev/case-studies/
-  Case-study index for deeper technical writeups
+  Case-study index
 
 https://hubertronald.dev/archive/
-  Historical archive for creative roots, older artifacts and site history
+  Historical archive
 
-https://hubertronald.dev/archive/under-construction/
-  Archive note for the original under-construction root page
+https://hubertronald.dev/technical-docs/
+  Canonical Technical Docs hub
 
-https://hubertronald.dev/legacy/root-under-construction/
-  Preserved static snapshot of the original under-construction page
+https://hubertronald.dev/technical-docs/versovector/
+  VersoVector documentation
 
-https://hubertronald.dev/retainai/
-  RetainAI public documentation
+https://hubertronald.dev/technical-docs/luasf/
+  LuaSF documentation
 
-https://hubertronald.dev/versovector/
-  VersoVector public documentation
+https://hubertronald.dev/technical-docs/gradientmesh/
+  GradientMesh documentation
 
-https://hubertronald.dev/relationalstats/
-  RelationalStats public documentation
+https://hubertronald.dev/technical-docs/relationalstats/
+  RelationalStats documentation
 
-https://hubertronald.dev/gradientmesh/
-  GradientMesh creative-coding documentation
+https://hubertronald.dev/technical-docs/retainai/
+  RetainAI documentation
 
-https://hubertronald.dev/luasf/
-  LuaSF technical documentation
+https://hubertronald.dev/technical-docs/fde-roadmap/
+  Forward-deployed engineering field guide
 
 https://liasoft.hubertronald.dev/
-  Standalone Liasoft creative archive for indie games and experiments
+  Standalone Liasoft creative archive
 ```
 
-Liasoft is no longer maintained as the main source under `/liasoft/` in this repository. If `/liasoft/` exists in the generated site, it should behave only as a lightweight bridge to:
+The following root-level project routes remain as compatibility surfaces and are **not** the canonical documentation roots:
 
 ```text
-https://liasoft.hubertronald.dev/
+/versovector/
+/luasf/
+/gradientmesh/
+/relationalstats/
+/retainai/
 ```
+
+New documentation should use the canonical `/technical-docs/...` namespace.
 
 ---
 
@@ -119,24 +133,23 @@ https://liasoft.hubertronald.dev/
 │   ├── journey/
 │   ├── case-studies/
 │   ├── archive/
-│   ├── retainai/
-│   ├── versovector/
-│   ├── relationalstats/
-│   ├── gradientmesh/
-│   ├── luasf/
+│   ├── technical-docs/
+│   │   ├── index.md
+│   │   ├── versovector/
+│   │   ├── luasf/
+│   │   ├── gradientmesh/
+│   │   ├── relationalstats/
+│   │   ├── retainai/
+│   │   └── fde-roadmap/
+│   ├── versovector/          # compatibility route
+│   ├── luasf/                # compatibility route
+│   ├── gradientmesh/         # compatibility route
+│   ├── relationalstats/      # compatibility route
+│   ├── retainai/             # compatibility route
 │   ├── public/
 │   │   ├── icons/
-│   │   │   ├── common/
-│   │   │   ├── gradientmesh/
-│   │   │   ├── luasf/
-│   │   │   ├── relationalstats/
-│   │   │   ├── retainai/
-│   │   │   ├── social/
-│   │   │   └── versovector/
-│   │   ├── images/
-│   │   │   └── profile/
-│   │   └── legacy/
-│   │       └── root-under-construction/
+│   │   └── images/
+│   │       └── profile/
 │   └── .vitepress/
 │       ├── config.mts
 │       └── theme/
@@ -146,11 +159,22 @@ https://liasoft.hubertronald.dev/
 │   └── root-under-construction/
 │
 ├── legacy/
+│   └── under-construction-template/
 │
 ├── scripts/
-│   ├── copy-static-sites.mjs
-│   └── audit/
+│   ├── audit/
+│   ├── technical-docs/
+│   └── copy-static-sites.mjs
 │
+├── technical_docs_source_locks/
+│   ├── README.md
+│   └── fde-roadmap.json
+├── technical_docs_source_lock.schema.json
+├── technical_docs_source_registry.json
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
 ├── package.json
 ├── package-lock.json
 ├── .nvmrc
@@ -161,29 +185,11 @@ https://liasoft.hubertronald.dev/
 
 ## Architecture
 
-The site is built with **VitePress**.
+The main site is built with **VitePress**.
 
-The landing uses a custom Vue component with `layout: false`, while technical documentation keeps the default VitePress documentation experience.
+The public landing experience uses custom Vue components and a dedicated editorial visual system, while Technical Docs retain documentation-oriented navigation, sidebar and content behavior.
 
-```text
-docs/
-├── index.md
-├── es/
-├── projects/
-├── journey/
-├── case-studies/
-├── archive/
-├── retainai/
-├── versovector/
-├── relationalstats/
-├── gradientmesh/
-├── luasf/
-└── .vitepress/
-```
-
-### Landing pages
-
-The root landing pages are VitePress pages with custom Vue rendering:
+### Landing
 
 ```text
 docs/index.md
@@ -193,76 +199,111 @@ docs/es/index.md
   -> /es/
 ```
 
-Both pages use the same landing component system and language-specific content files.
+Both landing routes share the same component system with language-specific content.
 
-### Documentation sections
+### Technical Docs
 
-The technical documentation sections keep the default VitePress layout, navigation, sidebar and search behavior.
-
-Current documentation sections:
+Canonical documentation lives under:
 
 ```text
-/retainai/
-/versovector/
-/relationalstats/
-/gradientmesh/
-/luasf/
+docs/technical-docs/
+  -> /technical-docs/
 ```
 
-### Static bridge
+The current publication set is:
 
-The static copy script may keep a lightweight bridge for older static paths, such as:
+```text
+/technical-docs/versovector/
+/technical-docs/luasf/
+/technical-docs/gradientmesh/
+/technical-docs/relationalstats/
+/technical-docs/retainai/
+/technical-docs/fde-roadmap/
+```
+
+Technical Docs lifecycle and provenance are governed by:
+
+```text
+technical_docs_source_registry.json
+technical_docs_source_lock.schema.json
+technical_docs_source_locks/
+scripts/technical-docs/
+```
+
+The registry defines publication and source behavior. Provenance locks are materialized only where required by the registered source policy.
+
+### Compatibility routes
+
+The older project roots remain only for compatibility:
+
+```text
+/versovector/
+/luasf/
+/gradientmesh/
+/relationalstats/
+/retainai/
+```
+
+They must not become the canonical source of future documentation.
+
+### Static sites
+
+`npm run docs:build` builds VitePress and then runs the static-copy stage.
+
+Current intentional static sources include:
 
 ```text
 static-sites/liasoft/
-  -> docs/.vitepress/dist/liasoft/
+static-sites/root-under-construction/
 ```
 
-This bridge should not be treated as the canonical Liasoft site. The canonical Liasoft archive is:
+Heavy local application exports under:
 
 ```text
-https://liasoft.hubertronald.dev/
+static-apps/liasoft/games/
 ```
 
-### Historical root
-
-The original under-construction page is preserved as part of the archive:
-
-- Source: `static-sites/root-under-construction/`
-- Preserved snapshot: `/legacy/root-under-construction/`
-- Archive note: `/archive/under-construction/`
-
-The under-construction page should not overwrite `/` anymore.
+are intentionally kept outside Git.
 
 ---
 
 ## Liasoft
 
-Liasoft is now maintained as a standalone creative archive:
+Liasoft is maintained as a standalone creative archive:
 
 <https://liasoft.hubertronald.dev/>
 
-The main site links to Liasoft externally.
+The main portfolio links to it externally.
 
-Liasoft represents the creative origin layer of this portfolio: indie games, mobile experiments, visual software, browser-friendly builds and old playful technical ideas.
+`static-sites/liasoft/` provides only the lightweight bridge used by this repository and should not be treated as the canonical Liasoft application source.
+
+---
+
+## Historical under-construction source
+
+The original under-construction material is intentionally separated from the active landing.
+
+Current retained sources are:
+
+```text
+static-sites/root-under-construction/
+legacy/under-construction-template/
+```
+
+The root `/` must remain the active portfolio landing and must not be overwritten by the historical template.
 
 ---
 
 ## Local development
 
-The local Node.js version is defined by `.nvmrc`.
+Node.js is defined by the repository `.nvmrc`.
 
 ```bash
 nvm use
-```
-
-Install dependencies:
-
-```bash
 npm ci
 ```
 
-Run the VitePress development server:
+Run the development server:
 
 ```bash
 npm run docs:dev
@@ -272,39 +313,56 @@ npm run docs:dev
 
 ## Build
 
-Build the VitePress site and copy intentional static bridges into the generated output:
+Build VitePress and copy intentional static sites into the generated output:
 
 ```bash
 npm run docs:build
 ```
 
----
+`docs:build` already includes the static-copy stage:
 
-## Preview
-
-Preview the built site:
-
-```bash
-npm run docs:preview
+```text
+vitepress build docs
+  -> npm run static:copy
 ```
 
+Generated output lives under:
+
+```text
+docs/.vitepress/dist/
+```
+
+and must not be committed.
+
 ---
 
-## Quality check
+## Validation
 
-Run the landing and launch quality script after building:
+Run the landing quality gate:
 
 ```bash
 python3 scripts/audit/landing-quality-check.py
 ```
 
+Run the current Technical Docs integration gate after building:
+
+```bash
+npm run technical-docs:validate-rtd6 -- --require-build
+```
+
+Check patch whitespace and malformed diff output:
+
+```bash
+git diff --check
+```
+
+A release candidate should pass all three checks after a clean build.
+
 ---
 
-## Clean local preview build
+## Clean local preview
 
-When updating static assets such as icons, images or bridge files, the browser may keep cached versions of files that use the same URL.
-
-To force a clean local build:
+When changing assets, navigation, static bridges or generated documentation, rebuild from a clean output directory:
 
 ```bash
 rm -rf docs/.vitepress/dist
@@ -314,60 +372,74 @@ npm run docs:build
 npm run docs:preview
 ```
 
-If the updated assets still do not appear in the browser, perform a hard refresh:
+If an updated asset still appears stale in the browser, perform a hard refresh:
 
 ```text
 macOS: Cmd + Shift + R
 Windows/Linux: Ctrl + Shift + R
 ```
 
-This is especially useful after replacing SVG icons under:
-
-```text
-docs/public/icons/
-```
-
-or profile images under:
-
-```text
-docs/public/images/profile/
-```
-
 ---
 
 ## Deployment
 
-The recommended deployment flow uses GitHub Actions.
-
-The workflow validates the site by:
-
-1. installing dependencies;
-2. building the VitePress site;
-3. copying intentional static bridges;
-4. validating the generated output;
-5. optionally deploying to GitHub Pages.
-
-Manual deployment should be triggered from GitHub Actions using the deploy input.
-
-Recommended validation flow:
+Deployment is handled by:
 
 ```text
-Actions -> Validate and Deploy Site -> Run workflow
-deploy: false
+.github/workflows/deploy.yml
 ```
 
-If validation passes:
+The workflow uses the Node.js version declared by `.nvmrc`.
+
+For pull requests and pushes targeting `master`, relevant source changes trigger validation. The workflow:
 
 ```text
-Actions -> Validate and Deploy Site -> Run workflow
-deploy: true
+checkout
+  ↓
+Node from .nvmrc
+  ↓
+npm ci
+  ↓
+npm run docs:build
+  ↓
+generated-output checks
+  ↓
+landing-quality-check.py
+  ↓
+technical-docs:validate-rtd6 -- --require-build
 ```
 
-The deployment target is GitHub Pages.
+A normal push does **not** deploy the site automatically.
+
+GitHub Pages deployment remains an explicit manual action through `workflow_dispatch`.
+
+Validation-only run:
+
+```text
+Actions
+  -> Validate and Deploy Site
+  -> Run workflow
+  -> deploy: false
+```
+
+Validated deployment:
+
+```text
+Actions
+  -> Validate and Deploy Site
+  -> Run workflow
+  -> deploy: true
+```
+
+The deployment artifact is:
+
+```text
+docs/.vitepress/dist/
+```
 
 ---
 
-## Important safety rules
+## Repository safety rules
 
 Do not commit generated VitePress output:
 
@@ -382,19 +454,17 @@ Do not commit dependencies:
 node_modules/
 ```
 
-Do not reintroduce the original under-construction page as the root page.
+Do not reintroduce the historical under-construction page as `/`.
 
-Do not use `static-sites/root-under-construction/` to overwrite `/`.
+Do not move canonical Technical Docs back to root-level project routes.
 
-Do not move existing documentation directories without validating routes.
+Do not modify Technical Docs provenance declarations without validating the registry and applicable locks.
 
-Do not create a local `/kaggle/` route. Kaggle remains an external profile link.
+Do not create a local `/kaggle/` route; Kaggle remains an external profile link.
 
-Do not treat Liasoft as RetainAI or as part of the RetainAI product identity.
+Do not treat Liasoft as part of the RetainAI product identity.
 
-Do not place heavy static game builds inside VitePress Markdown folders.
-
-Do not delete legacy folders until replacements and redirects are confirmed.
+Do not commit heavyweight local game exports under `static-apps/liasoft/games/`.
 
 Do not use destructive deployment commands that overwrite the source branch with generated output.
 
@@ -402,29 +472,16 @@ Do not use destructive deployment commands that overwrite the source branch with
 
 ## Legacy deployment note
 
-This repository previously used `ghp-import` directly:
+This repository previously used direct `ghp-import` deployment:
 
 ```bash
 ghp-import -n -p -f _build/html -b master
 git config --global http.postBuffer 524288000
 ```
 
-That approach is now considered legacy for this repository because the source branch should remain source-controlled.
+That process is retained only as historical context.
 
-The preferred approach is to keep source files in the production branch and let GitHub Actions deploy only the generated output from:
-
-```text
-docs/.vitepress/dist/
-```
-
-This avoids overwriting source folders such as:
-
-```text
-docs/
-static-sites/
-legacy/
-scripts/
-```
+The current model keeps source code in Git and publishes the generated `docs/.vitepress/dist/` artifact through GitHub Actions and GitHub Pages.
 
 ---
 

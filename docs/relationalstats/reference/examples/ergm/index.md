@@ -1,10 +1,16 @@
-# ERGM examples
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/examples/ergm/"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-Current example:
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-```bash
-python examples/ergm/ergm_florentine_like.py
-```
-
-This is a dyadic-logistic ERGM approximation, not a full MCMC-MLE equivalent to
-R `ergm`.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/examples/ergm/">/technical-docs/relationalstats/reference/examples/ergm/</a>.</p>

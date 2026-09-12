@@ -1,15 +1,16 @@
-# ERGM GOF approximation
+---
+layout: false
+search: false
+title: relationalstats
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/technical-docs/relationalstats/reference/docs/ergm/gof"
+  - - meta
+    - name: robots
+      content: "noindex,follow"
+---
 
-The initial GOF workflow simulates networks from fitted dyad probabilities and
-compares observed and simulated network statistics:
+<!-- R-TD5.4 legacy compatibility stub. Canonical content lives under /technical-docs/relationalstats/. -->
 
-- edges;
-- density;
-- average degree;
-- triangles;
-- degree distribution;
-- edge-wise shared partners;
-- geodesic distance distribution with `NR`.
-
-This approximates the spirit of R `ergm::gof`, but is not equivalent to the full
-R implementation.
+<p>relationalstats documentation moved to <a href="/technical-docs/relationalstats/reference/docs/ergm/gof">/technical-docs/relationalstats/reference/docs/ergm/gof</a>.</p>
