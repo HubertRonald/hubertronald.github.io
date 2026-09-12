@@ -11,6 +11,9 @@ on:
       - "scripts/**"
       - "package.json"
       - "package-lock.json"
+      - "technical_docs_source_registry.json"
+      - "technical_docs_source_lock.schema.json"
+      - "technical_docs_source_locks/**"
       - ".nvmrc"
       - ".github/workflows/deploy.yml"
 
@@ -24,6 +27,9 @@ on:
       - "scripts/**"
       - "package.json"
       - "package-lock.json"
+      - "technical_docs_source_registry.json"
+      - "technical_docs_source_lock.schema.json"
+      - "technical_docs_source_locks/**"
       - ".nvmrc"
       - ".github/workflows/deploy.yml"
 
@@ -54,7 +60,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Install dependencies
@@ -63,18 +69,17 @@ jobs:
       - name: Build VitePress site
         run: npm run docs:build
 
-      - name: Copy standalone static sites and apps
-        run: node scripts/copy-static-sites.mjs
-
       - name: Validate generated output
         run: |
           test -f docs/.vitepress/dist/index.html
           test -d docs/.vitepress/dist/liasoft
           test -f docs/.vitepress/dist/liasoft/index.html
 
-          if [ -d static-apps/liasoft/games/SuperWariBrosWebPlayer ]; then
-            test -d docs/.vitepress/dist/liasoft/games/SuperWariBrosWebPlayer
-          fi
+      - name: Validate landing quality
+        run: python3 scripts/audit/landing-quality-check.py
+
+      - name: Validate Technical Docs
+        run: npm run technical-docs:validate-rtd6 -- --require-build
 
       - name: Configure GitHub Pages
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy == true }}
