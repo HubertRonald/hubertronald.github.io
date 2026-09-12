@@ -23,7 +23,7 @@ const protectedTreeDigests = {
   versovector: '2525fa968b624350cc2410dc469ca74b7ff4e578f4d541760d53817065100aa2',
   luasf: '63677cb83c1716c3b97a746f079c524215a118cc84c36c1b5ebfefa520ca37af',
   gradientmesh: '040e787d9eb38cdca4aa385714c2f74b63314db2a0425d489d7f88b8199d5d30',
-  relationalstats: '487bc9c51074ee257e1c4943783cbd745e6efdcf1499875614950debd99fa01b',
+  relationalstats: 'ca9cae53b6dd321df58294c8e0b31dbd19881c9741718caee26e33bb2d8f7f8a',
   retainai: '87d70527e30e591454befea08c982baa0be66ac9cb3b70723bf69927cf49b870'
 }
 

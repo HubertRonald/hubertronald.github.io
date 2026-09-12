@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "source_id": "relationalstats",
+  "source_repository": "https://github.com/HubertRonald/relationalstats",
+  "source_mode": "moving_ref_sync",
+  "requested_ref": "main",
+  "resolved_sha": "d0b25d699be60a4d3675f587d8c53e8af9191f97",
+  "source_scopes": [
+    "README.md",
+    "docs/**/*.md",
+    "examples/**/*.md",
+    "notebooks/**/*.md"
+  ],
+  "generated_targets": [
+    "docs/technical-docs/relationalstats/package.md",
+    "docs/technical-docs/relationalstats/reference/**"
+  ],
+  "sync_strategy": "git_clone_transform",
+  "sync_adapter": "relationalstats_v1"
+}
