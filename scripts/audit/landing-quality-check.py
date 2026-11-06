@@ -139,8 +139,8 @@ def main() -> int:
         errors.append(f"/: approved owner portrait asset is missing: {approved_portrait}")
 
     for required in [
-        "I build evidence systems that turn complexity into clarity and action.",
-        "Data &amp; Cloud Architect · Data/ML Platform Engineer · AI-native Builder",
+        "I build reliable data, cloud, and AI systems for complex operational problems.",
+        "Data &amp; Cloud Architect · Data/ML Platform Engineer",
         "/images/profile/rony-white-shirt-portrait-final.png",
         "Portrait of Hubert Ronald",
     ]:

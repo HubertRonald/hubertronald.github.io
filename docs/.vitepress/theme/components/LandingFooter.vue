@@ -13,7 +13,7 @@ const copy = computed(() => portfolioFooterCopy[props.locale])
       <div class="hr-footer-intro">
         <p class="hr-footer-kicker">Hubert Ronald</p>
         <p class="hr-footer-note">
-          {{ locale === 'es' ? 'Sistemas de evidencia para problemas operativos reales y personas reales.' : 'Evidence systems for real operational problems and real people.' }}
+          {{ locale === 'es' ? 'Sistemas de datos, cloud e IA para problemas operativos reales y personas reales.' : 'Data, cloud, and AI systems for real operational problems and real people.' }}
         </p>
       </div>
 
@@ -46,7 +46,7 @@ const copy = computed(() => portfolioFooterCopy[props.locale])
 
       <div class="hr-footer-principles">
         <PortfolioIcon name="journey" :size="22" />
-        <p>{{ locale === 'es' ? 'Evidencia primero. Pensamiento sistémico. Construido con usuarios. Impacto medible.' : 'Evidence first. Systems thinking. Built with users. Measurable impact.' }}</p>
+        <p>{{ locale === 'es' ? 'Pensamiento sistémico. Construido con usuarios. Guiado por evidencia.' : 'Systems thinking. Built with users. Evidence-driven.' }}</p>
       </div>
     </div>
 
