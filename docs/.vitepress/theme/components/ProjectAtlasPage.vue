@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
         />
         <aside class="hr-atlas-role-note" aria-label="Professional positioning">
           <p class="hr-eyebrow">Role</p>
-          <p>I design and build data and AI systems that turn complexity into clarity and action.</p>
+          <p>I design and build data, cloud, and AI systems—from architecture and integration through deployment, validation, and operations.</p>
         </aside>
         <LocalSectionIndex :sections="atlasSections" />
         <AtlasMobileIndex />

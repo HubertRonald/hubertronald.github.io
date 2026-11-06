@@ -68,7 +68,7 @@ function projectExternal(id: string) {
           <p class="hr-eyebrow">Builder Journey</p>
           <h1 id="journey-title">Seven stages. One progression.</h1>
           <p class="hr-journey-summary">
-            A frozen journey across seven practice stages. Each stage is supported by primary projects and a focused set of supporting or related evidence.
+            A seven-stage progression from creative software and quantitative modeling to distributed data, cloud architecture, ML/NLP, and AI-native products and platforms. Each stage is anchored in primary projects and focused supporting evidence.
           </p>
           <p class="hr-journey-freeze-note">
             Project placement follows the frozen Project Atlas Builder Journey evidence map.
